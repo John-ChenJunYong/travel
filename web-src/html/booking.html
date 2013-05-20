@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>booking</title>
+<!-- bootstrap -->
+<link href="../css/bootstrap.css" rel="stylesheet" />
+<link href="../css/bootstrap-fixed.css" rel="stylesheet" />
+<link href="../css/bootstrap-datepicker.css" rel="stylesheet" />
+<!-- bootstrap的响应式 -->
+<link href="../css/bootstrap-responsive.css" rel="stylesheet" />
+<!-- 自定义 -->
+<link href="../css/john-global.css" rel="stylesheet" />
+<link href="../css/john-public.css" rel="stylesheet" />
+<link href="../css/john-booking.css" rel="stylesheet" />
+
+<script src="../js/jquery-1.8.3.js" ></script>
+<script src="../js/utils.js"></script>
+
+</head>
+
+<body>
+
+<!-- 主体区域 -->
+<div class="content">
+	<!-- 订单流程 -->
+	<ol class="orders-step">
+		<li class="step-1">
+			<p class="tips">
+				提交订单
+				<span>2013-5-18 14:28:55</span>
+			</p>
+		</li>
+		<li class="step-1">
+			<p class="tips">
+				旅伴回复
+				<span>2013-5-18 14:33:31</span>
+			</p>
+		</li>
+		<li class="step-1">
+			<p class="tips">
+				付款
+				<span>2013-5-18 14:28:55</span>
+			</p>
+		</li>
+		<li class="step-1">
+			<p class="tips">
+				完成
+				<span>2013-5-18 14:28:55</span>
+			</p>
+		</li>
+	</ol>
+
+	<!-- 时间表 -->
+	<div class="booking-schedule" id="J-booking-schedule">
+		<div class="mod-bd">
+			<table class="schedule-list" id="J-schedule-list">
+				<tbody>
+					<!-- <tr>
+						<td class="td-day">&nbsp;</td>
+						<td colspan="24" class="loading">正在加载...</td>
+					</tr> -->
+					<tr>
+						<td class="td-day">5月15日</td>
+						<td><label class="ui-checkbox"><input type="checkbox" class="checkbox" value="0" /></label></td>
+						<td><label class="ui-checkbox"><input type="checkbox" class="checkbox" value="1" /></label></td>
+						<td><label class="ui-checkbox"><input type="checkbox" class="checkbox" value="2" /></label></td>
+						<td><label class="ui-checkbox"><input type="checkbox" class="checkbox" value="3" /></label></td>
+						<td><label class="ui-checkbox"><input type="checkbox" class="checkbox" value="4" /></label></td>
+						<td><label class="ui-checkbox"><input type="checkbox" class="checkbox" value="5" /></label></td>
+						<td><label class="ui-checkbox"><input type="checkbox" class="checkbox" value="6" /></label></td>
+						<td><label class="ui-checkbox"><input type="checkbox" class="checkbox" value="7" /></label></td>
+						<td><label class="ui-checkbox"><input type="checkbox" class="checkbox" value="8" /></label></td>
+						<td><label class="ui-checkbox"><input type="checkbox" class="checkbox" value="9" /></label></td>
+						<td><label class="ui-checkbox"><input type="checkbox" class="checkbox" value="10" /></label></td>
+						<td><label class="ui-checkbox"><input type="checkbox" class="checkbox" value="11" /></label></td>
+						<td><label class="ui-checkbox"><input type="checkbox" class="checkbox" value="12" /></label></td>
+						<td><label class="ui-checkbox"><input type="checkbox" class="checkbox" value="13" /></label></td>
+						<td><label class="ui-checkbox"><input type="checkbox" class="checkbox" value="14" /></label></td>
+						<td><label class="ui-checkbox"><input type="checkbox" class="checkbox" value="15" /></label></td>
+						<td><label class="ui-checkbox"><input type="checkbox" class="checkbox" value="16" /></label></td>
+						<td><label class="ui-checkbox"><input type="checkbox" class="checkbox" value="17" /></label></td>
+						<td><label class="ui-checkbox"><input type="checkbox" class="checkbox" value="18" /></label></td>
+						<td><label class="ui-checkbox"><input type="checkbox" class="checkbox" value="19" /></label></td>
+						<td><label class="ui-checkbox"><input type="checkbox" class="checkbox" value="20" /></label></td>
+						<td><label class="ui-checkbox"><input type="checkbox" class="checkbox" value="21" /></label></td>
+						<td><label class="ui-checkbox"><input type="checkbox" class="checkbox" value="22" /></label></td>
+						<td><label class="ui-checkbox"><input type="checkbox" class="checkbox" value="23" /></label></td>
+						<td class="td-all"><button class="check-all">All</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="mod-ft">
+			<a href="javascript:void(0);" class="action-add" id="J-book-addday">添加</a>
+			<ul class="tips">
+				<li><b class="i-my"></b>我的预定</li>
+				<li><b class="i-can"></b>可以预定</li>
+				<li><b class="i-cannot"></b>不能预定</li>
+			</ul>
+		</div>
+		<b class="i-arrow"></b>
+		<a href="javascript:void(0);" class="close" title="close">close</a>
+	</div>
+
+	<a href="#" class="ui-btn-big btn-submit-orders"><span>Submit Orders</span></a>
+</div>
+
+<script type="text/javascript">
+	$(function(){
+		// 复选框
+		$('.ui-checkbox').checkbox();
+	});
+</script>
+
+</body>
+</html>

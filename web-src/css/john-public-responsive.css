@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+
+/**
+ * date:2013-05-16;
+ * explantion:
+ * 		帮助中心、公司简介的响应式;
+ *   	通过js判断出屏幕大小后，给body赋值即可;
+ */
+@media only screen and (min-width:1200px){
+	/*画廊*/
+	.content {
+		width:1134px;
+		-webkit-transition:width 0.25s linear;
+		-moz-transition:width 0.25s linear;
+		transition:width 0.25s linear;
+	}
+}
+
+
+/**
+ * date:2013-05-16;
+ * explanation:为IE作兼容处理;
+ */
+.widescreen .content {
+	width:1134px;
+}

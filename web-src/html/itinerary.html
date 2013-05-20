@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>travel-list</title>
+<link href="../css/app.min.css?2.0.20120308" rel="stylesheet" />
+<link href="../css/john-public.css" rel="stylesheet" />
+<link href="../css/john-itinerary.css" rel="stylesheet" />
+
+<script src="../js/jquery-1.8.3.js"></script>
+<script src="../js/bootstrap-transition.js"></script>
+<script src="../js/bootstrap-tab.js"></script>
+<script src="../js/bootstrap-dropdown.js"></script>
+<script src="../js/bootstrap-datepicker.js"></script>
+<script src="../js/bootstrap-modal.js"></script>
+<script src="../js/bootstrap-carousel.js"></script>
+<script src="../js/jquery.jcarousel.js"></script>
+<script src="../js/jquery.pikachoose.js"></script>
+<script src="../js/utils.js"></script>
+</head>
+
+<body>
+
+<a data-toggle="modal" data-target="#J-journey-domal" class="btn btn-primary btn-large">更多旅行线路</a>
+
+<div class="ui-modal hide fade" id="J-journey-domal">
+	<div class="modal-mod">
+		<div class="modal-bd modal-journey-search">
+			<div class="search-mod">
+				<!-- 收入框 -->
+				<div class="group-input">
+					<div class="ui-input-wrap">
+						<input type="text" placeholder="City you want to go" class="ui-input" />
+					</div>
+					<div class="ui-input-wrap">
+						<a href="#" class="ui-btn-small btn-search-small">
+							<span><i class="i-search"></i>Search</span>
+						</a>
+					</div>
+				</div>
+				<!-- 语言选择 -->
+				<div class="options">
+					<strong class="options-t">景点选择：</strong>
+					<div class="options-list">
+						<label>
+							<span class="ui-checkbox"><input type="checkbox" class="checkbox"></span>
+							<span>English</span>
+						</label>
+						<label>
+							<span class="ui-checkbox"><input type="checkbox" class="checkbox"></span>
+							<span>Chinese</span>
+						</label>
+						<label>
+							<span class="ui-checkbox"><input type="checkbox" class="checkbox"></span>
+							<span>French</span>
+						</label>
+						<label>
+							<span class="ui-checkbox"><input type="checkbox" class="checkbox"></span>
+							<span>Spanish</span>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="result-tips">一共为您搜出<span>563</span>个结果</div>
+			<div class="journey-thumbnails carousel slide" id="J-journey-thumbnails">
+				<div class="carousel-inner">
+					<ul class="thumbnails-list item active">
+						<li class="list-item">
+							<div class="pic">
+								<img src="../img/journey-1.jpg" alt="图片描述" />
+							</div>
+							<div class="caption">
+								<h4><a href="#">Biky the city in 1 Hours</a></h4>
+								<ul class="meta">
+									<li class="review">30 evaluation</li>
+									<li class="price">1834/person</li>
+								</ul>
+							</div>
+						</li>
+						<li class="list-item">
+							<div class="pic">
+								<img src="../img/journey-2.jpg" alt="图片描述" />
+							</div>
+							<div class="caption">
+								<h4><a href="#">Biky the city in 1 Hours</a></h4>
+								<ul class="meta">
+									<li class="review">30 evaluation</li>
+									<li class="price">1834/person</li>
+								</ul>
+							</div>
+						</li>
+						<li class="list-item">
+							<div class="pic">
+								<img src="../img/journey-3.jpg" alt="图片描述" />
+							</div>
+							<div class="caption">
+								<h4><a href="#">Biky the city in 1 Hours</a></h4>
+								<ul class="meta">
+									<li class="review">30 evaluation</li>
+									<li class="price">1834/person</li>
+								</ul>
+							</div>
+						</li>
+						<li class="list-item">
+							<div class="pic">
+								<img src="../img/journey-1.jpg" alt="图片描述" />
+							</div>
+							<div class="caption">
+								<h4><a href="#">Biky the city in 1 Hours</a></h4>
+								<ul class="meta">
+									<li class="review">30 evaluation</li>
+									<li class="price">1834/person</li>
+								</ul>
+							</div>
+						</li>
+						<li class="list-item">
+							<div class="pic">
+								<img src="../img/journey-2.jpg" alt="图片描述" />
+							</div>
+							<div class="caption">
+								<h4><a href="#">Biky the city in 1 Hours</a></h4>
+								<ul class="meta">
+									<li class="review">30 evaluation</li>
+									<li class="price">1834/person</li>
+								</ul>
+							</div>
+						</li>
+						<li class="list-item">
+							<div class="pic">
+								<img src="../img/journey-3.jpg" alt="图片描述" />
+							</div>
+							<div class="caption">
+								<h4><a href="#">Biky the city in 1 Hours</a></h4>
+								<ul class="meta">
+									<li class="review">30 evaluation</li>
+									<li class="price">1834/person</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+					<ul class="thumbnails-list item">
+						<li class="list-item">
+							<div class="pic">
+								<img src="../img/journey-1.jpg" alt="图片描述" />
+							</div>
+							<div class="caption">
+								<h4><a href="#">Biky the city in 2 Hours</a></h4>
+								<ul class="meta">
+									<li class="review">30 evaluation</li>
+									<li class="price">1834/person</li>
+								</ul>
+							</div>
+						</li>
+						<li class="list-item">
+							<div class="pic">
+								<img src="../img/journey-2.jpg" alt="图片描述" />
+							</div>
+							<div class="caption">
+								<h4><a href="#">Biky the city in 2 Hours</a></h4>
+								<ul class="meta">
+									<li class="review">30 evaluation</li>
+									<li class="price">1834/person</li>
+								</ul>
+							</div>
+						</li>
+						<li class="list-item">
+							<div class="pic">
+								<img src="../img/journey-3.jpg" alt="图片描述" />
+							</div>
+							<div class="caption">
+								<h4><a href="#">Biky the city in 2 Hours</a></h4>
+								<ul class="meta">
+									<li class="review">30 evaluation</li>
+									<li class="price">1834/person</li>
+								</ul>
+							</div>
+						</li>
+						<li class="list-item">
+							<div class="pic">
+								<img src="../img/journey-1.jpg" alt="图片描述" />
+							</div>
+							<div class="caption">
+								<h4><a href="#">Biky the city in 2 Hours</a></h4>
+								<ul class="meta">
+									<li class="review">30 evaluation</li>
+									<li class="price">1834/person</li>
+								</ul>
+							</div>
+						</li>
+						<li class="list-item">
+							<div class="pic">
+								<img src="../img/journey-2.jpg" alt="图片描述" />
+							</div>
+							<div class="caption">
+								<h4><a href="#">Biky the city in 2 Hours</a></h4>
+								<ul class="meta">
+									<li class="review">30 evaluation</li>
+									<li class="price">1834/person</li>
+								</ul>
+							</div>
+						</li>
+						<li class="list-item">
+							<div class="pic">
+								<img src="../img/journey-3.jpg" alt="图片描述" />
+							</div>
+							<div class="caption">
+								<h4><a href="#">Biky the city in 2 Hours</a></h4>
+								<ul class="meta">
+									<li class="review">30 evaluation</li>
+									<li class="price">1834/person</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<a class="left carousel-control" href="#J-journey-thumbnails" data-slide="prev">‹</a>
+				<a class="right carousel-control" href="#J-journey-thumbnails" data-slide="next">›</a>
+			</div>
+		</div>
+		<a href="javascript:void(0);" class="ui-close" data-dismiss="modal" aria-hidden="true">close</a>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(function(){
+		$('#J-journey-thumbnails').carousel()
+		// 复选框
+		$('.ui-checkbox').checkbox();
+	});
+</script>
+
+</body>
+</html>

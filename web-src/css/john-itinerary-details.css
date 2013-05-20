@@ -1,0 +1,141 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*base reset*/
+h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
+
+/*content layout*/
+.content .col-side { float:right; width:270px; font-size:12px; }
+.content .col-main { float:left; width:660px; font-size:14px; }
+
+/*标题*/
+.attractions-title { position:relative; padding:14px 0px; }
+.attractions-title h1 {
+	font-size:36px; font-weight:400;
+	-webkit-text-shadow:1px 1px 4px rgba(0, 0, 0, 0.15);
+	-moz-text-shadow:1px 1px 4px rgba(0, 0, 0, 0.15);
+	-o-text-shadow:1px 1px 4px rgba(0, 0, 0, 0.15);
+	-ms-text-shadow:1px 1px 4px rgba(0, 0, 0, 0.15);
+	text-shadow:1px 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+/*评价*/
+.rate-summary { position:absolute; top:50%; right:0px; margin-top:-18px; }
+.rate-summary .meta-list li { float:left; width:40px; text-align:center; }
+.rate-summary .meta-list a {
+	display:block; color:#333333;
+	-webkit-transition:all 0.25s linear;
+	-moz-transition:all 0.25s linear;
+	-o-transition:all 0.25s linear;
+	-ms-transition:all 0.25s linear;
+	transition:all 0.25s linear;
+}
+.rate-summary .meta-list a:hover {
+	text-decoration:none;
+	-webkit-transform:translateY(-6px);
+	-moz-transform:translateY(-6px);
+	-o-transform:translateY(-6px);
+	-ms-transform:translateY(-6px);
+	transform:translateY(-6px);
+}
+.rate-summary .meta-list i { display:block; width:20px; height:20px; margin:0px auto; background-image:url(../img/icon-review.png); background-repeat:no-repeat; }
+.rate-summary .meta-list .i-talk { background-position:0px -208px; }
+.rate-summary .meta-list a:hover .i-talk { background-position:0px -228px; }
+.rate-summary .meta-list .i-favorite { background-position:0px -248px; }
+.rate-summary .meta-list a:hover .i-favorite { background-position:0px -268px; }
+.rate-summary .meta-list .i-line { background-position:0px -288px; }
+.rate-summary .meta-list a:hover .i-line { background-position:0px -308px; }
+.rate-summary .meta-list .i-contact { background-position:0px -328px; }
+.rate-summary .meta-list a:hover .i-contact { background-position:0px -348px; }
+.rate-summary .meta-list .act-line:hover a { color:#f89494; }
+.rate-summary .meta-list .act-favorite:hover a { color:#faa327; }
+.rate-summary .meta-list .act-talk:hover a { color:#6ecc97; }
+.rate-summary .meta-list .act-contact:hover a { color:#faa327; }
+
+/*画廊*/
+.gallery { padding:10px; border:1px solid #cdcdcd; }
+.pika-stage { width:638px; height:426px; }
+.jcarousel-container { padding:0px 25px; }
+
+/*文章内容模块*/
+.article { margin:20px 0px; line-height:1.75; }
+.article .hd-t { font-size:24px; font-weight:400; }
+
+/*景点、线路*/
+.attractions-list li,
+.itinerary-list li { position:relative; line-height:1.75; }
+.attractions-list li:before,
+.itinerary-list li:before { position:absolute; left:0px; content:""; width:18px; height:18px; background-image:url(../img/icon-article.png); }
+
+/*景点*/
+.attractions { }
+.attractions-list { overflow:hidden; }
+.attractions-list li { float:left; width:50%; padding:4px 0px; text-indent:24px; cursor:pointer; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.attractions-list li:before { top:50%; margin-top:-9px; background-position:0px 0px; }
+.attractions-list li:hover:before {
+	-webkit-animation:bounce 1s .2s ease both;
+	-moz-animation:bounce 1s .2s ease both;
+}
+
+/*线路*/
+.itinerary { }
+.itinerary-list { }
+.itinerary-list li { padding:2px 0px 2px 24px; }
+.itinerary-list li:before { top:5px; background-position:0px -18px; }
+.itinerary-list li:hover:before {
+	-webkit-animation:rotate 1s .2s ease both;
+	-moz-animation:rotate 1s .2s ease both;
+}
+
+/*描述*/
+.details { }
+.details p { margin-bottom:10px; }
+
+/*地图*/
+.map { width:100%; height:200px; margin:20px 0px; background-color:#efefef; }
+.map-wrap { width:100%; height:100%; overflow:hidden; }
+
+/*预订，基本样式写在public.css下，这里作一些特殊处理*/
+.booking .bd { padding:10px 10px 0px 10px; }
+.booking .ft { padding:4px 10px 14px 10px; border-top:none; }
+.booking .input-date-wrap { margin-right:10px; }
+.booking .group-input { padding:14px 0px; border-bottom:1px dotted #cdcdcd; }
+.booking .input-date { width:105px; }
+.booking .input-person { width:105px; }
+.choose-time { min-height:30px; padding:14px 0px; border-bottom:1px dotted #cdcdcd; }
+.choose-time .point { float:left; width:96px; font-size:14px; line-height:30px; color:#0088cc; }
+.choose-time .input-cycle { width:80px; }
+.choose-time .ui-checkbox { float:left; margin-top:5px; margin-left:24px; }
+/*旅伴列表*/
+.booking .match-result { padding:0px 0px 10px 10px; }
+.travel-companions { position:relative; height:396px; padding:0px 10px; overflow:hidden; }
+.travel-companions .list { }
+.travel-companions .item { padding:10px 0px; overflow:hidden; border-bottom:1px dotted #cdcdcd; }
+.travel-companions .user { float:left; }
+.travel-companions .info { padding-left:10px; overflow:hidden; font-size:14px; }
+.travel-companions .price { padding:5px 0px; color:#999999; }
+.travel-companions .group-btn { overflow:hidden; }
+.travel-companions .btn-touch-small { float:left; width:76px; padding:3px 8px; }
+.travel-companions .ui-checkbox { float:left; margin-top:4px; margin-left:32px; }
+
+/*时间表*/
+.booking-schedule { position:absolute; top:0px; left:220px; z-index:20; display:none; width:710px; min-height:100px; background-color:#ffffff; font-size:12px; }
+.booking-schedule .inner { position:relative; border:1px solid #0088cc; }
+.booking-schedule .i-arrow { position:absolute; top:16px; left:-11px; width:11px; height:21px; background-image:url(../img/icon-widget.png); background-repeat:no-repeat; background-position:0px -164px; }
+.booking-schedule .close { position:absolute; top:-15px; right:-15px; float:none; width:30px; height:30px; background-image:url(../img/icon-widget.png); background-repeat:no-repeat; background-position:0px -227px; text-indent:-999px; overflow:hidden; opacity:1; text-shadow:none; filter:none }
+.schedule-list { table-layout:fixed; width:99.8%; border-collapse:collapse; border-spacing:0px; text-align:center; }
+.schedule-list th { padding:0px; background-color:#ffffff; cursor:pointer; font-weight:400; }
+.schedule-list td { height:26px; padding:0px; border:1px solid #cdcdcd; background-color:#ffffff; cursor:pointer; overflow:hidden; }
+.schedule-list .title { width:36px; }
+.schedule-list .title b { display:block; height:36px; background-image:url(../img/icon-widget.png); background-repeat:no-repeat; background-position:0px -128px; }
+.schedule-list .day { border-color:#ffffff #cdcdcd #ffffff #ffffff; }
+.schedule-list .disabled { background-color:#c0c0c0; }
+.schedule-list .choose { background-image:url(../img/icon-widget.png); background-repeat:no-repeat; background-position:0px -60px; }
+.booking-schedule .mod-ft { padding:6px; }
+.booking-schedule .action-add { float:left; width:24px; height:24px; background-image:url(../img/icon-widget.png); background-repeat:no-repeat; background-position:0px -36px; text-indent:-999px; overflow:hidden; }
+.booking-schedule .tips { padding:2px 4px; overflow:hidden; color:#3e3e3e; }
+.booking-schedule .tips li { float:left; padding-right:26px; }
+.booking-schedule .tips b { display:inline-block; width:28px; height:20px; margin-right:6px; background-image:url(../img/icon-widget.png); background-repeat:no-repeat; vertical-align:-5px; }
+.booking-schedule .tips .i-my { background-position:6px -65px; }
+.booking-schedule .tips .i-can { background-position:0px -88px; }
+.booking-schedule .tips .i-cannot { background-position:0px -108px; }

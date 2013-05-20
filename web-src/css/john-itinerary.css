@@ -1,0 +1,90 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/**
+ * @overview
+ * date:2013-05-15;
+ * explanantion:复写Bootstrap的modal部分外观;
+ * author:johnchen@tag-along.org;
+ */
+.ui-modal .ui-close { background-image:url(../img/icon-widget.png); background-repeat:no-repeat; }
+.ui-modal {
+	position:fixed; top:1%; left:50%; z-index:1050; width:1144px; margin-left:-572px; background-color:#ffffff; outline:none;
+	border:1px solid #cdcdcd;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;
+	-webkit-box-shadow:0 3px 7px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow:0 3px 7px rgba(0, 0, 0, 0.2);
+	box-shadow:0 3px 7px rgba(0, 0, 0, 0.2);
+	-webkit-background-clip:padding-box;
+	-moz-background-clip:padding-box;
+	background-clip:padding-box;
+}
+.ui-modal .modal-mod { position:relative; min-height:300px; }
+
+.ui-modal.fade {
+	top:-25%;
+	-webkit-transition:opacity 0.3s linear, top 0.3s ease-out;
+	-moz-transition:opacity 0.3s linear, top 0.3s ease-out;
+	-o-transition:opacity 0.3s linear, top 0.3s ease-out;
+	transition:opacity 0.3s linear, top 0.3s ease-out;
+}
+
+.ui-modal.fade.in { top:1%; }
+.ui-modal .modal-hd { display:none; padding:8px 15px; border-bottom:1px solid #eeeeee; }
+.ui-modal .modal-hd-t { line-height:30px; }
+.ui-modal .ui-close { position:absolute; top:10px; right:10px; display:block; width:29px; height:29px; background-position:0px -547px; text-indent:-999px; overflow:hidden; }
+.ui-modal .ui-close:hover {
+	background-position:0px -576px;
+	-webkit-animation:rotate 1s 0s ease both;
+	-moz-animation:rotate 1s 0s ease both;
+}
+
+/**
+ * date:2013-5-15;
+ * explanation:行程列表模块;
+ * author:johnchen@tag-along.org;
+ */
+.modal-journey-search { width:892px; padding:10px 0px; margin:0px auto; }
+.modal-journey-search .search-mod { position:relative; padding:10px 0px; margin:0px auto; text-align:center; }
+.modal-journey-search .search-mod .group-input { width:524px; min-height:30px; margin:0px auto; }
+.modal-journey-search .search-mod .ui-input-wrap { float:left; }
+.modal-journey-search .search-mod .ui-input { width:410px; margin-right:10px; }
+/*选项列表*/
+.modal-journey-search .options { clear:both; padding-top:10px; }
+.modal-journey-search .options .options-t { padding-right:10px; font-weight:400; font-size:12px; }
+.modal-journey-search .options-list { display:inline-block; vertical-align:middle; overflow:hidden; }
+.modal-journey-search .options-list label { display:inline-block; margin:0px 10px 0px 0px; font-size:12px; }
+.modal-journey-search .options-list span[class*=check] { display:inline-block; width:12px; height:12px; margin-right:8px; vertical-align:-2px; }
+.modal-journey-search .options-list .ui-checked { background-position:0px -271px; }
+.modal-journey-search .options-list .label-t { padding-right:10px; color:#0088cc; }
+.modal-journey-search .options-list .option { display:inline-block; padding-right:10px; margin:0px; font-size:12px; }
+.modal-journey-search .options-list .option:last-child { padding-right:0px; }
+.modal-journey-search .options-list .option span[class*=check] { margin-right:6px; }
+/*搜索提示*/
+.modal-journey-search .result-tips { margin:0px 2%; font-size:12px; text-align:right; color:#999999; }
+.modal-journey-search .result-tips span { padding:0px 4px; }
+/*图片列表*/
+.journey-thumbnails { min-height:400px; margin-bottom:0px; }
+.journey-thumbnails .thumbnails-list .list-item { float:left; width:29.3333%; padding:4px 2%; }
+.journey-thumbnails .thumbnails-list img { top:0px; left:0px; margin:0px; }
+
+
+/**
+ * @overview
+ * date:2013-05-15;
+ * explanantion:复写Bootstrap的carousel-control外观;
+ * author:johnchen@tag-along.org;
+ */
+.carousel-control { background:none; background-image:url(../img/icon-widget.png); background-repeat:no-repeat; }
+.carousel-control { position:absolute; width:44px; height:44px; border:none; text-indent:-999px; overflow:hidden; }
+.carousel-control:hover {
+	-webkit-animation:rotate 1s 0s ease both;
+	-moz-animation:rotate 1s 0s ease both;
+}
+.carousel-control.left { left:-60px; background-position:0px -371px; opacity:1; filter:none; }
+.carousel-control.left:hover { background-position:0px -415px; opacity:1; filter:none; }
+.carousel-control.right { right:-60px; background-position:0px -459px; opacity:1; filter:none; }
+.carousel-control.right:hover { background-position:0px -503px; opacity:1; filter:none; }

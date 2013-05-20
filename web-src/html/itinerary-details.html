@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>details</title>
+<!-- bootstrap -->
+<link href="../css/bootstrap.css" rel="stylesheet" />
+<link href="../css/bootstrap-fixed.css" rel="stylesheet" />
+<link href="../css/bootstrap-datepicker.css" rel="stylesheet" />
+<!-- bootstrap的响应式 -->
+<link href="../css/bootstrap-responsive.css" rel="stylesheet" />
+<!-- 自定义 -->
+<link href="../css/john-global.css" rel="stylesheet" />
+<link href="../css/john-public.css" rel="stylesheet" />
+<link href="../css/john-itinerary-details.css" rel="stylesheet" />
+<link href="../css/john-public-responsive.css" rel="stylesheet" />
+<link href="../css/john-itinerary-details-responsive.css" rel="stylesheet" />
+
+<script src="../js/jquery-1.8.3.js" ></script>
+<script src="../js/bootstrap-transition.js"></script>
+<script src="../js/bootstrap-tab.js"></script>
+<script src="../js/bootstrap-dropdown.js"></script>
+<script src="../js/bootstrap-datepicker.js"></script>
+<script src="../js/jquery.jcarousel.js"></script>
+<script src="../js/jquery.pikachoose.js"></script>
+<script src="../js/utils.js"></script>
+</head>
+
+<body>
+<!-- 头部 -->
+<div class="topbar navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<a class="brand" href="#"></a>
+		<div class="nav-collapse collapse pull-left">
+			<ul class="nav">
+				<li class="active">
+					<a data-toggle="dropdown" href="#"><i class="icon-search"></i> Search</a>
+					<ul class="dropdown-menu">
+						<li>
+							<form class="topbar-search">
+								<fieldset>
+									<label>City</label>
+									<input type="text" placeholder="Shenzhen" class="topbar-search-city"/>
+									<label>Date</label>
+									<input type="text" placeholder="2013/04/22" class="topbar-search-date" />
+									<label>Person</label>
+									<select>
+										<option value="1">1 Person</option>
+										<option value="2">2 People</option>
+										<option value="3">3 People</option>
+										<option value="4">4 People</option>
+										<option value="5">5 People</option>
+										<option value="6">6 People</option>
+										<option value="7">7 People</option>
+										<option value="8">8 People</option>
+										<option value="9">9 People</option>
+										<option value="10">10+ People</option>
+									</select>
+									<button type="submit" class="btn"><i class="icon icon-search"></i>Search</button>
+								</fieldset>
+							</form>
+						</li>
+					</ul>
+				</li>
+				<li><a href="#"><i class="icon-star"></i> Wish List</a></li>
+				<li>
+					<div class="btn-group top-lang">
+						<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="icon-globe"></i>English<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li data-lang="en"><a href="#">English</a></li>
+							<li data-lang="zh_Hans"><a href="#">中文简体</a></li>
+							<li data-lang="zh_Hant"><a href="#">中文繁体</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="nav-collapse collapse pull-right">
+			<ul class="nav">
+				<li class="btn-group">
+					<a data-toggle="dropdown" href="#">Sign Up</a>
+					<ul class="dropdown-menu">
+						<li>
+							<form action="/signup" method="post" class="topbar-signup simpleform">
+								<fieldset>
+									<div class="input-text">
+										<input type="text" name="firstname" placeholder="名字" empty="请输入名字" unvalid-css="input-unvalid"><em></em>
+									</div>
+									<div class="input-text">
+										<input type="text" name="lastname" placeholder="姓氏" empty="请输入姓氏" unvalid-css="input-unvalid">
+									</div>
+									<div class="input-text">
+										<input type="text" name="email" placeholder="电子邮箱" empty="请输入电子邮箱" unvalid-css="input-unvalid" regex="email" unvalid="输入的电子邮箱格式不正确">
+									</div>
+									<div class="input-password">
+										<input type="password" name="password" placeholder="请输入密码" empty="请输入密码" unvalid-css="input-unvalid">
+									</div>
+									<div>点击“创建账号”即表示您确认接受<a href="#">服务条款</a>和<a href="#">隐私政策</a></div>
+									<button type="submit" class="btn btn-primary pull-right">创建账号</button>
+									<div class="topbar-partner">
+										<div class="topbar-partner-other">或 使用合作网站账号注册Tagalong</div>
+										<div class="topbar-partner-circle"></div>
+										<div class="topbar-partner-list">
+											<ul>
+												<li class="facebook">Facebook</li>
+												<li class="twitter">Twitter</li>
+												<li class="qq">腾讯QQ</li>
+												<li class="weibo last">新浪微博</li>
+											</ul>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</li>
+					</ul>
+
+				</li>
+				<li class="btn-group">
+					<a data-toggle="dropdown" href="#">Log In</a>
+					<ul class="dropdown-menu">
+						<li>
+							<form action="/signin" method="post" class="topbar-login simpleform">
+								<fieldset>
+									<div class="input-text">
+										<input type="text" name="email" placeholder="电子邮箱" class="login-input" empty="请输入电子邮箱" unvalid-css="input-unvalid" regex="email" unvalid="输入的电子邮箱格式不正确">
+									</div>
+									<div class="input-password">
+										<input type="password" name="password" placeholder="请输入密码" class="login-input" empty="请输入密码" unvalid-css="input-unvalid">
+									</div>
+									<div class="input-container">
+										<label class="checkbox pull-left">
+											<input type="checkbox" name="rememberme"/>下次登录时记住我
+										</label>
+										<div class="pull-right">
+											<a href="#" onclick="TableUtil.ajax(this,'/ajax/forgotten')">忘记密码</a>
+										</div>
+									</div>
+									<button type="submit" class="btn btn-primary pull-right">登 录</button>
+									<div class="topbar-partner">
+										<div class="topbar-partner-other">或 使用合作网站账号登录Tagalong</div>
+										<div class="topbar-partner-circle"></div>
+										<div class="topbar-partner-list">
+											<ul>
+												<li class="facebook">Facebook</li>
+												<li class="twitter">Twitter</li>
+												<li class="qq">腾讯QQ</li>
+												<li class="weibo last">新浪微博</li>
+											</ul>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</li>
+					</ul>
+
+				</li>
+				<li><a href="#">How it works</a></li>
+				<li><button class="btn btn-warning">Provide Your Service</button></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- 主体区域 -->
+<div class="content">
+	<!-- 标题 -->
+	<div class="attractions-title">
+		<h1>Scout for Street Art</h1>
+		<div class="rate-summary">
+			<ul class="meta-list">
+				<li class="act-talk"><a href="#"><i class="i-talk"></i>126</a></li>
+				<li class="act-favorite"><a href="#"><i class="i-favorite"></i>158</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 主内容模块 -->
+	<div class="col-main">
+		<!-- 画廊 -->
+		<div class="gallery" id="J-gallery">
+			<ul class="gallery-thumb-list">
+				<li><img src="../img/gallery-1.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg"/><span>这里是标题这里是标题这里是标题这里是标题这里是标题</span></li>
+				<li><img src="../img/gallery-2.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-3.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-4.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-1.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-2.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-3.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-4.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-1.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-2.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-3.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-4.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-2.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-3.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-4.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-1.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-2.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-3.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-4.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-1.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-2.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-3.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-4.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+			</ul>
+			<!-- <div class="view-control">
+				<a href="javascript:void(0);" class="picture active" title="图片">图片</a>
+				<a href="javascript:void(0);" class="video" title="视频">视频</a>
+			</div> -->
+		</div>
+
+		<!-- 景点 -->
+		<div class="article attractions">
+			<h2 class="hd-t">View Port</h2>
+			<ul class="attractions-list">
+				<li>Queens food tour in New York</li>
+				<li>Street art tour in San Francisco</li>
+				<li>Local guide to Paris</li>
+				<li>Explore London like a local</li>
+				<li>Best Napa wine tour</li>
+				<li>Food tour in Berlin</li>
+			</ul>
+		</div>
+
+		<!-- 线路 -->
+		<div class="article itinerary">
+			<h2 class="hd-t">Itinerary</h2>
+			<ul class="itinerary-list">
+				<li>First day  08:00-12:00  Queens food tour in New York/13:00-16:00  Street art tour in San Francisco/19:00-22:00  Explore London like a local.</li>
+				<li>Second day  08:00-12:00  Local guide to Paris/14:00-18:00  Best Napa wine tour/20:00-24:00  Food tour in Berlin.</li>
+			</ul>
+		</div>
+
+		<!-- 详情 -->
+		<div class="article details">
+			<h2 class="hd-t">Details</h2>
+			<div class="details-article">
+				<p>
+					Imagine you’re fabulously wealthy with two summer homes and friends who go by names like Cartwright
+					and Kensington. You’ve entered the world of the Evening Star, where the good life seems to come 
+					naturally. Captain Marco, who has taken the helm of many rock royalty-owned vessels, will navigate his 
+					sailboat through the beautiful waters off Sausalito. All you and your crew need to worry about is having a 
+					tremendously good time.
+				</p>
+				<p>
+					Captain Marco will help you chart your own route to suit your interests. Depending on conditions, you might 
+					sail under the Golden Gate Bridge, along the San Francisco city front, past Alcatraz, around Angel Island 
+					and through Raccoon straights.
+				</p>
+			</div>
+		</div>
+
+		<!-- 地图 -->
+		<div class="map">
+			<div class="map-wrap"></div>
+		</div>
+
+		<!-- 评论选项卡 -->
+		<div class="reivew-mod">
+			<div class="hd">
+				<ul class="ui-tabs-nav">
+					<li class="active">
+						<a href="#J-review" class="guest" data-toggle="tab"><b class="i-review"></b>评价详情</a><b class="i-arrow"></b>
+					</li>
+					<li>
+						<a href="#J-record" class="record" data-toggle="tab"><b class="i-record"></b>旅伴记录</a><b class="i-arrow"></b>
+					</li>
+				</ul>
+			</div>
+			<div class="bd ui-tabs-content">
+				<!-- 评价详情 -->
+				<div class="tab-content active" id="J-review">
+					<ul class="review-list">
+						<li class="item">
+							<div class="traveler-item">
+								<strong class="tag">旅客</strong>
+								<div class="user">
+									<img src="../img/avator-1.jpg" alt="图片描述" class="avator" />
+									<strong class="name"><a href="#">Yi Lian</a></strong>
+								</div>
+								<div class="info">
+									<p>Such great fun; we booked the Night Tour for the evening of our first day in Vietnam and were glad we did; it was a great introduction to Saigon. We had 3 bikes between 4 (including 2 children); the girls, Di, Tram and Ngan were charming and took a great pride in showing us their city. They spoke very good English and were happy to answer all the questions we put to them. Saigon traffic is chaotic to say the least but we felt perfectly safe with them. Thoroughly recommended and good value. Booking online in advance was easy and faultless.<a href="#">more</a></p>
+									<ul class="meta">
+										<li class="date">2013年11月12日</span>
+										<li class="approval"><a href="javascript:void(0);">(10)</a></span>
+									</ul>
+									<!-- 回复 -->
+									<div class="reply-item">
+										<div class="user">
+											<img src="../img/avator-2.jpg" alt="图片描述" class="avator" />
+										</div>
+										<div class="info">
+											<p><span>来自Lyndsey的回复：</span>Thank you,I am glda to like the place!</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="companion-item">
+								<strong class="tag">旅客</strong>
+								<div class="user">
+									<img src="../img/avator-1.jpg" alt="图片描述" class="avator" />
+									<strong class="name"><a href="#">Yi Lian</a></strong>
+								</div>
+								<div class="info">
+									<p>Such great fun; we booked the Night Tour for the evening of our first day in Vietnam and were glad we did; it was a great introduction to Saigon. We had 3 bikes between 4 (including 2 children); the girls, Di, Tram and Ngan were charming and took a great pride in showing us their city. They spoke very good English and were happy to answer all the questions we put to them. Saigon traffic is chaotic to say the least but we felt perfectly safe with them. Thoroughly recommended and good value. Booking online in advance was easy and faultless.<a href="#">more</a></p>
+									<ul class="meta">
+										<li class="date">2013年11月12日</span>
+										<li class="approval"><a href="javascript:void(0);">(10)</a></span>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li class="item">
+							<div class="traveler-item">
+								<strong class="tag">旅客</strong>
+								<div class="user">
+									<img src="../img/avator-2.jpg" alt="图片描述" class="avator" />
+									<strong class="name"><a href="#">Yi Lian</a></strong>
+								</div>
+								<div class="info">
+									<p>We would definitely book with them when in Saigon again.<a href="#">more</a></p>
+									<ul class="meta">
+										<li class="date">2013年11月12日</span>
+										<li class="approval"><a href="javascript:void(0);">(10)</a></span>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li class="item">
+							<div class="traveler-item">
+								<strong class="tag">旅客</strong>
+								<div class="user">
+									<img src="../img/avator-3.jpg" alt="图片描述" class="avator" />
+									<strong class="name"><a href="#">Yi Lian</a></strong>
+								</div>
+								<div class="info">
+									<p>We would definitely book with them when in Saigon again.<a href="#">more</a></p>
+									<ul class="meta">
+										<li class="date">2013年11月12日</span>
+										<li class="approval"><a href="javascript:void(0);">(10)</a></span>
+									</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
+
+					<!-- 分页 -->
+					<div class="ui-pagination" id="J_ui_page" style="">
+						<a href="#" title="Prev" class="disabled prev"><b class="arror-prev"></b></span>
+						<a href="#" title="1" class="current">1</span>
+						<a href="#" title="2">2</a>
+						<a href="#" title="3">3</a>
+						<a href="#" title="4">4</a>
+						<span class="split">...</span>
+						<a href="#" title="6">6</a>
+						<a href="#" title="Next" class="next"><b class="arror-next"></b></a>
+					</div>
+				</div>
+
+				<!-- 旅伴记录 -->
+				<div class="tab-content" id="J-record">
+					<table class="companions-list">
+						<thead>
+							<tr>
+								<th class="user">游客</th>
+								<th class="product">交易套餐</th>
+								<th class="time">时间数/h</th>
+								<th class="date">成交时间</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="user">
+									<img src="../img/avator-1.jpg" alt="图片描述" class="avator" />
+									<strong class="name"><a href="#">Yi Lian</a></strong>
+								</td>
+								<td class="product">
+									<h5>马尔代夫酒店代理自由行蜜月旅游旅行度假2</h5>
+									<span class="ui-rate-score">
+										<span class="score" style="width:65%;"><!-- 星星，宽度按百分比来显示 --></span>
+									</span>
+								</td>
+								<td class="time">30</td>
+								<td class="date">2011年11月12日  02:19：06</td>
+							</tr>
+							<tr>
+								<td class="user">
+									<img src="../img/avator-2.jpg" alt="图片描述" class="avator" />
+									<strong class="name"><a href="#">Yi Lian</a></strong>
+								</td>
+								<td class="product">
+									<h5>马尔代夫酒店代理自由行蜜月旅游旅行度假2</h5>
+									<span class="ui-rate-score">
+										<span class="score" style="width:95%;"><!-- 星星，宽度按百分比来显示 --></span>
+									</span>
+								</td>
+								<td class="time">30</td>
+								<td class="date">2011年11月12日  02:19：06</td>
+							</tr>
+							<tr>
+								<td class="user">
+									<img src="../img/avator-3.jpg" alt="图片描述" class="avator" />
+									<strong class="name"><a href="#">Yi Lian</a></strong>
+								</td>
+								<td class="product">
+									<h5>马尔代夫酒店代理自由行蜜月旅游旅行度假2</h5>
+									<span class="ui-rate-score">
+										<span class="score" style="width:85%;"><!-- 星星，宽度按百分比来显示 --></span>
+									</span>
+								</td>
+								<td class="time">30</td>
+								<td class="date">2011年11月12日  02:19：06</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<!-- 分页 -->
+					<div class="ui-pagination" id="J_ui_page" style="">
+						<a href="#" title="Prev" class="disabled prev"><b class="arror-prev"></b></span>
+						<a href="#" title="1" class="current">1</span>
+						<a href="#" title="2">2</a>
+						<a href="#" title="3">3</a>
+						<a href="#" title="4">4</a>
+						<span class="split">...</span>
+						<a href="#" title="6">6</a>
+						<a href="#" title="Next" class="next"><b class="arror-next"></b></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 侧边栏 -->
+	<div class="col-side">
+		<!-- 预定 -->
+		<div class="booking">
+			<div class="bd">
+				<div class="prices">
+					<span class="units-price">&yen;</span>100/<span class="units-time">h</span>
+				</div>
+				<div class="group-input">
+					<div class="ui-input-wrap input-date-wrap">
+						<input type="text" placeholder="Date" class="ui-input input-date" id="J-book-date" />
+						<span class="i i-date"></span>
+					</div>
+					<div class="ui-input-wrap">
+						<input type="text" class="ui-input input-person" value="2 People" data-toggle="dropdown" />
+						<span class="i i-person"></span>
+						<ul class="dropdown-menu">
+							<li><a href="javascript:void(0);">1 Person</a></li>
+							<li><a href="javascript:void(0);">2 People</a></li>
+							<li><a href="javascript:void(0);">3 People</a></li>
+							<li><a href="javascript:void(0);">4 People</a></li>
+							<li><a href="javascript:void(0);">5 People</a></li>
+							<li><a href="javascript:void(0);">6 People</a></li>
+							<li><a href="javascript:void(0);">7 People</a></li>
+							<li><a href="javascript:void(0);">8 People</a></li>
+							<li><a href="javascript:void(0);">9 People</a></li>
+							<li><a href="javascript:void(0);">10+ People</a></li>
+						</ul>
+					</div>
+
+					<div class="booking-schedule" id="J-booking-schedule">
+						<div class="mod-bd">
+							<table class="schedule-list" id="J-schedule-list">
+								<thead>
+									<tr>
+										<th class="title"><b></b></th>
+										<th>0</th>
+										<th>1</th>
+										<th>2</th>
+										<th>3</th>
+										<th>4</th>
+										<th>5</th>
+										<th>6</th>
+										<th>7</th>
+										<th>8</th>
+										<th>9</th>
+										<th>10</th>
+										<th>11</th>
+										<th>12</th>
+										<th>13</th>
+										<th>14</th>
+										<th>15</th>
+										<th>16</th>
+										<th>17</th>
+										<th>18</th>
+										<th>19</th>
+										<th>20</th>
+										<th>21</th>
+										<th>22</th>
+										<th>23</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="day">&nbsp;</td>
+										<td colspan="24" class="loading">正在加载...</td>
+									</tr>
+									<tr>
+										<td class="day">25</td>
+										<td class="disabled" date-hour="0"></td>
+										<td class="disabled" date-hour="1"></td>
+										<td class="disabled" date-hour="2"></td>
+										<td date-hour="3"></td>
+										<td class="disabled" date-hour="4"></td>
+										<td date-hour="5"></td>
+										<td class="disabled" date-hour="6"></td>
+										<td class="disabled" date-hour="7"></td>
+										<td class="disabled" date-hour="8"></td>
+										<td class="disabled" date-hour="9"></td>
+										<td date-hour="10"></td>
+										<td date-hour="11"></td>
+										<td date-hour="12"></td>
+										<td  date-hour="13"></td>
+										<td date-hour="14"></td>
+										<td  date-hour="15"></td>
+										<td date-hour="16"></td>
+										<td date-hour="17"></td>
+										<td class="disabled" date-hour="18"></td>
+										<td date-hour="19"></td>
+										<td date-hour="20"></td>
+										<td  date-hour="21"></td>
+										<td date-hour="22"></td>
+										<td date-hour="23"></td>
+									</tr>
+								</tbody>
+							</table>
+							<b class="i-arrow"></b>
+						</div>
+						<div class="mod-ft">
+							<a href="javascript:void(0);" class="action-add" id="J-book-addday">添加</a>
+							<ul class="tips">
+								<li><b class="i-my"></b>我的预定</li>
+								<li><b class="i-can"></b>可以预定</li>
+								<li><b class="i-cannot"></b>不能预定</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- 选择时间 -->
+				<div class="choose-time">
+					<span class="point">08:00 AM</span>
+					<div class="ui-input-wrap input-cycle-wrap">
+						<input type="text" placeholder="Hours" class="ui-input input-cycle" data-toggle="dropdown" />
+						<span class="i i-clock"></span>
+
+						<ul class="dropdown-menu">
+							<li><a href="javascript:void(0);">1 Hours</a></li>
+							<li><a href="javascript:void(0);">2 Hours</a></li>
+							<li><a href="javascript:void(0);">3 Hours</a></li>
+							<li><a href="javascript:void(0);">4 Hours</a></li>
+							<li><a href="javascript:void(0);">5 Hours</a></li>
+							<li><a href="javascript:void(0);">6 Hours</a></li>
+							<li><a href="javascript:void(0);">7 Hours</a></li>
+							<li><a href="javascript:void(0);">8 Hours</a></li>
+							<li><a href="javascript:void(0);">9 Hours</a></li>
+							<li><a href="javascript:void(0);">10 Hours</a></li>
+						</ul>
+					</div>
+					<label class="ui-checkbox">
+						<input type="checkbox" class="checkbox" checked="checked" />
+					</label>
+				</div>
+				<!-- 选择时间 -->
+				<div class="choose-time">
+					<span class="point">12:00 AM</span>
+					<div class="ui-input-wrap input-cycle-wrap">
+						<input type="text" placeholder="Hours" class="ui-input input-cycle" data-toggle="dropdown" />
+						<span class="i i-clock"></span>
+
+						<ul class="dropdown-menu">
+							<li><a href="javascript:void(0);">1 Hours</a></li>
+							<li><a href="javascript:void(0);">2 Hours</a></li>
+							<li><a href="javascript:void(0);">3 Hours</a></li>
+							<li><a href="javascript:void(0);">4 Hours</a></li>
+							<li><a href="javascript:void(0);">5 Hours</a></li>
+							<li><a href="javascript:void(0);">6 Hours</a></li>
+							<li><a href="javascript:void(0);">7 Hours</a></li>
+							<li><a href="javascript:void(0);">8 Hours</a></li>
+							<li><a href="javascript:void(0);">9 Hours</a></li>
+							<li><a href="javascript:void(0);">10 Hours</a></li>
+						</ul>
+					</div>
+					<label class="ui-checkbox">
+						<input type="checkbox" class="checkbox" checked="checked" />
+					</label>
+				</div>
+				<!-- 选择时间 -->
+				<div class="choose-time">
+					<span class="point">13:00 PM</span>
+					<div class="ui-input-wrap input-cycle-wrap">
+						<input type="text" placeholder="Hours" class="ui-input input-cycle" data-toggle="dropdown" />
+						<span class="i i-i-clock"></span>
+
+						<ul class="dropdown-menu">
+							<li><a href="javascript:void(0);">1 Hours</a></li>
+							<li><a href="javascript:void(0);">2 Hours</a></li>
+							<li><a href="javascript:void(0);">3 Hours</a></li>
+							<li><a href="javascript:void(0);">4 Hours</a></li>
+							<li><a href="javascript:void(0);">5 Hours</a></li>
+							<li><a href="javascript:void(0);">6 Hours</a></li>
+							<li><a href="javascript:void(0);">7 Hours</a></li>
+							<li><a href="javascript:void(0);">8 Hours</a></li>
+							<li><a href="javascript:void(0);">9 Hours</a></li>
+							<li><a href="javascript:void(0);">10 Hours</a></li>
+						</ul>
+					</div>
+					<label class="ui-checkbox">
+						<input type="checkbox" class="checkbox" />
+					</label>
+				</div>
+			</div>
+
+			<div class="match-result">
+				<!-- 旅伴列表 -->
+				<div class="travel-companions">
+					<ul class="list" id="J-scroll-content">
+						<li class="item">
+							<div class="user">
+								<img src="../img/avator-1.jpg" alt="图片描述" class="avator" />
+							</div>
+							<div class="info">
+								<strong class="name"><a href="#">Yi Lian</a></strong>
+								<div class="price">&yen;100 per hour</div>
+								<div class="group-btn">
+									<a href="javascript:void(0);" class="ui-btn-small btn-touch-small"><span>Get in Touch</span></a>
+									<label class="ui-checkbox"><input type="checkbox" class="checkbox" /></label>
+								</div>
+							</div>
+						</li>
+						<li class="item">
+							<div class="user">
+								<img src="../img/avator-1.jpg" alt="图片描述" class="avator" />
+							</div>
+							<div class="info">
+								<strong class="name"><a href="#">Yi Lian</a></strong>
+								<div class="price">&yen;100 per hour</div>
+								<div class="group-btn">
+									<a href="javascript:void(0);" class="ui-btn-small btn-touch-small"><span>Get in Touch</span></a>
+									<label class="ui-checkbox"><input type="checkbox" class="checkbox" /></label>
+								</div>
+							</div>
+						</li>
+						<li class="item">
+							<div class="user">
+								<img src="../img/avator-1.jpg" alt="图片描述" class="avator" />
+							</div>
+							<div class="info">
+								<strong class="name"><a href="#">Yi Lian</a></strong>
+								<div class="price">&yen;100 per hour</div>
+								<div class="group-btn">
+									<a href="javascript:void(0);" class="ui-btn-small btn-touch-small"><span>Get in Touch</span></a>
+									<label class="ui-checkbox"><input type="checkbox" class="checkbox" /></label>
+								</div>
+							</div>
+						</li>
+						<li class="item">
+							<div class="user">
+								<img src="../img/avator-1.jpg" alt="图片描述" class="avator" />
+							</div>
+							<div class="info">
+								<strong class="name"><a href="#">Yi Lian</a></strong>
+								<div class="price">&yen;100 per hour</div>
+								<div class="group-btn">
+									<a href="javascript:void(0);" class="ui-btn-small btn-touch-small"><span>Get in Touch</span></a>
+									<label class="ui-checkbox"><input type="checkbox" class="checkbox" /></label>
+								</div>
+							</div>
+						</li>
+						<li class="item">
+							<div class="user">
+								<img src="../img/avator-1.jpg" alt="图片描述" class="avator" />
+							</div>
+							<div class="info">
+								<strong class="name"><a href="#">Yi Lian</a></strong>
+								<div class="price">&yen;100 per hour</div>
+								<div class="group-btn">
+									<a href="javascript:void(0);" class="ui-btn-small btn-touch-small"><span>Get in Touch</span></a>
+									<label class="ui-checkbox"><input type="checkbox" class="checkbox" /></label>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="ft">
+				<a href="javascript:void(0);" class="ui-btn-big btn-book-big"><span>Book It</span></a>
+			</div>
+		</div>
+
+		<!-- 收藏 -->
+		<div class="collect-side">
+			<div class="bd">
+				<a href="javascript:void(0);" class="ui-btn-big btn-follow-big"><span>Follow Itinerary</span></a>
+				<a href="javascript:void(0);" class="ui-btn-big btn-collect-big"><span><b class="i-star"></b>收藏行程</span></a>
+			</div>
+			<div class="ft">
+				<p>已被收藏86次</p>
+			</div>
+		</div>
+
+		<!-- 其他行程 -->
+		<div class="thumbnails-mod side-thumbnails">
+			<div class="hd">
+				<h2 class="hd-t">行程套餐</h2>
+				<span class="hd-extra">
+					<a href="#">查看更多&gt;&gt;</a>
+				</span>
+			</div>
+			<div class="bd">
+				<ul class="thumbnails-list">
+					<li class="list-item">
+						<div class="pic">
+							<img src="../img/journey-1.jpg" alt="图片描述" />
+						</div>
+						<div class="caption">
+							<h4><a href="#">Biky the city in 3 Hours</a></h4>
+							<ul class="meta">
+								<li class="review">30 evaluation</li>
+								<li class="price">1834/person</li>
+							</ul>
+						</div>
+					</li>
+					<li class="list-item">
+						<div class="pic">
+							<img src="../img/journey-2.jpg" alt="图片描述" />
+						</div>
+						<div class="caption">
+							<h4><a href="#">Biky the city in 3 Hours</a></h4>
+							<ul class="meta">
+								<li class="review">30 evaluation</li>
+								<li class="price">1834/person</li>
+							</ul>
+						</div>
+					</li>
+					<li class="list-item">
+						<div class="pic">
+							<img src="../img/journey-3.jpg" alt="图片描述" />
+						</div>
+						<div class="caption">
+							<h4><a href="#">Biky the city in 3 Hours</a></h4>
+							<ul class="meta">
+								<li class="review">30 evaluation</li>
+								<li class="price">1834/person</li>
+							</ul>
+						</div>
+					</li>
+					<li class="list-item">
+						<div class="pic">
+							<img src="../img/journey-4.jpg" alt="图片描述" />
+						</div>
+						<div class="caption">
+							<h4><a href="#">Biky the city in 3 Hours</a></h4>
+							<ul class="meta">
+								<li class="review">30 evaluation</li>
+								<li class="price">1834/person</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 底部 -->
+<div class="footor-1">
+	<div class="footor-block span3">
+		<div class="footor-block-title">Company</div>
+		<ul>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Contact</a></li>
+			<li><a href="#">Jobs</a></li>
+			<li><a href="#">Terms & Privacy</a></li>
+		</ul>
+	</div>
+
+	<div class="footor-block span3">
+		<div class="footor-block-title">Join us on</div>
+		<ul>
+			<li><a href="#">Twitter</a></li>
+			<li><a href="#">Facebook</a></li>
+			<li><a href="#">Google</a></li>
+			<li><a href="#">YouTube</a></li>
+		</ul>
+	</div>
+
+	<div class="footor-block span3">
+		<div class="footor-block-title">Others</div>
+		<ul>
+			<li><a href="#">How it works</a></li>
+			<li><a href="#">Why Tagalong</a></li>
+			<li><a href="#">How to find a guide</a></li>
+			<li><a href="#">FAQ</a></li>
+		</ul>
+	</div>
+
+	<div class="footor-copyright">&copy; 2013 Tagalong, Inc.</div>
+</div>
+
+<script type="text/javascript">
+	$(function(){
+		/**
+		 * 画廊
+		 */
+		$("#J-gallery .gallery-thumb-list").PikaChoose({
+			autoPlay : false,
+			carousel:true,
+			carouselOptions : {
+				visible: 11,
+				itemFallbackDimension: 300,
+				buttonNextHTML : '<span></span>',
+				buttonPrevHTML : '<span></span>'
+			}
+		});
+
+		// 复选框
+		$('.ui-checkbox').checkbox();
+
+		// 旅伴的滚动区域
+		$('.travel-companions').scrollbar();
+	});
+</script>
+</body>
+</html>

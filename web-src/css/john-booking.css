@@ -1,0 +1,71 @@
+@charset "utf-8";
+/* CSS Document */
+
+/**
+ * date:2013-5-18 11:27:37;
+ * explanation:交易部分相关页面;
+ */
+
+
+/**
+ * 按钮类
+ */
+/*取消某个旅伴*/
+.btn-cancle-traveler {
+
+
+}
+/*提交订单*/
+.btn-submit-orders {
+	display:inline-block!important; padding:10px 20px; border-color:#e49226; color:#ffffff;
+	background: #ffc768; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffc768 0%, #fda539 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffc768), color-stop(100%,#fda539)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffc768 0%,#fda539 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffc768 0%,#fda539 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffc768 0%,#fda539 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ffc768 0%,#fda539 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc768', endColorstr='#fda539',GradientType=0 ); /* IE6-9 */
+}
+.btn-submit-orders:hover {
+	color:#ffffff;
+	background: #ffd084; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffd084 0%, #fcaa46 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffd084), color-stop(100%,#fcaa46)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffd084 0%,#fcaa46 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffd084 0%,#fcaa46 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffd084 0%,#fcaa46 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ffd084 0%,#fcaa46 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd084', endColorstr='#fcaa46',GradientType=0 ); /* IE6-9 */
+}
+.btn-submit-orders:focus { color:#ffffff; }
+
+/**
+ * 流程类
+ */
+/*订单流程*/
+.orders-step { }
+.orders-step .step-1 { }
+.orders-step .step-2 { }
+.orders-step .step-3 { }
+.orders-step .step-4 { }
+.orders-step .tips { }
+.orders-step .time { }
+.orders-step .step-1 .tips { }
+.orders-step .step-2 .tips { }
+.orders-step .step-3 .tips { }
+.orders-step .step-4 .tips { }
+
+/**
+ * 列表类
+ */
+/*旅客列表*/
+.traveler-list { }
+.traveler-list .user { }
+/*时间表*/
+.booking-schedule { display:none; font-size:12px; border-spacing:0px; }
+.schedule-list { table-layout:fixed; width:100%; border-collapse:collapse; text-align:center; }
+.schedule-list td { border:1px solid #cdcdcd; }
+.schedule-list .td-day { width:100px; }
+.schedule-list .td-all { width:80px; }
+.schedule-list .ui-checkbox { width:30px; height:30px; margin:0px auto; background-color:transparent; border:none; }

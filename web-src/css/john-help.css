@@ -1,0 +1,122 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*base reset*/
+h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
+.col-main ul { list-style:disc; list-style-position:inside; }
+.col-main ol { list-style:decimal; list-style-position:inside; }
+.col-main ul[class*=list],
+.col-main ol[class*=list] { list-style:none; }
+
+/*content layout*/
+.content { width:990px; margin:0px auto; overflow:hidden; }
+.content .col-side {
+	float:left; width:220px;
+}
+.content .col-main {
+	padding:0px 25px; overflow:hidden;
+}
+
+/*导航*/
+.companyp-menu {
+	font-size:18px;
+	padding-bottom:9999px; margin-bottom:-9999px; border-right:2px solid #81c4e7;
+	-webkit-box-shadow:1px 0px 2px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:1px 0px 2px rgba(0, 0, 0, 0.1);
+	-o-box-shadow:1px 0px 2px rgba(0, 0, 0, 0.1);
+	-ms-box-shadow:1px 0px 2px rgba(0, 0, 0, 0.1);
+	box-shadow:1px 0px 2px rgba(0, 0, 0, 0.1);
+}
+.companyp-menu li { }
+.companyp-menu a { display:block; padding:8px; color:#73bee4; }
+.companyp-menu a:hover { text-decoration:none; color:#0088cc; }
+.companyp-menu b {
+	display:inline-block; width:26px; height:26px; margin-right:10px; background-image:url(../img/icon-help-center.png); background-repeat:no-repeat; vertical-align:-6px;
+	-webkit-transition:all 0.25s linear 0s;
+}
+.companyp-menu .i-about { background-position:0px -42px; }
+.companyp-menu a:hover .i-about { background-position:0px -68px; }
+.companyp-menu .i-jobs { background-position:-26px -42px; }
+.companyp-menu a:hover .i-jobs { background-position:-26px -68px; }
+.companyp-menu .i-resources { background-position:-52px -42px; }
+.companyp-menu a:hover .i-resources { background-position:-52px -68px; }
+.companyp-menu .i-feedback { background-position:-78px -42px; }
+.companyp-menu a:hover .i-feedback { background-position:-78px -68px; }
+.companyp-menu .i-partners { background-position:-104px -42px; }
+.companyp-menu a:hover .i-partners { background-position:-104px -68px; }
+.companyp-menu .i-blog { background-position:-130px -42px; }
+.companyp-menu a:hover .i-blog { background-position:-130px -68px; }
+
+/*banner*/
+.article-banner { margin-bottom:20px; }
+.article-banner img {
+	width:100%!important; height:auto!important; max-width:100%!important;
+	-webkit-box-reflect:below 1px -webkit-gradient( linear, 0 0, 0 100%, from( transparent ), color-stop( 0.9, transparent ), to( rgba( 0, 0, 0, 0.3 ) ) );
+}
+
+/*普通文章内容*/
+.article .hd { padding:16px 0px; border-bottom:2px solid #eaeaea; }
+.article .hd-t { font-style:italic; font-weight:400; font-size:46px; color:#f99406; }
+.article .bd { padding:16px 0px; overflow:hidden; }
+.article .col { float:left; width:45%; padding-left:5%; }
+.article .col-t { font-weight:400; font-size:16px; }
+
+/*描述列表*/
+.description-list { }
+.description-list dl { padding:0px 0px 0px 68px; margin:30px 0px; }
+.description-list dt { position:relative; padding:2px 0px; margin:0px; }
+.description-list dl[class*=item] dt:before { position:absolute; top:0px; left:-68px; content:""; width:42px; height:42px; background-image:url(../img/icon-help-center.png); background-repeat:no-repeat; }
+.description-list .item-find dt:before { background-position:0px 0px; }
+.description-list .item-book dt:before { background-position:-42px 0px; }
+.description-list .item-travel dt:before { background-position:-84px 0px; }
+.description-list dd { padding:0px; margin:0px; }
+
+/*图文列表*/
+.thumbnails-mod { overflow:hidden; }
+.thumbnails-list { margin-left:-1.3333%; list-style:none; }
+.thumbnails-list li { position:relative; float:left; width:32%; margin-left:1.3333%; margin-bottom:10px; }
+.thumbnails-list img { width:100%!important; height:auto!important; max-width:100%!important; }
+.thumbnails-list .caption { position:absolute; right:0px; bottom:0px; left:0px; width:90%; padding:0px 5%; background-color:rgba(0, 0, 0, 0.3); line-height:30px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:#ffffff; }
+
+/*文章列表*/
+.article-list li { padding:2px 0px; }
+
+/*问题列表*/
+.question-list { }
+.question-list .question { margin:4px 0px; }
+.question-list .title { padding:0px; margin:0px; }
+.question-list .title a { position:relative; display:block; padding:8px 20px; font-style:italic; font-weight:700; font-size:15px; }
+.question-list .title a:before { position:absolute; top:50%; left:0px; content:""; width:0px; height:0px; border-style:solid; overflow:hidden; }
+/*展开状态*/
+.question-list .title a { color:#0088cc; }
+.question-list .title a:before { color:#0088cc; margin-top:-4px; border-width:8px 4px 4px 4px; border-color:#0088cc transparent transparent transparent;}
+/*默认状态*/
+.question-list .title .collapsed { color:#005580; font-weight:400; }
+.question-list .title .collapsed:before { color:#005580; margin-top:-8px; border-width:4px 4px 8px 4px; border-color:transparent transparent #005580 transparent; }
+.question-list .answer { height:0px; padding:0px 20px; margin:0px; font-size:12px; overflow:hidden; }
+.question-list .active .answer { display:block; }
+
+
+/**
+ * date:2013-05-16;
+ * explanation:仿facebook帮助中心的菜单;
+ * author:johnchen@tag-along.org;
+ */
+.slider-menu-mod { position:relative; width:220px; min-height:600px; font-size:13px; overflow:hidden; }
+.slider-menu-mod .slider { position:absolute; top:0px; left:0px; bottom:0px; }
+.slider-menu-mod ul { position:relative; width:220px; }
+.slider-menu-mod .menu-list { }
+.slider-menu-mod .menu-list ul { position:absolute; top:0px; left:100%; display:none; background-color:#ffffff; }
+.slider-menu-mod a {
+	position:relative; display:block; margin-top:-1px; border-top:1px solid #f2f2f2; border-bottom:1px solid #f2f2f2; color:#6d83b3; padding:9px 30px 9px 8px; outline:none; 
+	text-shadow:0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.slider-menu-mod a:after { position:absolute; top:50%; right:10px; content:""; width:16px; height:16px; margin-top:-8px; background-image:url(../img/icon-help-center.png); background-repeat:no-repeat; background-position:100px 100px; overflow:hidden; }
+.slider-menu-mod .has_list:after { background-position:-166px 0px; }
+.slider-menu-mod .back:after { background-position:-166px -16px; }
+
+.slider-menu-mod a:focus,
+.slider-menu-mod a:hover { position:relative; z-index:1; background-color:#ebeef4; border-bottom-color:#dde2ed; border-top-color:#dde2ed; color:#3b5998; text-decoration:none; }
+.slider-menu-mod .active,
+.slider-menu-mod .active:focus,
+.slider-menu-mod .active:hover { background-color:#0088cc; color:#ffffff; }

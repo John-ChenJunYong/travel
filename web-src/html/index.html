@@ -1,0 +1,773 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>tagalong</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <!-- <link href="../css/app.min.css?2.0.20120308" rel="stylesheet">
+    <link href="../css/app-responsive.min.css?2.0.20120308" rel="stylesheet"> -->
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <link href="../css/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="../css/bootstrap-fixed.css" rel="stylesheet" />
+    <link href="../css/bootstrap-datepicker.css" rel="stylesheet" />
+    <link href="../css/john-global.css" rel="stylesheet" />
+    <link href="../css/john-index.css" rel="stylesheet" />
+    <!-- <link href="../css/simpleform.css" rel="stylesheet" /> -->
+    <!-- <link href="../css/stanby.css" rel="stylesheet" /> -->
+    <!-- <link href="../css/style.css" rel="stylesheet" /> -->
+    <link href="../css/style-responsive.css" rel="stylesheet" />
+
+	<script src="../js/jquery-1.8.3.min.js?2.0.20120308"></script>
+	<script src="../js/app.min.js?2.0.20120308"></script>
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=true&language=en&v=3"></script>
+
+    <!--[if IE]>
+      <link href="../css/ie.min.css?2.0.20120308" rel="stylesheet">
+    <![endif]-->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.js?2.0.20120308"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="topbar navbar navbar-fixed-top">
+      <div class="navbar-inner">
+          <a class="brand" href="#"></a>
+          <div class="nav-collapse collapse pull-left">
+            <ul class="nav">
+              <li class="active">
+
+				  <a data-toggle="dropdown" href="#"><i class="icon-search"></i> Search</a>
+				  <ul class="dropdown-menu">
+				      <li>
+						<form class="topbar-search">
+							<fieldset>
+							  <label>City</label>
+							  <input type="text" placeholder="Shenzhen" class="topbar-search-city">
+							  <label>Date</label>
+							  <input type="text" placeholder="2013/04/22" class="topbar-search-date">
+							  <label>Person</label>
+							  <select>
+								  <option value="1">1 Person</option>
+								  <option value="2">2 People</option>
+								  <option value="3">3 People</option>
+								  <option value="4">4 People</option>
+								  <option value="5">5 People</option>
+								  <option value="6">6 People</option>
+								  <option value="7">7 People</option>
+								  <option value="8">8 People</option>
+								  <option value="9">9 People</option>
+								  <option value="10">10+ People</option>
+							  </select>
+							  <button type="submit" class="btn"><i class="icon icon-search"></i>Search</button>
+							</fieldset>
+						  </form>
+					  </li>
+				  </ul>
+              </li>
+			  <li><a href="#"><i class="icon-star"></i> Wish List</a></li>
+			  <li>
+			  				<div class="btn-group top-lang">
+				  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+					<i class="icon-globe"></i> English<span class="caret"></span>
+				  </a>
+				  <ul class="dropdown-menu">
+				      <li data-lang="en"><a href="#">English</a></li><li data-lang="zh_Hans"><a href="#">中文简体</a></li><li data-lang="zh_Hant"><a href="#">中文繁体</a></li>				   </ul>
+				</div>
+			  </li>
+            </ul>
+          </div>
+          <div class="nav-collapse collapse pull-right">
+            <ul class="nav">
+			  <li class="btn-group">
+				  <a data-toggle="dropdown" href="#">Sign Up</a>
+				  <ul class="dropdown-menu">
+				      <li>
+						<form action="/signup" method="post" class="topbar-signup simpleform">
+							<fieldset>
+							  <div class="input-text">
+							      <input type="text" name="firstname" placeholder="名字" empty="请输入名字" unvalid-css="input-unvalid"><em></em>
+							  </div>
+							  <div class="input-text">
+							      <input type="text" name="lastname" placeholder="姓氏" empty="请输入姓氏" unvalid-css="input-unvalid">
+							  </div>
+							  <div class="input-text">
+							      <input type="text" name="email" placeholder="电子邮箱" empty="请输入电子邮箱" unvalid-css="input-unvalid" regex="email" unvalid="输入的电子邮箱格式不正确">
+							  </div>
+							  <div class="input-password">
+							      <input type="password" name="password" placeholder="请输入密码" empty="请输入密码" unvalid-css="input-unvalid">
+							  </div>
+							  <div>点击“创建账号”即表示您确认接受<a href="#">服务条款</a>和<a href="#">隐私政策</a></div>
+							  <button type="submit" class="btn btn-primary pull-right">创建账号</button>
+							  <div class="topbar-partner">
+								  <div class="topbar-partner-other">或 使用合作网站账号注册Tagalong</div>
+								  <div class="topbar-partner-circle"></div>
+								  <div class="topbar-partner-list">
+								      <ul>
+									      <li class="facebook">Facebook</li>
+										  <li class="twitter">Twitter</li>
+										  <li class="qq">腾讯QQ</li>
+										  <li class="weibo last">新浪微博</li>
+									  </ul>
+								  </div>
+							  </div>
+							</fieldset>
+						  </form>
+					  </li>
+				  </ul>
+			  
+			  </li>
+			  <li class="btn-group">
+			  
+				  <a data-toggle="dropdown" href="#">Log In</a>
+				  <ul class="dropdown-menu">
+				      <li>
+						<form action="/signin" method="post" class="topbar-login simpleform">
+							<fieldset>
+							  <div class="input-text">
+							      <input type="text" name="email" placeholder="电子邮箱" class="login-input" empty="请输入电子邮箱" unvalid-css="input-unvalid" regex="email" unvalid="输入的电子邮箱格式不正确">
+							  </div>
+							  <div class="input-password">
+							      <input type="password" name="password" placeholder="请输入密码" class="login-input" empty="请输入密码" unvalid-css="input-unvalid">
+							  </div>
+							  <div class="input-container">
+								  <label class="checkbox pull-left">
+									  <input type="checkbox" name="rememberme"/>
+									  下次登录时记住我
+								  </label>
+								  <div class="pull-right">
+								      <a href="#" onclick="TableUtil.ajax(this,'/ajax/forgotten')">忘记密码</a>
+								  </div>
+							  </div>
+							  <button type="submit" class="btn btn-primary pull-right">登 录</button>
+							  <div class="topbar-partner">
+								  <div class="topbar-partner-other">或 使用合作网站账号登录Tagalong</div>
+								  <div class="topbar-partner-circle"></div>
+								  <div class="topbar-partner-list">
+								      <ul>
+									      <li class="facebook">Facebook</li>
+										  <li class="twitter">Twitter</li>
+										  <li class="qq">腾讯QQ</li>
+										  <li class="weibo last">新浪微博</li>
+									  </ul>
+								  </div>
+							  </div>
+							</fieldset>
+						  </form>
+					  </li>
+				  </ul>
+			  
+			  </li>
+			  <li><a href="#">How it works</a></li>
+			  <li><button class="btn btn-warning">Provide Your Service</button></li>
+            </ul>
+          </div>
+      </div>
+    <!-- top bar --></div>
+
+	  <div id="myCarousel" class="carousel slide" style="height:500px;" data-interval="7000">
+		<div class="carousel-inner">
+		  <div class="item active">
+			<img width="1600" height="700" src="../img/banner-01.jpg" alt="">
+		  </div>
+		  <div class="item">
+			<img width="1600" height="700" src="../img/banner-02.jpg" alt="">
+		  </div>
+		  <div class="item">
+			<img width="1600" height="700" src="../img/banner-03.jpg" alt="">
+		  </div>
+		</div>
+		<a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+		<a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+		<div class="carousel-search">
+		    <div class="carousel-search-title">Tag along, be local!</div>
+		    <div class="carousel-search-bg"></div>
+		    <div class="carousel-search-inner">
+			    <div class="carousel-input-wrapper">
+			        <input type="text" placeholder="City you want to go" class="carousel-search-city">
+				</div>
+				<div class="carousel-input-wrapper">
+				    <input type="text" placeholder="Date" class="carousel-search-date">
+					<span class="search-date-icon"></span>
+				</div>
+				<div class="carousel-input-wrapper">
+					<div class="btn-group">
+						<button class="btn dropdown-toggle carousel-search-person" data-toggle="dropdown">1 Person</button>
+						<ul class="dropdown-menu">
+						  <li data-v="1"><a href="#">1 Person</a></li>
+						  <li data-v="2"><a href="#">2 People</a></li>
+						  <li data-v="3"><a href="#">3 People</a></li>
+						  <li data-v="4"><a href="#">4 People</a></li>
+						  <li data-v="5"><a href="#">5 People</a></li>
+						  <li data-v="6"><a href="#">6 People</a></li>
+						  <li data-v="7"><a href="#">7 People</a></li>
+						  <li data-v="8"><a href="#">8 People</a></li>
+						  <li data-v="9"><a href="#">9 People</a></li>
+						  <li data-v="10"><a href="#">10+ People</a></li>
+						</ul>
+					</div>
+					<span class="search-person-icon"></span>
+				</div>
+				<button class="carousel-search-button"><i class="icon icon-search icon-white"></i>Search</button>
+			</div>
+			<script type="text/javascript">
+			    $(function(){
+					Comm.googlePlace($('.carousel-search-city')[0]);
+
+					$('.search-date-icon').click(function(){
+						$('.carousel-search-date').datepicker('show');
+					});
+
+					$('.search-person-icon').click(function(e){
+						$('.carousel-input-wrapper .btn-group').addClass('open');
+						e.stopPropagation();
+					});
+
+					$('.carousel-search-person').next().find('li').click(function(){
+						//$(this).data('v')
+					    $('.carousel-search-person').html($(this).find('a').html());
+					});
+				});
+			</script>
+		</div>
+	 <!-- carousel --></div>
+	 <script src="/a/tagalong/js/home.min.js?2.0.20120308"></script>
+
+	 <div class="home-slide">
+	     <div class="home-slide-title">Journeys</div>
+		 <div class="home-slide-subtitle">The most favorite journeys</div>
+		 <div id="homeJourney" class="carousel slide home-slide-list home-journey" data-interval="0">
+		    <div class="carousel-inner home-slide-list-inner">
+			    <div class="active item">
+				    <ul>
+					    <li>
+						    <img src="../img/journey-1.jpg"/>
+							<div class="home-journey-inner">
+							    <div>Provence</div>
+								<span>5 Hours Trip</span>
+							</div>
+						</li>
+					    <li>
+						    <img src="../img/journey-2.jpg"/>
+							<div class="home-journey-inner">
+							    <div>Maldives</div>
+								<span>5 Hours Trip</span>
+							</div>
+						</li>
+					    <li class="last">
+						    <img src="../img/journey-3.jpg"/>
+							<div class="home-journey-inner">
+							    <div>South Francia</div>
+								<span>5 Hours Trip</span>
+							</div>
+						</li>
+					    <li>
+						    <img src="../img/journey-4.jpg"/>
+							<div class="home-journey-inner">
+							    <div>La Tour Eiffel</div>
+								<span>5 Hours Trip</span>
+							</div>
+						</li>
+					    <li>
+						    <img src="../img/journey-5.jpg"/>
+							<div class="home-journey-inner">
+							    <div>Skogafoss</div>
+								<span>5 Hours Trip</span>
+							</div>
+						</li>
+					    <li class="last">
+						    <img src="../img/journey-6.jpg"/>
+							<div class="home-journey-inner">
+							    <div>Venecia</div>
+								<span>5 Hours Trip</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="item">
+				    <ul>
+					    <li>
+						    <img src="../img/journey-1.jpg"/>
+							<div class="home-journey-inner">
+							    <div>Provence 1</div>
+								<span>5 Hours Trip</span>
+							</div>
+						</li>
+					    <li>
+						    <img src="../img/journey-2.jpg"/>
+							<div class="home-journey-inner">
+							    <div>Maldives</div>
+								<span>5 Hours Trip</span>
+							</div>
+						</li>
+					    <li class="last">
+						    <img src="../img/journey-3.jpg"/>
+							<div class="home-journey-inner">
+							    <div>South Francia</div>
+								<span>5 Hours Trip</span>
+							</div>
+						</li>
+					    <li>
+						    <img src="../img/journey-4.jpg"/>
+							<div class="home-journey-inner">
+							    <div>La Tour Eiffel</div>
+								<span>5 Hours Trip</span>
+							</div>
+						</li>
+					    <li>
+						    <img src="../img/journey-5.jpg"/>
+							<div class="home-journey-inner">
+							    <div>Skogafoss</div>
+								<span>5 Hours Trip</span>
+							</div>
+						</li>
+					    <li class="last">
+						    <img src="../img/journey-6.jpg"/>
+							<div class="home-journey-inner">
+							    <div>Venecia</div>
+								<span>5 Hours Trip</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="item">
+				    <ul>
+					    <li>
+						    <img src="../img/journey-1.jpg"/>
+							<div class="home-journey-inner">
+							    <div>Provence 2</div>
+								<span>5 Hours Trip</span>
+							</div>
+						</li>
+					    <li>
+						    <img src="../img/journey-2.jpg"/>
+							<div class="home-journey-inner">
+							    <div>Maldives</div>
+								<span>5 Hours Trip</span>
+							</div>
+						</li>
+					    <li class="last">
+						    <img src="../img/journey-3.jpg"/>
+							<div class="home-journey-inner">
+							    <div>South Francia</div>
+								<span>5 Hours Trip</span>
+							</div>
+						</li>
+					    <li>
+						    <img src="../img/journey-4.jpg"/>
+							<div class="home-journey-inner">
+							    <div>La Tour Eiffel</div>
+								<span>5 Hours Trip</span>
+							</div>
+						</li>
+					    <li>
+						    <img src="../img/journey-5.jpg"/>
+							<div class="home-journey-inner">
+							    <div>Skogafoss</div>
+								<span>5 Hours Trip</span>
+							</div>
+						</li>
+					    <li class="last">
+						    <img src="../img/journey-6.jpg"/>
+							<div class="home-journey-inner">
+							    <div>Venecia</div>
+								<span>5 Hours Trip</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<a class="left home-slide-control" href="#homeJourney" data-slide="prev">‹</a>
+			<a class="right home-slide-control" href="#homeJourney" data-slide="next">›</a>
+		 </div>
+	 <!-- home-slide --></div>
+
+	 <div class="home-slide">
+	     <div class="home-slide-title">Guides</div>
+		 <div class="home-slide-subtitle">The most popular guides</div>
+		 <div id="homeGuide" class="carousel slide home-slide-list" data-interval="0">
+		    <div class="carousel-inner home-slide-list-inner home-guide">
+			    <div class="active item">
+				   <ul>
+				       <li>
+							<div class="home-guide-info">
+								<img src="../img/avator-1.jpg"/>
+								<div class="home-guide-avator-mask"></div>
+								<div class="home-guide-info-inner">
+									<div class="home-guide-name">Tony Wu</div>
+									<div class="home-guide-detail">
+										 <div class="home-guide-city">shenzhen</div>
+										 <span class="home-guide-price">$80/Hour</span>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li><a href="#">2 hours nanshan trip</a></li>
+								<li><a href="#">3 hours culture of local</a></li>
+								<li><a href="#">more</a></li>
+							</ul>
+					   </li>
+				       <li>
+							<div class="home-guide-info">
+								<img src="../img/avator-2.jpg"/>
+								<div class="home-guide-avator-mask"></div>
+								<div class="home-guide-info-inner">
+									<div class="home-guide-name">Weny Yu</div>
+									<div class="home-guide-detail">
+										 <div class="home-guide-city">shenzhen</div>
+										 <span class="home-guide-price">$80/Hour</span>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li><a href="#">2 hours nanshan trip</a></li>
+								<li><a href="#">3 hours culture of local</a></li>
+								<li><a href="#">more</a></li>
+							</ul>
+					   </li>
+				       <li class="last">
+							<div class="home-guide-info">
+								<img src="../img/avator-3.jpg"/>
+								<div class="home-guide-avator-mask"></div>
+								<div class="home-guide-info-inner">
+									<div class="home-guide-name">Andy Wang</div>
+									<div class="home-guide-detail">
+										 <div class="home-guide-city">shenzhen</div>
+										 <span class="home-guide-price">$80/Hour</span>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li><a href="#">2 hours nanshan trip</a></li>
+								<li><a href="#">3 hours culture of local</a></li>
+								<li><a href="#">more</a></li>
+							</ul>
+					   </li>
+				       <li>
+							<div class="home-guide-info">
+								<img src="../img/avator-4.jpg"/>
+								<div class="home-guide-avator-mask"></div>
+								<div class="home-guide-info-inner">
+									<div class="home-guide-name">Jenny Lee</div>
+									<div class="home-guide-detail">
+										 <div class="home-guide-city">shenzhen</div>
+										 <span class="home-guide-price">$80/Hour</span>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li><a href="#">2 hours nanshan trip</a></li>
+								<li><a href="#">3 hours culture of local</a></li>
+								<li><a href="#">more</a></li>
+							</ul>
+					   </li>
+				       <li>
+							<div class="home-guide-info">
+								<img src="../img/avator-5.jpg"/>
+								<div class="home-guide-avator-mask"></div>
+								<div class="home-guide-info-inner">
+									<div class="home-guide-name">Sarah Liu</div>
+									<div class="home-guide-detail">
+										 <div class="home-guide-city">shenzhen</div>
+										 <span class="home-guide-price">$80/Hour</span>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li><a href="#">2 hours nanshan trip</a></li>
+								<li><a href="#">3 hours culture of local</a></li>
+								<li><a href="#">more</a></li>
+							</ul>
+					   </li>
+				       <li class="last">
+							<div class="home-guide-info">
+								<img src="../img/avator-6.jpg"/>
+								<div class="home-guide-avator-mask"></div>
+								<div class="home-guide-info-inner">
+									<div class="home-guide-name">Susanne Zhang</div>
+									<div class="home-guide-detail">
+										 <div class="home-guide-city">shenzhen</div>
+										 <span class="home-guide-price">$80/Hour</span>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li><a href="#">2 hours nanshan trip</a></li>
+								<li><a href="#">3 hours culture of local</a></li>
+								<li><a href="#">more</a></li>
+							</ul>
+					   </li>
+				   </ul>
+				</div>
+				<div class="item">
+				   <ul>
+				       <li>
+							<div class="home-guide-info">
+								<img src="../img/avator-1.jpg"/>
+								<div class="home-guide-avator-mask"></div>
+								<div class="home-guide-info-inner">
+									<div class="home-guide-name">Tony Wu 2</div>
+									<div class="home-guide-detail">
+										 <div class="home-guide-city">shenzhen</div>
+										 <span class="home-guide-price">$80/Hour</span>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li><a href="#">2 hours nanshan trip</a></li>
+								<li><a href="#">3 hours culture of local</a></li>
+								<li><a href="#">more</a></li>
+							</ul>
+					   </li>
+				       <li>
+							<div class="home-guide-info">
+								<img src="../img/avator-2.jpg"/>
+								<div class="home-guide-avator-mask"></div>
+								<div class="home-guide-info-inner">
+									<div class="home-guide-name">Weny Yu</div>
+									<div class="home-guide-detail">
+										 <div class="home-guide-city">shenzhen</div>
+										 <span class="home-guide-price">$80/Hour</span>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li><a href="#">2 hours nanshan trip</a></li>
+								<li><a href="#">3 hours culture of local</a></li>
+								<li><a href="#">more</a></li>
+							</ul>
+					   </li>
+				       <li class="last">
+							<div class="home-guide-info">
+								<img src="../img/avator-3.jpg"/>
+								<div class="home-guide-avator-mask"></div>
+								<div class="home-guide-info-inner">
+									<div class="home-guide-name">Andy Wang</div>
+									<div class="home-guide-detail">
+										 <div class="home-guide-city">shenzhen</div>
+										 <span class="home-guide-price">$80/Hour</span>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li><a href="#">2 hours nanshan trip</a></li>
+								<li><a href="#">3 hours culture of local</a></li>
+								<li><a href="#">more</a></li>
+							</ul>
+					   </li>
+				       <li>
+							<div class="home-guide-info">
+								<img src="../img/avator-4.jpg"/>
+								<div class="home-guide-avator-mask"></div>
+								<div class="home-guide-info-inner">
+									<div class="home-guide-name">Jenny Lee</div>
+									<div class="home-guide-detail">
+										 <div class="home-guide-city">shenzhen</div>
+										 <span class="home-guide-price">$80/Hour</span>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li><a href="#">2 hours nanshan trip</a></li>
+								<li><a href="#">3 hours culture of local</a></li>
+								<li><a href="#">more</a></li>
+							</ul>
+					   </li>
+				       <li>
+							<div class="home-guide-info">
+								<img src="../img/avator-5.jpg"/>
+								<div class="home-guide-avator-mask"></div>
+								<div class="home-guide-info-inner">
+									<div class="home-guide-name">Sarah Liu</div>
+									<div class="home-guide-detail">
+										 <div class="home-guide-city">shenzhen</div>
+										 <span class="home-guide-price">$80/Hour</span>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li><a href="#">2 hours nanshan trip</a></li>
+								<li><a href="#">3 hours culture of local</a></li>
+								<li><a href="#">more</a></li>
+							</ul>
+					   </li>
+				       <li class="last">
+							<div class="home-guide-info">
+								<img src="../img/avator-6.jpg"/>
+								<div class="home-guide-avator-mask"></div>
+								<div class="home-guide-info-inner">
+									<div class="home-guide-name">Susanne Zhang</div>
+									<div class="home-guide-detail">
+										 <div class="home-guide-city">shenzhen</div>
+										 <span class="home-guide-price">$80/Hour</span>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li><a href="#">2 hours nanshan trip</a></li>
+								<li><a href="#">3 hours culture of local</a></li>
+								<li><a href="#">more</a></li>
+							</ul>
+					   </li>
+				   </ul>
+				</div>
+				<div class="item">
+				   <ul>
+				       <li>
+							<div class="home-guide-info">
+								<img src="../img/avator-1.jpg"/>
+								<div class="home-guide-avator-mask"></div>
+								<div class="home-guide-info-inner">
+									<div class="home-guide-name">Tony Wu 3</div>
+									<div class="home-guide-detail">
+										 <div class="home-guide-city">shenzhen</div>
+										 <span class="home-guide-price">$80/Hour</span>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li><a href="#">2 hours nanshan trip</a></li>
+								<li><a href="#">3 hours culture of local</a></li>
+								<li><a href="#">more</a></li>
+							</ul>
+					   </li>
+				       <li>
+							<div class="home-guide-info">
+								<img src="../img/avator-2.jpg"/>
+								<div class="home-guide-avator-mask"></div>
+								<div class="home-guide-info-inner">
+									<div class="home-guide-name">Weny Yu</div>
+									<div class="home-guide-detail">
+										 <div class="home-guide-city">shenzhen</div>
+										 <span class="home-guide-price">$80/Hour</span>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li><a href="#">2 hours nanshan trip</a></li>
+								<li><a href="#">3 hours culture of local</a></li>
+								<li><a href="#">more</a></li>
+							</ul>
+					   </li>
+				       <li class="last">
+							<div class="home-guide-info">
+								<img src="../img/avator-3.jpg"/>
+								<div class="home-guide-avator-mask"></div>
+								<div class="home-guide-info-inner">
+									<div class="home-guide-name">Andy Wang</div>
+									<div class="home-guide-detail">
+										 <div class="home-guide-city">shenzhen</div>
+										 <span class="home-guide-price">$80/Hour</span>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li><a href="#">2 hours nanshan trip</a></li>
+								<li><a href="#">3 hours culture of local</a></li>
+								<li><a href="#">more</a></li>
+							</ul>
+					   </li>
+				       <li>
+							<div class="home-guide-info">
+								<img src="../img/avator-4.jpg"/>
+								<div class="home-guide-avator-mask"></div>
+								<div class="home-guide-info-inner">
+									<div class="home-guide-name">Jenny Lee</div>
+									<div class="home-guide-detail">
+										 <div class="home-guide-city">shenzhen</div>
+										 <span class="home-guide-price">$80/Hour</span>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li><a href="#">2 hours nanshan trip</a></li>
+								<li><a href="#">3 hours culture of local</a></li>
+								<li><a href="#">more</a></li>
+							</ul>
+					   </li>
+				       <li>
+							<div class="home-guide-info">
+								<img src="../img/avator-5.jpg"/>
+								<div class="home-guide-avator-mask"></div>
+								<div class="home-guide-info-inner">
+									<div class="home-guide-name">Sarah Liu</div>
+									<div class="home-guide-detail">
+										 <div class="home-guide-city">shenzhen</div>
+										 <span class="home-guide-price">$80/Hour</span>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li><a href="#">2 hours nanshan trip</a></li>
+								<li><a href="#">3 hours culture of local</a></li>
+								<li><a href="#">more</a></li>
+							</ul>
+					   </li>
+				       <li class="last">
+							<div class="home-guide-info">
+								<img src="../img/avator-6.jpg"/>
+								<div class="home-guide-avator-mask"></div>
+								<div class="home-guide-info-inner">
+									<div class="home-guide-name">Susanne Zhang</div>
+									<div class="home-guide-detail">
+										 <div class="home-guide-city">shenzhen</div>
+										 <span class="home-guide-price">$80/Hour</span>
+									</div>
+								</div>
+							</div>
+							<ul>
+								<li><a href="#">2 hours nanshan trip</a></li>
+								<li><a href="#">3 hours culture of local</a></li>
+								<li><a href="#">more</a></li>
+							</ul>
+					   </li>
+				   </ul>
+				</div>
+			</div>
+			<a class="left home-slide-control" href="#homeGuide" data-slide="prev">‹</a>
+			<a class="right home-slide-control" href="#homeGuide" data-slide="next">›</a>
+		 </div>
+	 <!-- home-slide --></div>
+
+
+	 <div class="footor-1">
+	      <div class="footor-block span3">
+		      <div class="footor-block-title">Company</div>
+			  <ul>
+			      <li><a href="#">About</a></li>
+				  <li><a href="#">Contact</a></li>
+				  <li><a href="#">Jobs</a></li>
+				  <li><a href="#">Terms & Privacy</a></li>
+			  </ul>
+		  </div>
+
+	      <div class="footor-block span3">
+		      <div class="footor-block-title">Join us on</div>
+			  <ul>
+			      <li><a href="#">Twitter</a></li>
+				  <li><a href="#">Facebook</a></li>
+				  <li><a href="#">Google</a></li>
+				  <li><a href="#">YouTube</a></li>
+			  </ul>
+		  </div>
+
+	      <div class="footor-block span3">
+		      <div class="footor-block-title">Others</div>
+			  <ul>
+			      <li><a href="#">How it works</a></li>
+				  <li><a href="#">Why Tagalong</a></li>
+				  <li><a href="#">How to find a guide</a></li>
+				  <li><a href="#">FAQ</a></li>
+			  </ul>
+		  </div>
+
+		  <div class="footor-copyright">&copy; 2013 Tagalong, Inc.</div>
+	 <!-- footor-1 --></div>
+
+  </body>
+  </html>

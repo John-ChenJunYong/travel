@@ -1,0 +1,101 @@
+.modal-wrapper { position: absolute; }
+.modal-wrapper.fixed { position: fixed; }
+
+  /* Modal */
+  
+  .modal-modal-blackout { position: absolute; background-color: black; left: 0; top: 0; }
+  
+  /* Border */
+
+  .modal-wrapper { empty-cells: show; }
+	.modal-wrapper .top-left,
+	.modal-wrapper .top-right,
+	.modal-wrapper .bottom-right,
+	.modal-wrapper .bottom-left { width: 10px; height: 10px; padding: 0 }
+	
+	.modal-wrapper .top-left { background: url('../img/modal-01.png') no-repeat 0 0; }
+	.modal-wrapper .top-right { background: url('../img/modal-01.png') no-repeat right 0; }
+	.modal-wrapper .bottom-right { background: url('../img/modal-01.png') no-repeat right -27px; }
+	.modal-wrapper .bottom-left { background: url('../img/modal-01.png') no-repeat 0 -27px; }
+	
+	/* IE6+7 hacks for the border. IE7 should support this natively but fails in conjuction with modal blackout bg. */
+	/* NB: these must be absolute paths or URLs to your images */
+	.modal-wrapper .top-left { #background: url('../img/modal-01.gif') no-repeat 0 0; }
+	.modal-wrapper .top-right { #background: url('../img/modal-01.gif') no-repeat right 0; }
+	.modal-wrapper .bottom-right { #background: url('../img/modal-01.gif') no-repeat right -27px; }
+	.modal-wrapper .bottom-left { #background: url('../img/modal-01.gif') no-repeat 0 -27px; }
+	
+	.modal-wrapper .top { height: 10px; background: url('../img/modal-01.png') repeat-x 0 -40px; padding: 0 }
+	.modal-wrapper .bottom { height: 10px; background: url('../img/modal-01.png') repeat-x 0 -67px; padding: 0 }
+	
+	.modal-wrapper .left { width: 10px; background: url('../img/modal-02.png') repeat-y 0 0; padding: 0 }
+	.modal-wrapper .right { width: 10px; background: url('../img/modal-02.png') repeat-y -30px 0; padding: 0 }
+
+
+	.modal-wrapper .top { #background: url('../img/modal-01.gif') repeat-x 0 -40px; }
+	.modal-wrapper .bottom { #background: url('../img/modal-01.gif') repeat-x 0 -67px; }
+	
+	.modal-wrapper .left { #background: url('../img/modal-02.gif') repeat-y 0 0; }
+	.modal-wrapper .right { #background: url('../img/modal-02.gif') repeat-y -30px 0; }
+	
+	/* Title bar */
+	
+	.modal-wrapper .title-bar { padding: 2px 0 7px 2px; position: relative; }
+	  .modal-wrapper .title-bar.dragging { cursor: move; }
+	    .modal-wrapper .title-bar h2 { font-size: 12px; color: #808080; line-height: 1; margin: 0; padding: 0; font-weight: bold; }
+	    .modal-wrapper .closeicon { color: #808080; position: absolute; top: 0; right: 2px; font-size: 90%; line-height: 1;width:16px;height:16px;background: url('../img/modal-01.png') no-repeat 0 -79px;_background: url('../img/modal-01.gif') no-repeat 0 -79px; }
+		
+	/* Content Region */
+	.modal-wrapper .content-loader { margin: 0 auto;background: url('../img/loader.gif') no-repeat center center;width:100px;height:100px;display:none; }
+	
+	.modal-inner { background-color: white; padding: 0;position: relative; }
+	.modal-content { padding: 15px;color:#000;font-size:14px; }
+
+	.modal .modal-inner { background-color: transparent; padding: 0;position: relative; }
+	.modal .modal-content { padding: 0;color:#000;font-size:14px; }
+	
+	/* Question Boxes */
+
+    .modal-wrapper .question { width: 350px; min-height: 80px;font-size:12px;line-height:26px; }
+    .modal-wrapper .answers { text-align: right; }
+
+    .modal-wrapper .modal-container{background-color:#fff;}
+    .modal .modal-container{background-color:transparent;}
+    .modal-wrapper .modal-container form{padding:0;margin:0;}
+
+	.modal .form-horizontal .control-label{width:100px;}
+	.modal .form-horizontal .controls{margin-left: 120px;}
+
+	.modal .form-horizontal .control-label.small{width:60px;}
+	.modal .form-horizontal .controls.small{margin-left: 80px;margin-left: 60px\9;}
+
+	.modal .confirm{width:420px;}
+	.modal .confirm .modal-body{min-height:70px;font-size:14px;font-weight:bold;}
+
+    .modal-okay-icon{
+	    background: url('../img/modal_okay.png') no-repeat center center;
+		height:112px;
+	}
+    .modal-okay-text{
+	    clear:both;
+		line-height:26px;
+		fong-size:12px;
+		text-align:center;
+	}
+    .modal-okay-text span{
+	    color:#ff0000;
+	}
+
+.modal-red-title{
+    font-size:14px;
+	font-weight:bold;
+	padding: 5px 0;
+	color:#ff0000;
+	text-align:left;
+}
+.modal-red-content{
+    font-size:12px;
+	padding: 5px 0;
+	color:#ff0000;
+	text-align:left;
+}

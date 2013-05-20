@@ -1,0 +1,93 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*base reset*/
+h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
+
+/*content layout*/
+.content { width:956px; margin:0px auto; }
+.content-inner {
+	border:1px solid #cdcdcd; overflow:hidden;
+	-webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;
+}
+.content:after,
+.content-inner:after { clear:both; display:block; height:0px; overflow:hidden; visibility:hidden; content:""; }
+
+.content .col-side { float:left; width:200px; padding-bottom:9999px; margin-bottom:-9999px; border-right:1px solid #cdcdcd; }
+.content .col-main { padding:20px; overflow:hidden; }
+
+/*面包屑*/
+.crumb-mod {
+	position:relative; 
+	padding:12px 20px; margin-bottom:0px; border-bottom:1px solid #e6e6e6;
+	-webkit-border-radius:5px 5px 0px 0px; -moz-border-radius:5px 5px 0px 0px; border-radius:5px 5px 0px 0px;
+	background:#fcfcfc; /* Old browsers */
+	background:-moz-linear-gradient(top,  #fcfcfc 0%, #f2f2f2 100%); /* FF3.6+ */
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#fcfcfc), color-stop(100%,#f2f2f2)); /* Chrome,Safari4+ */
+	background:-webkit-linear-gradient(top,  #fcfcfc 0%,#f2f2f2 100%); /* Chrome10+,Safari5.1+ */
+	background:-o-linear-gradient(top,  #fcfcfc 0%,#f2f2f2 100%); /* Opera 11.10+ */
+	background:-ms-linear-gradient(top,  #fcfcfc 0%,#f2f2f2 100%); /* IE10+ */
+	background:linear-gradient(to bottom,  #fcfcfc 0%,#f2f2f2 100%); /* W3C */
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#f2f2f2',GradientType=0 ); /* IE6-9 */
+}
+.crumb-mod .breadcrumb { padding:0px; margin-bottom:0px; background-color:transparent; }
+.crumb-mod .breadcrumb .icon-home { margin-right:12px; }
+.crumb-mod .btn-view-middle { position:absolute; top:50%; right:20px; margin-top:-15px; }
+
+
+/*当前用户*/
+.current-user { padding:15px; overflow:hidden; }
+.current-user img { width:48px!important; height:48px!important; padding:2px; margin-right:8px; border:1px solid #cdcdcd; }
+
+/*按钮*/
+/*不直接使用public.css里面的公共样式，因为这个dashboard页面基本都是独立于前台页面的*/
+.ui-btn-middle span,
+.ui-btn-middle:before,
+.ui-btn-middle:after { background-image:url(../img/ui-btn.png); background-repeat:no-repeat; }
+.ui-btn-middle { position:relative; display:block; padding:0px 5px; }
+.ui-btn-middle span { display:block; height:30px; background-position:0px -654px; background-repeat:repeat-x; line-height:30px; font-weight:400; font-size:14px; text-align:center; color:#333333; overflow:hidden; }
+.ui-btn-middle i,
+.ui-btn-middle b { margin-right:4px; }
+.ui-btn-middle:before,
+.ui-btn-middle:after { position:absolute; top:0px; bottom:0px; content:""; width:5px; }
+.ui-btn-middle:before { left:0px; background-position:0px -624px; }
+.ui-btn-middle:after { right:0px; background-position:-5px -624px; }
+.ui-btn-middle:hover { text-decoration:none; }
+.ui-btn-middle:hover span { background-position:0px -714px; }
+.ui-btn-middle:hover:before { background-position:0px -684px; }
+.ui-btn-middle:hover:after { background-position:-5px -684px; }
+/*预览*/
+.btn-view-middle { width:124px; }
+
+/*边栏导航*/
+.nav-list { padding:15px 35px; }
+.nav-list>li>a { padding:3px 35px; margin-left:-35px; margin-right:-35px; }
+
+/*主体栏目的默认标题*/
+.mod-title { position:relative; padding:18px; margin:10px -20px; border-width:1px 0px; border-style:solid; border-color:#cdcdcd transparent; }
+.mod-title:first-child { margin-top:-20px; border-top:none; }
+.mod-title .mod-hd { float:left; font-size:14px; padding-right:18px; line-height:32px; }
+.mod-title .mod-hd i[class*='i-'] { display:inline-block; width:32px; height:32px; margin-top:-4px; background-image:url(../img/icon-dashboard.png); background-repeat:no-repeat; vertical-align:middle; }
+.mod-title .mod-extra { padding:6px 0px; margin:0px; color:#999999; overflow:hidden; }
+.mod-title .mod-hd .i-video { background-position:0px 0px; }
+.mod-title .mod-hd .i-photo { background-position:0px -32px; }
+
+/*普通文章列表模块*/
+.article { }
+.article .hd { }
+.article .hd-t { font-size:14px; }
+.article .bd { color:#999999; }
+.article-list { list-style:disc; list-style-position:inside; overflow:hidden; }
+.article-list li { float:left; width:50%; padding:2px 0px; }
+.article-list a { color:#999999; }
+
+/*验证列表*/
+.verification-list {}
+.verification-list li { position:relative; padding-right:200px; margin:40px 0px; }
+.verification-list .dl { margin:0px; }
+.verification-list .dt { position:relative; margin-bottom:10px; padding-left:34px; }
+.verification-list .dt:before { position:absolute; top:50%; left:0px; content:""; width:14px; height:14px; margin-top:-7px; background-color:#cdcdcd; }
+.verification-list .dd { margin:0px; padding-left:34px; }
+.verification-list .btn-verify-big { position:absolute; top:50%; right:10px; width:100px; margin-top:-19px; }
+.verification-list .btn-verify-big:focus,
+.verification-list .btn-verify-big:hover { }

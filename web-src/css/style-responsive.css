@@ -1,0 +1,99 @@
+/*
+*  width > 1200px
+*/
+
+@media (min-width: 1200px) {
+
+  /* nav search */
+  .navbar .navbar-inner .navbar-search input.span3, .navbar .navbar-inner .navbar-search textarea.span3, .navbar .navbar-inner .navbar-search .uneditable-input.span3 {
+    width: 200px;
+  }
+
+  /* home feature */
+  .home-feature{
+	  width:1150px;
+  }
+  .home-feature-item{
+	  width:260px;
+	  margin-left:20px;
+  }
+
+
+  /* footor */
+  .footor-footor{
+	  width: 1170px;
+  }
+  .footor-container{
+	  width: 1170px;
+  }
+  .footor-item-first{
+      margin-left:50px;
+  }
+  .footor-footor ul{
+      margin-left:55px;
+  }
+
+  /* footor2 */
+  .footor2-footor{
+	  width: 1170px;
+  }
+
+  /* footor3 */
+  .footor3-footor{
+	  width: 1170px;
+  }
+
+
+/*** layout begin  ***/
+  .main-1{
+	  width:913px;
+  }
+
+  .main-1a{
+	  width:973px;
+  }
+
+  .main-2{
+	  width:913px;
+  }
+
+  .main-one{
+	  width:1128px;
+  }
+  /*** layout end  ***/
+
+
+  .m-navbar .navbar-inner ul.nav.pull-right li{
+    max-width:278px;
+  }
+
+
+}
+
+
+/*
+*  width < 1000px
+*/
+@media (max-width: 1000px) {
+
+    body {
+        padding-top: 0px;
+		width:1000px;
+    }
+    .navbar-fixed-top, .navbar-fixed-bottom {
+	    position: relative;
+	}
+
+	.affix{
+	    position: relative;
+	}
+
+}
+
+/* for question */
+@media (min-width: 1200px) {
+  .question-list .navbar input{
+    width:850px;
+  }
+}
+

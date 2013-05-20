@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>search travel</title>
+<!-- bootstrap -->
+<link href="../css/bootstrap.css" rel="stylesheet" />
+<link href="../css/bootstrap-fixed.css" rel="stylesheet" />
+<link href="../css/bootstrap-datepicker.css" rel="stylesheet" />
+<!-- bootstrap的响应式 -->
+<link href="../css/bootstrap-responsive.css" rel="stylesheet" />
+<!-- 自定义 -->
+<link href="../css/john-global.css" rel="stylesheet" />
+<link href="../css/john-public.css" rel="stylesheet" />
+<link href="../css/john-search.css" rel="stylesheet" />
+<link href="../css/john-public-responsive.css" rel="stylesheet" />
+
+<script src="../js/jquery-1.8.3.js" > </script>
+<script src="../js/bootstrap-transition.js"></script>
+<script src="../js/bootstrap-tab.js"></script>
+<script src="../js/bootstrap-dropdown.js"></script>
+<script src="../js/bootstrap-datepicker.js"></script>
+<script src="../js/bootstrap-slider.js"></script>
+<script src="../js/jquery.jcarousel.js"></script>
+<script src="../js/jquery.pikachoose.js"></script>
+<script src="../js/utils.js"></script>
+</head>
+
+<body>
+<!-- 头部 -->
+<div class="topbar navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<a class="brand" href="#"></a>
+		<div class="nav-collapse collapse pull-left">
+			<ul class="nav">
+				<li class="active">
+					<a data-toggle="dropdown" href="#"><i class="icon-search"></i> Search</a>
+					<ul class="dropdown-menu">
+						<li>
+							<form class="topbar-search">
+								<fieldset>
+									<label>City</label>
+									<input type="text" placeholder="Shenzhen" class="topbar-search-city"/>
+									<label>Date</label>
+									<input type="text" placeholder="2013/04/22" class="topbar-search-date" />
+									<label>Person</label>
+									<select>
+										<option value="1">1 Person</option>
+										<option value="2">2 People</option>
+										<option value="3">3 People</option>
+										<option value="4">4 People</option>
+										<option value="5">5 People</option>
+										<option value="6">6 People</option>
+										<option value="7">7 People</option>
+										<option value="8">8 People</option>
+										<option value="9">9 People</option>
+										<option value="10">10+ People</option>
+									</select>
+									<button type="submit" class="btn"><i class="icon icon-search"></i>Search</button>
+								</fieldset>
+							</form>
+						</li>
+					</ul>
+				</li>
+				<li><a href="#"><i class="icon-star"></i> Wish List</a></li>
+				<li>
+					<div class="btn-group top-lang">
+						<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="icon-globe"></i>English<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li data-lang="en"><a href="#">English</a></li>
+							<li data-lang="zh_Hans"><a href="#">中文简体</a></li>
+							<li data-lang="zh_Hant"><a href="#">中文繁体</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="nav-collapse collapse pull-right">
+			<ul class="nav">
+				<li class="btn-group">
+					<a data-toggle="dropdown" href="#">Sign Up</a>
+					<ul class="dropdown-menu">
+						<li>
+							<form action="/signup" method="post" class="topbar-signup simpleform">
+								<fieldset>
+									<div class="input-text">
+										<input type="text" name="firstname" placeholder="名字" empty="请输入名字" unvalid-css="input-unvalid"><em></em>
+									</div>
+									<div class="input-text">
+										<input type="text" name="lastname" placeholder="姓氏" empty="请输入姓氏" unvalid-css="input-unvalid">
+									</div>
+									<div class="input-text">
+										<input type="text" name="email" placeholder="电子邮箱" empty="请输入电子邮箱" unvalid-css="input-unvalid" regex="email" unvalid="输入的电子邮箱格式不正确">
+									</div>
+									<div class="input-password">
+										<input type="password" name="password" placeholder="请输入密码" empty="请输入密码" unvalid-css="input-unvalid">
+									</div>
+									<div>点击“创建账号”即表示您确认接受<a href="#">服务条款</a>和<a href="#">隐私政策</a></div>
+									<button type="submit" class="btn btn-primary pull-right">创建账号</button>
+									<div class="topbar-partner">
+										<div class="topbar-partner-other">或 使用合作网站账号注册Tagalong</div>
+										<div class="topbar-partner-circle"></div>
+										<div class="topbar-partner-list">
+											<ul>
+												<li class="facebook">Facebook</li>
+												<li class="twitter">Twitter</li>
+												<li class="qq">腾讯QQ</li>
+												<li class="weibo last">新浪微博</li>
+											</ul>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</li>
+					</ul>
+
+				</li>
+				<li class="btn-group">
+					<a data-toggle="dropdown" href="#">Log In</a>
+					<ul class="dropdown-menu">
+						<li>
+							<form action="/signin" method="post" class="topbar-login simpleform">
+								<fieldset>
+									<div class="input-text">
+										<input type="text" name="email" placeholder="电子邮箱" class="login-input" empty="请输入电子邮箱" unvalid-css="input-unvalid" regex="email" unvalid="输入的电子邮箱格式不正确">
+									</div>
+									<div class="input-password">
+										<input type="password" name="password" placeholder="请输入密码" class="login-input" empty="请输入密码" unvalid-css="input-unvalid">
+									</div>
+									<div class="input-container">
+										<label class="checkbox pull-left">
+											<input type="checkbox" name="rememberme"/>下次登录时记住我
+										</label>
+										<div class="pull-right">
+											<a href="#" onclick="TableUtil.ajax(this,'/ajax/forgotten')">忘记密码</a>
+										</div>
+									</div>
+									<button type="submit" class="btn btn-primary pull-right">登 录</button>
+									<div class="topbar-partner">
+										<div class="topbar-partner-other">或 使用合作网站账号登录Tagalong</div>
+										<div class="topbar-partner-circle"></div>
+										<div class="topbar-partner-list">
+											<ul>
+												<li class="facebook">Facebook</li>
+												<li class="twitter">Twitter</li>
+												<li class="qq">腾讯QQ</li>
+												<li class="weibo last">新浪微博</li>
+											</ul>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</li>
+					</ul>
+
+				</li>
+				<li><a href="#">How it works</a></li>
+				<li><button class="btn btn-warning">Provide Your Service</button></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- 主体区域 -->
+<div class="content">
+	<div class="search-mod">
+		<div class="group-input">
+			<div class="ui-input-wrap">
+				<input type="text" placeholder="City you want to go" class="ui-input" />
+			</div>
+			<div class="ui-input-wrap input-date-wrap">
+				<input type="text" placeholder="Date" class="ui-input input-date" id="J-book-date" />
+				<span class="i i-date"></span>
+			</div>
+			<div class="ui-input-wrap">
+				<input type="text" class="ui-input input-person" value="2 People" data-toggle="dropdown" />
+				<span class="i i-person"></span>
+				<ul class="dropdown-menu">
+					<li><a href="javascript:void(0);">1 Person</a></li>
+					<li><a href="javascript:void(0);">2 People</a></li>
+					<li><a href="javascript:void(0);">3 People</a></li>
+					<li><a href="javascript:void(0);">4 People</a></li>
+					<li><a href="javascript:void(0);">5 People</a></li>
+					<li><a href="javascript:void(0);">6 People</a></li>
+					<li><a href="javascript:void(0);">7 People</a></li>
+					<li><a href="javascript:void(0);">8 People</a></li>
+					<li><a href="javascript:void(0);">9 People</a></li>
+					<li><a href="javascript:void(0);">10+ People</a></li>
+				</ul>
+			</div>
+			<div class="ui-input-wrap">
+				<a href="#" class="ui-btn-small btn-search-small">
+					<span><i class="i-search"></i>Search</span>
+				</a>
+			</div>
+		</div>
+		<div class="ui-group-btn">
+			<a href="#" class="sub-btn">列表</a>
+			<a href="#" class="sub-btn">照片</a>
+			<a href="#" class="sub-btn active">地图</a>
+		</div>
+	</div>
+	<!-- 侧边栏 -->
+	<div class="col-side">
+		<!-- 边栏各种选项模块 -->
+		<!-- Language -->
+		<div class="side-option">
+			<div class="hd"><h2 class="hd-t">Language</h2></div>
+			<div class="bd">
+				<div class="options-list">
+					<label>
+						<span class="ui-checkbox"><input type="checkbox" class="checkbox" checked="checked"></span>
+						<span>English</span>
+					</label>
+					<label>
+						<span class="ui-checkbox"><input type="checkbox" class="checkbox"></span>
+						<span>Chinese</span>
+					</label>
+					<label>
+						<span class="ui-checkbox"><input type="checkbox" class="checkbox"></span>
+						<span>French</span>
+					</label>
+					<label>
+						<span class="ui-checkbox"><input type="checkbox" class="checkbox"></span>
+						<span>Spanish</span>
+					</label>
+					<label>
+						<span class="ui-checkbox"><input type="checkbox" class="checkbox"></span>
+						<span>Portuguese</span>
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<!-- Interest -->
+		<div class="side-option">
+			<div class="hd"><h2 class="hd-t">Interest</h2></div>
+			<div class="bd">
+				<div class="options-list">
+					<label>
+						<span class="ui-checkbox"><input type="checkbox" class="checkbox" checked="checked"></span>
+						<span>Reading</span>
+					</label>
+					<label>
+						<span class="ui-checkbox"><input type="checkbox" class="checkbox"></span>
+						<span>Dance</span>
+					</label>
+					<label>
+						<span class="ui-checkbox"><input type="checkbox" class="checkbox"></span>
+						<span>Sing</span>
+					</label>
+					<label>
+						<span class="ui-checkbox"><input type="checkbox" class="checkbox"></span>
+						<span>Tour</span>
+					</label>
+					<label>
+						<span class="ui-checkbox"><input type="checkbox" class="checkbox"></span>
+						<span>cultivate flowers</span>
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<!-- Time -->
+		<div class="side-option">
+			<div class="hd"><h2 class="hd-t">Time</h2></div>
+			<div class="bd">
+				<div class="options-list">
+					<label>
+						<span class="ui-checkbox"><input type="checkbox" class="checkbox" checked="checked"></span>
+						<span>06:00</span>
+					</label>
+					<label>
+						<span class="ui-checkbox"><input type="checkbox" class="checkbox"></span>
+						<span>07:00</span>
+					</label>
+					<label>
+						<span class="ui-checkbox"><input type="checkbox" class="checkbox"></span>
+						<span>08:00</span>
+					</label>
+					<label>
+						<span class="ui-checkbox"><input type="checkbox" class="checkbox"></span>
+						<span>09:00</span>
+					</label>
+					<label>
+						<span class="ui-checkbox"><input type="checkbox" class="checkbox"></span>
+						<span>10:00</span>
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="side-option">
+			<div class="hd"><h2 class="hd-t">Price</h2></div>
+			<div class="bd">
+				<input type="hidden" value="" data-slider-min="0" data-slider-max="886" data-slider-step="5" data-slider-value="[100,500]" id="J-slider-price" />
+			</div>
+		</div>
+
+		<div class="side-option">
+			<div class="hd"><h2 class="hd-t">Personal profile</h2></div>
+			<div class="bd">
+				<ul class="options-radio">
+					<li>
+						<span class="label-t">Sex</span>
+						<label class="option"><span class="ui-radio ui-radioed"><input type="radio" name="sex" value="0" class="radio" checked="checked" /></span>男</label>
+						<label class="option"><span class="ui-radio"><input type="radio" name="sex" value="1" class="radio" /></span>女</label>
+					</li>
+					<li>
+						<span class="label-t">Drivers license</span>
+						<label class="option"><span class="ui-radio"><input type="radio" name="drivers" value="0" class="radio" /></span>Yes</label>
+						<label class="option"><span class="ui-radio"><input type="radio" name="drivers" value="1" class="radio" /></span>No</label>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- sub-search -->
+		<div class="sub-search">
+			<div class="hd"><h2 class="hd-t">keywords</h2></div>
+			<div class="bd">
+				<input type="text" placeholder="Search" class="input-keyword" />
+				<a href="#" class="ui-btn-small btn-search-small">
+					<span><i class="i-search"></i></span>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- 主内容模块 -->
+	<div class="col-main">
+
+		<div class="search-result-tool">
+			<p class="result-tips">一共为您搜出<span>563</span>个结果</p>
+			<div class="tool">
+				<!-- 交互说明：点击按钮后增加active，执行相应的callback -->
+				<a href="#" class="ui-btn-small active"><span>人气<i class="i-asc"></i></span></a>
+				<a href="#" class="ui-btn-small"><span>人气<i class="i-desc"></i></span></a>
+			</div>
+		</div>
+
+		<ul class="search-result-list">
+			<li class="clearfix">
+				<div class="user">
+					<a href="#"><img src="../img/avator-6.jpg" class="avator" /></a>
+				</div>
+				<div class="info">
+					<h3 class="title"><a href="#">Andy</a></h3>
+					<p class="meta"><span class="meta-t">Language:</span>English,Chinese</p>
+					<p class="meta"><span class="meta-t">Interest:</span>Reading / Dance / Sing / Tour / Cultivate flowers</p>
+					<ul class="meta-list">
+						<li class="act-talk"><a href="#"><i class="i-talk"></i>126</a></li>
+						<li class="act-favorite"><a href="#"><i class="i-favorite"></i>158</a></li>
+						<li class="act-line"><a href="#"><i class="i-line"></i>8</a></li>
+					</ul>
+					<ul class="action-list">
+						<li class="act-contact"><a href="#"><i class="i-contact"></i>Contact</a></li>
+						<li class="act-favorite"><a href="#"><i class="i-favorite"></i>Wish List</a></li>
+						<li class="act-book"><a href="#" class="ui-btn-small btn-book-small"><span>Book It</span></a></li>
+					</ul>
+					<span class="price">
+						<sup>&yen;</sup>115/h
+					</span>
+				</div>
+			</li>
+			<li class="clearfix">
+				<div class="user">
+					<a href="#"><img src="../img/avator-5.jpg" class="avator" /></a>
+				</div>
+				<div class="info">
+					<h3 class="title"><a href="#">Ashley</a></h3>
+					<p class="meta"><span class="meta-t">Language:</span>English,Chinese</p>
+					<p class="meta"><span class="meta-t">Interest:</span>Reading / Dance / Sing / Tour / Cultivate flowers</p>
+					<ul class="meta-list">
+						<li class="act-talk"><a href="#"><i class="i-talk"></i>126</a></li>
+						<li class="act-favorite"><a href="#"><i class="i-favorite"></i>158</a></li>
+						<li class="act-line"><a href="#"><i class="i-line"></i>8</a></li>
+					</ul>
+					<ul class="action-list">
+						<li class="act-contact"><a href="#"><i class="i-contact"></i>Contact</a></li>
+						<li class="act-favorite"><a href="#"><i class="i-favorite"></i>Wish List</a></li>
+						<li class="act-book"><a href="#" class="ui-btn-small btn-book-small"><span>Book It</span></a></li>
+					</ul>
+					<span class="price">
+						<sup>&yen;</sup>110/h
+					</span>
+				</div>
+			</li>
+			<li class="clearfix">
+				<div class="user">
+					<a href="#"><img src="../img/avator-4.jpg" class="avator" /></a>
+				</div>
+				<div class="info">
+					<h3 class="title"><a href="#">Andy</a></h3>
+					<p class="meta"><span class="meta-t">Language:</span>English,Chinese</p>
+					<p class="meta"><span class="meta-t">Interest:</span>Reading / Dance / Sing / Tour / Cultivate flowers</p>
+					<ul class="meta-list">
+						<li class="act-talk"><a href="#"><i class="i-talk"></i>126</a></li>
+						<li class="act-favorite"><a href="#"><i class="i-favorite"></i>158</a></li>
+						<li class="act-line"><a href="#"><i class="i-line"></i>8</a></li>
+					</ul>
+					<ul class="action-list">
+						<li class="act-contact"><a href="#"><i class="i-contact"></i>Contact</a></li>
+						<li class="act-favorite"><a href="#"><i class="i-favorite"></i>Wish List</a></li>
+						<li class="act-book"><a href="#" class="ui-btn-small btn-book-small"><span>Book It</span></a></li>
+					</ul>
+					<span class="price">
+						<sup>&yen;</sup>130/h
+					</span>
+				</div>
+			</li>
+		</ul>
+
+		<!-- 分页 -->
+		<div class="ui-pagination" id="J_ui_page" style="">
+			<a href="#" title="Prev" class="disabled prev"><b class="arror-prev"></b></span>
+			<a href="#" title="1" class="current">1</span>
+			<a href="#" title="2">2</a>
+			<a href="#" title="3">3</a>
+			<a href="#" title="4">4</a>
+			<span class="split">...</span>
+			<a href="#" title="6">6</a>
+			<a href="#" title="Next" class="next"><b class="arror-next"></b></a>
+		</div>
+	</div>
+</div>
+
+<!-- 底部 -->
+<div class="footor-1">
+	<div class="footor-block span3">
+		<div class="footor-block-title">Company</div>
+		<ul>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Contact</a></li>
+			<li><a href="#">Jobs</a></li>
+			<li><a href="#">Terms & Privacy</a></li>
+		</ul>
+	</div>
+
+	<div class="footor-block span3">
+		<div class="footor-block-title">Join us on</div>
+		<ul>
+			<li><a href="#">Twitter</a></li>
+			<li><a href="#">Facebook</a></li>
+			<li><a href="#">Google</a></li>
+			<li><a href="#">YouTube</a></li>
+		</ul>
+	</div>
+
+	<div class="footor-block span3">
+		<div class="footor-block-title">Others</div>
+		<ul>
+			<li><a href="#">How it works</a></li>
+			<li><a href="#">Why Tagalong</a></li>
+			<li><a href="#">How to find a guide</a></li>
+			<li><a href="#">FAQ</a></li>
+		</ul>
+	</div>
+
+	<div class="footor-copyright">&copy; 2013 Tagalong, Inc.</div>
+</div>
+
+<script type="text/javascript">
+	$(function(){
+		// 复选框、单选框
+		$('.ui-checkbox, .ui-radio').checkbox();
+
+		// 价格筛选
+		$('#J-slider-price').slider({
+			themes : 'tagalongPriceRange',
+			tooltip : 'hide',
+			symbol : '¥'
+		}).on('slideStop', function(e){
+			console.log(e);
+		});
+	});
+</script>
+</body>
+</html>

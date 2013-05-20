@@ -1,0 +1,157 @@
+@charset "utf-8"; /* CSS Document */
+
+/********************
+ * date:2013-05-15;
+ * explanation:
+ * 全局通用样式，主要包括头部、尾部两大核心模块;
+ * 其中常用标签的重置、基本元素的UI效果统一交给bootstrap进行处理；
+ * 如果设计稿效果跟bootstrap的UI效果不致，将不采用bootstrap的效果，我们自己生写一个；
+ ********************/
+
+ /**
+  * date:2013-05-15;   
+  * explanation:引用bootstrap相关样式;
+  */
+/*核心:bootstrap.css*/
+/*日历组件:bootstrap-datepicker.css*/
+/*固定组件:bootstrap-fixed.css*/
+/*影响式组件:bootstrap-responsive.css*/
+
+/**
+ * 摘自:stanby.css;
+ * date:2013-05-15;
+ * explanation:头部;
+ */
+.navbar .navbar-inner {
+	min-height:41px; padding-right:20px; padding-left:20px;
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+	box-shadow:none;
+}
+.navbar-fixed-top .navbar-inner,
+.navbar-static-top .navbar-inner {
+	-webkit-box-shadow:inset 0 -1px 0 rgba(0, 0, 0, 0.1),0 1px 10px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:inset 0 -1px 0 rgba(0,0,0,0.1),0 1px 10px rgba(0,0,0,0.1);
+	box-shadow:inset 0 -1px 0 rgba(0, 0, 0, 0.1),0 1px 10px rgba(0, 0, 0, 0.1);
+}
+.navbar-fixed-top .navbar-inner,
+.navbar-fixed-bottom .navbar-inner {
+	padding-right:0; padding-left:0;
+	-webkit-border-radius:0;
+	-moz-border-radius:0;
+	border-radius:0;
+}
+.navbar-fixed-top .navbar-inner,
+.navbar-fixed-bottom .navbar-inner,
+.navbar-static-top .navbar-inner { border:0; border-bottom:1px solid #d4d4d4\9; }
+.navbar-inner {
+	min-height:40px; padding-right:20px; padding-left:20px; background-color:#fafafa;
+	background-image:-moz-linear-gradient(top,white,#F2F2F2);
+	background-image:-webkit-gradient(linear,0 0,0 100%,from(white),to(#F2F2F2));
+	background-image:-webkit-linear-gradient(top,white,#F2F2F2);
+	background-image:-o-linear-gradient(top,white,#F2F2F2);
+	background-image:linear-gradient(to bottom,white,#F2F2F2);
+	background-repeat:repeat-x; border:1px solid #D4D4D4;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px; border-radius:4px;
+	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.065);
+	-moz-box-shadow:0 1px 4px rgba(0,0,0,0.065);
+	box-shadow:0 1px 4px rgba(0, 0, 0, 0.065);
+}
+.topbar .brand { background:url(../img/logo.png) no-repeat; width:118px; height:40px; padding:0px; margin:0 50px 0 20px; }
+.navbar .nav>li>a.search-icon { background:url(../img/topbar_search_icon.png) no-repeat center center; width:49px; height:40px; padding:0; display:block; float:left; }
+.navbar .nav>li .btn-warning { font-weight:bold; }
+.navbar .nav>li>a { font-weight:bold; }
+.navbar .brand { display:block; float:left; font-size:20px; font-weight:200; color:#555; text-shadow:0 1px 0 white; }
+.b-allowed-ie { background:url(../img/allowed_browsers.jpg) 0 0; width:110px; height:110px; }
+.b-allowed-chrome { background:url(../img/allowed_browsers.jpg) -110px 0; width:110px; height:110px; }
+.b-allowed-firefox { background:url(../img/allowed_browsers.jpg) -220px 0; width:110px; height:110px; }
+.b-allowed-safari { background:url(../img/allowed_browsers.jpg) -330px 0; width:110px; height:110px; }
+.b-allowed-opera { background:url(../img/allowed_browsers.jpg) -440px 0; width:110px; height:110px; }
+
+/**
+ * 摘自:style.css;
+ * date:2013-05-15;
+ * explanation:头部;
+ */
+body { margin:0px; padding-top:40px; width:100%; overflow-x:hidden; overflow-y:scroll; }
+.topbar .brand{ background:url(../img/logo.png) no-repeat; width:118px; height:40px; padding:0px; margin:0 50px 0 20px; }
+.navbar .nav>li>a.search-icon{ background:url(../img/topbar_search_icon.png) no-repeat center center; width:49px; height:40px; padding:0; display:block; float:left; }
+.navbar .nav>li .btn-warning{ font-weight:bold; }
+.navbar .nav>li>a{ font-weight:bold; }
+/* top-search */
+.navbar .dropdown-menu form{ padding:0 8px; margin:0 0 5px 0; }
+.navbar .dropdown-menu label{ font-weight:bold; }
+.navbar .dropdown-menu button{ display:block; font-weight:bold; margin:0 auto; }
+.topbar-search button{ width:100px; }
+/* top-lang */
+.top-lang{ }
+.top-lang>.btn{ background:none; border:none; -webkit-box-shadow:none; -moz-box-shadow:none; box-shadow:none; }
+.top-lang>.btn .caret{ color:#333; border-top-color:#333; border-bottom-color:#333; }
+/* topbar-signup */
+.topbar-signup{ width:241px; }
+.topbar-signup input{ width:227px; display:block; }
+.topbar-signup div.input-text{ padding:5px 0; }
+.topbar-signup div{ font-size:12px; white-space:normal; }
+.topbar-signup div.input-password input{ margin-top:0; }
+.navbar-inner .simpleform em, .navbar-inner .simpleform .error-label{ background:none; border:none; color:#FF0000; margin:0; padding:0; }
+/* topbar-login */
+.topbar-login{ width:241px; }
+.topbar-login div.input-container{ overflow:hidden; padding:0 3px 8px 3px; font-size:12px; }
+.topbar-login input.login-input{ width:220px; display:block; }
+.topbar-login div.input-text{ padding:5px 0; }
+.navbar .dropdown-menu .topbar-login label{ font-weight:normal; font-size:12px; }
+.topbar-login div.input-password input{ margin-top:0; }
+.navbar-inner .simpleform em, .navbar-inner .simpleform .error-label{ background:none; border:none; color:#FF0000; margin:0; padding:0; }
+/* top-partner */
+.topbar-partner{ clear:both; height:40px; padding:0; position:relative; }
+.topbar-partner div.topbar-partner-other{ color:#0DA2FF; font-size:12px; clear:both; line-height:26px; position:absolute; z-index:20; top:10px; left:20%; margin-left:-18px; overflow:hidden; padding:0; }
+.topbar-partner div.topbar-partner-circle{ background:url(../img/signup.png) no-repeat -6px -192px; width:37px; height:39px; position:absolute; z-index:10; top:28px; left:50%; margin-left:-18px; overflow:hidden; padding:0; cursor:pointer; }
+.topbar-partner div.topbar-partner-circle.active{ background:url(../img/signup.png) no-repeat -56px -192px; }
+.topbar-partner div.topbar-partner-list{ background:url(../img/signup.png) no-repeat -5px -100px; width:257px; height:89px; position:absolute; z-index:5; top:46px; left:0; margin-left:-8px; overflow:hidden; padding:0; display:none; }
+.topbar-partner div.topbar-partner-list ul{ padding:22px 10px 0 10px; margin:0; }
+.topbar-partner div.topbar-partner-list li{ padding:35px 0 0 0; margin:0 3px 0 0; list-style:none; float:left; width:56px; height:21px; text-align:center; font-size:12px; cursor:pointer; }
+.topbar-partner div.topbar-partner-list li.last{ margin:0; }
+.topbar-partner div.topbar-partner-list li.weibo{ background:url(../img/signup.png) no-repeat -17px -7px; }
+.topbar-partner div.topbar-partner-list li.qq{ background:url(../img/signup.png) no-repeat -78px -7px; }
+.topbar-partner div.topbar-partner-list li.facebook{ background:url(../img/signup.png) no-repeat -138px -7px; }
+.topbar-partner div.topbar-partner-list li.twitter{ background:url(../img/signup.png) no-repeat -200px -7px; }
+.pull-right .nav .btn-group{ font-size:14px; margin-top:0px; }
+
+/**
+ * 摘自:style.css;
+ * date:2013-05-15;
+ * explanation:尾部;
+ */
+/* footor-1*/
+.footor-1{ margin:0px auto; width:995px; }
+.footor-block{ float:left; overflow:hidden; }
+.footor-block-title{ color:#AEAEAE; font-size:14px; font-weight:bold; line-height:30px; }
+.footor-block ul{ margin:0px; padding:0px; }
+.footor-block li{ margin:0px; padding:0px; list-style:none; }
+.footor-block li a{ line-height:20px; }
+.footor-copyright{ color:#999999; text-align:center; padding:35px 0px 15px 0px; clear:both; }
+
+/**
+ * 摘自:simpleform.css;
+ * date:2013-05-15;
+ * explanation:表单;
+ */
+.simpleform em,
+.simpleform .error-label{
+	display:none; padding:2px 6px; background:none repeat scroll 0 0 #fedee1; border:1px solid #e20a1f;font-style:normal; font-size:14px; line-height:20px; vertical-align:middle; color:#e20a1f;
+	margin:0 0 0 3px;
+	margin:2px 0 0 3px\9;	
+	margin-bottom:0;
+}
+.simpleform .input-unvalid{ border:1px solid #ff0000; }
+
+/**
+ * 摘自:style.css;
+ * date:2013-05-15;
+ * explanation:表单;
+ */
+.input-password{ position:relative; overflow:hidden; }
+.input-password span{ position:absolute; top:0; left:0; color:#555555; text-indent:6px; font-size:14px; }
+/* input-text */
+.input-text{ padding:5px 0px; margin:0px auto; }

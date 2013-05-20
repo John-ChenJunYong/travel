@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+
+/**
+ * date:2013-05-16;
+ * explantion:
+ * 		个人主页的响应式;
+ *   	通过js判断出屏幕大小后，给body赋值即可;
+ */
+@media only screen and (min-width:1200px){
+	.pika-stage { width:856px; height:572px; }
+	.gallery-thumb-list li { text-align:center; }
+	.gallery-thumb-list li .clip { display:inline-block; }
+}
+
+
+/**
+ * date:2013-05-16;
+ * explanation:为IE作兼容处理;
+ */
+.widescreen .pika-stage {
+	width:856px; height:572px;
+}
