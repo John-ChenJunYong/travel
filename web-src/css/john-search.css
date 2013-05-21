@@ -30,7 +30,7 @@
 .search-mod .group-input { height:30px; }
 .search-mod .ui-input-wrap { float:left; margin-right:8px; }
 .search-mod .ui-input-wrap .ui-input { width:150px; }
-.search-mod .ui-group-btn { position:absolute; top:50%; right:15px; margin-top:-15px; }
+.search-mod .ui-btn-group { position:absolute; top:50%; right:15px; margin-top:-15px; }
 
 /*搜索工具栏*/
 .search-result-tool {
@@ -105,7 +105,7 @@
 .options-list { padding:0px 5px; font-size:12px; }
 .options-list label { display:block; padding:2px 0px; margin:0px; font-size:12px; }
 .options-list span[class*=check] { display:inline-block; width:12px; height:12px; margin-right:8px; vertical-align:-2px; }
-.options-list .ui-checked { background-position:0px -271px; }
+.options-list .ui-checked { background-position:0px -206px; }
 
 
 .options-radio li { padding:4px 0px; }

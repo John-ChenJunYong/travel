@@ -82,12 +82,80 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 .article-list a { color:#999999; }
 
 /*验证列表*/
-.verification-list {}
-.verification-list li { position:relative; padding-right:200px; margin:40px 0px; }
+.verification-list li { position:relative; padding-right:275px; padding-bottom:20px; margin-bottom:30px; border-bottom:1px dashed #cdcdcd; }
 .verification-list .dl { margin:0px; }
-.verification-list .dt { position:relative; margin-bottom:10px; padding-left:34px; }
-.verification-list .dt:before { position:absolute; top:50%; left:0px; content:""; width:14px; height:14px; margin-top:-7px; background-color:#cdcdcd; }
-.verification-list .dd { margin:0px; padding-left:34px; }
-.verification-list .btn-verify-big { position:absolute; top:50%; right:10px; width:100px; margin-top:-19px; }
-.verification-list .btn-verify-big:focus,
-.verification-list .btn-verify-big:hover { }
+.verification-list .dt { position:relative; margin-bottom:10px; padding-left:34px; font-weight:700; font-size:14px; }
+.verification-list .dt:before { position:absolute; top:50%; left:0px; content:""; width:32px; height:32px; margin-top:-16px; background-image:url(../img/bg-dashboard.png); background-repeat:no-repeat; }
+.verification-list .sina .dt:before { background-position:0px 0px; }
+.verification-list .qq .dt:before { background-position:0px -32px; }
+.verification-list .facebook .dt:before { background-position:0px -64px; }
+.verification-list .linkedin .dt:before { background-position:0px -96px; }
+.verification-list .email .dt:before { background-position:0px -128px; }
+.verification-list .offline .dt:before { background-position:0px -160px; }
+.verification-list .phone .dt:before { background-position:0px -192px; }
+.verification-list .dd { margin:0px; padding-left:34px; font-size:13px; }
+.verification-list .dd p { margin-bottom:10px; }
+.verification-list .btn-verify-big,
+.verification-list .verified { position:absolute; top:50%; right:10px; width:100px; }
+.verification-list .btn-verify-big { margin-top:-19px; }
+.verification-list .verified { padding:0px 11px; margin-top:-26px; background-color:#ffffff; text-align:center; }
+.verification-list .verified .i-verified { display:block; width:32px; height:32px; margin:0px auto; background-image:url(../img/bg-dashboard.png); background-repeat:no-repeat; background-position:0px -224px; }
+
+
+/**
+ * 电话号码验证
+ */
+.verified-phone .i-verified,
+.verified-phone .remove,
+.btn-addphone-small i.i-add { width:20px; height:20px; background-image:url(../img/bg-dashboard.png); background-repeat:no-repeat; background-position:0px -256px; }
+/*添加新号码*/
+.verify-phone {
+	padding:15px; margin-bottom:10px; background-color:#ececec; border:1px solid #cdcdcd;
+	-webkit-box-shadow:inset 0 0 10px rgba(0,0,0,0.15);
+	-moz-box-shadow:inset 0 0 10px rgba(0,0,0,0.15);
+	box-shadow:inset 0 0 10px rgba(0,0,0,0.15);
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+}
+.verify-phone .phone-prefix {
+	float:left; min-width:30px; padding:0px 4px; border:1px solid #cdcdcd; border-right:none; line-height:28px; text-align:center;
+	-webkit-border-radius:3px 0 0 3px;
+	-moz-border-radius:3px 0 0 3px;
+	border-radius:3px 0 0 3px;
+	-webkit-box-shadow:inset 0 0 1px rgba(255,255,255,0.8);
+	-moz-box-shadow:inset 0 0 1px rgba(255,255,255,0.8);
+	box-shadow:inset 0 0 1px rgba(255,255,255,0.8);
+	background: #eeeeee; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffffff 0%, #eeeeee 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#eeeeee)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#eeeeee 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffffff 0%,#eeeeee 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffffff 0%,#eeeeee 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ffffff 0%,#eeeeee 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+}
+.verify-phone .input-line { min-height:30px; margin-bottom:10px; }
+.verify-phone .label-t { float:left; width:100px; height:30px; margin:0px; line-height:30px; }
+.verify-phone select { margin:0px; }
+.verify-phone .input-txt {
+	width:167px; margin:0px;
+	-webkit-border-top-left-radius:0px;
+	-moz-border-top-left-radius:0px;
+	border-top-left-radius:0px;
+	-webkit-border-bottom-left-radius:0px;
+	-moz-border-bottom-left-radius:0px;
+	border-bottom-left-radius:0px;
+}
+/*已经验证的电话号码*/
+.verified-phone { margin-bottom:10px; table-layout:fixed; width:100%; border-collapse:collapse; border-spacing:0px; border:1px solid #cdcdcd; }
+.verified-phone td { padding:8px 10px; border:1px solid #cdcdcd; }
+.verified-phone .phone-number { width:130px; background-color:#ececec; }
+.verified-phone .status { border-right:none; }
+.verified-phone .operate { width:20px; border-left:none; }
+.verified-phone .verified-tips { color:#5bb013; }
+.verified-phone .btn-verify-sms { vertical-align:-6px; }
+.verified-phone .i-verified { display:inline-block; margin-right:4px; background-position:0px -296px; vertical-align:-5px; }
+.verified-phone .remove { display:block; background-position:0px -276px; text-indent:-999px; overflow:hidden; }
+/*新增电话号码按钮*/
+.btn-addphone-small i.i-add { vertical-align:-5px; }

@@ -69,3 +69,12 @@
 .schedule-list .td-day { width:100px; }
 .schedule-list .td-all { width:80px; }
 .schedule-list .ui-checkbox { width:30px; height:30px; margin:0px auto; background-color:transparent; border:none; }
+
+
+/*图片列表*/
+.gallery-mod { padding:20px 18px; background-color:#fffceb; border:1px solid #eed97c; }
+.gallery-mod .hd { padding:0px 3px 6px 3px; }
+.gallery-mod .hd-t { font-size:14px; font-weight:400; line-height:inherit; }
+.gallery-mod .bd { padding-top:3px; }
+.gallery-mod .gallery-thumb-list { position:static; overflow:hidden; }
+.gallery-mod .gallery-thumb-list li { padding:0px 3px; }

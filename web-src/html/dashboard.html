@@ -16,7 +16,10 @@
 <link href="../css/john-global.css" rel="stylesheet" />
 <link href="../css/john-public.css" rel="stylesheet" />
 <link href="../css/john-dashboard.css" rel="stylesheet" />
-<link href="../css/john-public-responsive.css" rel="stylesheet" />
+<!-- <link href="../css/john-public-responsive.css" rel="stylesheet" /> -->
+
+<script src="../js/jquery-1.8.3.js" > </script>
+<script src="../js/bootstrap-tab.js"></script>
 </head>
 
 <body>
@@ -64,10 +67,12 @@
 		</div>
 
 		<div class="col-main">
+			<!-- 默认通栏标题 -->
 			<div class="mod-title">
 				<h2 class="mod-hd"><i class="i-video"></i>Profile Video</h2>
 				<p class="mod-extra">这里是之旅啊吼叫Please upload a photo that clearly shows your face.</p>
 			</div>
+			<!-- 默认文章列表模块 -->
 			<div class="article">
 				<div class="hd">
 					<h3 class="hd-t">Tell the community a little bit about yourself</h3>
@@ -85,28 +90,161 @@
 			</div>
 			<div class="mod-title">
 				<h2 class="mod-hd"><i class="i-photo"></i>Profile Video</h2>
-				<p class="mod-extra">这里是之旅啊吼叫Please upload a photo that clearly shows your face.</p>
+				<p class="mod-extra">Please upload a photo that clearly shows your face.</p>
 			</div>
 
-			<ul class="verification-list">
-				<li>
-					<dl class="dl">
-						<dt class="dt">Facebook</dt>
-						<dd class="dd">用Facebook帐号登录，发现您与世界各地的房东和房客之间的信任关系。</dd>
-					</dl>
-					<a href="#" target="_blank" class="ui-btn-big btn-verify-big"><span>验证</span></a>
-				</li>
-				<li>
-					<dl class="dl">
-						<dt class="dt">LinkedIn</dt>
-						<dd class="dd">现在您可以把您的Airbnb账号关联到世界上最大的专业人士网络。关联到LinkedIn意味着与你们的职业生活创建了联系，这样有助于在房客和房东之间建立信任。</dd>
-					</dl>
-					<a href="#" target="_blank" class="ui-btn-big btn-verify-big"><span>验证</span></a>
-				</li>
+			<!-- 个人资料：选项卡菜单 -->
+			<ul class="nav nav-tabs" id="J-account-profile">
+				<li class="active"><a href="#J-profile" data-toggle="tab">Profile</a></li>
+				<li><a href="#J-photoAndVedio" data-toggle="tab">Photo and Vedio</a></li>
+				<li><a href="#J-interest" data-toggle="tab">Interest</a></li>
+				<li><a href="#J-verification" data-toggle="tab">Verification</a></li>
+				<li><a href="#J-security" data-toggle="tab">Security</a></li>
 			</ul>
+			<!-- 个人资料：选项卡内容 -->
+			<div class="tab-content">
+				<div class="tab-pane active" id="J-profile">This is Profile</div>
+				<div class="tab-pane" id="J-photoAndVedio">This is Photo and Vedio</div>
+				<div class="tab-pane" id="J-interest">This is Interest</div>
+				<div class="tab-pane" id="J-verification">
+					<!-- 等待或已验证的社区列表 -->
+					<ul class="verification-list">
+						<li class="sina">
+							<dl class="dl">
+								<dt class="dt">Weibo</dt>
+								<dd class="dd">
+									<p>Scan an official ID, like a driver's license or passport or confirm a few personal details that only you would know.</p>
+									<p>Verifying your offline ID is part of Verified IDs on Airbnb,<a href="#">Learn more.</a></p>
+								</dd>
+							</dl>
+							<a href="#" class="ui-btn-big btn-verify-big"><span>验证</span></a>
+						</li>
+						<li class="qq">
+							<dl class="dl">
+								<dt class="dt">Tencent QQ</dt>
+								<dd class="dd">
+									<p>Scan an official ID, like a driver's license or passport or confirm a few personal details that only you would know.</p>
+									<p>Verifying your offline ID is part of Verified IDs on Airbnb,<a href="#">Learn more.</a></p>
+								</dd>
+							</dl>
+							<!-- <a href="#" class="ui-btn-big btn-verify-big"><span>验证</span></a> -->
+							<span class="verified"><i class="i-verified"></i>VERIFIED</span>
+						</li>
+						<li class="facebook">
+							<dl class="dl">
+								<dt class="dt">Facebook</dt>
+								<dd class="dd">
+									<p>Sign in with Facebook and discover your trusted connections to hosts and guests all over the world.</p>
+								</dd>
+							</dl>
+							<a href="#" class="ui-btn-big btn-verify-big"><span>验证</span></a>
+						</li>
+						<li class="linkedin">
+							<dl class="dl">
+								<dt class="dt">LinkedIn</dt>
+								<dd class="dd">
+									<p>You can now connect your Airbnb account with the world’s largest professional network. Connecting with LinkedIn builds confidence between guests and hostsby establishing a link to your professional life.</p>
+								</dd>
+							</dl>
+							<a href="#" class="ui-btn-big btn-verify-big"><span>验证</span></a>
+						</li>
+						<li class="email">
+							<dl class="dl">
+								<dt class="dt">Email Address</dt>
+								<dd class="dd">
+									<p>Please verify your email address by clicking the link in the message we just sent to: 396001130@qq.com</p>
+									<p>Check your spam folder or <a href="#">resend the confirmation email.</a></p>
+								</dd>
+							</dl>
+							<a href="#" class="ui-btn-big btn-verify-big"><span>验证</span></a>
+						</li>
+						<li class="offline">
+							<dl class="dl">
+								<dt class="dt">Offline ID</dt>
+								<dd class="dd">
+									<p>Scan an official ID, like a driver's license or passport or confirm a few personal details that only you would know.</p>
+									<p>Verifying your offline ID is part of Verified IDs on Airbnb,<a href="#">Learn more.</a></p>
+								</dd>
+							</dl>
+							<a href="#" class="ui-btn-big btn-verify-big"><span>验证</span></a>
+						</li>
+						<li class="phone">
+							<dl class="dl">
+								<dt class="dt">Phone Number</dt>
+								<dd class="dd">
+									<p>Make it easier to communicate with a verified phone number. We’ll send you a code by SMS or read it to you over the phone. Enter the code below to confirm that you’re the person on the other end.</p>
+									<p>Rest assured, your number is only shared with another Airbnb member once you have a confirmed booking.</p>
+									<!-- 添加新号码 -->
+									<div class="verify-phone">
+										<div class="input-line">
+											<label class="label-t" for="J-phone-country">选择一个国家:</label>
+											<select id="J-phone-country" name="phone-country">
+												<option value="AL" data-prefix="355">阿尔巴尼亚</option>
+												<option value="DZ" data-prefix="213">阿尔及利亚</option>
+												<option value="AF" data-prefix="93">阿富汗</option>
+												<option value="AR" data-prefix="54">阿根廷</option>
+												<option value="AE" data-prefix="971">阿拉伯联合酋长国</option>
+												<option value="AW" data-prefix="297">阿鲁巴</option>
+												<option value="OM" data-prefix="968">阿曼</option>
+												<option value="AZ" data-prefix="994">阿塞拜疆</option>
+												<option value="EG" data-prefix="20">埃及</option>
+												<option value="ET" data-prefix="251">埃塞俄比亚</option>
+												<option value="IE" data-prefix="353">爱尔兰</option>
+												<option value="EE" data-prefix="372">爱沙尼亚</option>
+												<option value="CN" data-prefix="86" selected="selected">中国</option>
+											</select>
+										</div>
+										<div class="input-line">
+											<label class="label-t" for="J-phone-number">电话号码:</label>
+											<div class="phone-prefix">+86</div>
+											<input type="text" class="input-txt" id="J-phone-number">
+										</div>
+										<div class="input-line">
+											<label class="label-t"> </label><a href="javascript:void(0);" class="ui-btn-small btn-verify-sms"><span>通过短信验证</span></a>
+										</div>
+									</div>
+
+									<!-- 已经验证的电话号码 -->
+									<table class="verified-phone">
+										<tr>
+											<td class="phone-number">+86 186 6464 0304</td>
+											<td class="status">
+												<span class="verified-tips"><i class="i-verified"></i>已验证</span>
+											</td>
+											<td class="operate">
+												<a href="javascript:void(0);" class="remove" title="remove">delete</a>
+											</td>
+										</tr>
+										<tr>
+											<td class="phone-number">+86 186 6464 0304</td>
+											<td class="status">
+												<a href="javascript:void(0);" class="ui-btn-small btn-verify-sms"><span>通过短信验证</span></a>
+											</td>
+											<td class="operate">
+												<a href="javascript:void(0);" class="remove" title="remove">delete</a>
+											</td>
+										</tr>
+									</table>
+
+									<!-- 添加新电话按钮 -->
+									<a href="javascript:void(0);" class="ui-btn-small btn-addphone-small"><span><i class="i-add"></i>添加电话号码</span></a>
+								</dd>
+							</dl>
+							<a href="#" class="ui-btn-big btn-verify-big"><span>验证</span></a>
+						</li>
+					</ul>
+				</div>
+				<div class="tab-pane" id="J-security">This is Security</div>
+			</div>
 		</div>
 	</div>
 </div>
 
+
+<script type="text/javascript">
+	$(function(){
+		$('#J-account-profile a:eq(3)').tab('show');
+	});
+</script>
 </body>
 </html>

@@ -1,0 +1,135 @@
+@charset "utf-8";
+/* CSS Document */
+
+/**
+ * date:2013-5-21 09:26:04;
+ * explanation:申请成为旅伴;
+ * author:johnchen@tag-along.org;
+ * version:v1.0;
+ */
+
+/**
+ * 流程类
+ */
+/*申请流程*/
+.guide-step { height:35px; padding:0px 296px 0px 0px; margin-bottom:30px; overflow:hidden; }
+.guide-step li { position:relative; float:left; width:29.3333%; padding:0 0% 0px 4%; background-color:#efefef; line-height:35px; cursor:pointer; }
+.guide-step li:after { position:absolute; top:0px; right:-22px; bottom:0px; content:""; width:22px; height:35px; background-image:url(../img/icon-widget.png); background-repeat:no-repeat; background-position:0px -689px; }
+.guide-step .step-1 { z-index:4; }
+.guide-step .step-2 { z-index:3; }
+.guide-step .step-3 { z-index:2; }
+
+.guide-step .step-3:before,
+.guide-step .step-3:after { display:none; }
+.guide-step .active { background-color:#0088cc; color:#ffffff; }
+.guide-step .active:after { background-position:-22px -689px; }
+
+.guide-description { padding:0px 296px 0px 0px; margin-bottom:30px; border-bottom:1px dashed #cdcdcd; }
+.guide-description .dt { font-weight:400; font-size:24px; color:#0088cc; }
+.guide-description .dd { padding:20px 0px; margin:0px; line-height:1.75; }
+
+/**
+ * 模块类
+ */
+/*每个模块的默认结构样式*/
+.guide-mod { position:relative; padding:0px 296px 0px 0px; margin:20px 0px; }
+.guide-mod:after { clear:both; display:block; content:""; line-height:0; }
+.guide-mod .hd { position:relative; padding:10px 0px; }
+.guide-mod .hd-t { font-weight:500; line-height:1; font-size:18px; }
+.guide-mod .bd { }
+.guide-mod .guide-tips {
+	float:right; margin-right:-296px; position:relative; top:0px; right:0px; width:226px; padding:10px 20px; background-color:#efefef;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	-webkit-box-shadow:0px 0px 2px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow:0px 0px 2px rgba(0, 0, 0, 0.05);
+	box-shadow:0px 0px 2px rgba(0, 0, 0, 0.05);
+}
+.guide-mod .guide-tips p { padding:4px 0px; margin:0px; }
+.guide-mod input,
+.guide-mod select,
+.guide-mod textarea { margin-bottom:0px; }
+
+/*可提供服务的地方*/
+.service-location .grout-list { position:relative; width:424px; }
+.service-location .act-add-location { position:absolute; top:0px; right:-48px; }
+.service-location .input-txt { display:block; width:410px; }
+/*地图*/
+.map { width:100%; height:200px; margin:20px 0px; background-color:#efefef; }
+.map-wrap { width:100%; height:100%; overflow:hidden; }
+/*价格*/
+.service-price .input-txt { width:120px; margin-right:10px; vertical-align:1px; }
+.service-price .price { font-size:18px; color:#999999; }
+/*宽松程度*/
+.service-policy select { width:420px; }
+/*服务描述*/
+.service-description .input-area { width:646px; height:180px; min-width:646px; max-width:646px; min-height:180px; }
+.service-description .guide-tips { margin-top:38px; }
+/*服务时间*/
+.service-time .ui-btn-group { position:absolute; top:50%; right:0px; margin-top:-15px; }
+.schedule-list { table-layout:fixed; width:100%; border:1px solid #cdcdcd; text-align:center; }
+.schedule-list td { padding:0px; border:1px solid #cdcdcd; }
+.schedule-list .td-day { width:70px; }
+.schedule-list .ui-checkbox,
+.schedule-list .ui-checkall { display:block; width:100%; padding:2px 0px; margin:0px auto; border:none;  }
+.schedule-list .ui-checkbox { background-color:#ffffff; }
+.schedule-list .ui-checkbox.ui-checked { background-position:-12px -61px; }
+.schedule-list .ui-checkall { background-position:-13px -107px; }
+.schedule-list .ui-checkall.ui-checked { background-position:-13px -155px; }
+
+.booking-schedule .tips li { float:left; padding-right:26px; }
+.booking-schedule .tips i { display:inline-block; width:28px; height:20px; margin-right:6px; background-image:url(../img/icon-widget.png); background-repeat:no-repeat; vertical-align:-5px; }
+.booking-schedule .tips .i-work { background-position:6px -65px; }
+.booking-schedule .tips .i-allday { background-position:0px -88px; }
+
+
+
+/**
+ * 步骤类
+ */
+.navigation-step { padding:0px 296px 0px 0px; text-align:right; }
+.navigation-step .btn-guide-step { display:inline-block!important; padding-left:30px; padding-right:30px; }
+
+/**
+ * 按钮类
+ */
+.btn-guide-step {
+	border-color:#e18619; color:#ffffff;
+	background: #ffc869; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffc869 0%, #ffa537 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffc869), color-stop(100%,#ffa537)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffc869 0%,#ffa537 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffc869 0%,#ffa537 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffc869 0%,#ffa537 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ffc869 0%,#ffa537 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc869', endColorstr='#ffa537',GradientType=0 ); /* IE6-9 */
+}
+.btn-guide-step:hover {
+	color:#ffffff;
+	background: #feb350; /* Old browsers */
+	background: -moz-linear-gradient(top,  #feb350 0%, #fe8923 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feb350), color-stop(100%,#fe8923)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #feb350 0%,#fe8923 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #feb350 0%,#fe8923 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #feb350 0%,#fe8923 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #feb350 0%,#fe8923 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feb350', endColorstr='#fe8923',GradientType=0 ); /* IE6-9 */
+}
+
+/**
+ * 操作、动作类的按钮
+ */
+/*操作、动作类的默认reset*/
+.act-add-location {
+	display:inline-block; width:28px; height:28px; padding:0px; margin:0px; background:transparent; border:none;
+	background-image:url(../img/icon-widget.png); background-repeat:no-repeat;
+	text-indent:-999px; overflow:hidden;
+}
+.act-add-location:hover {
+	-webkit-animation:rotate 1s 0s ease both;
+	-moz-animation:rotate 1s 0s ease both;
+}
+/*添加服务地址的操作*/
+.act-add-location { background-position:0px -633px; }
+.act-add-location:hover { background-position:0px -661px; }

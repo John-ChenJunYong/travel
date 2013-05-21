@@ -2,7 +2,8 @@
 /* CSS Document */
 
 /*base reset*/
-body { font-family:Arial, sans-serif!important; }
+body { font-family:Arial, sans-serif!important; font-size:13px; }
+label, input, button, select, textarea { font-size:13px; }
 h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 
 /*content layout*/
@@ -56,9 +57,12 @@ button[class*='-btn'] {
 	-moz-border-radius:5px;
 	border-radius:5px;
 	text-shadow:0 1px 1px rgba(255, 255, 255, 0.25);
-	-webkit-box-shadow:inset 0px 1px 0px rgba(255, 255, 255, 0.2), inset -1px 0px 0px rgba(255, 255, 255, 0.2), inset 0px -1px 0px rgba(255, 255, 255, 0.2), inset 1px 0px 0px rgba(255, 255, 255, 0.2), 0px 1px 2px rgba(0, 0, 0, 0.05);
+	/*-webkit-box-shadow:inset 0px 1px 0px rgba(255, 255, 255, 0.2), inset -1px 0px 0px rgba(255, 255, 255, 0.2), inset 0px -1px 0px rgba(255, 255, 255, 0.2), inset 1px 0px 0px rgba(255, 255, 255, 0.2), 0px 1px 2px rgba(0, 0, 0, 0.05);
 	-moz-box-shadow:inset 0px 1px 0px rgba(255, 255, 255, 0.2), inset -1px 0px 0px rgba(255, 255, 255, 0.2), inset 0px -1px 0px rgba(255, 255, 255, 0.2), inset 1px 0px 0px rgba(255, 255, 255, 0.2), 0px 1px 2px rgba(0, 0, 0, 0.05);
-	box-shadow:inset 0px 1px 0px rgba(255, 255, 255, 0.2), inset -1px 0px 0px rgba(255, 255, 255, 0.2), inset 0px -1px 0px rgba(255, 255, 255, 0.2), inset 1px 0px 0px rgba(255, 255, 255, 0.2), 0px 1px 2px rgba(0, 0, 0, 0.05);
+	box-shadow:inset 0px 1px 0px rgba(255, 255, 255, 0.2), inset -1px 0px 0px rgba(255, 255, 255, 0.2), inset 0px -1px 0px rgba(255, 255, 255, 0.2), inset 1px 0px 0px rgba(255, 255, 255, 0.2), 0px 1px 2px rgba(0, 0, 0, 0.05);*/
+	-webkit-box-shadow:inset 0px 1px 0px rgba(255, 255, 255, 0.2), 0px 1px 2px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow:inset 0px 1px 0px rgba(255, 255, 255, 0.2), 0px 1px 2px rgba(0, 0, 0, 0.05);
+	box-shadow:inset 0px 1px 0px rgba(255, 255, 255, 0.2), 0px 1px 2px rgba(0, 0, 0, 0.05);
 }
 /*默认大号按钮、小号按钮的外观*/
 .ui-btn-big,
@@ -115,8 +119,7 @@ button[class*='-btn'] {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2bd689', endColorstr='#10a049',GradientType=0 ); /* IE6-9 */
 }
 /*收藏旅伴*/
-.btn-collect-big:focus,
-.btn-collect-big:hover { color:#333333!important; }
+
 /*联系我、验证*/
 .btn-contact-big,
 .btn-verify-big {
@@ -192,8 +195,8 @@ button[class*='-btn'] {
 .ui-btn-big .i-star { background-position:0px -170px; }
 
 /*按钮组*/
-.ui-group-btn { font-size:0px; overflow:hidden; }
-.ui-group-btn .sub-btn {
+.ui-btn-group { font-size:0px; overflow:hidden; }
+.ui-btn-group .btn {
 	padding:4px 12px; border:1px solid #d2d2de; font-size:14px; color:#333333;
 	-webkit-border-radius:0px;
 	-moz-border-radius:0px;
@@ -207,7 +210,7 @@ button[class*='-btn'] {
 	background:linear-gradient(to bottom,  #ffffff 0%,#efefef 100%); /* W3C */
 	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#efefef',GradientType=0 ); /* IE6-9 */
 }
-.ui-group-btn .sub-btn:hover {
+.ui-btn-group .btn:hover {
 	color:#333333;
 	box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
 	background:#fefefe; /* Old browsers */
@@ -219,19 +222,19 @@ button[class*='-btn'] {
 	background:linear-gradient(to bottom,  #fefefe 0%,#e3e3e3 100%); /* W3C */
 	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#e3e3e3',GradientType=0 ); /* IE6-9 */
 }
-.ui-group-btn .sub-btn:first-child {
+.ui-btn-group .btn:first-child {
 	-webkit-border-radius:5px 0px 0px 5px;
 	-moz-border-radius:5px 0px 0px 5px;
 	border-radius:5px 0px 0px 5px;
 }
-.ui-group-btn .sub-btn:last-child {
+.ui-btn-group .btn:last-child {
 	-webkit-border-radius:0px 5px 5px 0px;
 	-moz-border-radius:0px 5px 5px 0px;
 	border-radius:0px 5px 5px 0px;
 }
-.ui-group-btn .sub-btn + .sub-btn { margin-left:-1px; }
-.ui-group-btn .sub-btn.active {
-	border-color:#0176b9; text-decoration:none; color:#ffffff;
+.ui-btn-group .btn + .btn { margin-left:-1px; }
+.ui-btn-group .btn.active {
+	z-index:10; border-color:#0176b9; text-decoration:none; color:#ffffff;
 	background:#00abfd; /* Old browsers */
 	background:-moz-linear-gradient(top,  #00abfd 0%, #0191e3 100%); /* FF3.6+ */
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#00abfd), color-stop(100%,#0191e3)); /* Chrome,Safari4+ */
@@ -248,7 +251,7 @@ input[class*='-btn']:active,
 input[class*='-btn']:focus,
 button[class*='-btn']:active,
 button[class*='-btn']:focus {
-	outline:0; text-decoration:none; color:#ffffff;
+	outline:0; text-decoration:none;
 	-webkit-box-shadow:inset 0 2px 4px rgba(0, 0, 0, 0.15),0 1px 2px rgba(0, 0, 0, 0.05);
 	-moz-box-shadow:inset 0 2px 4px rgba(0, 0, 0, 0.15),0 1px 2px rgba(0, 0, 0, 0.05);
 	box-shadow:inset 0 2px 4px rgba(0, 0, 0, 0.15),0 1px 2px rgba(0, 0, 0, 0.05);
@@ -283,9 +286,12 @@ button[class*='-btn']:focus {
 .ui-input-wrap .i-person { background-position:0px -18px; }
 .ui-input-wrap .i-clock { background-position:-18px 0px; }
 /*单选框、复选框*/
+.ui-checkbox,
+.ui-checkall,
 .ui-checked,
 .ui-radio,
-.ui-radioed { background-image:url(../img/icon-widget.png); background-repeat:no-repeat; }
+.ui-radioed { background-image:url(../img/icon-form.png); background-repeat:no-repeat; }
+.ui-checkall input,
 .ui-checkbox input,
 .ui-radio input {
 	position:absolute; top:0px; right:0px; bottom:0px; left:0px; z-index:2; width:100%; height:100%; min-height:100%; padding:0px; margin:0px; border:none;
@@ -293,14 +299,18 @@ button[class*='-btn']:focus {
 }
 /*复选框*/
 .ui-checkbox,
-.ui-checked { display:block; position:relative; width:20px; height:20px; padding:0px; margin:0px; border-width:1px; border-style:solid; border-radius:2px; }
-.ui-checkbox { background-color:#edebe5; border-color:#cfc8bc; }
-.ui-checked { border-color:#0088cc; background-color:#ffffff; background-position:0px -205px; }
+.ui-checked,
+.ui-checkall { display:inline-block; position:relative; width:20px; height:20px; padding:0px; margin:0px; border-width:1px; border-style:solid; border-radius:2px; }
+.ui-checkbox { background-color:#edebe5; background-position:-100% -100%; border-color:#cfc8bc; }
+.ui-checked { border-color:#0088cc; background-color:#ffffff; background-position:-14px -157px; }
 /*单选框*/
 .ui-radio,
-.ui-radioed { display:inline-block; position:relative; width:17px; height:17px; padding:0px; margin-right:4px; vertical-align:-3px; overflow:hidden; }
-.ui-radio { background-position:0px -297px; }
-.ui-radioed { background-position:0px -314px; }
+.ui-radioed { display:inline-block; position:relative; width:16px; height:16px; padding:0px; margin-right:4px; vertical-align:-3px; overflow:hidden; }
+.ui-radio { background-position:0px -218px; }
+.ui-radioed { background-position:0px -234px; }
+/*全选*/
+.ui-checkall { background-position:-13px -110px; border:none; }
+.ui-checkall.ui-checked { background-position:-13px -157px; }
 
 /*分页*/
 .ui-pagination { padding:16px 0px; text-align:center; font-size:0px; }
