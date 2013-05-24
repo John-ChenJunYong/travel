@@ -32,32 +32,13 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 }
 .crumb-mod .breadcrumb { padding:0px; margin-bottom:0px; background-color:transparent; }
 .crumb-mod .breadcrumb .icon-home { margin-right:12px; }
-.crumb-mod .btn-view-middle { position:absolute; top:50%; right:20px; margin-top:-15px; }
+.crumb-mod .btn-view-middle { position:absolute; top:50%; right:20px; width:124px; margin-top:-17px; }
 
 
 /*当前用户*/
 .current-user { padding:15px; overflow:hidden; }
 .current-user img { width:48px!important; height:48px!important; padding:2px; margin-right:8px; border:1px solid #cdcdcd; }
 
-/*按钮*/
-/*不直接使用public.css里面的公共样式，因为这个dashboard页面基本都是独立于前台页面的*/
-.ui-btn-middle span,
-.ui-btn-middle:before,
-.ui-btn-middle:after { background-image:url(../img/ui-btn.png); background-repeat:no-repeat; }
-.ui-btn-middle { position:relative; display:block; padding:0px 5px; }
-.ui-btn-middle span { display:block; height:30px; background-position:0px -654px; background-repeat:repeat-x; line-height:30px; font-weight:400; font-size:14px; text-align:center; color:#333333; overflow:hidden; }
-.ui-btn-middle i,
-.ui-btn-middle b { margin-right:4px; }
-.ui-btn-middle:before,
-.ui-btn-middle:after { position:absolute; top:0px; bottom:0px; content:""; width:5px; }
-.ui-btn-middle:before { left:0px; background-position:0px -624px; }
-.ui-btn-middle:after { right:0px; background-position:-5px -624px; }
-.ui-btn-middle:hover { text-decoration:none; }
-.ui-btn-middle:hover span { background-position:0px -714px; }
-.ui-btn-middle:hover:before { background-position:0px -684px; }
-.ui-btn-middle:hover:after { background-position:-5px -684px; }
-/*预览*/
-.btn-view-middle { width:124px; }
 
 /*边栏导航*/
 .nav-list { padding:15px 35px; }

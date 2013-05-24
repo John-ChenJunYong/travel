@@ -23,90 +23,88 @@
 
 <!-- 主体区域 -->
 <div class="content">
-	<!--****************************
-		第二步
-	*****************************-->
-	<!-- 申请步骤图 -->
-	<ol class="guide-step">
-		<li class="step-1">
-			Geographical scope of service
-		</li>
-		<li class="step-2 active">
-			Price&amp;Service description
-		</li>
-		<li class="step-3">
-			Service time
-		</li>
-	</ol>
+	<form active="" method="post">
+		<!--****************************
+			第二步
+		*****************************-->
+		<!-- 申请步骤图 -->
+		<ol class="guide-step">
+			<li class="step-1">
+				Geographical scope of service
+			</li>
+			<li class="step-2 active">
+				Price&amp;Service description
+			</li>
+			<li class="step-3">
+				Service time
+			</li>
+		</ol>
 
-	<!-- 价格 -->
-	<div class="guide-mod service-price">
-		<!-- 每个模块右边的提示模块 -->
-		<div class="guide-tips">
-			<p>The price of your service in one hour.</p>
-			<a href="#" target="_blank">click to see some example</a>
+		<!-- 价格 -->
+		<div class="guide-mod service-price">
+			<!-- 每个模块右边的提示模块 -->
+			<div class="guide-tips">
+				<p>The price of your service in one hour.</p>
+				<a href="#" target="_blank">click to see some example</a>
+			</div>
+			<div class="hd">
+				<h2 class="hd-t">Price</h2>
+			</div>
+			<div class="bd">
+				<input type="text" class="input-txt" placeholder="Los Angeles,CA" /><span class="price">$/Hours</span>
+			</div>
 		</div>
-		<div class="hd">
-			<h2 class="hd-t">Price</h2>
-		</div>
-		<div class="bd">
-			<input type="text" class="input-txt" placeholder="Los Angeles,CA" /><span class="price">$/Hours</span>
-		</div>
-	</div>
 
-	<!-- 宽松程度 -->
-	<div class="guide-mod service-policy">
-		<!-- 每个模块右边的提示模块 -->
-		<div class="guide-tips">
-			<p>Loose is not required to pay liquidated damages, strict, need to pay 3% of the liquidated damages.</p>
-			<a href="#" target="_blank">click to see some example</a>
+		<!-- 宽松程度 -->
+		<div class="guide-mod service-policy">
+			<!-- 每个模块右边的提示模块 -->
+			<div class="guide-tips">
+				<p>Loose is not required to pay liquidated damages, strict, need to pay 3% of the liquidated damages.</p>
+				<a href="#" target="_blank">click to see some example</a>
+			</div>
+			<div class="hd">
+				<h2 class="hd-t">Cancellation Policy</h2>
+			</div>
+			<div class="bd">
+				<select id="J-guide-policy" name="guide-policy">
+					<option value="AL" data-prefix="355">Moderate:Full refund 5 day prior to arrival,except fees</option>
+					<option value="DZ" data-prefix="213">阿尔及利亚</option>
+					<option value="AF" data-prefix="93">阿富汗</option>
+					<option value="AR" data-prefix="54">阿根廷</option>
+					<option value="AE" data-prefix="971">阿拉伯联合酋长国</option>
+					<option value="AW" data-prefix="297">阿鲁巴</option>
+					<option value="OM" data-prefix="968">阿曼</option>
+					<option value="AZ" data-prefix="994">阿塞拜疆</option>
+					<option value="EG" data-prefix="20">埃及</option>
+					<option value="ET" data-prefix="251">埃塞俄比亚</option>
+					<option value="IE" data-prefix="353">爱尔兰</option>
+					<option value="EE" data-prefix="372">爱沙尼亚</option>
+					<option value="CN" data-prefix="86" selected="selected">Moderate:Full refund 5 day prior to arrival,except fees</option>
+				</select>
+			</div>
 		</div>
-		<div class="hd">
-			<h2 class="hd-t">Cancellation Policy</h2>
-		</div>
-		<div class="bd">
-			<select id="J-guide-policy" name="guide-policy">
-				<option value="AL" data-prefix="355">Moderate:Full refund 5 day prior to arrival,except fees</option>
-				<option value="DZ" data-prefix="213">阿尔及利亚</option>
-				<option value="AF" data-prefix="93">阿富汗</option>
-				<option value="AR" data-prefix="54">阿根廷</option>
-				<option value="AE" data-prefix="971">阿拉伯联合酋长国</option>
-				<option value="AW" data-prefix="297">阿鲁巴</option>
-				<option value="OM" data-prefix="968">阿曼</option>
-				<option value="AZ" data-prefix="994">阿塞拜疆</option>
-				<option value="EG" data-prefix="20">埃及</option>
-				<option value="ET" data-prefix="251">埃塞俄比亚</option>
-				<option value="IE" data-prefix="353">爱尔兰</option>
-				<option value="EE" data-prefix="372">爱沙尼亚</option>
-				<option value="CN" data-prefix="86" selected="selected">Moderate:Full refund 5 day prior to arrival,except fees</option>
-			</select>
-		</div>
-	</div>
 
-	<!-- 服务描述 -->
-	<div class="guide-mod service-description">
-		<!-- 每个模块右边的提示模块 -->
-		<div class="guide-tips">
-			<p>You fill in the service specification and relatedconditions of service, so that visitors to understand your habits, and to facilitate transactions..</p>
-			<a href="#" target="_blank">click to see some example</a>
+		<!-- 服务描述 -->
+		<div class="guide-mod service-description">
+			<!-- 每个模块右边的提示模块 -->
+			<div class="guide-tips">
+				<p>You fill in the service specification and relatedconditions of service, so that visitors to understand your habits, and to facilitate transactions..</p>
+				<a href="#" target="_blank">click to see some example</a>
+			</div>
+			<div class="hd">
+				<h2 class="hd-t">Cancellation Policy</h2>
+			</div>
+			<div class="bd">
+				<textarea class="input-area"></textarea>
+			</div>
 		</div>
-		<div class="hd">
-			<h2 class="hd-t">Cancellation Policy</h2>
-		</div>
-		<div class="bd">
-			<textarea class="input-area"></textarea>
-		</div>
-	</div>
 
-	<!-- 导航 -->
-	<div class="navigation-step">
-		<a href="javascript:void(0);" class="ui-btn-big btn-guide-step"><span>prev step</span></a>
-		<a href="javascript:void(0);" class="ui-btn-big btn-guide-step"><span>next step</span></a>
-	</div>
+		<!-- 导航 -->
+		<div class="navigation-step">
+			<button class="ui-btn-big btn-guide-step"><span>prev step</span></button>
+			<button class="ui-btn-big btn-guide-step"><span>next step</span></button>
+		</div>
+	</form>
 </div>
-
-<script type="text/javascript">
-	
-</script>
 </body>
 </html>

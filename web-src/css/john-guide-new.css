@@ -67,9 +67,21 @@
 .service-description .input-area { width:646px; height:180px; min-width:646px; max-width:646px; min-height:180px; }
 .service-description .guide-tips { margin-top:38px; }
 /*服务时间*/
+.service-time .hd { padding:16px 0px; }
 .service-time .ui-btn-group { position:absolute; top:50%; right:0px; margin-top:-15px; }
+.service-time .schedule-mod { display:none; }
+.service-time .schedule-mod.active { display:block; }
+.schedule-mod .mod-hd { min-height:20px; border:1px solid #cdcdcd; border-bottom:none; }
+.schedule-mod .mod-ft { padding:5px; border:1px solid #cdcdcd; border-top:none; }
 .schedule-list { table-layout:fixed; width:100%; border:1px solid #cdcdcd; text-align:center; }
 .schedule-list td { padding:0px; border:1px solid #cdcdcd; }
+.schedule-list .hour-list td { border:none; }
+.schedule-list .hour { position:relative; z-index:2; width:24px; height:24px; padding:5px 0px; }
+.schedule-list .hour span { position:absolute; top:50%; left:-8px; min-width:16px; margin-top:-10px; }
+.schedule-list .hour span[data-hour='0'] { margin-left:-8px; }
+.schedule-list .hour i { position:absolute; bottom:-3px; left:-2px; width:5px; height:5px; background-image:url(../img/icon-schedule.png); background-repeat:no-repeat; background-position:0px -87px; }
+.schedule-list .hour-list .td-day { vertical-align:bottom; }
+.schedule-list .hour-list .td-day i { display:block; width:48px; height:34px; background-image:url(../img/icon-schedule.png); background-repeat:no-repeat; background-position:0px -100px; }
 .schedule-list .td-day { width:70px; }
 .schedule-list .ui-checkbox,
 .schedule-list .ui-checkall { display:block; width:100%; padding:2px 0px; margin:0px auto; border:none;  }
@@ -77,45 +89,18 @@
 .schedule-list .ui-checkbox.ui-checked { background-position:-12px -61px; }
 .schedule-list .ui-checkall { background-position:-13px -107px; }
 .schedule-list .ui-checkall.ui-checked { background-position:-13px -155px; }
-
-.booking-schedule .tips li { float:left; padding-right:26px; }
-.booking-schedule .tips i { display:inline-block; width:28px; height:20px; margin-right:6px; background-image:url(../img/icon-widget.png); background-repeat:no-repeat; vertical-align:-5px; }
-.booking-schedule .tips .i-work { background-position:6px -65px; }
-.booking-schedule .tips .i-allday { background-position:0px -88px; }
-
+.schedule-mod .tips { overflow:hidden; }
+.schedule-mod .tips li { position:relative; float:left; padding-right:26px; padding-left:38px; }
+.schedule-mod .tips i { position:absolute; top:0px; left:0px; width:28px; height:20px; margin-right:6px; background-image:url(../img/icon-schedule.png); background-repeat:no-repeat; vertical-align:-5px; }
+.schedule-mod .tips .i-work { background-position:0px 0px; }
+.schedule-mod .tips .i-allday { background-position:0px -60px; }
 
 
 /**
  * 步骤类
  */
 .navigation-step { padding:0px 296px 0px 0px; text-align:right; }
-.navigation-step .btn-guide-step { display:inline-block!important; padding-left:30px; padding-right:30px; }
-
-/**
- * 按钮类
- */
-.btn-guide-step {
-	border-color:#e18619; color:#ffffff;
-	background: #ffc869; /* Old browsers */
-	background: -moz-linear-gradient(top,  #ffc869 0%, #ffa537 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffc869), color-stop(100%,#ffa537)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #ffc869 0%,#ffa537 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #ffc869 0%,#ffa537 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #ffc869 0%,#ffa537 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #ffc869 0%,#ffa537 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc869', endColorstr='#ffa537',GradientType=0 ); /* IE6-9 */
-}
-.btn-guide-step:hover {
-	color:#ffffff;
-	background: #feb350; /* Old browsers */
-	background: -moz-linear-gradient(top,  #feb350 0%, #fe8923 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feb350), color-stop(100%,#fe8923)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #feb350 0%,#fe8923 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #feb350 0%,#fe8923 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #feb350 0%,#fe8923 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #feb350 0%,#fe8923 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feb350', endColorstr='#fe8923',GradientType=0 ); /* IE6-9 */
-}
+.navigation-step .btn-guide-step { display:inline-block!important; min-width:246px; padding-left:0px; padding-right:0px; }
 
 /**
  * 操作、动作类的按钮

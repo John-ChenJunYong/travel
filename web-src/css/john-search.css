@@ -28,7 +28,7 @@
 	border-radius:5px;
 }
 .search-mod .group-input { height:30px; }
-.search-mod .ui-input-wrap { float:left; margin-right:8px; }
+.search-mod .ui-input-wrap { float:left; margin-right:10px; }
 .search-mod .ui-input-wrap .ui-input { width:150px; }
 .search-mod .ui-btn-group { position:absolute; top:50%; right:15px; margin-top:-15px; }
 

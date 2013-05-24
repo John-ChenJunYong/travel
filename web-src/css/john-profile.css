@@ -80,6 +80,7 @@
 }
 .profile-side .hd-t,
 .masters .hd-t { font-size:14px; line-height:34px; }
+.ui-btn-big { display:block; }
 
 /*边栏主人模块*/
 .masters { padding:10px; text-align:center; }

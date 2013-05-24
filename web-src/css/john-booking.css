@@ -5,56 +5,34 @@
  * date:2013-5-18 11:27:37;
  * explanation:交易部分相关页面;
  */
-
-
-/**
- * 按钮类
- */
-/*取消某个旅伴*/
-.btn-cancle-traveler {
-
-
-}
-/*提交订单*/
-.btn-submit-orders {
-	display:inline-block!important; padding:10px 20px; border-color:#e49226; color:#ffffff;
-	background: #ffc768; /* Old browsers */
-	background: -moz-linear-gradient(top,  #ffc768 0%, #fda539 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffc768), color-stop(100%,#fda539)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #ffc768 0%,#fda539 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #ffc768 0%,#fda539 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #ffc768 0%,#fda539 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #ffc768 0%,#fda539 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc768', endColorstr='#fda539',GradientType=0 ); /* IE6-9 */
-}
-.btn-submit-orders:hover {
-	color:#ffffff;
-	background: #ffd084; /* Old browsers */
-	background: -moz-linear-gradient(top,  #ffd084 0%, #fcaa46 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffd084), color-stop(100%,#fcaa46)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #ffd084 0%,#fcaa46 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #ffd084 0%,#fcaa46 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #ffd084 0%,#fcaa46 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #ffd084 0%,#fcaa46 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd084', endColorstr='#fcaa46',GradientType=0 ); /* IE6-9 */
-}
-.btn-submit-orders:focus { color:#ffffff; }
+.orders-step-title { font-size:18px; border-bottom:1px solid #cdcdcd; }
 
 /**
  * 流程类
  */
 /*订单流程*/
-.orders-step { }
-.orders-step .step-1 { }
-.orders-step .step-2 { }
-.orders-step .step-3 { }
-.orders-step .step-4 { }
-.orders-step .tips { }
-.orders-step .time { }
-.orders-step .step-1 .tips { }
-.orders-step .step-2 .tips { }
-.orders-step .step-3 .tips { }
-.orders-step .step-4 .tips { }
+.orders-step,
+.orders-step:before { background-image:url(../img/bg-orders-step.png); background-repeat:no-repeat; }
+.orders-step { position:relative; width:660px; height:26px; margin:40px auto; background-position:0px 0px; font-size:12px; }
+.orders-step:before { position:absolute; top:0px; left:0px; z-index:2; content:""; width:145px; height:26px; background-position:0px -26px; }
+.orders-step-1:before { width:145px; }
+.orders-step-2:before { width:276px; }
+.orders-step-3:before { width:409px; }
+.orders-step-4:before { width:660px; }
+.orders-step li { position:relative; z-index:3; float:left; width:145px; height:26px; }
+.orders-step .step-1 { width:145px; }
+.orders-step .step-2 { width:132px; }
+.orders-step .step-3 { width:132px; }
+.orders-step .step-4 { width:251px; }
+.orders-step .tips { position:absolute; top:30px; width:132px; text-align:center; }
+.orders-step .time { display:block; color:#999999; }
+.orders-step .step-1 .tips { right:-54px; }
+.orders-step .step-2 .tips { right:-54px; }
+.orders-step .step-3 .tips { right:-54px; }
+.orders-step .step-4 .tips { left:54px; }
+
+/*提示*/
+.description-tips { padding:14px 0px; margin-bottom:20px; border-bottom:1px dashed #cdcdcd; }
 
 /**
  * 列表类
@@ -70,6 +48,16 @@
 .schedule-list .td-all { width:80px; }
 .schedule-list .ui-checkbox { width:30px; height:30px; margin:0px auto; background-color:transparent; border:none; }
 
+/**
+ * 通用模块类
+ */
+.guide-mod { clear:both; margin-bottom:10px; }
+.guide-mod .hd { padding:10px 0px; overflow:hidden; }
+.guide-mod .hd-t { display:inline-block; padding-right:10px; }
+.guide-mod .bd { padding:14px; border:1px solid #cdcdcd; border-radius:5px; }
+.guide-mod p { margin:10px 0px; }
+.guide-mod .ui-btn-small { padding:4px 20px; }
+.guide-mod .btn-wrap { display:none; }
 
 /*图片列表*/
 .gallery-mod { padding:20px 18px; background-color:#fffceb; border:1px solid #eed97c; }
@@ -78,3 +66,100 @@
 .gallery-mod .bd { padding-top:3px; }
 .gallery-mod .gallery-thumb-list { position:static; overflow:hidden; }
 .gallery-mod .gallery-thumb-list li { padding:0px 3px; }
+/*景点、线路*/
+.attractions-list li,
+.itinerary-list li { position:relative; line-height:1.75; }
+.attractions-list li:before,
+.itinerary-list li:before { position:absolute; left:0px; content:""; width:18px; height:18px; background-image:url(../img/icon-article.png); }
+/*景点*/
+.attractions .bd { padding:0px; border:none; }
+.attractions-list { padding:20px; margin-top:10px; background-color:#e8f7fe; border:1px solid #b2ddf1; border-radius:5px; overflow:hidden; }
+.attractions-list li { float:left; width:50%; padding:4px 0px; text-indent:24px; cursor:pointer; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.attractions-list li:before { top:50%; margin-top:-9px; background-position:0px 0px; }
+.attractions-list li:hover:before {
+	-webkit-animation:bounce 1s .2s ease both;
+	-moz-animation:bounce 1s .2s ease both;
+}
+.attractions-list .i-remove { margin-left:10px; }
+.attractions-list .empty { text-indent:0px; color:#0088cc; }
+.attractions-list .empty:before { display:none; }
+/*线路*/
+.itinerary-list { padding:20px 4px 0px 4px; }
+.itinerary-list li { padding:2px 0px 2px 24px; }
+.itinerary-list li:before { top:5px; background-position:0px -18px; }
+.itinerary-list li:hover:before {
+	-webkit-animation:rotate 1s .2s ease both;
+	-moz-animation:rotate 1s .2s ease both;
+}
+/*旅伴*/
+.companion-active { table-layout:fixed; width:100%; }
+.companion-active td { width:100px; vertical-align:top; }
+.companion-active .pic { width:100px; }
+.companion-active .name { font-weight:700; }
+.companion-active .operate { width:auto; }
+.companion-active .amount-price { color:#ff6600; }
+.companion-active .operate { text-align:right; vertical-align:middle; }
+
+/*旅客人数*/
+.guide-traveler .quantity { color:#ff0000; }
+/*描述*/
+.msg-description .bd { padding:0px; border:none; }
+.msg-description .input-area { width:942px; height:180px; min-width:942px; max-width:942px; min-height:180px; }
+/*错误提示*/
+.alert-error-list { padding:10px 0px; font-size:12px; }
+.alert-error-list li { position:relative; padding:4px 0px; }
+.alert-error-list label { position:absolute; top:50%; right:0px; margin:0px; margin-top:-7px; font-size:12px; }
+.alert-error-list span[class*=check] { display:inline-block; width:12px; height:12px; margin-right:8px; vertical-align:-2px; }
+.alert-error-list .ui-checked { background-position:0px -206px; }
+
+/*结算信息*/
+.guide-amount { text-align:right; }
+.guide-amount .pay-info { padding-right:14px; font-size:20px; line-height:30px; vertical-align:-4px; }
+.guide-amount .pay-info .price { color:#ff0000; font-size:30px; vertical-align:-3px; }
+.guide-amount .ui-btn-big { padding-left:40px; padding-right:40px; }
+
+/*移除按钮*/
+.i-remove { display:inline-block; width:12px; height:12px; padding:0px; margin:0px; background-color:#ff0000; border:none; text-indent:-999px; overflow:hidden; vertical-align:-1px; }
+
+
+/****************************
+ * date:2013-5-23 15:32:10;
+ * explanation:在编辑状态下;
+ ****************************/
+.ui-backdrop {
+	display:none; position:fixed; top:0px; right:0px; bottom:0px; left:0px; z-index:998; background-color:#ffffff;
+	opacity:0.6;
+	filter:alpha(opacity=60);
+}
+.status-editing .hd,
+.status-editing .bd,
+.status-editing .ft { position:relative; z-index:999; }
+.status-editing .bd { padding:10px; border:1px solid #ff0000; }
+.status-editing .btn-wrap { display:block; padding:20px 0px 0px 0px; text-align:right; }
+.status-editing .ui-btn-big { padding-left:50px; padding-right:50px; }
+.status-editing .edit { display:none; }
+.status-editing .ui-backdrop {  }
+/*旅伴列表*/
+.travel-companions { position:relative; padding:20px 30px 20px 60px; margin-top:20px; border-top:1px solid #cdcdcd; }
+.travel-companions .page-prev,
+.travel-companions .page-next { position:absolute; top:50%; width:29px; height:29px; margin-top:-15px; background-image:url(../img/icon-sprite.png); background-repeat:no-repeat; text-indent:-999px; overflow:hidden; }
+.travel-companions .page-prev { left:10px; background-position:0 0; }
+.travel-companions .page-prev:hover { background-position:-30px 0; }
+.travel-companions .page-next { right:10px; background-position:-60px 0; }
+.travel-companions .page-next:hover { background-position:-90px 0; }
+.travel-companions .page-prev:hover,
+.travel-companions .page-next:hover {
+	-webkit-animation:rotate 1s 0s ease both;
+	-moz-animation:rotate 1s 0s ease both;
+}
+.travel-companions .list { height:78px; overflow:hidden; }
+.travel-companions .item { float:left; width:25%; overflow:hidden; }
+.travel-companions .user { float:left; }
+.travel-companions .info { padding-left:10px; overflow:hidden; font-size:14px; }
+.travel-companions .price { padding:5px 0px; color:#999999; }
+.travel-companions .group-btn { overflow:hidden; }
+.travel-companions .btn-book-small { padding-top:3px; padding-bottom:3px; }
+.travel-companions .ui-checkbox { float:left; margin-top:4px; margin-left:32px; }
+/*第一次所*/
+.history-companions .mod-hd-t { margin-bottom:10px; font-size:14px; }
+.history-companions .mod-bd { padding:10px; background-color:#e4f6ff; border:1px dashed #98dcff; }

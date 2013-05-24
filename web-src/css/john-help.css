@@ -93,7 +93,7 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 /*默认状态*/
 .question-list .title .collapsed { color:#005580; font-weight:400; }
 .question-list .title .collapsed:before { color:#005580; margin-top:-8px; border-width:4px 4px 8px 4px; border-color:transparent transparent #005580 transparent; }
-.question-list .answer { height:0px; padding:0px 20px; margin:0px; font-size:12px; overflow:hidden; }
+.question-list .answer { height:0px; padding:0px 20px; margin:0px; font-size:13px; overflow:hidden; }
 .question-list .active .answer { display:block; }
 
 
