@@ -50,6 +50,7 @@
 .search-result-tool .ui-btn-small.active .i-desc { background-position:-14px -605px; }
 .search-result-tool .ui-btn-small.active .i-asc { background-position:-14px -619px; }
 
+
 /*用户列表*/
 .search-result-list li.clearfix { position:relative; min-height:136px; padding:10px; border-bottom:1px solid #cdcdcd; }
 .search-result-list .user { position:absolute; top:10px; left:10px; }

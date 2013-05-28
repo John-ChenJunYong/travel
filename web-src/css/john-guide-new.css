@@ -12,15 +12,15 @@
  * 流程类
  */
 /*申请流程*/
-.guide-step { height:35px; padding:0px 296px 0px 0px; margin-bottom:30px; overflow:hidden; }
-.guide-step li { position:relative; float:left; width:29.3333%; padding:0 0% 0px 4%; background-color:#efefef; line-height:35px; cursor:pointer; }
+.guide-step { height:35px; padding:0px 0px 0px 0px; margin-bottom:30px; overflow:hidden; }
+.guide-step li { position:relative; float:left; width:21%; padding:0 0% 0px 4%; background-color:#efefef; line-height:35px; text-align:center; cursor:pointer; }
 .guide-step li:after { position:absolute; top:0px; right:-22px; bottom:0px; content:""; width:22px; height:35px; background-image:url(../img/icon-widget.png); background-repeat:no-repeat; background-position:0px -689px; }
-.guide-step .step-1 { z-index:4; }
-.guide-step .step-2 { z-index:3; }
-.guide-step .step-3 { z-index:2; }
+.guide-step .step-1 { z-index:5; }
+.guide-step .step-2 { z-index:4; }
+.guide-step .step-3 { z-index:3; }
+.guide-step .step-4 { z-index:2; }
 
-.guide-step .step-3:before,
-.guide-step .step-3:after { display:none; }
+.guide-step .step-4:after { display:none; }
 .guide-step .active { background-color:#0088cc; color:#ffffff; }
 .guide-step .active:after { background-position:-22px -689px; }
 
@@ -36,7 +36,6 @@
 .guide-mod:after { clear:both; display:block; content:""; line-height:0; }
 .guide-mod .hd { position:relative; padding:10px 0px; }
 .guide-mod .hd-t { font-weight:500; line-height:1; font-size:18px; }
-.guide-mod .bd { }
 .guide-mod .guide-tips {
 	float:right; margin-right:-296px; position:relative; top:0px; right:0px; width:226px; padding:10px 20px; background-color:#efefef;
 	-webkit-border-radius:5px;
@@ -52,12 +51,38 @@
 .guide-mod textarea { margin-bottom:0px; }
 
 /*可提供服务的地方*/
-.service-location .grout-list { position:relative; width:424px; }
-.service-location .act-add-location { position:absolute; top:0px; right:-48px; }
-.service-location .input-txt { display:block; width:410px; }
-/*地图*/
-.map { width:100%; height:200px; margin:20px 0px; background-color:#efefef; }
-.map-wrap { width:100%; height:100%; overflow:hidden; }
+.service-location .bd { position:relative; margin-top:10px; }
+.service-location .img-map { width:100%; height:auto; }
+.location-list { position:absolute; top:50px; right:4.54545%; bottom:50px; left:4.54545%; }
+.location-list li { position:relative; padding:5px 10px; margin:10px 0px; background-color:#ffffff; border:1px solid #cdcdcd; border-radius:3px; cursor:pointer; }
+.location-list .i-remove { position:absolute; top:50%; right:8px; margin-top:-9px; }
+.location-list .operate { color:#0088cc; }
+.location-list .operate:hover { color:#005580; }
+/*点击添加地址后弹出一个浮层*/
+.modal { width:800px; margin-left:-400px; }
+.modal-body { min-height:400px; max-height:800px; }
+.modal-body .search-mod { margin-bottom:0px; text-align:center; }
+.modal-body .ui-input-wrap { margin-right:6px; vertical-align:1px; }
+.modal-body .ui-input { width:664px; }
+.modal-body .map { width:100%; height:200px; background-color:#efefef; }
+.modal-body .view-location { padding-top:15px; }
+.modal-body .map { float:left; width:550px; height:350px; border:1px solid #cdcdcd; overflow:hidden; }
+.modal-body .result-location { overflow:hidden; height:350px; border:1px solid #afd9ee; border-left:none; }
+.result-location .list { color:#0088cc; }
+.result-location li { position:relative; padding:8px 8px 8px 30px; cursor:pointer; }
+.result-location li:before {
+	position:absolute; top:10px; left:8px; content:""; width:18px; height:18px;
+	background:url(../img/icon-sprite.png) no-repeat -164px -38px;
+}
+.result-location li:hover:before {
+	-webkit-animation:bounce 1s .2s ease both;
+	-moz-animation:bounce 1s .2s ease both;
+}
+.result-location .active { background-color:#efefef ; }
+.result-location .example { color:#999999; font-style:italic; }
+.result-location .example:before { background-position:-164px -19px; }
+
+
 /*价格*/
 .service-price .input-txt { width:120px; margin-right:10px; vertical-align:1px; }
 .service-price .price { font-size:18px; color:#999999; }
@@ -68,32 +93,57 @@
 .service-description .guide-tips { margin-top:38px; }
 /*服务时间*/
 .service-time .hd { padding:16px 0px; }
-.service-time .ui-btn-group { position:absolute; top:50%; right:0px; margin-top:-15px; }
-.service-time .schedule-mod { display:none; }
-.service-time .schedule-mod.active { display:block; }
+.service-time .hd select { position:absolute; top:50%; right:0px; margin-top:-15px; margin-bottom:0px; }
+.schedule-mod.active { display:block; }
+.schedule-mod { display:none; font-size:12px; }
 .schedule-mod .mod-hd { min-height:20px; border:1px solid #cdcdcd; border-bottom:none; }
-.schedule-mod .mod-ft { padding:5px; border:1px solid #cdcdcd; border-top:none; }
+.schedule-mod .mod-ft { min-height:28px; padding:5px; border:1px solid #cdcdcd; border-top:none; }
+.schedule-mod .temp-data { display:none; }
 .schedule-list { table-layout:fixed; width:100%; border:1px solid #cdcdcd; text-align:center; }
 .schedule-list td { padding:0px; border:1px solid #cdcdcd; }
 .schedule-list .hour-list td { border:none; }
 .schedule-list .hour { position:relative; z-index:2; width:24px; height:24px; padding:5px 0px; }
 .schedule-list .hour span { position:absolute; top:50%; left:-8px; min-width:16px; margin-top:-10px; }
-.schedule-list .hour span[data-hour='0'] { margin-left:-8px; }
+.schedule-list .hour span[data-value='0'] { margin-left:-8px; }
 .schedule-list .hour i { position:absolute; bottom:-3px; left:-2px; width:5px; height:5px; background-image:url(../img/icon-schedule.png); background-repeat:no-repeat; background-position:0px -87px; }
 .schedule-list .hour-list .td-day { vertical-align:bottom; }
 .schedule-list .hour-list .td-day i { display:block; width:48px; height:34px; background-image:url(../img/icon-schedule.png); background-repeat:no-repeat; background-position:0px -100px; }
 .schedule-list .td-day { width:70px; }
-.schedule-list .ui-checkbox,
-.schedule-list .ui-checkall { display:block; width:100%; padding:2px 0px; margin:0px auto; border:none;  }
-.schedule-list .ui-checkbox { background-color:#ffffff; }
-.schedule-list .ui-checkbox.ui-checked { background-position:-12px -61px; }
-.schedule-list .ui-checkall { background-position:-13px -107px; }
-.schedule-list .ui-checkall.ui-checked { background-position:-13px -155px; }
-.schedule-mod .tips { overflow:hidden; }
+.schedule-list .td-day input { border:none; width:100%; padding:0px; box-shadow:none; text-align:center; font-size:12px; }
+.schedule-list .td-day input:focus { border:none; outline:none; box-shadow:none; }
+.schedule-list .operate { position:relative; }
+.schedule-list .i-remove { position:absolute; top:2px; left:-18px; display:none; cursor:pointer; }
+.schedule-list .check,
+.schedule-list .checkall { display:block; max-width:23px; min-height:23px; padding:0px; margin:0px; }
+.schedule-list .checkall,
+.schedule-list .check.active,
+.schedule-list .checkall.active { background-image:url(../img/icon-sprite.png); background-repeat:no-repeat; }
+.schedule-list .check.active { background-position:-118px -32px; }
+.schedule-list .checkall { background-position:-90px -3px; }
+.schedule-list .checkall.active { background-position:-90px -32px; }
+.schedule-mod .i-addition { float:left; margin-left:16px; }
+.schedule-mod .tips { padding:4px 14px; overflow:hidden; }
 .schedule-mod .tips li { position:relative; float:left; padding-right:26px; padding-left:38px; }
 .schedule-mod .tips i { position:absolute; top:0px; left:0px; width:28px; height:20px; margin-right:6px; background-image:url(../img/icon-schedule.png); background-repeat:no-repeat; vertical-align:-5px; }
 .schedule-mod .tips .i-work { background-position:0px 0px; }
 .schedule-mod .tips .i-allday { background-position:0px -60px; }
+
+/*完成基本注册后，到达最后一步*/
+.guide-complete { margin-bottom:10px; }
+.guide-complete .hd { }
+.guide-complete .hd-t { font-size:18px; line-height:20px; }
+.guide-complete .hd-t span { padding-right:10px; font-style:italic; font-weight:700; font-size:28px; }
+.guide-complete .bd { padding:10px 36px; }
+.guide-complete p { }
+.guide-complete .tips { color:#999999; }
+
+.itinerary-thumbnails { padding:0px 10px; }
+.itinerary-thumbnails .ui-carousel-control.prev { left:-36px; }
+.itinerary-thumbnails .ui-carousel-control.next { right:-36px; }
+.thumbnails-list { }
+.thumbnails-list .pic { cursor:pointer; }
+.thumbnails-list li { float:left; width:31.3333%; padding:0px 1%; }
+.thumbnails-list .follow-tag { position:absolute; top:50%; right:0; left:0; margin-top:-12px; text-align:center; font-size:24px; color:#ffffff; }
 
 
 /**
@@ -118,3 +168,16 @@
 /*添加服务地址的操作*/
 .act-add-location { background-position:0px -633px; }
 .act-add-location:hover { background-position:0px -661px; }
+
+
+/**
+ * 重写Bootstrap部分代码
+ */
+.ui-carousel-control {
+	position:absolute; top:40%; width:40px; height:40px; margin-top:-20px; color:#ffffff; text-indent:-999px; overflow:hidden;
+	background-color:#999999;
+	border-radius:100%;
+}
+.ui-carousel-control:hover { background-color:#333333; }
+.ui-carousel-control.prev { left:0px; }
+.ui-carousel-control.next { right:0px; }

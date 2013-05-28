@@ -194,10 +194,6 @@ if(!window.console){
 			var scroll_btn_up = _this.find('.up');
 			var scroll_btn_dowm = _this.find('.down');
 
-			scroll_content.css({
-				'padding-right' : scrollbar_width
-			});
-
 			scroll_dragger.css({
 				top: scrollbar_width
 			});
@@ -221,13 +217,13 @@ if(!window.console){
 
 			// 判断是否出现滚动条
 			if(scroll_content_height <= this_height){
-				// scroll_wrap.css({
-				// 	'display': 'none'
-				// });
 				scroll_bar.css({
 					'display' : 'none'
-				})
+				});
 			} else {
+				scroll_content.css({
+					'padding-right' : scrollbar_width
+				});
 				allow_scroll = true;
 			}
 
@@ -412,6 +408,45 @@ if(!window.console){
 		});
 	}
 })(jQuery, document);
+
+;;;(function(window, document){
+
+	/**
+	 * 全局命名空间
+	 * author: johnchen@tag-along.org
+	 * @type {Object}
+	 */
+	if(!window.utils) window.utils = {}
+
+	/**
+	 * 获取事件目标
+	 * @param  {[type]} e [description]
+	 * @return {[type]}   [description]
+	 */
+	var getTarget = function(e){
+		if(!e) return false;
+		var target = e.target || e.srcElement;
+		return target;
+	}
+	window.utils.getTarget = getTarget;
+
+	/**
+	 * json对象转换成字符串
+	 * @param  {[type]} json [description]
+	 * @return {[type]}   [description]
+	 */
+	var jsonToString = function(json) {
+		var array = [];
+		var format = function(s) {
+			if (typeof s == 'object' && s != null) return jsonToString(s);
+			return /^(string|number)$/.test(typeof s) ? "'" + s + "'" : s;
+		}
+		for (var i in json) array.push("'" + i + "':" + format(json[i]));
+		return '{' + array.join(',') + '}';
+	}
+	window.utils.jsonToString = jsonToString;
+
+})(window, document);
 
 $(function(){
 

@@ -14,8 +14,11 @@
 <link href="../css/john-public.css" rel="stylesheet" />
 <link href="../css/john-guide-new.css" rel="stylesheet" />
 
-<script src="../js/jquery-1.8.3.js" > </script>
+<script src="../js/jquery-1.8.3.js"></script>
+<script src="../js/bootstrap-modal.js"></script>
+<script src="../js/bootstrap-datepicker.js"></script>
 <script src="../js/utils.js"></script>
+<script src="../js/john-guide-new.js"></script>
 
 </head>
 
@@ -30,13 +33,16 @@
 		<!-- 申请步骤图 -->
 		<ol class="guide-step">
 			<li class="step-1 active">
-				Geographical scope of service
+				Service Area
 			</li>
 			<li class="step-2">
-				Price&amp;Service description
+				Service Time
 			</li>
 			<li class="step-3">
-				Service time
+				Price &amp; Rules
+			</li>
+			<li class="step-4">
+				Complete
 			</li>
 		</ol>
 
@@ -57,14 +63,15 @@
 				<h2 class="hd-t">Geographical scope of the service</h2>
 			</div>
 			<div class="bd">
-				<div class="grout-list">
-					<button class="act-add-location">Add</button>
-					<input type="text" class="input-txt" placeholder="Los Angeles,CA" />
-				</div>
-				<!-- 地图 -->
-				<div class="map">
-					<div class="map-wrap"></div>
-				</div>
+				<img src="../img/bg-map.jpg" class="img-map" alt="global map" />
+				<ul class="location-list">
+					<li>Click to add a service area<i class="i-remove J-remove"></i></li>
+					<li>Click to add a service area<i class="i-remove J-remove"></i></li>
+					<li>Click to add a service area<i class="i-remove J-remove"></i></li>
+					<li>Click to add a service area<i class="i-remove J-remove"></i></li>
+					<li>Click to add a service area<i class="i-remove J-remove"></i></li>
+					<li data-toggle="modal" class="operate">Click to add a service area</li>
+				</ul>
 			</div>
 		</div>
 
@@ -74,5 +81,34 @@
 		</div>
 	</form>
 </div>
+
+
+
+<!-- 选择地区 -->
+<div class="modal fade hide" tabindex="-1" role="dialog" id="J-modal-location">
+	<div class="modal-body">
+		<form action="" method="post" class="search-mod">
+			<div class="ui-input-wrap">
+				<input type="text" placeholder="City you want to go" class="ui-input" />
+			</div>
+			<a href="javascript:void(0);" class="ui-btn-small btn-search-small">
+				<span><i class="i-search"></i>Search</span>
+			</a>
+		</form>
+		<div class="view-location">
+			<div class="map" id="J-google-map"><!-- 这里加载google map --></div>
+			<div class="result-location" id="J-location-list">
+				<ul class="list">
+					<li class="example">GD Province Shenzhen window of the world</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button class="ui-btn-small" data-dismiss="modal" aria-hidden="true">Close</button>
+		<button class="ui-btn-small ui-btn-primary">Save changes</button>
+	</div>
+</div>
+
 </body>
 </html>

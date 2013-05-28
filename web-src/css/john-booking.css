@@ -5,7 +5,9 @@
  * date:2013-5-18 11:27:37;
  * explanation:交易部分相关页面;
  */
-.orders-step-title { font-size:18px; border-bottom:1px solid #cdcdcd; }
+.orders-step-title { margin-bottom:20px; border-bottom:1px solid #cdcdcd; }
+.orders-step-title .hd-t { display:inline-block; padding-right:20px; font-size:18px; }
+.orders-step-title .hd-extra { color:#999999; font-size:12px; }
 
 /**
  * 流程类
@@ -47,6 +49,11 @@
 .schedule-list .td-day { width:100px; }
 .schedule-list .td-all { width:80px; }
 .schedule-list .ui-checkbox { width:30px; height:30px; margin:0px auto; background-color:transparent; border:none; }
+/*游玩时间列表*/
+.travel-time-list { }
+.travel-time-list li { position:relative; padding:6px 400px 6px 110px; }
+.travel-time-list strong { position:absolute; top:6px; left:10px; font-weight:400; color:#0088cc; }
+.travel-time-list span { display:inline-block; padding-right:20px; }
 
 /**
  * 通用模块类
@@ -54,13 +61,16 @@
 .guide-mod { clear:both; margin-bottom:10px; }
 .guide-mod .hd { padding:10px 0px; overflow:hidden; }
 .guide-mod .hd-t { display:inline-block; padding-right:10px; }
+.guide-mod .hd-extra { font-weight:400; }
+.guide-mod .hd-extra span { color:#ff6600; }
 .guide-mod .bd { padding:14px; border:1px solid #cdcdcd; border-radius:5px; }
 .guide-mod p { margin:10px 0px; }
 .guide-mod .ui-btn-small { padding:4px 20px; }
+.guide-mod .quantity { padding:0px 4px; color:#ff0000; }
 .guide-mod .btn-wrap { display:none; }
 
 /*图片列表*/
-.gallery-mod { padding:20px 18px; background-color:#fffceb; border:1px solid #eed97c; }
+.gallery-mod { padding:20px 18px; margin-top:20px; background-color:#fffceb; border:1px solid #eed97c; }
 .gallery-mod .hd { padding:0px 3px 6px 3px; }
 .gallery-mod .hd-t { font-size:14px; font-weight:400; line-height:inherit; }
 .gallery-mod .bd { padding-top:3px; }
@@ -73,14 +83,14 @@
 .itinerary-list li:before { position:absolute; left:0px; content:""; width:18px; height:18px; background-image:url(../img/icon-article.png); }
 /*景点*/
 .attractions .bd { padding:0px; border:none; }
-.attractions-list { padding:20px; margin-top:10px; background-color:#e8f7fe; border:1px solid #b2ddf1; border-radius:5px; overflow:hidden; }
-.attractions-list li { float:left; width:50%; padding:4px 0px; text-indent:24px; cursor:pointer; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.attractions-list { width:auto; padding:20px; margin-top:10px; background-color:#e8f7fe; border:1px solid #b2ddf1; border-radius:5px; overflow:hidden; }
+.attractions-list li { float:left; width:33%; padding:4px 0px; text-indent:24px; cursor:pointer; }
 .attractions-list li:before { top:50%; margin-top:-9px; background-position:0px 0px; }
 .attractions-list li:hover:before {
 	-webkit-animation:bounce 1s .2s ease both;
 	-moz-animation:bounce 1s .2s ease both;
 }
-.attractions-list .i-remove { margin-left:10px; }
+.attractions-list .i-remove { margin-left:10px; vertical-align:-4px; }
 .attractions-list .empty { text-indent:0px; color:#0088cc; }
 .attractions-list .empty:before { display:none; }
 /*线路*/
@@ -100,8 +110,6 @@
 .companion-active .amount-price { color:#ff6600; }
 .companion-active .operate { text-align:right; vertical-align:middle; }
 
-/*旅客人数*/
-.guide-traveler .quantity { color:#ff0000; }
 /*描述*/
 .msg-description .bd { padding:0px; border:none; }
 .msg-description .input-area { width:942px; height:180px; min-width:942px; max-width:942px; min-height:180px; }
@@ -114,12 +122,10 @@
 
 /*结算信息*/
 .guide-amount { text-align:right; }
-.guide-amount .pay-info { padding-right:14px; font-size:20px; line-height:30px; vertical-align:-4px; }
+.guide-amount .pay-info { padding-right:20px; font-size:20px; line-height:30px; vertical-align:-4px; }
 .guide-amount .pay-info .price { color:#ff0000; font-size:30px; vertical-align:-3px; }
 .guide-amount .ui-btn-big { padding-left:40px; padding-right:40px; }
 
-/*移除按钮*/
-.i-remove { display:inline-block; width:12px; height:12px; padding:0px; margin:0px; background-color:#ff0000; border:none; text-indent:-999px; overflow:hidden; vertical-align:-1px; }
 
 
 /****************************
@@ -127,31 +133,31 @@
  * explanation:在编辑状态下;
  ****************************/
 .ui-backdrop {
-	display:none; position:fixed; top:0px; right:0px; bottom:0px; left:0px; z-index:998; background-color:#ffffff;
-	opacity:0.6;
-	filter:alpha(opacity=60);
+	position:fixed; top:0px; right:0px; bottom:0px; left:0px; z-index:998; background-color:#ffffff;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	-webkit-transition: opacity .15s linear;
+	-moz-transition: opacity .15s linear;
+	-o-transition: opacity .15s linear;
+	transition: opacity .15s linear;
+}
+.ui-backdrop.in {
+	opacity:.8;
+	filter:alpha(opacity=80);
 }
 .status-editing .hd,
 .status-editing .bd,
-.status-editing .ft { position:relative; z-index:999; }
+.status-editing .ft { position:relative; z-index:9999; background-color:#ffffff; }
 .status-editing .bd { padding:10px; border:1px solid #ff0000; }
 .status-editing .btn-wrap { display:block; padding:20px 0px 0px 0px; text-align:right; }
 .status-editing .ui-btn-big { padding-left:50px; padding-right:50px; }
 .status-editing .edit { display:none; }
-.status-editing .ui-backdrop {  }
 /*旅伴列表*/
 .travel-companions { position:relative; padding:20px 30px 20px 60px; margin-top:20px; border-top:1px solid #cdcdcd; }
 .travel-companions .page-prev,
-.travel-companions .page-next { position:absolute; top:50%; width:29px; height:29px; margin-top:-15px; background-image:url(../img/icon-sprite.png); background-repeat:no-repeat; text-indent:-999px; overflow:hidden; }
-.travel-companions .page-prev { left:10px; background-position:0 0; }
-.travel-companions .page-prev:hover { background-position:-30px 0; }
-.travel-companions .page-next { right:10px; background-position:-60px 0; }
-.travel-companions .page-next:hover { background-position:-90px 0; }
-.travel-companions .page-prev:hover,
-.travel-companions .page-next:hover {
-	-webkit-animation:rotate 1s 0s ease both;
-	-moz-animation:rotate 1s 0s ease both;
-}
+.travel-companions .page-next { position:absolute; top:50%; margin-top:-15px; }
+.travel-companions .page-prev { left:10px; }
+.travel-companions .page-next { right:10px; }
 .travel-companions .list { height:78px; overflow:hidden; }
 .travel-companions .item { float:left; width:25%; overflow:hidden; }
 .travel-companions .user { float:left; }
@@ -163,3 +169,15 @@
 /*第一次所*/
 .history-companions .mod-hd-t { margin-bottom:10px; font-size:14px; }
 .history-companions .mod-bd { padding:10px; background-color:#e4f6ff; border:1px dashed #98dcff; }
+
+
+/**
+ * date:2013-5-24 14:41:14;
+ * explanation:接收/拒绝订单;
+ */
+.orders-traveler { height:78px; }
+.orders-traveler .user { float:left; }
+.orders-traveler .info { float:left; padding:10px 20px; }
+.orders-traveler .group-btn { padding-top:10px; overflow:hidden; }
+.orders-traveler .btn-book-small { padding-top:3px; padding-bottom:3px; }
+.orders-traveler .info-quantity { padding:28px 0px; overflow:hidden; }
