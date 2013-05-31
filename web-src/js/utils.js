@@ -86,7 +86,7 @@ if(!window.console){
 		return this.each(function() {
 			var _self = this;
 			_self.direction = 0; //滚动方向
-			if (!window.Components) {
+			if ($.browser.msie || $.browser.webkit) {
 				_self.onmousewheel = function() {
 					_self.direction = event.wheelDelta;
 					event.returnValue = false;
@@ -110,7 +110,7 @@ if(!window.console){
 	$.fn.scrollbar = function(opts){
 		var defaults = {
 			// 滚动条默认宽度
-			width : '14px',
+			width : '12px',
 			bg : '#efefef',
 			img : '',
 			// 滚动区域的背景及控制条的默认外观
@@ -436,15 +436,50 @@ if(!window.console){
 	 * @return {[type]}   [description]
 	 */
 	var jsonToString = function(json) {
+		// return JSON.stringify(json);
 		var array = [];
 		var format = function(s) {
 			if (typeof s == 'object' && s != null) return jsonToString(s);
-			return /^(string|number)$/.test(typeof s) ? "'" + s + "'" : s;
+			return /^(string|number)$/.test(typeof s) ? '"' + s + '"' : s;
 		}
-		for (var i in json) array.push("'" + i + "':" + format(json[i]));
+		for (var i in json) array.push('"' + i + '":' + format(json[i]));
 		return '{' + array.join(',') + '}';
 	}
 	window.utils.jsonToString = jsonToString;
+
+	var stringToJSON = function(data) {
+		if (!data) return false;
+		var json = JSON.parse(data);
+		return json;
+	}
+	window.utils.stringToJSON = stringToJSON;
+
+	/**
+	 * 显示datepicker这个日历组件
+	 * @param  {[type]} opts [description]
+	 * @return {[type]}      [description]
+	 */
+	var showDatepicker = function(opts) {
+		var opts = opts || {};
+		var mod = opts.mod;
+		var callback_change = opts.callback_change;
+
+		var now_temp = new Date();
+		var now = new Date(now_temp.getFullYear(), now_temp.getMonth(), now_temp.getDate(), 0, 0, 0, 0);
+
+		$(mod).datepicker({
+			format : 'yyyy-mm-dd',
+			onRender : function(date){
+				return date.valueOf() < now.valueOf() ? 'disabled' : '';
+			}
+		}).datepicker('show')
+		.on('changeDate', function(ev) {
+			if(typeof callback_change === 'function') {
+				callback_change(ev);
+			}
+		});
+	}
+	window.utils.showDatepicker = showDatepicker;
 
 })(window, document);
 

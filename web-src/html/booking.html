@@ -17,8 +17,11 @@
 
 <script src="../js/jquery-1.8.3.js" ></script>
 <script src="../js/bootstrap-dropdown.js"></script>
+<script src="../js/bootstrap-typeahead.js"></script>
+<script src="../js/bootstrap-datepicker.js"></script>
 <script src="../js/lightbox.js"></script>
 <script src="../js/utils.js"></script>
+<script src="../js/john-book-orders.js"></script>
 
 </head>
 
@@ -92,11 +95,16 @@
 	</div>
 
 	<!-- 时间表 -->
-	<div class="guide-mod guide-schedule">
+	<div class="guide-mod guide-schedule" id="J-guide-schedule">
 		<div class="hd">
 			<h3 class="hd-t">Schedule</h3><a href="javascript:void(0);" class="edit">[Edit]</a>
 		</div>
 		<div class="bd">
+			<!-- 如果是在编辑状态下 -->
+			<div class="ui-input-line">
+				<div class="ui-input-wrap"><input type="text" placeholder="请选择开始时间" id="J-start-date" /><i class="i-date"></i></div>
+				<button class="ui-btn-small ui-btn-yellow">Sure</button>
+			</div>
 			<ul class="travel-time-list">
 				<li>
 					<strong>2013-05-15</strong>
@@ -138,33 +146,57 @@
 					<span>08:00-12:00</span>
 				</li>
 			</ul>
+
+			<!-- 保存按钮 -->
+			<div class="btn-wrap">
+				<button class="ui-btn-big ui-btn-primary"><span>Save</span></button>
+			</div>
 		</div>
 	</div>
 	
 	<!-- 景点 -->
-	<div class="guide-mod attractions">
+	<div class="guide-mod attractions" id="J-attractions">
 		<div class="hd">
 			<h3 class="hd-t">View spot</h3><a href="javascript:void(0);" class="edit">[Edit]</a>
 		</div>
 		<div class="bd">
 			<!-- 如果是在编辑状态下 -->
-			<div class="ui-input-wrap">
-				<input type="text" class="input-attractions" /><i class="i-map-marker"></i>
+			<div class="ui-input-line">
+				<div class="ui-input-wrap"><input type="text" class="input-attractions" /><i class="i-map-marker"></i></div>
+				<button class="ui-btn-small ui-btn-yellow">Sure</button>
 			</div>
-			<button class="ui-btn-small ui-btn-yellow">Sure</button>
-			<!-- 如果是自由行，并且景点为空的话，显示以下信息 -->
-			<ul class="attractions-list">
-				<li class="empty">您可以点击 [Edit] 添加感兴趣的景点</li>
-			</ul>
 			<!-- 如果是已经有了相应的行程景点的话，显示以下信息 -->
 			<ul class="attractions-list">
-				<li>Queens food tour in New York<a href="javascript:void(0);" class="i-remove">Remove</a></li>
-				<li>Street art tour in San Francisco<a href="javascript:void(0);" class="i-remove">Remove</a></li>
-				<li>Local guide to Paris<a href="javascript:void(0);" class="i-remove">Remove</a></li>
-				<li>Explore London like a local<a href="javascript:void(0);" class="i-remove">Remove</a></li>
-				<li>Best Napa wine tour<a href="javascript:void(0);" class="i-remove">Remove</a></li>
-				<li>Food tour in Berlin<a href="javascript:void(0);" class="i-remove">Remove</a></li>
+				<li>
+					<p>Queens food tour in New York</p>
+					<a href="javascript:void(0);" class="i-remove">Remove</a>
+				</li>
+				<li>
+					<p>Street art tour in San Francisco</p>
+					<a href="javascript:void(0);" class="i-remove">Remove</a>
+				</li>
+				<li>
+					<p>Local guide to Paris</p>
+					<a href="javascript:void(0);" class="i-remove">Remove</a>
+				</li>
+				<li>
+					<p>Explore London like a local</p>
+					<a href="javascript:void(0);" class="i-remove">Remove</a>
+				</li>
+				<li>
+					<p>Best Napa wine tour</p>
+					<a href="javascript:void(0);" class="i-remove">Remove</a>
+				</li>
+				<li>
+					<p>Food tour in Berlin</p>
+					<a href="javascript:void(0);" class="i-remove">Remove</a>
+				</li>
 			</ul>
+
+			<!-- 保存按钮 -->
+			<div class="btn-wrap">
+				<button class="ui-btn-big ui-btn-primary"><span>Save</span></button>
+			</div>
 		</div>
 	</div>
 
@@ -175,141 +207,114 @@
 		</div>
 		<div class="bd">
 			<!-- 当前所选的旅伴 -->
-			<table class="companion-active">
+			<input type="hidden" name="J-companion-id" value="" id="J-companion-id" />
+			<table class="companion-active" id="J-companion-active">
 				<tr>
-					<td class="pic"><a href="#" target="_blank"><img src="../img/avator-1.jpg" alt="图片描述" class="avator" /></a></td>
+					<td class="user"><a href="#" target="_blank"><img src="../img/avator-1.jpg" alt="图片描述" class="avator" /></a></td>
 					<td class="name"><a href="#" target="_blank">Yi Lian</a></td>
 					<td class="price">$20/h</td>
 					<td class="duration">48h</td>
 					<td class="amount">In all:<span class="amount-price">$960</span></td>
-					<td class="operate"></td>
+					<td class="operate"><a href="javascript:void(0);" class="ui-btn-small btn-book-small"><span>Book it again</span></a></td>
 				</tr>
 			</table>
-			<!--
-				其它旅伴
-				交互方式：点击左右两个按钮的时候，进行异步分页，因为这里的人数可能很多；
-			-->
+
 			<div class="travel-companions">
 				<ul class="list">
-					<li class="item">
+					<li class="list-item">
 						<div class="user">
 							<a href="#" target="_blank"><img src="../img/avator-1.jpg" alt="图片描述" class="avator" /></a>
 						</div>
 						<div class="info">
 							<strong class="name"><a href="#" target="_blank">Yi Lian</a></strong>
-							<div class="price">&yen;100 per hour</div>
-							<div class="group-btn">
-								<a href="javascript:void(0);" class="ui-btn-small btn-book-small"><span>Book it</span></a>
-							</div>
+							<div class="price">&yen;100/hour</div>
+							<a href="javascript:void(0);" class="ui-btn-small btn-book-small"><span>Book it</span></a>
 						</div>
 					</li>
-					<li class="item">
+					<li class="list-item">
 						<div class="user">
 							<a href="#" target="_blank"><img src="../img/avator-2.jpg" alt="图片描述" class="avator" /></a>
 						</div>
 						<div class="info">
 							<strong class="name"><a href="#" target="_blank">Yi Lian</a></strong>
-							<div class="price">&yen;100 per hour</div>
-							<div class="group-btn">
-								<a href="javascript:void(0);" class="ui-btn-small btn-book-small"><span>Book it</span></a>
-							</div>
+							<div class="price">&yen;100/hour</div>
+							<a href="javascript:void(0);" class="ui-btn-small btn-book-small"><span>Book it</span></a>
 						</div>
 					</li>
-					<li class="item">
+					<li class="list-item">
 						<div class="user">
 							<a href="#" target="_blank"><img src="../img/avator-3.jpg" alt="图片描述" class="avator" /></a>
 						</div>
 						<div class="info">
 							<strong class="name"><a href="#" target="_blank">Yi Lian</a></strong>
-							<div class="price">&yen;100 per hour</div>
-							<div class="group-btn">
-								<a href="javascript:void(0);" class="ui-btn-small btn-book-small"><span>Book it</span></a>
-							</div>
+							<div class="price">&yen;100/hour</div>
+							<a href="javascript:void(0);" class="ui-btn-small btn-book-small"><span>Book it</span></a>
 						</div>
 					</li>
-					<li class="item">
+					<li class="list-item">
 						<div class="user">
 							<a href="#" target="_blank"><img src="../img/avator-4.jpg" alt="图片描述" class="avator" /></a>
 						</div>
 						<div class="info">
 							<strong class="name"><a href="#" target="_blank">Yi Lian</a></strong>
-							<div class="price">&yen;100 per hour</div>
-							<div class="group-btn">
-								<a href="javascript:void(0);" class="ui-btn-small btn-book-small"><span>Book it</span></a>
-							</div>
+							<div class="price">&yen;100/hour</div>
+							<a href="javascript:void(0);" class="ui-btn-small btn-book-small"><span>Book it</span></a>
 						</div>
 					</li>
 				</ul>
 				<a href="javascript:void(0);" class="page-prev">prev</a>
 				<a href="javascript:void(0);" class="page-next">next</a>
 			</div>
-			<!-- 第一次所选择的旅伴 -->
-			<div class="history-companions">
-				<h4 class="mod-hd-t">Your first choice</h4>
-				<div class="mod-bd">
-					<table class="companion-active">
-						<tr>
-							<td class="pic"><a href="#" target="_blank"><img src="../img/avator-1.jpg" alt="图片描述" class="avator" /></a></td>
-							<td class="name"><a href="#" target="_blank">Yi Lian</a></td>
-							<td class="price">$20/h</td>
-							<td class="duration">48h</td>
-							<td class="amount">In all:<span class="amount-price">$960</span></td>
-							<td class="operate">
-								<a href="javascript:void(0);" class="ui-btn-small btn-book-small"><span>Book it again</span></a>
-							</td>
-						</tr>
-					</table>
-				</div>
+			<!-- 保存按钮 -->
+			<div class="btn-wrap">
+				<button class="ui-btn-big ui-btn-primary"><span>Save</span></button>
 			</div>
 		</div>
 	</div>
 
 	<!-- 旅客 -->
-	<div class="guide-mod guide-traveler">
+	<div class="guide-mod guide-traveler" id="J-traveler-join">
 		<div class="hd">
 			<h3 class="hd-t">Person</h3><a href="javascript:void(0);" class="edit">[Edit]</a>
 		</div>
 		<div class="bd">
-			<p><strong class="quantity">10</strong> People will join this journey</p>
-
-			<div class="ui-input-wrap">
-				<input type="text" class="input-person" placeholder="选择参加人数" value="" data-toggle="dropdown" />
-				<i class="i-user"></i>
-				<ul class="dropdown-menu">
-					<li><a href="javascript:void(0);">1 Person</a></li>
-					<li><a href="javascript:void(0);">2 People</a></li>
-					<li><a href="javascript:void(0);">3 People</a></li>
-					<li><a href="javascript:void(0);">4 People</a></li>
-					<li><a href="javascript:void(0);">5 People</a></li>
-					<li><a href="javascript:void(0);">6 People</a></li>
-					<li><a href="javascript:void(0);">7 People</a></li>
-					<li><a href="javascript:void(0);">8 People</a></li>
-					<li><a href="javascript:void(0);">9 People</a></li>
-					<li><a href="javascript:void(0);">10+ People</a></li>
-				</ul>
+			<p class="J-current-result"><strong class="quantity">10</strong> People will join this journey</p>
+			<input type="hidden" value="10" name="J-traveler-quantity" id="J-traveler-quantity" />
+			<div class="ui-input-line">
+				<div class="ui-input-wrap">
+					<select name="traveler-join">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+					</select>
+				</div>
+				<button class="ui-btn-small ui-btn-yellow" id="J-sure-join">Sure</button>
 			</div>
-			<button class="ui-btn-small ui-btn-yellow">Sure</button>
 		</div>
 	</div>
 
 	<!-- 碰面地点 -->
-	<div class="guide-mod guide-place">
+	<div class="guide-mod guide-place" id="J-meet-place">
 		<div class="hd">
 			<h3 class="hd-t">Meet Place</h3><a href="javascript:void(0);" class="edit">[Edit]</a>
 		</div>
 		<div class="bd">
-			<p>guangd, shenzhen, nanshan</p>
-			<div class="ui-input-wrap">
-				<input type="text" class="input-person" placeholder="选择见面地址" data-provide="typeahead" data-items="4" />
-				<i class="i-map-marker"></i>
-				<ul class="typeahead dropdown-menu">
-					<li data-value="South Carolina" class="active"><a href="#"><strong>S</strong>outh Carolina</a></li>
-					<li data-value="South Dakota"><a href="#"><strong>S</strong>outh Dakota</a></li>
-					<li data-value="Alaska"><a href="#">Ala<strong>s</strong>ka</a></li>
-					<li data-value="Arkansas"><a href="#">Arkan<strong>s</strong>a<strong>s</strong></a></li>
-				</ul>
+			<p class="J-current-result">guangd, shenzhen, nanshan</p>
+			<input type="hidden" value="" name="J-place" id="J-place" />
+			<div class="ui-input-line">
+				<div class="ui-input-wrap">
+					<input type="text" class="input-place" data-provide="typeahead" data-items="4" data-source='["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]'>
+					<i class="i-map-marker"></i>
+				</div>
+				<button class="ui-btn-small ui-btn-yellow" id="J-sure-place">Sure</button>
 			</div>
-			<button class="ui-btn-small ui-btn-yellow">Sure</button>
 		</div>
 	</div>
 
@@ -348,101 +353,6 @@
 		<button class="ui-btn-big btn-submit-orders"><span>Submit Orders</span></button>
 	</div>
 </div>
-
-<script type="text/javascript">
-	$(function(){
-		// 复选框
-		$('.ui-checkbox').checkbox();
-
-		/**
-		 * 订单页面的相关方法
-		 * @type {Object}
-		 */
-		var Orders = {
-			/**
-			 * 正在编辑的模块，默认添加的className
-			 * @type {String}
-			 */
-			editClassName : 'status-editing',
-			/**
-			 * 当用户点击某个模块进行编辑的时候，调用此方法
-			 * 交互效果：把当前模块的[Edit]给隐藏，并添加一个遮罩层防止用户点击非编辑模块
-			 * @return {[type]} [description]
-			 */
-			edit : function(e){
-				var backdrop = this.tmpl('backdrop');
-				var button = this.tmpl('button');
-				var target = e.target || e.srcElement;
-				var parents = $(target).parents('.guide-mod');
-				// 为当前的编辑模块添加className
-				parents.addClass(this.editClassName);
-				// 插入遮罩层
-				parents.append(backdrop);
-				// 插入保存按钮
-				var bd = parents.find('.bd');
-				if(!bd.length) return false;
-				bd.append(button);
-			},
-
-			/**
-			 * 在自由行下，删除景点
-			 * 通过指定一个callback进行操作
-			 * @param  {[type]} opts [description]
-			 * @return {[type]}      [description]
-			 */
-			removeAttractions : function(e){
-				var target = e.target || e.srcElement;
-				var parent = $(target).parent();
-				var parents = parent.parent();
-				var dom_child = parents[0].children;
-				parent.remove();
-				if(!dom_child.length){
-					var tmpl = this.tmpl('attractions');
-					parents.append(tmpl);
-				}
-			},
-
-			tmpl : function(type){
-				if(!type) return;
-				var tmpl;
-				switch(type){
-					// 景点
-					case 'attractions' :
-						tmpl = [
-							'<li class="empty">您可以点击 [Edit] 添加感兴趣的景点</li>'
-						].join('');
-						break;
-					// 遮罩层，用于在编辑状态下，防止非编辑状态的内容被点击到
-					case 'backdrop' :
-						tmpl = [
-							'<div class="ui-backdrop in"><!-- 遮罩层，用于在编辑状态下，防止非编辑状态的内容被点击到 --></div>'
-						].join('');
-						break;
-					// 保存按钮
-					case 'button' :
-						tmpl = [
-							'<div class="btn-wrap">',
-								'<button class="ui-btn-big ui-btn-primary"><span>Save</span></button>',
-							'</div>'
-						].join('');
-						break;
-				}
-				return tmpl;
-			}
-		};
-
-		$('.guide-mod .edit').on('click', function(e){
-			Orders.edit(e);
-			return false;
-		});
-
-		$('.i-remove').on('click', function(e){
-			var _this = $(this);
-			Orders.removeAttractions(e);
-			return false;
-		})
-	});
-</script>
 
 </body>
 </html>

@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* CSS Document */
+
+/**
+ * date:2013-5-30 16:44:12;
+ * explanation:行程管理;
+ */
+.history-mod .hd { position:relative; padding:10px; border-bottom:1px solid #dddddd; }
+.history-mod .hd-t { font-size:18px; line-height:30px; }
+.history-mod .hd select { position:absolute; top:50%; right:10px; margin-top:-15px; margin-bottom:0px; }
+.history-list { table-layout:fixed; width:100%; border-collapse:collapse; border-spacing:0px; text-align:left; }
+.history-list span,
+.history-list strong { display:block; }
+.history-list th { padding:6px 10px; border-bottom:1px solid #dddddd; font-weight:400; text-align:left; }
+.history-list td { padding:20px 10px; border-bottom:1px dashed #dddddd; vertical-align:top; }
+.history-list .time { width:15%; }
+.history-list .time span { padding-bottom:10px; }
+.history-list .user { width:15%; text-align:center; }
+.history-list .user strong { padding:4px 0px; }
+.history-list .user .ui-btn-small { padding-left:4px; padding-right:4px; }
+.history-list .number { width:11%; }
+.history-list .duration { width:11%; }
+.history-list .total { width:11%; }
+.history-list td.status { color:#ff6600; }
+.history-list .handle { width:15%; }
+.history-list .handle span { padding-bottom:8px; }
+.history-list .handle a { display:inline-block; margin-bottom:8px; }
+.history-list .handle .ui-btn-small { display:block; }
+.history-list .ui-btn-small span { display:inline; padding:0px; margin:0px; }
+
+/*行程管理*/
+.itinerary-history-mod .hd { padding:0px; border:none; }
+.itinerary-history-mod .nav-tabs { margin-bottom:0px; }
+.itinerary-history-mod .ui-btn-big { position:absolute; top:0px; right:10px; width:130px; margin-top:-10px; }
+.history-list .booked { width:11%; }
+.history-list .date { width:14%; }
+.history-list .view { width:17.6%; }
+.history-list .view .img { width:100px; max-width:100px; height:auto; padding:4px; background-color:#ffffff; border:1px solid #dddddd; }

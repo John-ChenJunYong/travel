@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document */
+
+/**
+ * date:2013-5-29 16:00:58;
+ * explanation:交易记录;
+ */
+.history-mod .hd { position:relative; padding:10px; border-bottom:1px solid #dddddd; }
+.history-mod .hd-t { font-size:18px; line-height:30px; }
+.history-mod .hd select { position:absolute; top:50%; right:10px; margin-top:-15px; margin-bottom:0px; }
+.history-list { table-layout:fixed; width:100%; border-collapse:collapse; border-spacing:0px; text-align:left; }
+.history-list span,
+.history-list strong { display:block; }
+.history-list th { padding:6px 10px; border-bottom:1px solid #dddddd; font-weight:400; text-align:left; }
+.history-list td { padding:20px 10px; border-bottom:1px dashed #dddddd; vertical-align:top; }
+.history-list .time { width:15%; }
+.history-list .time span { padding-bottom:10px; }
+.history-list .user { width:15%; text-align:center; }
+.history-list .user strong { padding:4px 0px; }
+.history-list .user .ui-btn-small { padding-left:4px; padding-right:4px; }
+.history-list .number { width:11%; }
+.history-list .duration { width:11%; }
+.history-list .total { width:11%; }
+.history-list td.status { color:#ff6600; }
+.history-list .handle { width:15%; }
+.history-list .handle span { padding-bottom:8px; }
+.history-list .handle a { display:inline-block; margin-bottom:8px; }
+.history-list .handle .ui-btn-small { display:block; }
+.history-list .ui-btn-small span { display:inline; padding:0px; margin:0px; }
+/**
+ * @overflow
+ * @explanation:重新定义bootstrap popover的外观;
+ */
+.history-list .popover .arrow { margin-top:-6px; border-width:5px; }
+.history-list .popover .arrow:after { right:0px; display:none\9; }
+.history-list .popover-title { display:none; }
+.history-list .popover-content { position:relative; padding:6px 14px 6px 26px; color:#0088cc; }
+.history-list .popover-content:before {
+	position:absolute; top:7px; left:6px; content:""; width:18px; height:18px;
+	background-image:url(../img/_icon-map-marker-light.png); background-repeat:no-repeat; background-position:0px 0px;
+}

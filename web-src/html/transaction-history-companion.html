@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>交易记录---旅伴</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- bootstrap -->
+<link href="../css/bootstrap.css" rel="stylesheet" />
+<link href="../css/bootstrap-fixed.css" rel="stylesheet" />
+<link href="../css/bootstrap-datepicker.css" rel="stylesheet" />
+<!-- bootstrap的响应式 -->
+<link href="../css/bootstrap-responsive.css" rel="stylesheet" />
+<!-- 自定义 -->
+<link href="../css/john-global.css" rel="stylesheet" />
+<link href="../css/john-public.css" rel="stylesheet" />
+<link href="../css/john-dashboard.css" rel="stylesheet" />
+<link href="../css/john-transaction-history.css" rel="stylesheet" />
+<!-- <link href="../css/john-public-responsive.css" rel="stylesheet" /> -->
+
+<script src="../js/jquery-1.8.3.js" > </script>
+<script src="../js/bootstrap-tooltip.js"></script>
+<script src="../js/bootstrap-popover.js"></script>
+</head>
+
+<body>
+
+<div class="content">
+	<div class="content-inner">
+		<div class="crumb-mod">
+			<ul class="breadcrumb">
+				<li><i class="icon-home"></i><a href="#">Dashboard</a> <span class="divider">/</span></li>
+				<li><a href="#">Photos and Video</a> <span class="divider">/</span></li>
+				<li class="active">Upload</li>
+			</ul>
+			<a href="javascript:void(0);" class="ui-btn-middle btn-view-middle">
+				<span><i class="icon-eye-open"></i>VIEW PROFILE</span>
+			</a>
+		</div>
+
+		<div class="col-side">
+			<div class="current-user">
+				<img src="../img/avator-1.jpg" alt="图片描述" class="avator">
+				<strong class="name">Yi Lian</strong>
+			</div>
+			<ul class="nav nav-list">
+				<li><a href="#"><i class="icon-home"></i>Dashboard</a></li>
+				<li class="nav-header">Transaction</li>
+				<li><a href="#"><i class="icon-file"></i>Bookings</a></li>
+				<li><a href="#"><i class="icon-file"></i>Guests</a></li>
+				<li class="nav-header">Account</li>
+				<li><a href="#"><i class="icon-user"></i>Profile</a></li>
+				<li><a href="#"><i class="icon-picture"></i>Photos</a></li>
+				<li><a href="#"><i class="icon-ok-circle"></i>Verification</a></li>
+				<li><a href="#"><i class="icon-eye-open"></i>Reviews</a></li>
+				<li class="nav-header">Setting</li>
+				<li><a href="#"><i class="icon-file"></i>Notification</a></li>
+				<li><a href="#"><i class="icon-file"></i>Privacy</a></li>
+				<li><a href="#"><i class="icon-file"></i>Security</a></li>
+				<li class="divider"></li>
+				<li><a href="#"><i class="icon-question-sign"></i>Help</a></li>
+			</ul>
+		</div>
+
+		<div class="col-main">
+			<div class="history-mod">
+				<div class="hd">
+					<h3 class="hd-t">交易记录</h3>
+					<select name="status" class="select">
+						<option value="0">Transaction status</option>
+						<option value="1">Paid</option>
+						<option value="2">Clinch a bargain</option>
+						<option value="3">Refund</option>
+						<option value="4">Denied</option>
+						<option value="5">Waiting for a reply</option>
+					</select>
+				</div>
+				<div class="bd">
+					<table class="history-list">
+						<thead>
+							<tr>
+								<th class="time">Orders/Time</th>
+								<th class="user">Visitor</th>
+								<th class="number">People</th>
+								<th class="duration">Duration</th>
+								<th class="total">Total</th>
+								<th class="status">Status</th>
+								<th class="handle">Handle</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="time">
+									<span class="deal-orders">5246898745</span>
+									<span class="deal-time">2013-04-16</span>
+								</td>
+								<td class="user">
+									<img src="../img/avator-1.jpg" alt="图片描述" class="avator" />
+									<strong class="name"><a href="#">Yi Lian</a></strong>
+									<a href="javascript:void(0);" class="ui-btn-small"
+									data-toggle="popover"
+									data-content="Queens food tour in New York"><span>Get in Touch</span></a>
+								</td>
+								<td class="number">
+									10
+								</td>
+								<td class="duration">
+									48h
+								</td>
+								<td class="total">
+									$960
+								</td>
+								<td class="status">
+									<span class="paid">Paid</span>
+								</td>
+								<td class="handle">
+									<span>Confirmed</span>
+									<a href="#">Complaints </a>
+									<a href="#">Order details</a>
+									<a href="javascript:void(0);" class="ui-btn-small ui-btn-primary"><span>Confirm</span></a>
+								</td>
+							</tr>
+							<tr>
+								<td class="time">
+									<span class="deal-orders">5246898745</span>
+									<span class="deal-time">2013-04-16</span>
+								</td>
+								<td class="user">
+									<img src="../img/avator-1.jpg" alt="图片描述" class="avator" />
+									<strong class="name"><a href="#">Yi Lian</a></strong>
+									<a href="javascript:void(0);" class="ui-btn-small"
+									data-toggle="popover"
+									data-content="Queens food tour in New York"><span>Get in Touch</span></a>
+								</td>
+								<td class="number">
+									10
+								</td>
+								<td class="duration">
+									48h
+								</td>
+								<td class="total">
+									$960
+								</td>
+								<td class="status">
+									<span class="paid">Clinch a bargain</span>
+								</td>
+								<td class="handle">
+									<span>Confirmed</span>
+									<a href="#">Complaints </a>
+									<a href="#">Order details</a>
+									<a href="javascript:void(0);" class="ui-btn-small ui-btn-primary"><span>Confirm</span></a>
+								</td>
+							</tr>
+							<tr>
+								<td class="time">
+									<span class="deal-orders">5246898745</span>
+									<span class="deal-time">2013-04-16</span>
+								</td>
+								<td class="user">
+									<img src="../img/avator-1.jpg" alt="图片描述" class="avator" />
+									<strong class="name"><a href="#">Yi Lian</a></strong>
+									<a href="javascript:void(0);" class="ui-btn-small"
+									data-toggle="popover"
+									data-content="Queens food tour in New York"><span>Get in Touch</span></a>
+								</td>
+								<td class="number">
+									10
+								</td>
+								<td class="duration">
+									48h
+								</td>
+								<td class="total">
+									$960
+								</td>
+								<td class="status">
+									<span class="paid">Waiting for a reply</span>
+								</td>
+								<td class="handle">
+									<span>Confirmed</span>
+									<a href="#">Complaints </a>
+									<a href="#">Order details</a>
+									<a href="javascript:void(0);" class="ui-btn-small ui-btn-primary"><span>Confirm</span></a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<!-- 分页 -->
+					<div class="ui-pagination" id="J_ui_page" style="">
+						<a href="#" title="Prev" class="disabled prev"><b class="arror-prev"></b></span>
+						<a href="#" title="1" class="current">1</span>
+						<a href="#" title="2">2</a>
+						<a href="#" title="3">3</a>
+						<a href="#" title="4">4</a>
+						<span class="split">...</span>
+						<a href="#" title="6">6</a>
+						<a href="#" title="Next" class="next"><b class="arror-next"></b></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(function(){
+		// 为元素绑定popover事件
+		$('a[data-toggle=popover]')
+		.popover({
+			trigger : 'hover',
+			delay: {
+				show: 100,
+				hide: 400
+			}
+		})
+		.on('click', function(e){
+			e.preventDefault();
+		});
+	});
+</script>
+</body>
+</html>

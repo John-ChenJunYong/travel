@@ -69,22 +69,12 @@
 /*图片列表*/
 .journey-thumbnails { min-height:400px; margin-bottom:0px; }
 .journey-thumbnails .thumbnails-list .list-item { float:left; width:29.3333%; padding:4px 2%; }
-.journey-thumbnails .thumbnails-list img { top:0px; left:0px; margin:0px; }
 
 
 /**
  * @overview
  * date:2013-05-15;
- * explanantion:复写Bootstrap的carousel-control外观;
- * author:johnchen@tag-along.org;
  */
-.carousel-control { background:none; background-image:url(../img/icon-widget.png); background-repeat:no-repeat; }
-.carousel-control { position:absolute; width:44px; height:44px; border:none; text-indent:-999px; overflow:hidden; }
-.carousel-control:hover {
-	-webkit-animation:rotate 1s 0s ease both;
-	-moz-animation:rotate 1s 0s ease both;
-}
-.carousel-control.left { left:-60px; background-position:0px -371px; opacity:1; filter:none; }
-.carousel-control.left:hover { background-position:0px -415px; opacity:1; filter:none; }
-.carousel-control.right { right:-60px; background-position:0px -459px; opacity:1; filter:none; }
-.carousel-control.right:hover { background-position:0px -503px; opacity:1; filter:none; }
+.ui-carousel-control.prev { left:-60px; }
+.ui-carousel-control.next { right:-60px; }
+

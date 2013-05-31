@@ -24,9 +24,17 @@
 .guide-step .active { background-color:#0088cc; color:#ffffff; }
 .guide-step .active:after { background-position:-22px -689px; }
 
-.guide-description { padding:0px 296px 0px 0px; margin-bottom:30px; border-bottom:1px dashed #cdcdcd; }
-.guide-description .dt { font-weight:400; font-size:24px; color:#0088cc; }
-.guide-description .dd { padding:20px 0px; margin:0px; line-height:1.75; }
+.guide-description,
+.guide-congratulation { padding:0px 296px 0px 0px; margin:0px; color:#0088cc; }
+.guide-description .dt,
+.guide-congratulation .dt { font-weight:400; font-size:24px; text-transform:Capitalize; }
+
+.guide-description { border-bottom:1px dashed #cdcdcd; }
+.guide-description .dd { padding:20px 0px; margin:0px; line-height:1.75; color:#333333; }
+.guide-congratulation .dd { padding:10px 0px; font-size:18px; margin:0px; line-height:1.5; }
+
+.step-tips { padding:20px 0px; margin-bottom:30px; border-bottom:1px dashed #cdcdcd; color:#999999; }
+.step-tips span { color:#333333; }
 
 /**
  * 模块类
@@ -109,10 +117,10 @@
 .schedule-list .hour-list .td-day { vertical-align:bottom; }
 .schedule-list .hour-list .td-day i { display:block; width:48px; height:34px; background-image:url(../img/icon-schedule.png); background-repeat:no-repeat; background-position:0px -100px; }
 .schedule-list .td-day { width:70px; }
-.schedule-list .td-day input { border:none; width:100%; padding:0px; box-shadow:none; text-align:center; font-size:12px; }
-.schedule-list .td-day input:focus { border:none; outline:none; box-shadow:none; }
-.schedule-list .operate { position:relative; }
-.schedule-list .i-remove { position:absolute; top:2px; left:-18px; display:none; cursor:pointer; }
+.schedule-list .date-operate { position:relative; min-height:23px; line-height:23px; color:#999999; cursor:pointer; text-align:center; }
+.schedule-list .date-operate .choose { position:absolute; top:0px; right:0px; bottom:0px; left:0px; }
+.schedule-list .date-operate .date { display:block; width:100%; font-size:12px; color:#333333; }
+.schedule-list .date-operate .i-remove { position:absolute; top:2px; left:-18px; display:none; cursor:pointer; }
 .schedule-list .check,
 .schedule-list .checkall { display:block; max-width:23px; min-height:23px; padding:0px; margin:0px; }
 .schedule-list .checkall,
@@ -142,15 +150,32 @@
 .itinerary-thumbnails .ui-carousel-control.next { right:-36px; }
 .thumbnails-list { }
 .thumbnails-list .pic { cursor:pointer; }
-.thumbnails-list li { float:left; width:31.3333%; padding:0px 1%; }
-.thumbnails-list .follow-tag { position:absolute; top:50%; right:0; left:0; margin-top:-12px; text-align:center; font-size:24px; color:#ffffff; }
+.thumbnails-list .list-item { float:left; width:31.3333%; padding:0px 1%; }
+.thumbnails-list .flag,
+.thumbnails-list .opacity { position:absolute; display:none; }
+.thumbnails-list .flag {
+	top:50%; right:0; left:0; z-index:2; margin-top:-12px; text-align:center; font-size:24px; color:#ffffff; text-transform:Capitalize;
+	text-shadow:0 0 15px rgba(0,0,0,0.6),0 -1px 1px rgba(0,0,0,0.6);
+}
+.thumbnails-list .opacity {
+	top:10px; right:10px; bottom:10px; left:10px; z-index:1; content:""; width:auto;
+	background:#000000;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+	opacity:0.5;
+}
+.thumbnails-list .list-item:hover .flag,
+.thumbnails-list .list-item:hover .opacity { display:block; }
+.thumbnails-list .followed .flag,
+.thumbnails-list .followed .opacity { display:block; }
 
 
 /**
  * 步骤类
  */
-.navigation-step { padding:0px 296px 0px 0px; text-align:right; }
-.navigation-step .btn-guide-step { display:inline-block!important; min-width:246px; padding-left:0px; padding-right:0px; }
+.navigation-step { padding:20px 0px; border-top:1px dashed #cdcdcd; text-align:right; }
+.navigation-step .btn-guide-step { padding-left:40px; padding-right:40px; }
+.navigation-step .skin { display:inline-block; padding:10px; font-size:20px; text-decoration:underline; }
 
 /**
  * 操作、动作类的按钮
@@ -169,15 +194,3 @@
 .act-add-location { background-position:0px -633px; }
 .act-add-location:hover { background-position:0px -661px; }
 
-
-/**
- * 重写Bootstrap部分代码
- */
-.ui-carousel-control {
-	position:absolute; top:40%; width:40px; height:40px; margin-top:-20px; color:#ffffff; text-indent:-999px; overflow:hidden;
-	background-color:#999999;
-	border-radius:100%;
-}
-.ui-carousel-control:hover { background-color:#333333; }
-.ui-carousel-control.prev { left:0px; }
-.ui-carousel-control.next { right:0px; }

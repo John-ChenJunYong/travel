@@ -15,8 +15,10 @@
 <link href="../css/john-guide-new.css" rel="stylesheet" />
 
 <script src="../js/jquery-1.8.3.js" > </script>
+<script src="../js/bootstrap-transition.js"></script>
 <script src="../js/bootstrap-tab.js"></script>
 <script src="../js/bootstrap-datepicker.js"></script>
+<script src="../js/bootstrap-carousel.js"></script>
 <script src="../js/utils.js"></script>
 <script src="../js/john-guide-new.js"></script>
 
@@ -46,6 +48,15 @@
 			</li>
 		</ol>
 
+		<!-- 祝贺 -->
+		<dl class="guide-congratulation">
+			<dt class="dt">Congratulations！</dt>
+			<dd class="dd">Welcome to become a traveling guide of tagalong！</dd>
+		</dl>
+
+		<!-- 提示 -->
+		<p class="step-tips"><span>Tips:</span>You can continue to improve the service description, follow some itinerary or publish your own itinerary.</p>
+
 		<!-- 继续完善资料：第1步 -->
 		<div class="guide-complete">
 			<div class="hd">
@@ -65,11 +76,12 @@
 				<p class="tips">Follow some itinerary can highly enhance your profession as a guide.</p>
 				<div class="itinerary-thumbnails carousel slide" id="J-itinerary-thumbnails">
 					<div class="carousel-inner">
-						<ul class="thumbnails-list">
+						<ul class="thumbnails-list item active">
 							<li class="list-item">
 								<div class="pic">
 									<img src="../img/journey-1.jpg" alt="图片描述" />
-									<span class="follow-tag">Followed</span>
+									<span class="flag">Follow</span>
+									<i class="opacity"></i>
 								</div>
 								<div class="caption">
 									<h4><a href="#">Biky the city in 3 Hours</a></h4>
@@ -82,7 +94,8 @@
 							<li class="list-item">
 								<div class="pic">
 									<img src="../img/journey-2.jpg" alt="图片描述" />
-									<span class="follow-tag">Followed</span>
+									<span class="flag">Follow</span>
+									<i class="opacity"></i>
 								</div>
 								<div class="caption">
 									<h4><a href="#">Biky the city in 3 Hours</a></h4>
@@ -95,7 +108,52 @@
 							<li class="list-item">
 								<div class="pic">
 									<img src="../img/journey-3.jpg" alt="图片描述" />
-									<span class="follow-tag">Followed</span>
+									<span class="flag">Follow</span>
+									<i class="opacity"></i>
+								</div>
+								<div class="caption">
+									<h4><a href="#">Biky the city in 3 Hours</a></h4>
+									<ul class="meta">
+										<li class="review">30 evaluation</li>
+										<li class="price">1834/person</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+						<ul class="thumbnails-list item">
+							<li class="list-item">
+								<div class="pic">
+									<img src="../img/journey-1.jpg" alt="图片描述" />
+									<span class="flag">Follow</span>
+									<i class="opacity"></i>
+								</div>
+								<div class="caption">
+									<h4><a href="#">Biky the city in 3 Hours</a></h4>
+									<ul class="meta">
+										<li class="review">30 evaluation</li>
+										<li class="price">1834/person</li>
+									</ul>
+								</div>
+							</li>
+							<li class="list-item">
+								<div class="pic">
+									<img src="../img/journey-2.jpg" alt="图片描述" />
+									<span class="flag">Follow</span>
+									<i class="opacity"></i>
+								</div>
+								<div class="caption">
+									<h4><a href="#">Biky the city in 3 Hours</a></h4>
+									<ul class="meta">
+										<li class="review">30 evaluation</li>
+										<li class="price">1834/person</li>
+									</ul>
+								</div>
+							</li>
+							<li class="list-item">
+								<div class="pic">
+									<img src="../img/journey-3.jpg" alt="图片描述" />
+									<span class="flag">Follow</span>
+									<i class="opacity"></i>
 								</div>
 								<div class="caption">
 									<h4><a href="#">Biky the city in 3 Hours</a></h4>
@@ -125,9 +183,10 @@
 
 		<!-- 导航 -->
 		<div class="navigation-step">
-			
+			<a href="javascript:void(0);" class="skin">Skip</a>
 		</div>
 	</form>
 </div>
+
 </body>
 </html>

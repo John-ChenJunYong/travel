@@ -14,7 +14,8 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 .content-inner:after { clear:both; display:block; height:0px; overflow:hidden; visibility:hidden; content:""; }
 
 .content .col-side { float:left; width:200px; padding-bottom:9999px; margin-bottom:-9999px; border-right:1px solid #cdcdcd; }
-.content .col-main { padding:20px; overflow:hidden; }
+.content .col-main { padding:20px 0px; overflow:hidden; }
+.col-main .nav-tabs { padding:0px 20px; }
 
 /*面包屑*/
 .crumb-mod {
@@ -32,11 +33,11 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 }
 .crumb-mod .breadcrumb { padding:0px; margin-bottom:0px; background-color:transparent; }
 .crumb-mod .breadcrumb .icon-home { margin-right:12px; }
-.crumb-mod .btn-view-middle { position:absolute; top:50%; right:20px; width:124px; margin-top:-17px; }
+.crumb-mod .btn-view-middle { position:absolute; top:50%; right:20px; margin-top:-17px; }
 
 
 /*当前用户*/
-.current-user { padding:15px; overflow:hidden; }
+.current-user { padding:15px; text-align:center; overflow:hidden; }
 .current-user img { width:48px!important; height:48px!important; padding:2px; margin-right:8px; border:1px solid #cdcdcd; }
 
 
@@ -45,7 +46,7 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 .nav-list>li>a { padding:3px 35px; margin-left:-35px; margin-right:-35px; }
 
 /*主体栏目的默认标题*/
-.mod-title { position:relative; padding:18px; margin:10px -20px; border-width:1px 0px; border-style:solid; border-color:#cdcdcd transparent; }
+.mod-title { position:relative; padding:18px; margin:10px 0px; border-width:1px 0px; border-style:solid; border-color:#cdcdcd transparent; }
 .mod-title:first-child { margin-top:-20px; border-top:none; }
 .mod-title .mod-hd { float:left; font-size:14px; padding-right:18px; line-height:32px; }
 .mod-title .mod-hd i[class*='i-'] { display:inline-block; width:32px; height:32px; margin-top:-4px; background-image:url(../img/icon-dashboard.png); background-repeat:no-repeat; vertical-align:middle; }
@@ -54,7 +55,7 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 .mod-title .mod-hd .i-photo { background-position:0px -32px; }
 
 /*普通文章列表模块*/
-.article { }
+.article { padding:0px 20px; }
 .article .hd { }
 .article .hd-t { font-size:14px; }
 .article .bd { color:#999999; }
@@ -62,7 +63,11 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 .article-list li { float:left; width:50%; padding:2px 0px; }
 .article-list a { color:#999999; }
 
-/*验证列表*/
+/**
+ * date:2013-5-20 13:59:50;
+ * explanation:Verification;
+ */
+.verification-list { padding:0px 20px; }
 .verification-list li { position:relative; padding-right:275px; padding-bottom:20px; margin-bottom:30px; border-bottom:1px dashed #cdcdcd; }
 .verification-list .dl { margin:0px; }
 .verification-list .dt { position:relative; margin-bottom:10px; padding-left:34px; font-weight:700; font-size:14px; }
@@ -81,11 +86,7 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 .verification-list .btn-verify-big { margin-top:-19px; }
 .verification-list .verified { padding:0px 11px; margin-top:-26px; background-color:#ffffff; text-align:center; }
 .verification-list .verified .i-verified { display:block; width:32px; height:32px; margin:0px auto; background-image:url(../img/bg-dashboard.png); background-repeat:no-repeat; background-position:0px -224px; }
-
-
-/**
- * 电话号码验证
- */
+/*电话号码验证*/
 .verified-phone .i-verified,
 .verified-phone .remove,
 .btn-addphone-small i.i-add { width:20px; height:20px; background-image:url(../img/bg-dashboard.png); background-repeat:no-repeat; background-position:0px -256px; }
@@ -140,3 +141,43 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 .verified-phone .remove { display:block; background-position:0px -276px; text-indent:-999px; overflow:hidden; }
 /*新增电话号码按钮*/
 .btn-addphone-small i.i-add { vertical-align:-5px; }
+
+
+/**
+ * date:2013-5-28 13:59:25;
+ * explanation:Interest;
+ */
+/*已经选择的分类*/
+.choose-interest { margin-bottom:20px; }
+.choose-interest .hd { padding:0px 10px; border-bottom:1px solid #dddddd; }
+.choose-interest .hd-t { font-weight:400; font-size:14px; }
+.choose-interest .hd-t .i-heart { margin-right:8px; }
+.choose-interest .bd { padding:20px; overflow:hidden; }
+.choose-interest .tag { display:inline-block; padding:3px 2px 3px 8px; margin-right:4px; border:1px solid #82bc3e; cursor:pointer; }
+/*兴趣分类*/
+.categories-interest { overflow:hidden; }
+.categories-interest .hd {
+	padding:0px 12px; border-top:1px solid #dddddd; border-bottom:1px solid #dddddd;
+	background:#fcfcfc; /* Old browsers */
+	background:-moz-linear-gradient(top,  #fcfcfc 0%, #f2f2f2 100%); /* FF3.6+ */
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#fcfcfc), color-stop(100%,#f2f2f2)); /* Chrome,Safari4+ */
+	background:-webkit-linear-gradient(top,  #fcfcfc 0%,#f2f2f2 100%); /* Chrome10+,Safari5.1+ */
+	background:-o-linear-gradient(top,  #fcfcfc 0%,#f2f2f2 100%); /* Opera 11.10+ */
+	background:-ms-linear-gradient(top,  #fcfcfc 0%,#f2f2f2 100%); /* IE10+ */
+	background:linear-gradient(to bottom,  #fcfcfc 0%,#f2f2f2 100%); /* W3C */
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#f2f2f2',GradientType=0 ); /* IE6-9 */
+}
+.categories-interest .hd-t { line-height:35px; font-weight:400; font-size:14px; }
+.categories-interest .i-line { float:left; margin-top:4px; margin-right:6px; }
+.categories-interest .bd { height:440px; border-bottom:1px solid #dddddd; overflow:hidden; }
+.interest-cate-menu { float:left; width:22.5763%; }
+.interest-cate-menu .bd { border-right:1px solid #dddddd; }
+.interest-cate-list { padding:20px 0px; font-size:13px; }
+.interest-cate-list a { display:block; padding:3px 0px 3px 20px; color:#333333; }
+.interest-cate-list .active a,
+.interest-cate-list a:hover { background-color:#eeeeee; text-decoration:none; color:#333333; }
+.interest-list-mod { overflow:hidden; }
+.interest-list { padding:20px 10px 20px 30px; overflow:hidden; }
+.interest-list li { float:left; width:33.3333%; padding:3px 0px; margin:0px; font-size:12px; }
+.interest-list span[class*=check] { display:inline-block; width:12px; height:12px; margin-right:8px; vertical-align:-2px; }
+.interest-list .ui-checked { background-position:0px -206px; }

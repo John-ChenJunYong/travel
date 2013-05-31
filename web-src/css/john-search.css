@@ -105,10 +105,7 @@
 /*选项列表*/
 .options-list { padding:0px 5px; font-size:12px; }
 .options-list label { display:block; padding:2px 0px; margin:0px; font-size:12px; }
-.options-list span[class*=check] { display:inline-block; width:12px; height:12px; margin-right:8px; vertical-align:-2px; }
 .options-list .ui-checked { background-position:0px -206px; }
-
-
 .options-radio li { padding:4px 0px; }
 .options-radio .label-t { padding-right:10px; color:#0088cc; }
 .options-radio .option { display:inline-block; padding-right:10px; margin:0px; font-size:12px;  }

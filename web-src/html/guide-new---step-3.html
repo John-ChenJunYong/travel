@@ -15,8 +15,6 @@
 <link href="../css/john-guide-new.css" rel="stylesheet" />
 
 <script src="../js/jquery-1.8.3.js" > </script>
-<script src="../js/bootstrap-tab.js"></script>
-<script src="../js/bootstrap-datepicker.js"></script>
 <script src="../js/utils.js"></script>
 <script src="../js/john-guide-new.js"></script>
 
@@ -26,9 +24,9 @@
 
 <!-- 主体区域 -->
 <div class="content">
-	<form action="" method="post">
+	<form active="" method="post">
 		<!--****************************
-			第三步
+			第二步
 		*****************************-->
 		<!-- 申请步骤图 -->
 		<ol class="guide-step">
@@ -46,456 +44,54 @@
 			</li>
 		</ol>
 
-		<!-- 服务时间 -->
-		<div class="guide-mod service-time">
+		<!-- 价格 -->
+		<div class="guide-mod service-price">
 			<!-- 每个模块右边的提示模块 -->
 			<div class="guide-tips">
-				<p>The time you can provide your service.You can set your time by month, by week,or by a specific day.</p>
+				<p>The price of your service in one hour.</p>
 				<a href="#" target="_blank">click to see some example</a>
 			</div>
 			<div class="hd">
-				<h2 class="hd-t">Time</h2>
-				<select id="J-schedule-select">
-					<option value="month">Month</option>
-					<option value="week" selected="selected">Week</option>
-					<option value="day">Day</option>
-				</select>
+				<h2 class="hd-t">Price</h2>
 			</div>
 			<div class="bd">
-				<!-- 时间表：以月为单位 -->
-				<div class="schedule-mod" id="J-schedule-month">
-					<div class="mod-bd">
-						<table class="schedule-list" id="J-schedule-list" data-type="month">
-							<thead>
-								<tr class="hour-list">
-									<td class="td-day"><i class="t"></i></td>
-									<td><div class="hour"><span data-value="0">00:00</span><i></i></div></td>
-									<td><div class="hour"><span data-value="1">1</span><i></i></div></td>
-									<td><div class="hour"><span data-value="2">2</span><i></i></div></td>
-									<td><div class="hour"><span data-value="3">3</span><i></i></div></td>
-									<td><div class="hour"><span data-value="4">4</span><i></i></div></td>
-									<td><div class="hour"><span data-value="5">5</span><i></i></div></td>
-									<td><div class="hour"><span data-value="6">6</span><i></i></div></td>
-									<td><div class="hour"><span data-value="7">7</span><i></i></div></td>
-									<td><div class="hour"><span data-value="8">8</span><i></i></div></td>
-									<td><div class="hour"><span data-value="9">9</span><i></i></div></td>
-									<td><div class="hour"><span data-value="10">10</span><i></i></div></td>
-									<td><div class="hour"><span data-value="11">11</span><i></i></div></td>
-									<td><div class="hour"><span data-value="12">12</span><i></i></div></td>
-									<td><div class="hour"><span data-value="13">13</span><i></i></div></td>
-									<td><div class="hour"><span data-value="14">14</span><i></i></div></td>
-									<td><div class="hour"><span data-value="15">15</span><i></i></div></td>
-									<td><div class="hour"><span data-value="16">16</span><i></i></div></td>
-									<td><div class="hour"><span data-value="17">17</span><i></i></div></td>
-									<td><div class="hour"><span data-value="18">18</span><i></i></div></td>
-									<td><div class="hour"><span data-value="19">19</span><i></i></div></td>
-									<td><div class="hour"><span data-value="20">20</span><i></i></div></td>
-									<td><div class="hour"><span data-value="21">21</span><i></i></div></td>
-									<td><div class="hour"><span data-value="22">22</span><i></i></div></td>
-									<td><div class="hour"><span data-value="23">23</span><i></i></div></td>
-									<td><div class="hour"><i></i></div></td>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="td-day" data-value="month-01">01</td>
-									<td><label class="check" data-value="0"></label></td>
-									<td><label class="check" data-value="1"></label></td>
-									<td><label class="check" data-value="2"></label></td>
-									<td><label class="check" data-value="3"></label></td>
-									<td><label class="check" data-value="4"></label></td>
-									<td><label class="check" data-value="5"></label></td>
-									<td><label class="check" data-value="6"></label></td>
-									<td><label class="check" data-value="7"></label></td>
-									<td><label class="check" data-value="8"></label></td>
-									<td><label class="check" data-value="9"></label></td>
-									<td><label class="check" data-value="10"></label></td>
-									<td><label class="check" data-value="11"></label></td>
-									<td><label class="check" data-value="12"></label></td>
-									<td><label class="check" data-value="13"></label></td>
-									<td><label class="check" data-value="14"></label></td>
-									<td><label class="check" data-value="15"></label></td>
-									<td><label class="check" data-value="16"></label></td>
-									<td><label class="check" data-value="17"></label></td>
-									<td><label class="check" data-value="18"></label></td>
-									<td><label class="check" data-value="19"></label></td>
-									<td><label class="check" data-value="20"></label></td>
-									<td><label class="check" data-value="21"></label></td>
-									<td><label class="check" data-value="22"></label></td>
-									<td><label class="check" data-value="23"></label></td>
-									<td class="td-all"><label class="checkall"></label></td>
-								</tr>
-								<tr>
-									<td class="td-day" data-value="month-02">02</td>
-									<td><label class="check" data-value="0"></label></td>
-									<td><label class="check" data-value="1"></label></td>
-									<td><label class="check" data-value="2"></label></td>
-									<td><label class="check" data-value="3"></label></td>
-									<td><label class="check" data-value="4"></label></td>
-									<td><label class="check" data-value="5"></label></td>
-									<td><label class="check" data-value="6"></label></td>
-									<td><label class="check" data-value="7"></label></td>
-									<td><label class="check" data-value="8"></label></td>
-									<td><label class="check" data-value="9"></label></td>
-									<td><label class="check" data-value="10"></label></td>
-									<td><label class="check" data-value="11"></label></td>
-									<td><label class="check" data-value="12"></label></td>
-									<td><label class="check" data-value="13"></label></td>
-									<td><label class="check" data-value="14"></label></td>
-									<td><label class="check" data-value="15"></label></td>
-									<td><label class="check" data-value="16"></label></td>
-									<td><label class="check" data-value="17"></label></td>
-									<td><label class="check" data-value="18"></label></td>
-									<td><label class="check" data-value="19"></label></td>
-									<td><label class="check" data-value="20"></label></td>
-									<td><label class="check" data-value="21"></label></td>
-									<td><label class="check" data-value="22"></label></td>
-									<td><label class="check" data-value="23"></label></td>
-									<td class="td-all"><label class="checkall"></label></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<div class="mod-ft">
-						<ul class="tips">
-							<li><i class="i-work"></i>提供服务的时间</li>
-							<li><i class="i-allday"></i>全天提供服务</li>
-						</ul>
-					</div>
-					<!-- 存储《以月为单位》的缓存数据 -->
-					<div class="temp-data" id="J-temp-month"></div>
-				</div>
-				<!-- 时间表：以周为单位 -->
-				<div class="schedule-mod" id="J-schedule-week">
-					<div class="mod-bd">
-						<table class="schedule-list" id="J-schedule-list" data-type="week">
-							<thead>
-								<tr class="hour-list">
-									<td class="td-day"><i class="t"></i></td>
-									<td><div class="hour"><span data-value="0">00:00</span><i></i></div></td>
-									<td><div class="hour"><span data-value="1">1</span><i></i></div></td>
-									<td><div class="hour"><span data-value="2">2</span><i></i></div></td>
-									<td><div class="hour"><span data-value="3">3</span><i></i></div></td>
-									<td><div class="hour"><span data-value="4">4</span><i></i></div></td>
-									<td><div class="hour"><span data-value="5">5</span><i></i></div></td>
-									<td><div class="hour"><span data-value="6">6</span><i></i></div></td>
-									<td><div class="hour"><span data-value="7">7</span><i></i></div></td>
-									<td><div class="hour"><span data-value="8">8</span><i></i></div></td>
-									<td><div class="hour"><span data-value="9">9</span><i></i></div></td>
-									<td><div class="hour"><span data-value="10">10</span><i></i></div></td>
-									<td><div class="hour"><span data-value="11">11</span><i></i></div></td>
-									<td><div class="hour"><span data-value="12">12</span><i></i></div></td>
-									<td><div class="hour"><span data-value="13">13</span><i></i></div></td>
-									<td><div class="hour"><span data-value="14">14</span><i></i></div></td>
-									<td><div class="hour"><span data-value="15">15</span><i></i></div></td>
-									<td><div class="hour"><span data-value="16">16</span><i></i></div></td>
-									<td><div class="hour"><span data-value="17">17</span><i></i></div></td>
-									<td><div class="hour"><span data-value="18">18</span><i></i></div></td>
-									<td><div class="hour"><span data-value="19">19</span><i></i></div></td>
-									<td><div class="hour"><span data-value="20">20</span><i></i></div></td>
-									<td><div class="hour"><span data-value="21">21</span><i></i></div></td>
-									<td><div class="hour"><span data-value="22">22</span><i></i></div></td>
-									<td><div class="hour"><span data-value="23">23</span><i></i></div></td>
-									<td><div class="hour"><i></i></div></td>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="td-day" data-value="monday">周一</td>
-									<td><label class="check" data-value="0"></label></td>
-									<td><label class="check" data-value="1"></label></td>
-									<td><label class="check" data-value="2"></label></td>
-									<td><label class="check" data-value="3"></label></td>
-									<td><label class="check" data-value="4"></label></td>
-									<td><label class="check" data-value="5"></label></td>
-									<td><label class="check" data-value="6"></label></td>
-									<td><label class="check" data-value="7"></label></td>
-									<td><label class="check" data-value="8"></label></td>
-									<td><label class="check" data-value="9"></label></td>
-									<td><label class="check" data-value="10"></label></td>
-									<td><label class="check" data-value="11"></label></td>
-									<td><label class="check" data-value="12"></label></td>
-									<td><label class="check" data-value="13"></label></td>
-									<td><label class="check" data-value="14"></label></td>
-									<td><label class="check" data-value="15"></label></td>
-									<td><label class="check" data-value="16"></label></td>
-									<td><label class="check" data-value="17"></label></td>
-									<td><label class="check" data-value="18"></label></td>
-									<td><label class="check" data-value="19"></label></td>
-									<td><label class="check" data-value="20"></label></td>
-									<td><label class="check" data-value="21"></label></td>
-									<td><label class="check" data-value="22"></label></td>
-									<td><label class="check" data-value="23"></label></td>
-									<td class="td-all"><label class="checkall"></label></td>
-								</tr>
-								<tr>
-									<td class="td-day" data-value="tuesday">周二</td>
-									<td><label class="check" data-value="0"></label></td>
-									<td><label class="check" data-value="1"></label></td>
-									<td><label class="check" data-value="2"></label></td>
-									<td><label class="check" data-value="3"></label></td>
-									<td><label class="check" data-value="4"></label></td>
-									<td><label class="check" data-value="5"></label></td>
-									<td><label class="check" data-value="6"></label></td>
-									<td><label class="check" data-value="7"></label></td>
-									<td><label class="check" data-value="8"></label></td>
-									<td><label class="check" data-value="9"></label></td>
-									<td><label class="check" data-value="10"></label></td>
-									<td><label class="check" data-value="11"></label></td>
-									<td><label class="check" data-value="12"></label></td>
-									<td><label class="check" data-value="13"></label></td>
-									<td><label class="check" data-value="14"></label></td>
-									<td><label class="check" data-value="15"></label></td>
-									<td><label class="check" data-value="16"></label></td>
-									<td><label class="check" data-value="17"></label></td>
-									<td><label class="check" data-value="18"></label></td>
-									<td><label class="check" data-value="19"></label></td>
-									<td><label class="check" data-value="20"></label></td>
-									<td><label class="check" data-value="21"></label></td>
-									<td><label class="check" data-value="22"></label></td>
-									<td><label class="check" data-value="23"></label></td>
-									<td class="td-all"><label class="checkall"></label></td>
-								</tr>
-								<tr>
-									<td class="td-day" data-value="wednesday">周三</td>
-									<td><label class="check" data-value="0"></label></td>
-									<td><label class="check" data-value="1"></label></td>
-									<td><label class="check" data-value="2"></label></td>
-									<td><label class="check" data-value="3"></label></td>
-									<td><label class="check" data-value="4"></label></td>
-									<td><label class="check" data-value="5"></label></td>
-									<td><label class="check" data-value="6"></label></td>
-									<td><label class="check" data-value="7"></label></td>
-									<td><label class="check" data-value="8"></label></td>
-									<td><label class="check" data-value="9"></label></td>
-									<td><label class="check" data-value="10"></label></td>
-									<td><label class="check" data-value="11"></label></td>
-									<td><label class="check" data-value="12"></label></td>
-									<td><label class="check" data-value="13"></label></td>
-									<td><label class="check" data-value="14"></label></td>
-									<td><label class="check" data-value="15"></label></td>
-									<td><label class="check" data-value="16"></label></td>
-									<td><label class="check" data-value="17"></label></td>
-									<td><label class="check" data-value="18"></label></td>
-									<td><label class="check" data-value="19"></label></td>
-									<td><label class="check" data-value="20"></label></td>
-									<td><label class="check" data-value="21"></label></td>
-									<td><label class="check" data-value="22"></label></td>
-									<td><label class="check" data-value="23"></label></td>
-									<td class="td-all"><label class="checkall"></label></td>
-								</tr>
-								<tr>
-									<td class="td-day" data-value="thursday">周四</td>
-									<td><label class="check" data-value="0"></label></td>
-									<td><label class="check" data-value="1"></label></td>
-									<td><label class="check" data-value="2"></label></td>
-									<td><label class="check" data-value="3"></label></td>
-									<td><label class="check" data-value="4"></label></td>
-									<td><label class="check" data-value="5"></label></td>
-									<td><label class="check" data-value="6"></label></td>
-									<td><label class="check" data-value="7"></label></td>
-									<td><label class="check" data-value="8"></label></td>
-									<td><label class="check" data-value="9"></label></td>
-									<td><label class="check" data-value="10"></label></td>
-									<td><label class="check" data-value="11"></label></td>
-									<td><label class="check" data-value="12"></label></td>
-									<td><label class="check" data-value="13"></label></td>
-									<td><label class="check" data-value="14"></label></td>
-									<td><label class="check" data-value="15"></label></td>
-									<td><label class="check" data-value="16"></label></td>
-									<td><label class="check" data-value="17"></label></td>
-									<td><label class="check" data-value="18"></label></td>
-									<td><label class="check" data-value="19"></label></td>
-									<td><label class="check" data-value="20"></label></td>
-									<td><label class="check" data-value="21"></label></td>
-									<td><label class="check" data-value="22"></label></td>
-									<td><label class="check" data-value="23"></label></td>
-									<td class="td-all"><label class="checkall"></label></td>
-								</tr>
-								<tr>
-									<td class="td-day" data-value="friday">周五</td>
-									<td><label class="check" data-value="0"></label></td>
-									<td><label class="check" data-value="1"></label></td>
-									<td><label class="check" data-value="2"></label></td>
-									<td><label class="check" data-value="3"></label></td>
-									<td><label class="check" data-value="4"></label></td>
-									<td><label class="check" data-value="5"></label></td>
-									<td><label class="check" data-value="6"></label></td>
-									<td><label class="check" data-value="7"></label></td>
-									<td><label class="check" data-value="8"></label></td>
-									<td><label class="check" data-value="9"></label></td>
-									<td><label class="check" data-value="10"></label></td>
-									<td><label class="check" data-value="11"></label></td>
-									<td><label class="check" data-value="12"></label></td>
-									<td><label class="check" data-value="13"></label></td>
-									<td><label class="check" data-value="14"></label></td>
-									<td><label class="check" data-value="15"></label></td>
-									<td><label class="check" data-value="16"></label></td>
-									<td><label class="check" data-value="17"></label></td>
-									<td><label class="check" data-value="18"></label></td>
-									<td><label class="check" data-value="19"></label></td>
-									<td><label class="check" data-value="20"></label></td>
-									<td><label class="check" data-value="21"></label></td>
-									<td><label class="check" data-value="22"></label></td>
-									<td><label class="check" data-value="23"></label></td>
-									<td class="td-all"><label class="checkall"></label></td>
-								</tr>
-								<tr>
-									<td class="td-day" data-value="saturday">周六</td>
-									<td><label class="check" data-value="0"></label></td>
-									<td><label class="check" data-value="1"></label></td>
-									<td><label class="check" data-value="2"></label></td>
-									<td><label class="check" data-value="3"></label></td>
-									<td><label class="check" data-value="4"></label></td>
-									<td><label class="check" data-value="5"></label></td>
-									<td><label class="check" data-value="6"></label></td>
-									<td><label class="check" data-value="7"></label></td>
-									<td><label class="check" data-value="8"></label></td>
-									<td><label class="check" data-value="9"></label></td>
-									<td><label class="check" data-value="10"></label></td>
-									<td><label class="check" data-value="11"></label></td>
-									<td><label class="check" data-value="12"></label></td>
-									<td><label class="check" data-value="13"></label></td>
-									<td><label class="check" data-value="14"></label></td>
-									<td><label class="check" data-value="15"></label></td>
-									<td><label class="check" data-value="16"></label></td>
-									<td><label class="check" data-value="17"></label></td>
-									<td><label class="check" data-value="18"></label></td>
-									<td><label class="check" data-value="19"></label></td>
-									<td><label class="check" data-value="20"></label></td>
-									<td><label class="check" data-value="21"></label></td>
-									<td><label class="check" data-value="22"></label></td>
-									<td><label class="check" data-value="23"></label></td>
-									<td class="td-all"><label class="checkall"></label></td>
-								</tr>
-								<tr>
-									<td class="td-day" data-value="sunday">周日</td>
-									<td><label class="check" data-value="0"></label></td>
-									<td><label class="check" data-value="1"></label></td>
-									<td><label class="check" data-value="2"></label></td>
-									<td><label class="check" data-value="3"></label></td>
-									<td><label class="check" data-value="4"></label></td>
-									<td><label class="check" data-value="5"></label></td>
-									<td><label class="check" data-value="6"></label></td>
-									<td><label class="check" data-value="7"></label></td>
-									<td><label class="check" data-value="8"></label></td>
-									<td><label class="check" data-value="9"></label></td>
-									<td><label class="check" data-value="10"></label></td>
-									<td><label class="check" data-value="11"></label></td>
-									<td><label class="check" data-value="12"></label></td>
-									<td><label class="check" data-value="13"></label></td>
-									<td><label class="check" data-value="14"></label></td>
-									<td><label class="check" data-value="15"></label></td>
-									<td><label class="check" data-value="16"></label></td>
-									<td><label class="check" data-value="17"></label></td>
-									<td><label class="check" data-value="18"></label></td>
-									<td><label class="check" data-value="19"></label></td>
-									<td><label class="check" data-value="20"></label></td>
-									<td><label class="check" data-value="21"></label></td>
-									<td><label class="check" data-value="22"></label></td>
-									<td><label class="check" data-value="23"></label></td>
-									<td class="td-all"><label class="checkall"></label></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<div class="mod-ft">
-						<ul class="tips">
-							<li><i class="i-work"></i>提供服务的时间</li>
-							<li><i class="i-allday"></i>全天提供服务</li>
-						</ul>
-					</div>
-					<!-- 存储《以周为单位》的缓存数据 -->
-					<div class="temp-data" id="J-temp-week"></div>
-				</div>
-				<!-- 时间表：以天为单位 -->
-				<div class="schedule-mod" id="J-schedule-day">
-					<div class="mod-bd">
-						<table class="schedule-list" id="J-schedule-list" data-type="day">
-							<thead>
-								<tr class="hour-list">
-									<td class="td-day"><i class="t"></i></td>
-									<td><div class="hour"><span data-value="0">00:00</span><i></i></div></td>
-									<td><div class="hour"><span data-value="1">1</span><i></i></div></td>
-									<td><div class="hour"><span data-value="2">2</span><i></i></div></td>
-									<td><div class="hour"><span data-value="3">3</span><i></i></div></td>
-									<td><div class="hour"><span data-value="4">4</span><i></i></div></td>
-									<td><div class="hour"><span data-value="5">5</span><i></i></div></td>
-									<td><div class="hour"><span data-value="6">6</span><i></i></div></td>
-									<td><div class="hour"><span data-value="7">7</span><i></i></div></td>
-									<td><div class="hour"><span data-value="8">8</span><i></i></div></td>
-									<td><div class="hour"><span data-value="9">9</span><i></i></div></td>
-									<td><div class="hour"><span data-value="10">10</span><i></i></div></td>
-									<td><div class="hour"><span data-value="11">11</span><i></i></div></td>
-									<td><div class="hour"><span data-value="12">12</span><i></i></div></td>
-									<td><div class="hour"><span data-value="13">13</span><i></i></div></td>
-									<td><div class="hour"><span data-value="14">14</span><i></i></div></td>
-									<td><div class="hour"><span data-value="15">15</span><i></i></div></td>
-									<td><div class="hour"><span data-value="16">16</span><i></i></div></td>
-									<td><div class="hour"><span data-value="17">17</span><i></i></div></td>
-									<td><div class="hour"><span data-value="18">18</span><i></i></div></td>
-									<td><div class="hour"><span data-value="19">19</span><i></i></div></td>
-									<td><div class="hour"><span data-value="20">20</span><i></i></div></td>
-									<td><div class="hour"><span data-value="21">21</span><i></i></div></td>
-									<td><div class="hour"><span data-value="22">22</span><i></i></div></td>
-									<td><div class="hour"><span data-value="23">23</span><i></i></div></td>
-									<td><div class="hour"><i></i></div></td>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="td-day">
-										<div class="operate"><i class="i-remove"></i></div>
-										<input type="text" value="选择日期" class="J-date" />
-									</td>
-									<td><label class="check" data-value="0"></label></td>
-									<td><label class="check" data-value="1"></label></td>
-									<td><label class="check" data-value="2"></label></td>
-									<td><label class="check" data-value="3"></label></td>
-									<td><label class="check" data-value="4"></label></td>
-									<td><label class="check" data-value="5"></label></td>
-									<td><label class="check" data-value="6"></label></td>
-									<td><label class="check" data-value="7"></label></td>
-									<td><label class="check" data-value="8"></label></td>
-									<td><label class="check" data-value="9"></label></td>
-									<td><label class="check" data-value="10"></label></td>
-									<td><label class="check" data-value="11"></label></td>
-									<td><label class="check" data-value="12"></label></td>
-									<td><label class="check" data-value="13"></label></td>
-									<td><label class="check" data-value="14"></label></td>
-									<td><label class="check" data-value="15"></label></td>
-									<td><label class="check" data-value="16"></label></td>
-									<td><label class="check" data-value="17"></label></td>
-									<td><label class="check" data-value="18"></label></td>
-									<td><label class="check" data-value="19"></label></td>
-									<td><label class="check" data-value="20"></label></td>
-									<td><label class="check" data-value="21"></label></td>
-									<td><label class="check" data-value="22"></label></td>
-									<td><label class="check" data-value="23"></label></td>
-									<td class="td-all"><label class="checkall"></label></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<div class="mod-ft">
-						<a href="javascript:void(0);" class="i-addition" id="J-add-service-day">Add Day</a>
-						<ul class="tips">
-							<li><i class="i-work"></i>提供服务的时间</li>
-							<li><i class="i-allday"></i>全天提供服务</li>
-						</ul>
-					</div>
-					<!-- 存储《以天为单位》的缓存数据 -->
-					<div class="temp-data" id="J-temp-day"></div>
-				</div>
+				<input type="text" class="input-txt" placeholder="Los Angeles,CA" /><span class="price">$/Hours</span>
+			</div>
+		</div>
 
-				<!-- 存储用户所选的时间表 -->
-				<input type="hidden" name="schedule-data" id="J-schedule-data" />
+		<!-- 宽松程度 -->
+		<div class="guide-mod service-policy">
+			<!-- 每个模块右边的提示模块 -->
+			<div class="guide-tips">
+				<p>Loose is not required to pay liquidated damages, strict, need to pay 3% of the liquidated damages.</p>
+				<a href="#" target="_blank">click to see some example</a>
+			</div>
+			<div class="hd">
+				<h2 class="hd-t">Cancellation Policy</h2>
+			</div>
+			<div class="bd">
+				<select id="J-guide-policy" name="guide-policy">
+					<option value="AL" data-prefix="355">Moderate:Full refund 5 day prior to arrival,except fees</option>
+					<option value="DZ" data-prefix="213">阿尔及利亚</option>
+					<option value="AF" data-prefix="93">阿富汗</option>
+					<option value="AR" data-prefix="54">阿根廷</option>
+					<option value="AE" data-prefix="971">阿拉伯联合酋长国</option>
+					<option value="AW" data-prefix="297">阿鲁巴</option>
+					<option value="OM" data-prefix="968">阿曼</option>
+					<option value="AZ" data-prefix="994">阿塞拜疆</option>
+					<option value="EG" data-prefix="20">埃及</option>
+					<option value="ET" data-prefix="251">埃塞俄比亚</option>
+					<option value="IE" data-prefix="353">爱尔兰</option>
+					<option value="EE" data-prefix="372">爱沙尼亚</option>
+					<option value="CN" data-prefix="86" selected="selected">Moderate:Full refund 5 day prior to arrival,except fees</option>
+				</select>
 			</div>
 		</div>
 
 		<!-- 导航 -->
 		<div class="navigation-step">
-			<button class="ui-btn-big btn-guide-step"><span>save</span></button>
+			<button class="ui-btn-big btn-guide-step"><span>prev step</span></button>
+			<button class="ui-btn-big btn-guide-step"><span>next step</span></button>
 		</div>
 	</form>
 </div>

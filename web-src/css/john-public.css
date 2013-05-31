@@ -355,13 +355,13 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 .ui-scroll-bar .dragger,
 .ui-scroll-bar .dragger-bd:before,
 .ui-scroll-bar .dragger-bd:after,
-.ui-scroll-bar .dragger-bd b { display:block; width:14px; background-image:url(../img/bg-scrollbar.png); background-repeat:no-repeat; cursor:pointer; }
-.ui-scroll-bar { position:absolute; top:0px; right:-1px; bottom:0px; z-index:1; width:14px; min-height:200px; background-repeat:repeat-y; background-position:-29px 0px; }
+.ui-scroll-bar .dragger-bd b { display:block; width:12px; background-image:url(../img/bg-scrollbar.png); background-repeat:no-repeat; cursor:pointer; }
+.ui-scroll-bar { position:absolute; top:0px; right:-1px; bottom:0px; z-index:1; width:12px; min-height:200px; background-repeat:repeat-y; background-position:-24px 0px; }
 .ui-scroll-bar .up,
 .ui-scroll-bar .down { position:absolute; left:0px; right:0px; z-index:2}
 .ui-scroll-bar .up { top:0px; height:14px; background-position:0px 0px; }
 .ui-scroll-bar .down { bottom:0px; height:14px; background-position:0px -14px; }
-.ui-scroll-bar .dragger { position:absolute; top:14px; left:0px; right:0px; z-index:6; height:49px; background-repeat:repeat-y; background-position:-15px 0px; }
+.ui-scroll-bar .dragger { position:absolute; top:14px; left:0px; right:0px; z-index:6; height:49px; background-repeat:repeat-y; background-position:-12px 0px; }
 .ui-scroll-bar .dragger-bd { display:block; position:relative; top:0px; right:0px; bottom:0px; left:0px; height:100%; }
 .ui-scroll-bar .dragger-bd:before,
 .ui-scroll-bar .dragger-bd:after { position:absolute; left:0px; right:0px; content:""; height:4px; overflow:hidden; }
@@ -372,8 +372,8 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 /*输入框*/
 .ui-input-wrap { display:inline-block; position:relative; }
 .ui-input-wrap input { margin-bottom:0px; }
-.ui-input-wrap input+span[class^=i],
-.ui-input-wrap input+i[class^=i] { position:absolute; top:50%; right:5px; margin-top:-9px; }
+.ui-input-wrap span[class^=i],
+.ui-input-wrap i[class^=i] { position:absolute; top:50%; right:5px; margin-top:-9px; }
 
 
 /*单选框、复选框*/
@@ -391,7 +391,7 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 /*复选框*/
 .ui-checkbox,
 .ui-checked,
-.ui-checkall { display:inline-block; position:relative; width:19px; height:19px; padding:0px; margin:0px; border-width:1px; border-style:solid; border-radius:2px; }
+.ui-checkall { display:inline-block; position:relative; width:12px; height:12px; padding:0px; margin:0px 8px 0px 0px; border-width:1px; border-style:solid; border-radius:2px; vertical-align:-2px; }
 .ui-checkbox { background-color:#edebe5; background-position:-100% -100%; border-color:#cfc8bc; }
 .ui-checked { border-color:#0088cc; background-color:#ffffff; background-position:-14px -157px; }
 /*单选框*/
@@ -472,9 +472,10 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 .thumbnails-mod .bd { padding:10px 0px; }
 .thumbnails-list { overflow:hidden; }
 .thumbnails-list .pic { position:relative; padding:10px; border:1px solid #cdcdcd; }
-.thumbnails-list .pic img { width:100%!important; height:auto!important; max-width:100%!important; }
+.thumbnails-list .pic img { top:0px; left:0px; width:100%!important; height:auto!important; max-width:100%!important; margin:0px; }
 .thumbnails-list .caption { padding:0px 10px; }
 .thumbnails-list .caption h4 { padding:10px 0px; font-weight:400; font-size:18px; }
+.thumbnails-list .meta { overflow:hidden; }
 .thumbnails-list .meta li { position:relative; display:inline-block; padding-left:16px; padding-right:20px; font-size:12px; }
 .thumbnails-list .meta li:before { position:absolute; left:0px; top:3px; content:""; width:12px; height:12px; background-image:url(../img/icon-thumbnails.png); background-position:no-repeat; }
 .thumbnails-list .meta .review:before { background-position:0px 0px; }
@@ -487,7 +488,7 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 .side-thumbnails .list-item { padding:10px 0px; }
 
 /*头像*/
-.avator { width:68px!important; height:68px!important; max-width:68px!important; padding:4px; border:1px solid #cdcdcd; }
+.avator { width:68px!important; height:68px!important; max-width:68px!important; padding:4px; background-color:#ffffff; border:1px solid #cdcdcd; }
 
 /*评价*/
 .reivew-mod .bd { padding:10px 0px;  font-size:13px; }
@@ -579,6 +580,7 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 .booking .bd,
 .booking .ft { padding:10px; }
 .booking .prices { font-size:40px; line-height:1.2; border-bottom:1px dotted #cdcdcd; }
+.booking .prices .tips { padding:2px 0px 10px 0px; margin:0px; font-size:14px; }
 .booking .group-input { position:relative; padding-top:10px; min-height:30px; z-index:10; }
 .booking .input-date-wrap { margin-right:6px; }
 .booking .ui-input-wrap { float:left; }
@@ -628,6 +630,34 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 	-webkit-animation:rotate 1s 0s ease both;
 	-moz-animation:rotate 1s 0s ease both;
 }
+/*18px*/
+.i-heart { display:inline-block; width:18px; height:18px; background-image:url(../img/_icon-heart.png); background-repeat:no-repeat; background-position:0px 0px; vertical-align:-3px; }
+.i-remove-green { display:inline-block; width:18px; height:18px; background-image:url(../img/_icon-remove-green.png); background-repeat:no-repeat; background-position:0px 0px; vertical-align:-4px; }
+
+/*28px*/
+.i-line { display:inline-block; width:3px; height:28px; background-image:url(../img/_icon-line.png); background-repeat:no-repeat; background-position:0px 0px; }
+
+
+
+/**
+ * @overflow:
+ * 重写Bootstrap部分代码
+ */
+.ui-carousel-control {
+	position:absolute; top:40%; z-index:100; width:44px; height:44px; margin-top:-20px; color:#ffffff; text-indent:-999px; overflow:hidden;
+	background:none; background-image:url(../img/icon-widget.png); background-repeat:no-repeat;
+	
+	border-radius:100%;
+}
+.ui-carousel-control.prev { background-position:0px -371px; }
+.ui-carousel-control.prev:hover { background-position:0px -415px; }
+.ui-carousel-control.next { background-position:0px -459px; }
+.ui-carousel-control.next:hover { background-position:0px -503px; }
+
+.ui-carousel-control:hover {
+	-webkit-animation:rotate 1s 0s ease both;
+	-moz-animation:rotate 1s 0s ease both;
+}
 
 
 
@@ -641,7 +671,7 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 		-webkit-transform:translateY(0);
 	}
 	40%{
-		-webkit-transform:translateY(-10px);
+		-webkit-transform:translateY(-6px);
 	}
 	60%{
 		-webkit-transform:translateY(-3px);
@@ -652,7 +682,7 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 		-moz-transform:translateY(0);
 	}
 	40%{
-		-moz-transform:translateY(-10px);
+		-moz-transform:translateY(-6px);
 	}
 	60%{
 		-moz-transform:translateY(-3px);

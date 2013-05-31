@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- bootstrap -->
+<link href="../css/bootstrap.css" rel="stylesheet" />
+<link href="../css/bootstrap-fixed.css" rel="stylesheet" />
+<link href="../css/bootstrap-datepicker.css" rel="stylesheet" />
+<!-- bootstrap的响应式 -->
+<link href="../css/bootstrap-responsive.css" rel="stylesheet" />
+<!-- 自定义 -->
+<link href="../css/john-global.css" rel="stylesheet" />
+<link href="../css/john-public.css" rel="stylesheet" />
+<link href="../css/john-dashboard.css" rel="stylesheet" />
+<!-- <link href="../css/john-public-responsive.css" rel="stylesheet" /> -->
+
+<script src="../js/jquery-1.8.3.js" > </script>
+<script src="../js/bootstrap-tab.js"></script>
+<script src="../js/utils.js"></script>
+</head>
+
+<body>
+
+<div class="content">
+	<div class="content-inner">
+		<div class="crumb-mod">
+			<ul class="breadcrumb">
+				<li><i class="icon-home"></i><a href="#">Dashboard</a> <span class="divider">/</span></li>
+				<li><a href="#">Photos and Video</a> <span class="divider">/</span></li>
+				<li class="active">Upload</li>
+			</ul>
+			<a href="javascript:void(0);" class="ui-btn-middle btn-view-middle">
+				<span><i class="icon-eye-open"></i>VIEW PROFILE</span>
+			</a>
+		</div>
+
+		<div class="col-side">
+			<div class="current-user">
+				<img src="../img/avator-1.jpg" alt="图片描述" class="avator">
+				<strong class="name">Yi Lian</strong>
+			</div>
+			<ul class="nav nav-list">
+				<li><a href="#"><i class="icon-home"></i>Dashboard</a></li>
+				<li class="nav-header">Message</li>
+				<li><a href="#"><i class=" icon-inbox"></i>Inbox</a></li>
+				<li class="nav-header">Transaction</li>
+				<li><a href="#"><i class="icon-file"></i>Bookings</a></li>
+				<li><a href="#"><i class="icon-file"></i>Guests</a></li>
+				<li class="nav-header">Account</li>
+				<li><a href="#"><i class="icon-user"></i>Profile</a></li>
+				<li><a href="#"><i class="icon-picture"></i>Photos</a></li>
+				<li><a href="#"><i class="icon-ok-circle"></i>Verification</a></li>
+				<li><a href="#"><i class="icon-eye-open"></i>Reviews</a></li>
+				<li class="nav-header">Itinerary</li>
+				<li><a href="#"><i class="icon-file"></i>Itinerarys</a></li>
+				<li><a href="#"><i class="icon-file"></i>Follows</a></li>
+				<li class="nav-header">Setting</li>
+				<li><a href="#"><i class="icon-file"></i>Notification</a></li>
+				<li><a href="#"><i class="icon-file"></i>Privacy</a></li>
+				<li><a href="#"><i class="icon-file"></i>Security</a></li>
+				<li class="divider"></li>
+				<li><a href="#"><i class="icon-question-sign"></i>Help</a></li>
+			</ul>
+		</div>
+
+		<div class="col-main">
+			<!-- 个人资料：选项卡菜单 -->
+			<ul class="nav nav-tabs" id="J-account-profile">
+				<li><a href="#J-profile" data-toggle="tab">Profile</a></li>
+				<li><a href="#J-photoAndVedio" data-toggle="tab">Photo and Vedio</a></li>
+				<li class="active"><a href="#J-interest" data-toggle="tab">Interest</a></li>
+				<li><a href="#J-verification" data-toggle="tab">Verification</a></li>
+				<li><a href="#J-security" data-toggle="tab">Security</a></li>
+			</ul>
+			<!-- 个人资料：选项卡内容 -->
+			<div class="tab-content">
+				<div class="tab-pane" id="J-profile">This is Profile</div>
+				<div class="tab-pane" id="J-photoAndVedio">This is Photo and Vedio</div>
+				<div class="tab-pane active" id="J-interest">
+					<div class="choose-interest">
+						<div class="hd">
+							<h3 class="hd-t"><i class="i-heart"></i>Choose 1-10 of your interest below.</h3>
+						</div>
+						<div class="bd">
+							<span class="tag">example-1<i class="i-remove-green"></i></span>
+							<span class="tag">example-2<i class="i-remove-green"></i></span>
+							<span class="tag">example-3<i class="i-remove-green"></i></span>
+							<span class="tag">example-4<i class="i-remove-green"></i></span>
+						</div>
+					</div>
+
+					<div class="categories-interest">
+						<!-- 兴趣分类 -->
+						<div class="interest-cate-menu" id="J-interest-cate-menu">
+							<div class="hd">
+								<h3 class="hd-t"><i class="i-line"></i>Categories</h3>
+							</div>
+							<div class="bd">
+								<ul class="interest-cate-list">
+									<li><a href="javascript:void(0);">Architecture</a></li>
+									<li><a href="javascript:void(0);">Art</a></li>
+									<li><a href="javascript:void(0);">Animals</a></li>
+									<li class="active"><a href="javascript:void(0);">Cars &amp; Motorcycles</a></li>
+									<li><a href="javascript:void(0);">Celebrities</a></li>
+									<li><a href="javascript:void(0);">DIY &amp; Crafts</a></li>
+									<li><a href="javascript:void(0);">Design</a></li>
+									<li><a href="javascript:void(0);">Education</a></li>
+									<li><a href="javascript:void(0);">Film,Music &amp; Books</a></li>
+									<li><a href="javascript:void(0);">Food &amp; Drink</a></li>
+									<li><a href="javascript:void(0);">Gardening</a></li>
+									<li><a href="javascript:void(0);">Geek</a></li>
+									<li><a href="javascript:void(0);">Hair &amp; Beauty</a></li>
+									<li><a href="javascript:void(0);">Health &amp; Fitness</a></li>
+									<li><a href="javascript:void(0);">Celebrities</a></li>
+									<li><a href="javascript:void(0);">Architecture</a></li>
+									<li><a href="javascript:void(0);">Art</a></li>
+									<li><a href="javascript:void(0);">Animals</a></li>
+									<li><a href="javascript:void(0);">Cars &amp; Motorcycles</a></li>
+									<li><a href="javascript:void(0);">Celebrities</a></li>
+									<li><a href="javascript:void(0);">DIY &amp; Crafts</a></li>
+									<li><a href="javascript:void(0);">Design</a></li>
+									<li><a href="javascript:void(0);">Education</a></li>
+									<li><a href="javascript:void(0);">Film,Music &amp; Books</a></li>
+									<li><a href="javascript:void(0);">Food &amp; Drink</a></li>
+									<li><a href="javascript:void(0);">Gardening</a></li>
+									<li><a href="javascript:void(0);">Geek</a></li>
+									<li><a href="javascript:void(0);">Hair &amp; Beauty</a></li>
+									<li><a href="javascript:void(0);">Health &amp; Fitness</a></li>
+									<li><a href="javascript:void(0);">Celebrities</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- 兴趣列表 -->
+						<div class="interest-list-mod" id="J-interest-list-mod">
+							<div class="hd">
+								<h3 class="hd-t"><i class="i-line"></i>Interest List</h3>
+							</div>
+							<div class="bd">
+								<ul class="interest-list">
+									<li>
+										<span class="ui-checkbox"><input type="checkbox" class="checkbox" checked="checked"></span>English
+									</li>
+									<li>
+										<span class="ui-checkbox"><input type="checkbox" class="checkbox"></span>Chinese
+									</li>
+									<li>
+										<span class="ui-checkbox"><input type="checkbox" class="checkbox"></span>French
+									</li>
+									<li>
+										<span class="ui-checkbox"><input type="checkbox" class="checkbox"></span>Spanish
+									</li>
+									<li>
+										<span class="ui-checkbox"><input type="checkbox" class="checkbox"></span>Portuguese
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane" id="J-verification">This is Verification</div>
+				<div class="tab-pane" id="J-security">This is Security</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	$(function(){
+		$('#J-account-profile a:eq(2)').tab('show');
+		// 复选框、单选框
+		$('.ui-checkbox, .ui-radio').checkbox();
+		// 兴趣分类的滚动区域
+		$('#J-interest-cate-menu .bd').scrollbar();
+	});
+</script>
+</body>
+</html>

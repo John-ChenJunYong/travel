@@ -43,6 +43,7 @@
 .traveler-list { }
 .traveler-list .user { }
 /*时间表*/
+.guide-schedule .ui-input-line { margin-bottom:10px; }
 .booking-schedule { display:none; font-size:12px; border-spacing:0px; }
 .schedule-list { table-layout:fixed; width:100%; border-collapse:collapse; text-align:center; }
 .schedule-list td { border:1px solid #cdcdcd; }
@@ -51,8 +52,8 @@
 .schedule-list .ui-checkbox { width:30px; height:30px; margin:0px auto; background-color:transparent; border:none; }
 /*游玩时间列表*/
 .travel-time-list { }
-.travel-time-list li { position:relative; padding:6px 400px 6px 110px; }
-.travel-time-list strong { position:absolute; top:6px; left:10px; font-weight:400; color:#0088cc; }
+.travel-time-list li { position:relative; padding:6px 400px 6px 100px; }
+.travel-time-list strong { position:absolute; top:6px; left:0px; font-weight:400; color:#0088cc; }
 .travel-time-list span { display:inline-block; padding-right:20px; }
 
 /**
@@ -63,11 +64,14 @@
 .guide-mod .hd-t { display:inline-block; padding-right:10px; }
 .guide-mod .hd-extra { font-weight:400; }
 .guide-mod .hd-extra span { color:#ff6600; }
-.guide-mod .bd { padding:14px; border:1px solid #cdcdcd; border-radius:5px; }
-.guide-mod p { margin:10px 0px; }
-.guide-mod .ui-btn-small { padding:4px 20px; }
+.guide-mod .bd { padding:20px; border:1px solid #cdcdcd; border-radius:5px; }
+.guide-mod p { margin:0px 0px; }
 .guide-mod .quantity { padding:0px 4px; color:#ff0000; }
-.guide-mod .btn-wrap { display:none; }
+.guide-mod .ui-input-line { display:none; min-height:30px; padding:0px 0px; }
+.guide-mod .ui-input-wrap { float:left; margin-right:10px; }
+.guide-mod .ui-btn-small { padding:4px 20px; }
+.guide-mod .btn-wrap { display:none; padding:20px 0px 0px 0px; text-align:right; }
+.guide-mod .btn-wrap .ui-btn-big { padding-left:50px; padding-right:50px; }
 
 /*图片列表*/
 .gallery-mod { padding:20px 18px; margin-top:20px; background-color:#fffceb; border:1px solid #eed97c; }
@@ -80,17 +84,18 @@
 .attractions-list li,
 .itinerary-list li { position:relative; line-height:1.75; }
 .attractions-list li:before,
-.itinerary-list li:before { position:absolute; left:0px; content:""; width:18px; height:18px; background-image:url(../img/icon-article.png); }
+.itinerary-list li:before { position:absolute; left:0px; content:""; z-index:2; width:18px; height:18px; background-image:url(../img/icon-article.png); }
 /*景点*/
 .attractions .bd { padding:0px; border:none; }
 .attractions-list { width:auto; padding:20px; margin-top:10px; background-color:#e8f7fe; border:1px solid #b2ddf1; border-radius:5px; overflow:hidden; }
-.attractions-list li { float:left; width:33%; padding:4px 0px; text-indent:24px; cursor:pointer; }
+.attractions-list li { float:left; width:33%; padding:4px 0px; cursor:pointer; }
+.attractions-list p { float:left; max-width:80%; padding-left:24px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
 .attractions-list li:before { top:50%; margin-top:-9px; background-position:0px 0px; }
 .attractions-list li:hover:before {
 	-webkit-animation:bounce 1s .2s ease both;
 	-moz-animation:bounce 1s .2s ease both;
 }
-.attractions-list .i-remove { margin-left:10px; vertical-align:-4px; }
+.attractions-list .i-remove { display:none; margin-left:10px; vertical-align:-4px; }
 .attractions-list .empty { text-indent:0px; color:#0088cc; }
 .attractions-list .empty:before { display:none; }
 /*线路*/
@@ -104,11 +109,12 @@
 /*旅伴*/
 .companion-active { table-layout:fixed; width:100%; }
 .companion-active td { width:100px; vertical-align:top; }
-.companion-active .pic { width:100px; }
+.companion-active .user { width:100px; }
 .companion-active .name { font-weight:700; }
 .companion-active .operate { width:auto; }
 .companion-active .amount-price { color:#ff6600; }
 .companion-active .operate { text-align:right; vertical-align:middle; }
+.companion-active .operate .btn-book-small { display:none; }
 
 /*描述*/
 .msg-description .bd { padding:0px; border:none; }
@@ -117,7 +123,6 @@
 .alert-error-list { padding:10px 0px; font-size:12px; }
 .alert-error-list li { position:relative; padding:4px 0px; }
 .alert-error-list label { position:absolute; top:50%; right:0px; margin:0px; margin-top:-7px; font-size:12px; }
-.alert-error-list span[class*=check] { display:inline-block; width:12px; height:12px; margin-right:8px; vertical-align:-2px; }
 .alert-error-list .ui-checked { background-position:0px -206px; }
 
 /*结算信息*/
@@ -134,32 +139,39 @@
  ****************************/
 .ui-backdrop {
 	position:fixed; top:0px; right:0px; bottom:0px; left:0px; z-index:998; background-color:#ffffff;
-	opacity: 0;
-	filter: alpha(opacity=0);
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+	opacity:0;
 	-webkit-transition: opacity .15s linear;
 	-moz-transition: opacity .15s linear;
 	-o-transition: opacity .15s linear;
 	transition: opacity .15s linear;
 }
 .ui-backdrop.in {
-	opacity:.8;
-	filter:alpha(opacity=80);
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+	filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+	opacity:0.6;
 }
-.status-editing .hd,
-.status-editing .bd,
-.status-editing .ft { position:relative; z-index:9999; background-color:#ffffff; }
-.status-editing .bd { padding:10px; border:1px solid #ff0000; }
-.status-editing .btn-wrap { display:block; padding:20px 0px 0px 0px; text-align:right; }
-.status-editing .ui-btn-big { padding-left:50px; padding-right:50px; }
+.status-editing { position:relative; z-index:9999; background-color:#ffffff; }
+.status-editing .bd { padding:20px; border:1px solid #ff0000; }
 .status-editing .edit { display:none; }
+.status-editing .J-current-result { display:none; }
+
+.status-editing .history-companions,
+.status-editing .travel-companions,
+.status-editing .ui-input-line,
+.status-editing .btn-wrap { display:block; }
+/*景点*/
+.status-editing .attractions-list .i-remove { display:inline-block; }
+
 /*旅伴列表*/
-.travel-companions { position:relative; padding:20px 30px 20px 60px; margin-top:20px; border-top:1px solid #cdcdcd; }
+.travel-companions { position:relative; display:none; padding:20px 30px 20px 60px; margin-top:20px; border-top:1px solid #cdcdcd; }
 .travel-companions .page-prev,
 .travel-companions .page-next { position:absolute; top:50%; margin-top:-15px; }
 .travel-companions .page-prev { left:10px; }
 .travel-companions .page-next { right:10px; }
 .travel-companions .list { height:78px; overflow:hidden; }
-.travel-companions .item { float:left; width:25%; overflow:hidden; }
+.travel-companions .list-item { float:left; width:25%; overflow:hidden; }
 .travel-companions .user { float:left; }
 .travel-companions .info { padding-left:10px; overflow:hidden; font-size:14px; }
 .travel-companions .price { padding:5px 0px; color:#999999; }
@@ -167,8 +179,10 @@
 .travel-companions .btn-book-small { padding-top:3px; padding-bottom:3px; }
 .travel-companions .ui-checkbox { float:left; margin-top:4px; margin-left:32px; }
 /*第一次所*/
+.history-companions { display:none; }
 .history-companions .mod-hd-t { margin-bottom:10px; font-size:14px; }
 .history-companions .mod-bd { padding:10px; background-color:#e4f6ff; border:1px dashed #98dcff; }
+.history-companions .operate .btn-book-small { display:inline-block; }
 
 
 /**
