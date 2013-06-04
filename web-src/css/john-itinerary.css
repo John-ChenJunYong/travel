@@ -8,7 +8,6 @@
  * explanantion:复写Bootstrap的modal部分外观;
  * author:johnchen@tag-along.org;
  */
-.ui-modal .ui-close { background-image:url(../img/icon-widget.png); background-repeat:no-repeat; }
 .ui-modal {
 	position:fixed; top:1%; left:50%; z-index:1050; width:1144px; margin-left:-572px; background-color:#ffffff; outline:none;
 	border:1px solid #cdcdcd;
@@ -35,12 +34,7 @@
 .ui-modal.fade.in { top:1%; }
 .ui-modal .modal-hd { display:none; padding:8px 15px; border-bottom:1px solid #eeeeee; }
 .ui-modal .modal-hd-t { line-height:30px; }
-.ui-modal .ui-close { position:absolute; top:10px; right:10px; display:block; width:29px; height:29px; background-position:0px -547px; text-indent:-999px; overflow:hidden; }
-.ui-modal .ui-close:hover {
-	background-position:0px -576px;
-	-webkit-animation:rotate 1s 0s ease both;
-	-moz-animation:rotate 1s 0s ease both;
-}
+.ui-modal .ui-close { position:absolute; top:10px; right:10px; }
 
 /**
  * date:2013-5-15;
@@ -57,8 +51,6 @@
 .modal-journey-search .options .options-t { padding-right:10px; font-weight:400; font-size:12px; }
 .modal-journey-search .options-list { display:inline-block; vertical-align:middle; overflow:hidden; }
 .modal-journey-search .options-list label { display:inline-block; margin:0px 10px 0px 0px; font-size:12px; }
-.modal-journey-search .options-list span[class*=check] { display:inline-block; width:12px; height:12px; margin-right:8px; vertical-align:-2px; }
-.modal-journey-search .options-list .ui-checked { background-position:0px -271px; }
 .modal-journey-search .options-list .label-t { padding-right:10px; color:#0088cc; }
 .modal-journey-search .options-list .option { display:inline-block; padding-right:10px; margin:0px; font-size:12px; }
 .modal-journey-search .options-list .option:last-child { padding-right:0px; }

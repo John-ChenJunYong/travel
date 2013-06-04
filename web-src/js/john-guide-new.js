@@ -4,6 +4,9 @@
  */
 var GuideNew = {
 	active_name : 'active',
+
+	error_same_date : '日期不能相同',
+	error_no_date : '请选择日期',
 	/**
 	 * 缓存《以月为单位》的缓存数据
 	 * @type {Object}
@@ -25,10 +28,13 @@ var GuideNew = {
 	 */
 	clickLocationTxt : function(opts) {
 		var opts = opts || {};
-		var e = opts.e;
+		var arg = opts.arg;
 		var callback = opts.callback;
-		var target = utils.getTarget(e);
-		$(target).addClass(this.active_name).siblings().removeClass(this.active_name);
+
+		var that = this;
+		var _this = arg;
+		
+		_this.addClass(this.active_name).siblings().removeClass(this.active_name);
 
 		if(typeof callback === 'function') {
 			callback();
@@ -41,16 +47,18 @@ var GuideNew = {
 	 */
 	removeLocation : function(opts){
 		var opts = opts || {};
-		var e = opts.e;
+		var arg = opts.arg;
 		var callback = opts.callback;
-		var target = utils.getTarget(e);
-		$(target).parent().remove();
+
+		var that = this;
+		var _this = arg;
+
+		_this.parent().remove();
 
 		if(typeof callback === 'function') {
 			callback();
 		}
 	},
-
 
 	/**
 	 * 初始化选择时间表的类型，会根据当前select所选中的值进行自动切换到指定的时间表
@@ -92,21 +100,32 @@ var GuideNew = {
 					// do something
 					break;
 			}
-			console.log(json);
+			// 在编辑状态下，需要判断是否全选，如果是，自动为《全选》按钮添加className
+			// 而已经被选中的时间点，则由php那端控制输出
+			for (i in json) {
+				var __parent_tr = $('.td-day[data-value=' + i + ']').parent();
+				var active_length = __parent_tr.find('label.'+that.active_name+'[data-value]').length;
+				var date_length = __parent_tr.find('label.check').length;
+				active_length == date_length ? __parent_tr.find('.checkall').addClass(that.active_name) : __parent_tr.find('.checkall').removeClass(that.active_name);
+			}
 		}
 	},
 
 	/**
 	 * 切换选择时间表的类型，分别有：月、周、天这三种类型
-	 * @return {[type]} [description]
+	 * @param  {[type]} arg [description]
+	 * @return {[type]}     [description]
 	 */
-	selectScheduleType : function(e) {
-		var target 		= 	utils.getTarget(e);
-		var $target 	= 	$(target);
-		var type 		= 	$target.val();
-		var schedule 	= 	$target.parent().parent().find('.schedule-mod');
+	selectScheduleType : function(arg) {
+		if (!arg) return false;
 
-		this.initScheduleType({
+		var that = this;
+		var _this = arg;
+
+		var type 		= 	_this.val();
+		var schedule 	= 	_this.parent().parent().find('.schedule-mod');
+
+		that.initScheduleType({
 			type : type,
 			schedule : schedule
 		});
@@ -115,13 +134,13 @@ var GuideNew = {
 
 		var data;
 		if (type == 'month') {
-			data = this.temp_month_data;
+			data = that.temp_month_data;
 		} else if (type == 'week') {
-			data = this.temp_week_data;
+			data = that.temp_week_data;
 		} else if (type == 'day') {
-			data = this.temp_day_data;
+			data = that.temp_day_data;
 		}
-		this.conversionData(data, type);
+		that.conversionData(data, type);
 		// var temp_value = $('#J-temp-' + type).html();
 		// $('#J-schedule-data').val(temp_value);
 	},
@@ -131,30 +150,35 @@ var GuideNew = {
 	 * @param  {[type]} e [description]
 	 * @return {[type]}   [description]
 	 */
-	chooseScheduleHour : function(e) {
-		var that = this;
-		var target = utils.getTarget(e);
-		var $target = $(target);
-		
-		var $parents_tr = $target.parent().parent();
-		var date_value = $parents_tr.find('.td-day').attr('data-value') || $parents_tr.find('.date-operate .date').text();
-		var hour_value = $target.attr('data-value');
-		var type = $parents_tr.parents('table').attr('data-type');
+	chooseScheduleHour : function(arg) {
+		if (!arg) return false;
 
+		var that = this;
+		var _this = arg;
+		
+		var _parents_tr = _this.parent().parent();
+		var date_value = _parents_tr.find('.td-day').attr('data-value') || _parents_tr.find('.date-operate .date').text();
+		var hour_value = _this.attr('data-value');
+		var type = _parents_tr.parents('table').attr('data-type');
 
 		// 在《以天为单位》的情况下
 		// 判断是否选择了日期
-		if(!date_value || date_value == '选择日期') {
-			alert('请先选择日期');
+		if(!date_value.length && date_value != that.error_no_date) {
+			alert(that.error_no_date);
 			return false;
 		}
 
-		$target.hasClass(that.active_name) ? $target.removeClass(that.active_name) : $target.addClass(that.active_name);
+		_this.hasClass(that.active_name) ? _this.removeClass(that.active_name) : _this.addClass(that.active_name);
+
+		// 检测是否全选，以便给《全选》按钮增加一个className
+		var active_length = _parents_tr.find('label.'+that.active_name+'[data-value]').length;
+		var date_length = _parents_tr.find('label.check').length;
+		active_length == date_length ? _parents_tr.find('.checkall').addClass(that.active_name) : _parents_tr.find('.checkall').removeClass(that.active_name);
 
 		// 获取选中的时间的值
 		this.getChooseScheduleData({
 			_type : type,
-			_target : $target,
+			_target : _this,
 			date_value : date_value,
 			hour_value : hour_value
 		});
@@ -167,27 +191,29 @@ var GuideNew = {
 	 * @param  {[type]} e [description]
 	 * @return {[type]}   [description]
 	 */
-	chooseScheduleAllDay : function(e) {
+	chooseScheduleAllDay : function(arg) {
+		if (!arg) return false;
+
 		var that = this;
-		var target = utils.getTarget(e);
-		var $target = $(target);
-		var $parents_tr = $target.parent().parent();
-		var check = $parents_tr.find('.check');
-		var type = $parents_tr.parents('table').attr('data-type');
-		var date_value = $parents_tr.find('.td-day').attr('data-value') || $parents_tr.find('.date-operate .date').text();
+		var _this = arg;
+
+		var _parents_tr = _this.parent().parent();
+		var check = _parents_tr.find('.check');
+		var type = _parents_tr.parents('table').attr('data-type');
+		var date_value = _parents_tr.find('.td-day').attr('data-value') || _parents_tr.find('.date-operate .date').text();
 
 		// 在《以天为单位》的情况下
 		// 判断是否选择了日期
-		if(!date_value || date_value == '选择日期') {
-			alert('请先选择日期');
+		if(!date_value.length && date_value != that.error_no_date) {
+			alert(that.error_no_date);
 			return false;
 		}
 
-		if ($target.hasClass(this.active_name)) {
-			$target.removeClass(this.active_name);
+		if (_this.hasClass(this.active_name)) {
+			_this.removeClass(this.active_name);
 			check.removeClass(this.active_name);
 		} else {
-			$target.addClass(this.active_name);
+			_this.addClass(this.active_name);
 			check.addClass(this.active_name);
 		}
 
@@ -267,14 +293,18 @@ var GuideNew = {
 	 * 选择日期
 	 * @return {[type]} [description]
 	 */
-	chooseScheduleDay : function(e) {
-		var that = this;
-		var target = utils.getTarget(e);
-		var _this = $(target);
+	chooseScheduleDay : function(arg) {
 		
-		var $parent = _this.parent();
-		var $parents_table = _this.parents('table.schedule-list');
-		var type = $parents_table.attr('data-type');
+		if (!arg) return false;
+
+		var that = this;
+		var _this = arg;
+
+		var temp_day 	= 	that.temp_day_data;
+
+		var _parent = _this.parent();
+		var _parents_table = _this.parents('table.schedule-list');
+		var type = _parents_table.attr('data-type');
 
 		var now_temp = new Date();
 		var now = new Date(now_temp.getFullYear(), now_temp.getMonth(), now_temp.getDate(), 0, 0, 0, 0);
@@ -287,19 +317,30 @@ var GuideNew = {
 		})
 		.datepicker('show')
 		.on('changeDate', function(ev){
+
 			// 清空数值
 			_this.text('');
 			// 之前的日期
-			var temp_date = $parent.find('.date').text();
+			var temp_date = _parent.find('.date').text();
 			// 修改后的日期
 			var date_value = _this.data('date');
-			$parent.find('.date').text(date_value);
+
+			// 判断所选择的日期是否有冲突
+			for (i in temp_day) {
+				if (date_value == i) {
+					alert(that.error_same_date);
+					return false;
+				}
+			}
+
+			_parent.find('.date').text(date_value);
 			// 处理以天为单位的json对象
-			that.temp_day_data[temp_date] = that.temp_day_data[temp_date] || {}
-			that.temp_day_data[date_value] = that.temp_day_data[temp_date];
+			temp_day[temp_date] = temp_day[temp_date] || {}
+			temp_day[date_value] = temp_day[temp_date];
+
 			// 删除之前日期的属性值
-			delete that.temp_day_data[temp_date];
-			that.conversionData(that.temp_day_data, type);
+			delete temp_day[temp_date];
+			that.conversionData(temp_day, type);
 			// 隐藏日历
 			_this.datepicker('hide');
 		});
@@ -309,7 +350,7 @@ var GuideNew = {
 	 * 根据当前需要，只要在《天》这个类型下，新增一天，需要在后面插入一行表格
 	 * @return {[type]} [description]
 	 */
-	addScheduleNewLine : function(e) {
+	addScheduleNewLine : function() {
 		var tmpl = this.tmplScheduleNewLine();
 		$('#J-schedule-day tbody').append(tmpl);
 	},
@@ -318,20 +359,25 @@ var GuideNew = {
 	 * 删除某天
 	 * @return {[type]} [description]
 	 */
-	removeScheduleDayLine : function(e) {
-		var target = utils.getTarget(e);
-		var $parents_tr = $(target).parents('tr');
-		var $parents_table = $(target).parents('table.schedule-list');
-		var type = $parents_table.attr('data-type');
-		var date_value = $parents_tr.find('.date').text();
-		if (!$parents_tr.length) return false;
+	removeScheduleDayLine : function(arg) {
+		if (!arg) return false;
+
+		var that = this;
+		var _this = arg;
+
+		var _parents_tr = _this.parents('tr');
+		var _parents_table = _this.parents('table.schedule-list');
+		var type = _parents_table.attr('data-type');
+		var date_value = _parents_tr.find('.date').text();
+		if (!_parents_tr.length) return false;
 
 		// 删除某天后，重新将缓存的对象转换成json格式的字符串
 		// console.log(this.temp_day_data[date_value]);
-		this.temp_day_data[date_value] = {};
+		// this.temp_day_data[date_value] = {};
+		delete this.temp_day_data[date_value];
 		this.conversionData(this.temp_day_data, type);
 		// console.log(this.temp_day_data[date_value]);
-		$parents_tr.remove();
+		_parents_tr.remove();
 	},
 
 	/**
@@ -419,9 +465,9 @@ $(function() {
 		$('#J-location-list').scrollbar();
 		// 点击地址文本
 		$('#J-location-list li:not(.example)').on('click', function(e) {
-			console.log('aaa');
+			var _this = $(this)
 			GuideNew.clickLocationTxt({
-				e : e,
+				arg : _this,
 				callback : function() {
 					// do something
 					// 例如在这里进行ajax
@@ -431,9 +477,10 @@ $(function() {
 	});
 
 	// 删除某个已经添加过的地址
-	$('.location-list .i-remove').live('click', function(e) {
+	$('.location-list .i-remove').live('click', function() {
+		var _this = $(this);
 		GuideNew.removeLocation({
-			e : e,
+			arg : _this,
 			callback : function() {
 				// do something
 				// 例如在这里进行ajax
@@ -442,14 +489,16 @@ $(function() {
 	});
 
 	// 选择某天的某个时间点
-	$('.schedule-list .check').live('click', function(e){
-		GuideNew.chooseScheduleHour(e);
+	$('.schedule-list .check').live('click', function(){
+		var _this = $(this);
+		GuideNew.chooseScheduleHour(_this);
 		return false;
 	});
 
 	// 选择一整天
 	$('.schedule-list .checkall').live('click', function(e){
-		GuideNew.chooseScheduleAllDay(e);
+		var _this = $(this);
+		GuideNew.chooseScheduleAllDay(_this);
 		return false;
 	});
 	
@@ -458,19 +507,21 @@ $(function() {
 		status : 'edit'
 	});
 	$('#J-schedule-select').on('change', function(e) {
-		GuideNew.selectScheduleType(e);
+		var _this = $(this);
+		GuideNew.selectScheduleType(_this);
 		e.stopPropagation();
 	});
 
 	// 为日期当中的《天》绑定增加日期事件
 	$('#J-add-service-day').on('click', function(e) {
-		GuideNew.addScheduleNewLine(e);
+		GuideNew.addScheduleNewLine();
 		return false;
 	});
 
 	// 为日期当中的《天》绑定切换天数事件
-	$('#J-schedule-day .date-operate .choose').live('click', function(e){
-		GuideNew.chooseScheduleDay(e);
+	$('#J-schedule-day .date-operate .choose').live('click', function(){
+		var _this = $(this);
+		GuideNew.chooseScheduleDay(_this);
 	});
 
 	// 为日期当中的《天》绑定删除日期事件
@@ -484,7 +535,8 @@ $(function() {
 		e.stopPropagation();
 	});
 	$('#J-schedule-day .i-remove').live('click', function(e){
-		GuideNew.removeScheduleDayLine(e);
+		var _this = $(this);
+		GuideNew.removeScheduleDayLine(_this);
 		return false;
 	});
 

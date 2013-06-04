@@ -492,29 +492,23 @@
 				</div>
 
 				<!-- 存储用户所选的时间表 -->
-				<textarea name="schedule-data" id="J-schedule-data" style="display:none;">
-					{"thursday":{"4":"4"},"wednesday":{"9":"9"},"friday":{"6":"6","8":"8","12":"12"},"saturday":{"6":"6","9":"9","12":"12"},"sunday":{"9":"9"},"tuesday":{"13":"13"},"monday":{"12":"12"}}
-				</textarea>
+				<textarea name="schedule-data" id="J-schedule-data" style="display:none;"></textarea>
 			</div>
 		</div>
 
 		<!-- 导航 -->
 		<div class="navigation-step">
 			<button class="ui-btn-big btn-guide-step"><span>prev step</span></button>
-			<button class="ui-btn-big btn-guide-step"><span>next step</span></button>
+			<button class="ui-btn-big btn-guide-step" id="J-save-date"><span>next step</span></button>
 		</div>
 	</form>
 </div>
 <script type="text/javascript">
 	$(function(){
-		// $('#J-schedule-list .td-day .choose').datepicker()
-		// .on('onRender', function(date){
-		// 	var nowTemp = new Date();
-		// 	var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
-		// 	return date.valueOf() < now.valueOf() ? 'disabled' : '';
-		// }).on('changeDate', function(ev){
-
-		// });
+		$('#J-save-date').live('click', function(){
+			console.log($('#J-schedule-data').val());
+			return false;
+		});
 	});
 </script>
 </body>

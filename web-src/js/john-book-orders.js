@@ -69,27 +69,6 @@ var bookOrders = {
 		return false;
 	},
 
-	
-	tmpl : function(type){
-		if(!type) return;
-		var tmpl;
-		switch(type){
-			// 景点
-			case 'attractions' :
-				tmpl = [
-					'<li class="empty">您暂时还没有添加任何景点</li>'
-				].join('');
-				break;
-			// 遮罩层，用于在编辑状态下，防止非编辑状态的内容被点击到
-			case 'backdrop' :
-				tmpl = [
-					'<div class="ui-backdrop in"><!-- 遮罩层，用于在编辑状态下，防止非编辑状态的内容被点击到 --></div>'
-				].join('');
-				break;
-		}
-		return tmpl;
-	},
-
 	/**
 	 * 更新参加人数
 	 * @param  {[type]} opts [description]
@@ -192,6 +171,31 @@ var bookOrders = {
 				'</div>',
 			'</div>'
 		].join('');
+		return tmpl;
+	},
+
+	/**
+	 * 模板
+	 * @param  {[type]} type [description]
+	 * @return {[type]}      [description]
+	 */
+	tmpl : function(type){
+		if(!type) return;
+		var tmpl;
+		switch(type){
+			// 景点
+			case 'attractions' :
+				tmpl = [
+					'<li class="empty">您暂时还没有添加任何景点</li>'
+				].join('');
+				break;
+			// 遮罩层，用于在编辑状态下，防止非编辑状态的内容被点击到
+			case 'backdrop' :
+				tmpl = [
+					'<div class="ui-backdrop in"></div>'
+				].join('');
+				break;
+		}
 		return tmpl;
 	}
 };

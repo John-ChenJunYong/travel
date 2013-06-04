@@ -11,11 +11,11 @@
 body { font-family:'Helvetica Neue', Helvetica, Arial, sans-serif!important; font-size:14px; }
 label, input, button, select, textarea { font-size:14px; }
 h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
-
+input[readonly=readonly] { background-color:#ffffff; cursor:default; }
 /*content layout*/
 .content {
 	width:956px; min-width:956px; padding:10px 0px; margin:0px auto;
-	font-family:'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif!important;
+	/*font-family:'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif!important;*/
 }
 .content:after { clear:both; display:block; height:0px; overflow:hidden; visibility:hidden; content:""; }
 
@@ -81,15 +81,15 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 .ui-btn-middle i,
 .ui-btn-middle b,
 .ui-btn-small i,
-.ui-btn-small b { display:inline-block; background-image:url(../img/icon-widget.png); background-repeat:no-repeat; vertical-align:-2px; }
+.ui-btn-small b { display:inline-block; background-image:url(../img/_icon-sprite.png); background-repeat:no-repeat; vertical-align:-2px; }
 .ui-btn-small i,
 .ui-btn-small b { width:14px; height:14px; margin-right:4px; }
 .ui-btn-big i,
 .ui-btn-big b { width:22px; height:20px; margin-right:10px; }
 /*各个小图标的特殊处理*/
-.ui-btn-small .i-search { background-position:0px -283px; }
-.ui-btn-big .i-star { background-image:url(../img/icon-sns.png); background-position:0px -170px; }
-.btn-view-middle .icon-eye-open { background-image:url(../img/glyphicons-halflings.png); }
+.ui-btn-small .i-search { background-position:-7px -286px; }
+.ui-btn-big .i-star { background-position:-3px -338px; }
+.btn-view-middle .icon-eye-open { margin-right:6px; background-position:-7px -651px; }
 /*按钮在鼠标经过的默认效果*/
 .ui-btn-big:hover,
 .ui-btn-big:focus,
@@ -372,36 +372,24 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 /*输入框*/
 .ui-input-wrap { display:inline-block; position:relative; }
 .ui-input-wrap input { margin-bottom:0px; }
-.ui-input-wrap span[class^=i],
-.ui-input-wrap i[class^=i] { position:absolute; top:50%; right:5px; margin-top:-9px; }
+.ui-input-wrap i[class^=i] { position:absolute; top:3px; right:3px; }
 
 
 /*单选框、复选框*/
 .ui-checkbox,
-.ui-checkall,
-.ui-checked,
-.ui-radio,
-.ui-radioed { background-image:url(../img/icon-form.png); background-repeat:no-repeat; }
-.ui-checkall input,
+.ui-radio { position:relative; display:inline-block; width:16px; height:16px; margin-right:6px; background-image:url(../img/_icon-form.png); background-repeat:no-repeat; vertical-align:-3px; }
 .ui-checkbox input,
 .ui-radio input {
 	position:absolute; top:0px; right:0px; bottom:0px; left:0px; z-index:2; width:100%; height:100%; min-height:100%; padding:0px; margin:0px; border:none;
-	opacity:0; filter:alpha(opacity=0);
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+	opacity:0;
 }
-/*复选框*/
-.ui-checkbox,
-.ui-checked,
-.ui-checkall { display:inline-block; position:relative; width:12px; height:12px; padding:0px; margin:0px 8px 0px 0px; border-width:1px; border-style:solid; border-radius:2px; vertical-align:-2px; }
-.ui-checkbox { background-color:#edebe5; background-position:-100% -100%; border-color:#cfc8bc; }
-.ui-checked { border-color:#0088cc; background-color:#ffffff; background-position:-14px -157px; }
-/*单选框*/
-.ui-radio,
-.ui-radioed { display:inline-block; position:relative; width:16px; height:16px; padding:0px; margin-right:4px; vertical-align:-3px; overflow:hidden; }
-.ui-radio { background-position:0px -218px; }
-.ui-radioed { background-position:0px -234px; }
-/*全选*/
-.ui-checkall { background-position:-13px -110px; border:none; }
-.ui-checkall.ui-checked { background-position:-13px -157px; }
+.ui-checkbox { background-position:-76px 0; }
+.ui-checkbox.ui-checked { background-position:-93px 0; }
+.ui-radio { background-position:-42px 0; }
+.ui-radio.ui-radioed { background-position:-59px 0; }
+
 
 /*分页*/
 .ui-pagination { padding:16px 0px; text-align:center; font-size:0px; }
@@ -477,9 +465,9 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 .thumbnails-list .caption h4 { padding:10px 0px; font-weight:400; font-size:18px; }
 .thumbnails-list .meta { overflow:hidden; }
 .thumbnails-list .meta li { position:relative; display:inline-block; padding-left:16px; padding-right:20px; font-size:12px; }
-.thumbnails-list .meta li:before { position:absolute; left:0px; top:3px; content:""; width:12px; height:12px; background-image:url(../img/icon-thumbnails.png); background-position:no-repeat; }
-.thumbnails-list .meta .review:before { background-position:0px 0px; }
-.thumbnails-list .meta .price:before { background-position:0px -12px; }
+.thumbnails-list .meta li:before { position:absolute; left:0px; top:3px; content:""; width:12px; height:12px; background-image:url(../img/_icon-sprite.png); background-repeat:no-repeat; }
+.thumbnails-list .meta .review:before { background-position:-10px -371px; }
+.thumbnails-list .meta .price:before { background-position:100% 100%; }
 /*图文列表的特殊处理，分主栏目、边栏两种情况*/
 .main-thumbnails { padding:26px 0px; }
 .main-thumbnails .list-item { float:left; width:43.42857%; padding:10px 3.2857%; }
@@ -555,7 +543,7 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 .collect-side .ui-btn-big { display:block; }
 .collect-side .btn-follow-big { margin-bottom:10px; }
 .collect-side .ft {
-	padding:8px 0px; border-top:1px solid #cdcdcd; text-align:center;
+	padding:8px 0px; border-top:1px solid #cdcdcd; text-align:center; font-size:12px;
 	-webkit-border-radius:0px 0px 5px 5px;
 	-moz-border-radius:0px 0px 5px 5px;
 	border-radius:0px 0px 5px 5px;
@@ -577,8 +565,8 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 	-moz-border-radius:5px;
 	border-radius:5px;
 }
-.booking .bd,
-.booking .ft { padding:10px; }
+.booking .bd { padding:10px; }
+.booking .ft { padding:10px; padding-top:0px; }
 .booking .prices { font-size:40px; line-height:1.2; border-bottom:1px dotted #cdcdcd; }
 .booking .prices .tips { padding:2px 0px 10px 0px; margin:0px; font-size:14px; }
 .booking .group-input { position:relative; padding-top:10px; min-height:30px; z-index:10; }
@@ -586,7 +574,6 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 .booking .ui-input-wrap { float:left; }
 .booking .input-date { width:96px; }
 .booking .input-person { width:78px; }
-.booking .ft { border-top:1px solid #cdcdcd; }
 .booking .ui-btn-big { display:block; }
 
 /**
@@ -594,34 +581,32 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
  * explanation:重写页面页面所有自定义icon（不包括bootstrap方面的）;
  */
 /*所引用的图片*/
-.i-addition,
 .page-prev,
 .page-next,
-.i-remove,
 .i-time,
 .i-user,
 .i-person,
 .i-calendar,
 .i-date,
-.i-map-marker { display:inline-block; background:transparent; background-image:url(../img/icon-sprite.png); background-repeat:no-repeat; border:none; text-indent:-999px; overflow:hidden; }
+.i-map-marker,
+.i-heart,
+.i-line,
+.i-remove-green { display:inline-block; background:transparent; background-image:url(../img/_icon-sprite.png); background-repeat:no-repeat; border:none; text-indent:-999px; overflow:hidden; }
 /*图片外观*/
 .page-prev,
 .page-next,
-.i-addition { width:28px; height:28px; }
 .page-prev { background-position:0 0; }
 .page-prev:hover { background-position:0 -29px; }
 .page-next { background-position:-29px 0; }
 .page-next:hover { background-position:-29px -29px; }
 
-.i-addition { background-position:-58px 0; }
-.i-addition:hover { background-position:-58px -29px; }
-
-.i-remove { width:18px; height:18px; background-position:-145px 0; }
 .i-time { width:18px; height:18px; background-position:-145px -19px; }
 .i-person,
-.i-user { width:18px; height:18px; background-position:-145px -38px; }
+.i-user { width:24px; height:24px; background-color:#ffffff; background-position:-3px -58px; border-radius:0px 4px 4px 0px; }
+
 .i-date,
-.i-calendar { width:18px; height:18px; background-position:-164px 0; }
+.i-calendar { width:24px; height:24px; background-color:#ffffff; background-position:-3px -225px; border-radius:0px 4px 4px 0px; }
+
 .i-map-marker { width:18px; height:18px; background-position:-164px -19px; }
 .i-map-marker-light { width:18px; height:18px; background-position:-164px -38px; }
 /*鼠标经过效果*/
@@ -631,30 +616,36 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 	-moz-animation:rotate 1s 0s ease both;
 }
 /*18px*/
-.i-heart { display:inline-block; width:18px; height:18px; background-image:url(../img/_icon-heart.png); background-repeat:no-repeat; background-position:0px 0px; vertical-align:-3px; }
-.i-remove-green { display:inline-block; width:18px; height:18px; background-image:url(../img/_icon-remove-green.png); background-repeat:no-repeat; background-position:0px 0px; vertical-align:-4px; }
+.i-heart { width:18px; height:18px; background-position:-5px -592px; vertical-align:-3px; }
+.i-remove-green { width:18px; height:18px; background-position:-5px -564px; vertical-align:-4px; }
 
 /*28px*/
-.i-line { display:inline-block; width:3px; height:28px; background-image:url(../img/_icon-line.png); background-repeat:no-repeat; background-position:0px 0px; }
+.i-line { width:3px; height:28px; background-position:-13px -616px; }
+.i-remove,
+.i-delete { width:28px; height:28px; background-image:url(../img/_icon-delete.png); background-repeat:no-repeat; background-position:0px 0px; }
 
 
 
 /**
  * @overflow:
- * 重写Bootstrap部分代码
+ * 重写Bootstrap部分代码以及页面控制类的图标
+ * 主要是以28 * 28， 44 * 44这两类图标
  */
-.ui-carousel-control {
-	position:absolute; top:40%; z-index:100; width:44px; height:44px; margin-top:-20px; color:#ffffff; text-indent:-999px; overflow:hidden;
-	background:none; background-image:url(../img/icon-widget.png); background-repeat:no-repeat;
-	
-	border-radius:100%;
-}
-.ui-carousel-control.prev { background-position:0px -371px; }
-.ui-carousel-control.prev:hover { background-position:0px -415px; }
-.ui-carousel-control.next { background-position:0px -459px; }
-.ui-carousel-control.next:hover { background-position:0px -503px; }
-
-.ui-carousel-control:hover {
+.ui-carousel-control,
+.i-addition,
+.ui-close { background-image:url(../img/_icon-control-page.png); background-repeat:no-repeat; text-indent:-999px; overflow:hidden; }
+.ui-carousel-control { position:absolute; top:40%; z-index:100; width:44px; height:44px; margin-top:-20px; color:#ffffff; border-radius:100%; }
+.ui-carousel-control.prev { background-position:-90px 0; }
+.ui-carousel-control.prev:hover { background-position:-90px -45px; }
+.ui-carousel-control.next { background-position:-135px 0; }
+.ui-carousel-control.next:hover { background-position:-135px -45px; }
+.i-addition { display:inline-block; width:28px; height:28px; background-position:-180px 0; }
+.i-addition:hover { background-position:-180px -29px; }
+.ui-close { display:inline-block; width:28px; height:28px; background-position:-180px -58px; }
+.ui-close:hover { background-position:-209px 0; }
+.ui-carousel-control:hover,
+.i-addition:hover,
+.ui-close:hover {
 	-webkit-animation:rotate 1s 0s ease both;
 	-moz-animation:rotate 1s 0s ease both;
 }

@@ -5,8 +5,8 @@
 h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 
 /*content layout*/
-.content .col-side { float:right; width:270px; font-size:12px; }
-.content .col-main { float:left; width:660px; font-size:14px; }
+.content .col-side { float:right; width:270px; }
+.content .col-main { float:left; width:660px; }
 
 /*标题*/
 .attractions-title { position:relative; padding:14px 0px; }
@@ -118,25 +118,3 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 .travel-companions .ui-btn-small { float:left; padding:3px 6px; }
 .travel-companions .btn-touch-small { margin-right:8px; }
 .travel-companions .ui-checkbox { float:left; margin-top:4px; margin-left:32px; }
-
-/*时间表*/
-.booking-schedule { position:absolute; top:0px; left:220px; z-index:20; display:none; width:710px; min-height:100px; background-color:#ffffff; font-size:12px; }
-.booking-schedule .inner { position:relative; border:1px solid #0088cc; }
-.booking-schedule .i-arrow { position:absolute; top:16px; left:-11px; width:11px; height:21px; background-image:url(../img/icon-widget.png); background-repeat:no-repeat; background-position:0px -164px; }
-.booking-schedule .close { position:absolute; top:-15px; right:-15px; float:none; width:30px; height:30px; background-image:url(../img/icon-widget.png); background-repeat:no-repeat; background-position:0px -227px; text-indent:-999px; overflow:hidden; opacity:1; text-shadow:none; filter:none }
-.schedule-list { table-layout:fixed; width:99.8%; border-collapse:collapse; border-spacing:0px; text-align:center; }
-.schedule-list th { padding:0px; background-color:#ffffff; cursor:pointer; font-weight:400; }
-.schedule-list td { height:26px; padding:0px; border:1px solid #cdcdcd; background-color:#ffffff; cursor:pointer; overflow:hidden; }
-.schedule-list .title { width:36px; }
-.schedule-list .title b { display:block; height:36px; background-image:url(../img/icon-widget.png); background-repeat:no-repeat; background-position:0px -128px; }
-.schedule-list .day { border-color:#ffffff #cdcdcd #ffffff #ffffff; }
-.schedule-list .disabled { background-color:#c0c0c0; }
-.schedule-list .choose { background-image:url(../img/icon-widget.png); background-repeat:no-repeat; background-position:0px -60px; }
-.booking-schedule .mod-ft { padding:6px; }
-.booking-schedule .action-add { float:left; width:24px; height:24px; background-image:url(../img/icon-widget.png); background-repeat:no-repeat; background-position:0px -36px; text-indent:-999px; overflow:hidden; }
-.booking-schedule .tips { padding:2px 4px; overflow:hidden; color:#3e3e3e; }
-.booking-schedule .tips li { float:left; padding-right:26px; }
-.booking-schedule .tips b { display:inline-block; width:28px; height:20px; margin-right:6px; background-image:url(../img/icon-widget.png); background-repeat:no-repeat; vertical-align:-5px; }
-.booking-schedule .tips .i-my { background-position:6px -65px; }
-.booking-schedule .tips .i-can { background-position:0px -88px; }
-.booking-schedule .tips .i-cannot { background-position:0px -108px; }

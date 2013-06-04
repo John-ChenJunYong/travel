@@ -171,12 +171,12 @@
 				<input type="text" placeholder="City you want to go" class="ui-input" />
 			</div>
 			<div class="ui-input-wrap input-date-wrap">
-				<input type="text" placeholder="Date" class="ui-input input-date" id="J-book-date" />
-				<span class="i i-date"></span>
+				<input type="text" placeholder="Date" class="ui-input input-date" readonly="readonly" id="J-book-date" />
+				<i class="i-date"></i>
 			</div>
 			<div class="ui-input-wrap">
-				<input type="text" class="ui-input input-person" value="2 People" data-toggle="dropdown" />
-				<span class="i i-person"></span>
+				<input type="text" class="ui-input input-person" value="2 People" readonly="readonly" data-toggle="dropdown" />
+				<i class="i-person"></i>
 				<ul class="dropdown-menu">
 					<li><a href="javascript:void(0);">1 Person</a></li>
 					<li><a href="javascript:void(0);">2 People</a></li>
@@ -473,6 +473,20 @@
 			symbol : '¥'
 		}).on('slideStop', function(e){
 			console.log(e);
+		});
+
+
+		// 搜索栏
+		$('.input-date-wrap, .input-date-wrap+.i-date').live('click', function(e){
+			var _this = $(this)
+			utils.showDatepicker({
+				mod : '#J-book-date',
+				callback_change : function(ev){
+					// console.log(ev);
+					// console.log(_this);
+				}
+			});
+			e.stopPropagation();
 		});
 	});
 </script>

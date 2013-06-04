@@ -44,7 +44,8 @@
 .guide-mod:after { clear:both; display:block; content:""; line-height:0; }
 .guide-mod .hd { position:relative; padding:10px 0px; }
 .guide-mod .hd-t { font-weight:500; line-height:1; font-size:18px; }
-.guide-mod .guide-tips {
+.guide-tips {
+	
 	float:right; margin-right:-296px; position:relative; top:0px; right:0px; width:226px; padding:10px 20px; background-color:#efefef;
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;
@@ -53,7 +54,7 @@
 	-moz-box-shadow:0px 0px 2px rgba(0, 0, 0, 0.05);
 	box-shadow:0px 0px 2px rgba(0, 0, 0, 0.05);
 }
-.guide-mod .guide-tips p { padding:4px 0px; margin:0px; }
+.guide-tips p { padding:4px 0px; margin:0px; }
 .guide-mod input,
 .guide-mod select,
 .guide-mod textarea { margin-bottom:0px; }
@@ -63,7 +64,7 @@
 .service-location .img-map { width:100%; height:auto; }
 .location-list { position:absolute; top:50px; right:4.54545%; bottom:50px; left:4.54545%; }
 .location-list li { position:relative; padding:5px 10px; margin:10px 0px; background-color:#ffffff; border:1px solid #cdcdcd; border-radius:3px; cursor:pointer; }
-.location-list .i-remove { position:absolute; top:50%; right:8px; margin-top:-9px; }
+.location-list .i-remove { position:absolute; top:50%; right:0px; margin-top:-14px; }
 .location-list .operate { color:#0088cc; }
 .location-list .operate:hover { color:#005580; }
 /*点击添加地址后弹出一个浮层*/
@@ -113,27 +114,27 @@
 .schedule-list .hour { position:relative; z-index:2; width:24px; height:24px; padding:5px 0px; }
 .schedule-list .hour span { position:absolute; top:50%; left:-8px; min-width:16px; margin-top:-10px; }
 .schedule-list .hour span[data-value='0'] { margin-left:-8px; }
-.schedule-list .hour i { position:absolute; bottom:-3px; left:-2px; width:5px; height:5px; background-image:url(../img/icon-schedule.png); background-repeat:no-repeat; background-position:0px -87px; }
+.schedule-list .hour i { position:absolute; bottom:-3px; left:-2px; width:5px; height:5px; background-image:url(../img/_icon-schedule.png); background-repeat:no-repeat; background-position:0px -87px; }
 .schedule-list .hour-list .td-day { vertical-align:bottom; }
-.schedule-list .hour-list .td-day i { display:block; width:48px; height:34px; background-image:url(../img/icon-schedule.png); background-repeat:no-repeat; background-position:0px -100px; }
+.schedule-list .hour-list .td-day i { display:block; width:48px; height:34px; background-image:url(../img/_icon-schedule.png); background-repeat:no-repeat; background-position:0px -100px; }
 .schedule-list .td-day { width:70px; }
-.schedule-list .date-operate { position:relative; min-height:23px; line-height:23px; color:#999999; cursor:pointer; text-align:center; }
+.schedule-list .date-operate { position:relative; min-height:24px; line-height:24px; color:#999999; cursor:pointer; text-align:center; }
 .schedule-list .date-operate .choose { position:absolute; top:0px; right:0px; bottom:0px; left:0px; }
 .schedule-list .date-operate .date { display:block; width:100%; font-size:12px; color:#333333; }
-.schedule-list .date-operate .i-remove { position:absolute; top:2px; left:-18px; display:none; cursor:pointer; }
+.schedule-list .date-operate .i-remove { position:absolute; top:-2px; left:-28px; display:none; cursor:pointer; }
 .schedule-list .check,
-.schedule-list .checkall { display:block; max-width:23px; min-height:23px; padding:0px; margin:0px; }
+.schedule-list .checkall { display:block; min-height:24px; padding:0px; margin:0px; }
 .schedule-list .checkall,
 .schedule-list .check.active,
-.schedule-list .checkall.active { background-image:url(../img/icon-sprite.png); background-repeat:no-repeat; }
-.schedule-list .check.active { background-position:-118px -32px; }
-.schedule-list .checkall { background-position:-90px -3px; }
-.schedule-list .checkall.active { background-position:-90px -32px; }
+.schedule-list .checkall.active { background-image:url(../img/_icon-schedule.png); background-repeat:no-repeat; }
+.schedule-list .check.active { background-position:center -160px; }
+.schedule-list .checkall { background-position:center -257px; }
+.schedule-list .checkall.active { background-position:center -305px; }
 .schedule-mod .i-addition { float:left; margin-left:16px; }
 .schedule-mod .tips { padding:4px 14px; overflow:hidden; }
 .schedule-mod .tips li { position:relative; float:left; padding-right:26px; padding-left:38px; }
-.schedule-mod .tips i { position:absolute; top:0px; left:0px; width:28px; height:20px; margin-right:6px; background-image:url(../img/icon-schedule.png); background-repeat:no-repeat; vertical-align:-5px; }
-.schedule-mod .tips .i-work { background-position:0px 0px; }
+.schedule-mod .tips i { position:absolute; top:0px; left:0px; width:28px; height:20px; margin-right:6px; background-image:url(../img/_icon-schedule.png); background-repeat:no-repeat; vertical-align:-5px; }
+.schedule-mod .tips .i-work { background-position:center -307px; }
 .schedule-mod .tips .i-allday { background-position:0px -60px; }
 
 /*完成基本注册后，到达最后一步*/
@@ -176,21 +177,4 @@
 .navigation-step { padding:20px 0px; border-top:1px dashed #cdcdcd; text-align:right; }
 .navigation-step .btn-guide-step { padding-left:40px; padding-right:40px; }
 .navigation-step .skin { display:inline-block; padding:10px; font-size:20px; text-decoration:underline; }
-
-/**
- * 操作、动作类的按钮
- */
-/*操作、动作类的默认reset*/
-.act-add-location {
-	display:inline-block; width:28px; height:28px; padding:0px; margin:0px; background:transparent; border:none;
-	background-image:url(../img/icon-widget.png); background-repeat:no-repeat;
-	text-indent:-999px; overflow:hidden;
-}
-.act-add-location:hover {
-	-webkit-animation:rotate 1s 0s ease both;
-	-moz-animation:rotate 1s 0s ease both;
-}
-/*添加服务地址的操作*/
-.act-add-location { background-position:0px -633px; }
-.act-add-location:hover { background-position:0px -661px; }
 
