@@ -9,7 +9,7 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 .content .col-main { float:left; width:660px; }
 
 /*标题*/
-.attractions-title { position:relative; padding:14px 0px; }
+.attractions-title { position:relative; padding:10px 0px; }
 .attractions-title h1 {
 	font-size:36px; font-weight:400;
 	-webkit-text-shadow:1px 1px 4px rgba(0, 0, 0, 0.15);
@@ -18,6 +18,58 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 	-ms-text-shadow:1px 1px 4px rgba(0, 0, 0, 0.15);
 	text-shadow:1px 1px 4px rgba(0, 0, 0, 0.15);
 }
+
+/*画廊*/
+.gallery { padding:10px; border:1px solid #cdcdcd; }
+.pika-stage { width:638px; height:426px; }
+.jcarousel-container { padding:0px 24px; }
+
+/*文章内容模块*/
+.article { margin:20px 0px; line-height:1.75; }
+.article .hd-t { font-size:24px; font-weight:400; }
+
+/*景点、线路*/
+.attractions-list li,
+.itinerary-list li { position:relative; }
+.attractions-list li:before,
+.itinerary-list li:before { position:absolute; left:0px; content:""; z-index:2; width:18px; height:18px; background-image:url(../img/_icon-sprite.png); }
+/*景点*/
+.attractions-list { overflow:hidden; }
+.attractions-list li { float:left; width:50%; padding:6px 0px; cursor:pointer; }
+.attractions-list p { float:left; max-width:80%; padding-left:24px; margin-bottom:0px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.attractions-list li:before { top:50%; margin-top:-9px; background-position:-5px -33px; }
+.attractions-list li:hover:before {
+	-webkit-animation:bounce 1s .2s ease both;
+	-moz-animation:bounce 1s .2s ease both;
+}
+.attractions-list .i-remove { display:none; margin-left:10px; }
+.attractions-list .empty { text-indent:0px; color:#0088cc; }
+.attractions-list .empty:before { display:none; }
+/*线路*/
+.itinerary-list { }
+.itinerary-list li { padding:6px 0px 6px 24px; }
+.itinerary-list li:before { top:7px; background-position:-5px -146px; }
+.itinerary-list li:hover:before {
+	-webkit-animation:rotate 1s .2s ease both;
+	-moz-animation:rotate 1s .2s ease both;
+}
+
+/*地图*/
+.map { width:100%; height:200px; margin:20px 0px; background-color:#efefef; }
+.map-wrap { width:100%; height:100%; overflow:hidden; }
+
+/*旅伴列表*/
+.booking .match-result { clear:both; padding:0px 0px 10px 10px; }
+.travel-companions { position:relative; height:396px; padding-right:10px; overflow:hidden; }
+.travel-companions .list { }
+.travel-companions .item { padding:10px 0px; overflow:hidden; border-bottom:1px dotted #cdcdcd; }
+.travel-companions .user { float:left; }
+.travel-companions .info { padding-left:10px; overflow:hidden; font-size:14px; }
+.travel-companions .price { padding:5px 0px; color:#999999; }
+.travel-companions .group-btn { overflow:hidden; }
+.travel-companions .ui-btn-small { float:left; padding:3px 6px; }
+.travel-companions .btn-touch-small { margin-right:8px; }
+.travel-companions .ui-checkbox { float:left; margin-top:4px; margin-left:32px; }
 
 /*评价*/
 .rate-summary { position:absolute; top:50%; right:0px; margin-top:-18px; }
@@ -51,70 +103,3 @@ h1, h2, h3, h4, h5, h6, ul, ol { padding:0px; margin:0px; list-style:none; }
 .rate-summary .meta-list .act-favorite:hover a { color:#faa327; }
 .rate-summary .meta-list .act-talk:hover a { color:#6ecc97; }
 .rate-summary .meta-list .act-contact:hover a { color:#faa327; }
-
-/*画廊*/
-.gallery { padding:10px; border:1px solid #cdcdcd; }
-.pika-stage { width:638px; height:426px; }
-.jcarousel-container { padding:0px 24px; }
-
-/*文章内容模块*/
-.article { margin:20px 0px; line-height:1.75; }
-.article .hd-t { font-size:24px; font-weight:400; }
-
-/*景点、线路*/
-.attractions-list li,
-.itinerary-list li { position:relative; line-height:1.75; }
-.attractions-list li:before,
-.itinerary-list li:before { position:absolute; left:0px; content:""; width:18px; height:18px; background-image:url(../img/icon-article.png); }
-
-/*景点*/
-.attractions { }
-.attractions-list { overflow:hidden; }
-.attractions-list li { float:left; width:50%; padding:4px 0px; text-indent:24px; cursor:pointer; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-.attractions-list li:before { top:50%; margin-top:-9px; background-position:0px 0px; }
-.attractions-list li:hover:before {
-	-webkit-animation:bounce 1s .2s ease both;
-	-moz-animation:bounce 1s .2s ease both;
-}
-
-/*线路*/
-.itinerary { }
-.itinerary-list { }
-.itinerary-list li { padding:2px 0px 2px 24px; }
-.itinerary-list li:before { top:5px; background-position:0px -18px; }
-.itinerary-list li:hover:before {
-	-webkit-animation:rotate 1s .2s ease both;
-	-moz-animation:rotate 1s .2s ease both;
-}
-
-/*描述*/
-.details { }
-.details p { margin-bottom:10px; }
-
-/*地图*/
-.map { width:100%; height:200px; margin:20px 0px; background-color:#efefef; }
-.map-wrap { width:100%; height:100%; overflow:hidden; }
-
-/*预订，基本样式写在public.css下，这里作一些特殊处理*/
-.booking .bd { padding:10px 10px 0px 10px; }
-.booking .ft { padding:4px 10px 14px 10px; border-top:none; }
-.booking .input-date-wrap { margin-right:10px; }
-.booking .group-input { padding:14px 0px; border-bottom:1px dotted #cdcdcd; }
-.booking .input-date { width:105px; }
-.booking .input-person { width:105px; }
-.choose-time { min-height:30px; padding:14px 0px; border-bottom:1px dotted #cdcdcd; }
-.choose-time .point { float:left; width:96px; font-size:14px; line-height:30px; color:#0088cc; }
-.choose-time .input-cycle { width:80px; }
-.choose-time .ui-checkbox { float:left; margin-top:5px; margin-left:24px; }
-/*旅伴列表*/
-.booking .match-result { clear:both; padding:0px 0px 10px 10px; }
-.travel-companions { position:relative; height:396px; padding-right:10px; overflow:hidden; }
-.travel-companions .list { }
-.travel-companions .item { padding:10px 0px; overflow:hidden; border-bottom:1px dotted #cdcdcd; }
-.travel-companions .user { float:left; }
-.travel-companions .info { padding-left:10px; overflow:hidden; font-size:14px; }
-.travel-companions .price { padding:5px 0px; color:#999999; }
-.travel-companions .group-btn { overflow:hidden; }
-.travel-companions .ui-btn-small { float:left; padding:3px 6px; }
-.travel-companions .btn-touch-small { margin-right:8px; }
-.travel-companions .ui-checkbox { float:left; margin-top:4px; margin-left:32px; }

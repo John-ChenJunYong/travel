@@ -41,15 +41,10 @@
 }
 .search-result-tool .result-tips { margin:0px; line-height:30px; }
 .search-result-tool .tool { position:absolute; top:8px; right:10px; white-space:nowrap; }
-.search-result-tool .ui-btn-small .i-desc,
-.search-result-tool .ui-btn-small .i-asc { margin-left:6px; margin-right:0px; }
-.search-result-tool .i-desc { background-position:0px -605px; }
-.search-result-tool .i-asc { background-position:0px -619px; }
 .search-result-tool .ui-btn-small { margin-left:4px; }
 .search-result-tool .ui-btn-small.active { color:#0088cc; }
-.search-result-tool .ui-btn-small.active .i-desc { background-position:-14px -605px; }
-.search-result-tool .ui-btn-small.active .i-asc { background-position:-14px -619px; }
-
+.search-result-tool .ui-btn-small .i-desc,
+.search-result-tool .ui-btn-small .i-asc { margin-left:6px; margin-right:0px; }
 
 /*用户列表*/
 .search-result-list li.clearfix { position:relative; min-height:136px; padding:10px; border-bottom:1px solid #cdcdcd; }

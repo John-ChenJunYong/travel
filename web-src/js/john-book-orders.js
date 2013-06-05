@@ -205,9 +205,6 @@ var bookOrders = {
  * explanation:实例化;
  */
 $(function(){
-	// 复选框
-	$('.ui-checkbox').checkbox();
-
 	// 在下单页面，为各个模块绑定编辑事件
 	$('.guide-mod .edit').live('click', function(){
 		var _this = $(this);

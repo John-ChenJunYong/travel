@@ -13,8 +13,8 @@
  */
 /*申请流程*/
 .guide-step { height:35px; padding:0px 0px 0px 0px; margin-bottom:30px; overflow:hidden; }
-.guide-step li { position:relative; float:left; width:21%; padding:0 0% 0px 4%; background-color:#efefef; line-height:35px; text-align:center; cursor:pointer; }
-.guide-step li:after { position:absolute; top:0px; right:-22px; bottom:0px; content:""; width:22px; height:35px; background-image:url(../img/icon-widget.png); background-repeat:no-repeat; background-position:0px -689px; }
+.guide-step li { position:relative; float:left; width:25%; background-color:#efefef; line-height:35px; text-align:center; cursor:pointer; }
+.guide-step li:after { position:absolute; top:0px; right:-22px; bottom:0px; content:""; width:22px; height:35px; background-image:url(../img/_icon-sprite.png); background-repeat:no-repeat; background-position:0px -682px; }
 .guide-step .step-1 { z-index:5; }
 .guide-step .step-2 { z-index:4; }
 .guide-step .step-3 { z-index:3; }
@@ -22,7 +22,7 @@
 
 .guide-step .step-4:after { display:none; }
 .guide-step .active { background-color:#0088cc; color:#ffffff; }
-.guide-step .active:after { background-position:-22px -689px; }
+.guide-step .active:after { background-position:0px -738px; }
 
 .guide-description,
 .guide-congratulation { padding:0px 296px 0px 0px; margin:0px; color:#0088cc; }
@@ -63,8 +63,8 @@
 .service-location .bd { position:relative; margin-top:10px; }
 .service-location .img-map { width:100%; height:auto; }
 .location-list { position:absolute; top:50px; right:4.54545%; bottom:50px; left:4.54545%; }
-.location-list li { position:relative; padding:5px 10px; margin:10px 0px; background-color:#ffffff; border:1px solid #cdcdcd; border-radius:3px; cursor:pointer; }
-.location-list .i-remove { position:absolute; top:50%; right:0px; margin-top:-14px; }
+.location-list li { position:relative; padding:5px 10px; margin:10px 0px; background-color:#ffffff; border:1px solid #cdcdcd; border-radius:3px; }
+.location-list .i-remove { position:absolute; top:50%; right:10px; margin-top:-9px; }
 .location-list .operate { color:#0088cc; }
 .location-list .operate:hover { color:#005580; }
 /*点击添加地址后弹出一个浮层*/
@@ -81,7 +81,7 @@
 .result-location li { position:relative; padding:8px 8px 8px 30px; cursor:pointer; }
 .result-location li:before {
 	position:absolute; top:10px; left:8px; content:""; width:18px; height:18px;
-	background:url(../img/icon-sprite.png) no-repeat -164px -38px;
+	background:url(../img/_icon-sprite.png) no-repeat -3px -34px;
 }
 .result-location li:hover:before {
 	-webkit-animation:bounce 1s .2s ease both;
@@ -89,7 +89,7 @@
 }
 .result-location .active { background-color:#efefef ; }
 .result-location .example { color:#999999; font-style:italic; }
-.result-location .example:before { background-position:-164px -19px; }
+.result-location .example:before { background-position:-3px -5px; }
 
 
 /*价格*/
@@ -100,46 +100,10 @@
 /*服务描述*/
 .service-description .input-area { width:646px; height:180px; min-width:646px; max-width:646px; min-height:180px; }
 .service-description .guide-tips { margin-top:38px; }
-/*服务时间*/
-.service-time .hd { padding:16px 0px; }
-.service-time .hd select { position:absolute; top:50%; right:0px; margin-top:-15px; margin-bottom:0px; }
-.schedule-mod.active { display:block; }
-.schedule-mod { display:none; font-size:12px; }
-.schedule-mod .mod-hd { min-height:20px; border:1px solid #cdcdcd; border-bottom:none; }
-.schedule-mod .mod-ft { min-height:28px; padding:5px; border:1px solid #cdcdcd; border-top:none; }
-.schedule-mod .temp-data { display:none; }
-.schedule-list { table-layout:fixed; width:100%; border:1px solid #cdcdcd; text-align:center; }
-.schedule-list td { padding:0px; border:1px solid #cdcdcd; }
-.schedule-list .hour-list td { border:none; }
-.schedule-list .hour { position:relative; z-index:2; width:24px; height:24px; padding:5px 0px; }
-.schedule-list .hour span { position:absolute; top:50%; left:-8px; min-width:16px; margin-top:-10px; }
-.schedule-list .hour span[data-value='0'] { margin-left:-8px; }
-.schedule-list .hour i { position:absolute; bottom:-3px; left:-2px; width:5px; height:5px; background-image:url(../img/_icon-schedule.png); background-repeat:no-repeat; background-position:0px -87px; }
-.schedule-list .hour-list .td-day { vertical-align:bottom; }
-.schedule-list .hour-list .td-day i { display:block; width:48px; height:34px; background-image:url(../img/_icon-schedule.png); background-repeat:no-repeat; background-position:0px -100px; }
-.schedule-list .td-day { width:70px; }
-.schedule-list .date-operate { position:relative; min-height:24px; line-height:24px; color:#999999; cursor:pointer; text-align:center; }
-.schedule-list .date-operate .choose { position:absolute; top:0px; right:0px; bottom:0px; left:0px; }
-.schedule-list .date-operate .date { display:block; width:100%; font-size:12px; color:#333333; }
-.schedule-list .date-operate .i-remove { position:absolute; top:-2px; left:-28px; display:none; cursor:pointer; }
-.schedule-list .check,
-.schedule-list .checkall { display:block; min-height:24px; padding:0px; margin:0px; }
-.schedule-list .checkall,
-.schedule-list .check.active,
-.schedule-list .checkall.active { background-image:url(../img/_icon-schedule.png); background-repeat:no-repeat; }
-.schedule-list .check.active { background-position:center -160px; }
-.schedule-list .checkall { background-position:center -257px; }
-.schedule-list .checkall.active { background-position:center -305px; }
-.schedule-mod .i-addition { float:left; margin-left:16px; }
-.schedule-mod .tips { padding:4px 14px; overflow:hidden; }
-.schedule-mod .tips li { position:relative; float:left; padding-right:26px; padding-left:38px; }
-.schedule-mod .tips i { position:absolute; top:0px; left:0px; width:28px; height:20px; margin-right:6px; background-image:url(../img/_icon-schedule.png); background-repeat:no-repeat; vertical-align:-5px; }
-.schedule-mod .tips .i-work { background-position:center -307px; }
-.schedule-mod .tips .i-allday { background-position:0px -60px; }
+
 
 /*完成基本注册后，到达最后一步*/
 .guide-complete { margin-bottom:10px; }
-.guide-complete .hd { }
 .guide-complete .hd-t { font-size:18px; line-height:20px; }
 .guide-complete .hd-t span { padding-right:10px; font-style:italic; font-weight:700; font-size:28px; }
 .guide-complete .bd { padding:10px 36px; }

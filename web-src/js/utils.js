@@ -161,7 +161,7 @@ if(!window.console){
 
 			var this_width = _this.width()
 			var	this_height = _this.height();
-			var scrollbar_width = opts.width ? parseInt(opts.width) : 21;
+			var scrollbar_width = opts.width ? parseInt(opts.width) : 12;
 			var scrollbar_btn_width = opts.btn.visibility ? scrollbar_width : 0;
 
 
@@ -244,8 +244,9 @@ if(!window.console){
 				});
 				$(document).mouseup(function() {
 					is_up = 0;
-					$(document).unbind();
+					$(document).unbind('mousedown, mousemove');
 				});
+				e.stopPropagation();
 				return false;
 			});
 
@@ -255,7 +256,7 @@ if(!window.console){
 				_self.setTimeOut('up');
 				$(document).mouseup(function(){
 					is_up = 0;
-					$(document).unbind();
+					$(document).unbind('mousedown');
 					clearTimeout(time_out);
 					sp = 0;
 				});
@@ -268,7 +269,7 @@ if(!window.console){
 				_self.setTimeOut('down');
 				$(document).mouseup(function() {
 					is_up = 0;
-					$(document).unbind();
+					$(document).unbind('mousedown');
 					clearTimeout(time_out);
 					sp = 0;
 				});
@@ -298,6 +299,7 @@ if(!window.console){
 				opts['callback'] && opts['callback'].call(_self);
 				current_top = current_top + e.pageY - scroll_dragger.offset().top - scroll_height / 2;
 				asetTop();
+				e.stopPropagation();
 				return false;
 			});
 
@@ -485,6 +487,8 @@ if(!window.console){
 
 $(function(){
 
+	// 复选框
+	$('.ui-checkbox, .ui-radio').checkbox();
 	/**
 	 * 匹配宽屏
 	 * @param  {[type]} w [description]

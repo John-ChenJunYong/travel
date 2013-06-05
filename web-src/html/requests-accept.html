@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>旅伴同意旅客的需求，并制作相应的行程表格</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- bootstrap -->
+<link href="../css/bootstrap.css" rel="stylesheet" />
+<link href="../css/bootstrap-fixed.css" rel="stylesheet" />
+<link href="../css/bootstrap-datepicker.css" rel="stylesheet" />
+<!-- bootstrap的响应式 -->
+<link href="../css/bootstrap-responsive.css" rel="stylesheet" />
+<!-- 自定义 -->
+<link href="../css/john-global.css" rel="stylesheet" />
+<link href="../css/john-public.css" rel="stylesheet" />
+<link href="../css/john-dashboard.css" rel="stylesheet" />
+<link href="../css/john-requests.css" rel="stylesheet" />
+<link href="../css/john-public-responsive.css" rel="stylesheet" />
+
+<script src="../js/jquery-1.8.3.js" > </script>
+<script src="../js/bootstrap-tooltip.js"></script>
+<script src="../js/bootstrap-popover.js"></script>
+<script src="../js/bootstrap-datepicker.js"></script>
+<script src="../js/bootstrap-modal.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/john-guide-new.js"></script>
+
+</head>
+
+<body>
+
+<div class="content">
+	<div class="content-inner">
+		<div class="crumb-mod">
+			<ul class="breadcrumb">
+				<li><i class="icon-home"></i><a href="#">Dashboard</a> <span class="divider">/</span></li>
+				<li><a href="#">Photos and Video</a> <span class="divider">/</span></li>
+				<li class="active">Upload</li>
+			</ul>
+			<a href="javascript:void(0);" class="ui-btn-middle btn-view-middle">
+				<span><i class="icon-eye-open"></i>VIEW PROFILE</span>
+			</a>
+		</div>
+
+		<div class="col-side">
+			<div class="current-user">
+				<img src="../img/avator-1.jpg" alt="图片描述" class="avator">
+				<strong class="name">Yi Lian</strong>
+			</div>
+			<ul class="nav nav-list">
+				<li><a href="#"><i class="icon-home"></i>Dashboard</a></li>
+				<li class="nav-header">Transaction</li>
+				<li><a href="#"><i class="icon-file"></i>Bookings</a></li>
+				<li><a href="#"><i class="icon-file"></i>Guests</a></li>
+				<li class="nav-header">Account</li>
+				<li><a href="#"><i class="icon-user"></i>Profile</a></li>
+				<li><a href="#"><i class="icon-picture"></i>Photos</a></li>
+				<li><a href="#"><i class="icon-ok-circle"></i>Verification</a></li>
+				<li><a href="#"><i class="icon-eye-open"></i>Reviews</a></li>
+				<li class="nav-header">Setting</li>
+				<li><a href="#"><i class="icon-file"></i>Notification</a></li>
+				<li><a href="#"><i class="icon-file"></i>Privacy</a></li>
+				<li><a href="#"><i class="icon-file"></i>Security</a></li>
+				<li class="divider"></li>
+				<li><a href="#"><i class="icon-question-sign"></i>Help</a></li>
+			</ul>
+		</div>
+
+		<div class="col-main">
+			<div class="requests-mod">
+				<div class="hd">
+					<h3 class="hd-t">为旅客制定个性化行程</h3>
+				</div>
+				<div class="bd">
+					<div class="item-traveler">
+						<table class="table-view-user" id="J-traveler-active">
+							<tr>
+								<td class="user"><a href="#" target="_blank"><img src="../img/avator-1.jpg" alt="图片描述" class="avator" /></a></td>
+								<td class="name"><a href="#" target="_blank">Yi Lian</a></td>
+								<td class="date">2013-06-03 12:30:15</td>
+								<td class="operate"><a href="javascript:void(0);" class="ui-btn-small btn-book-small"><span>Get In Touch</span></a></td>
+							</tr>
+						</table>
+					</div>
+
+					<!-- 时间表 -->
+					<div class="guide service-time">
+						<div class="mod-hd"><h4 class="title">View spot</h4></div>
+						<div class="alert alert-error">Passenger demand, "June a weekend two days tour"</div>
+						<!-- 时间表：以天为单位 -->
+						<div class="schedule-mod" id="J-schedule-day">
+							<div class="mod-bd">
+								<table class="schedule-list" id="J-schedule-list" data-type="day">
+									<thead>
+										<tr class="hour-list">
+											<td class="td-day"><i class="t"></i></td>
+											<td><div class="hour"><span data-value="0">00:00</span><i></i></div></td>
+											<td><div class="hour"><span data-value="1">1</span><i></i></div></td>
+											<td><div class="hour"><span data-value="2">2</span><i></i></div></td>
+											<td><div class="hour"><span data-value="3">3</span><i></i></div></td>
+											<td><div class="hour"><span data-value="4">4</span><i></i></div></td>
+											<td><div class="hour"><span data-value="5">5</span><i></i></div></td>
+											<td><div class="hour"><span data-value="6">6</span><i></i></div></td>
+											<td><div class="hour"><span data-value="7">7</span><i></i></div></td>
+											<td><div class="hour"><span data-value="8">8</span><i></i></div></td>
+											<td><div class="hour"><span data-value="9">9</span><i></i></div></td>
+											<td><div class="hour"><span data-value="10">10</span><i></i></div></td>
+											<td><div class="hour"><span data-value="11">11</span><i></i></div></td>
+											<td><div class="hour"><span data-value="12">12</span><i></i></div></td>
+											<td><div class="hour"><span data-value="13">13</span><i></i></div></td>
+											<td><div class="hour"><span data-value="14">14</span><i></i></div></td>
+											<td><div class="hour"><span data-value="15">15</span><i></i></div></td>
+											<td><div class="hour"><span data-value="16">16</span><i></i></div></td>
+											<td><div class="hour"><span data-value="17">17</span><i></i></div></td>
+											<td><div class="hour"><span data-value="18">18</span><i></i></div></td>
+											<td><div class="hour"><span data-value="19">19</span><i></i></div></td>
+											<td><div class="hour"><span data-value="20">20</span><i></i></div></td>
+											<td><div class="hour"><span data-value="21">21</span><i></i></div></td>
+											<td><div class="hour"><span data-value="22">22</span><i></i></div></td>
+											<td><div class="hour"><span data-value="23">23</span><i></i></div></td>
+											<td><div class="hour"><i></i></div></td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="td-day">
+												<div class="date-operate">
+													<i class="i-remove"></i>
+													<span href="javascript:void(0);" class="choose">请选择日期</span>
+													<span class="date"></span>
+												</div>
+											</td>
+											<td><label class="check" data-value="0"></label></td>
+											<td><label class="check" data-value="1"></label></td>
+											<td><label class="check" data-value="2"></label></td>
+											<td><label class="check" data-value="3"></label></td>
+											<td><label class="check" data-value="4"></label></td>
+											<td><label class="check" data-value="5"></label></td>
+											<td><label class="check" data-value="6"></label></td>
+											<td><label class="check" data-value="7"></label></td>
+											<td><label class="check" data-value="8"></label></td>
+											<td><label class="check" data-value="9"></label></td>
+											<td><label class="check" data-value="10"></label></td>
+											<td><label class="check" data-value="11"></label></td>
+											<td><label class="check" data-value="12"></label></td>
+											<td><label class="check" data-value="13"></label></td>
+											<td><label class="check" data-value="14"></label></td>
+											<td><label class="check" data-value="15"></label></td>
+											<td><label class="check" data-value="16"></label></td>
+											<td><label class="check" data-value="17"></label></td>
+											<td><label class="check" data-value="18"></label></td>
+											<td><label class="check" data-value="19"></label></td>
+											<td><label class="check" data-value="20"></label></td>
+											<td><label class="check" data-value="21"></label></td>
+											<td><label class="check" data-value="22"></label></td>
+											<td><label class="check" data-value="23"></label></td>
+											<td class="td-all"><label class="checkall"></label></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="mod-ft">
+								<a href="javascript:void(0);" class="i-addition" id="J-add-service-day">Add Day</a>
+								<ul class="tips">
+									<li><i class="i-mywork"></i>行程时间</li>
+									<li><i class="i-idle"></i>空闲时间</li>
+									<li><i class="i-allday"></i>选择全天的空闲时间</li>
+									<li><i class="i-busy"></i>忙</li>
+								</ul>
+							</div>
+							<!-- 存储《以天为单位》的缓存数据 -->
+							<div class="temp-data" id="J-temp-day"></div>
+						</div>
+						<!-- 存储用户所选的时间表 -->
+						<textarea name="schedule-data" id="J-schedule-data" style="display:none;"></textarea>
+					</div>
+
+					<!-- 景点 -->
+					<div class="guide guide-attractions">
+						<div class="mod-hd"><h4 class="title">View spot</h4></div>
+						<div class="alert alert-error">Passenger demand, "various well-known attractions in Shenzhen"</div>
+						<div class="mod-bd">
+							<div class="ui-input-line">
+								<div class="ui-input-wrap">
+									<input type="text" class="input-place" placeholder="在此添加景点名称" />
+									<i class="i-map-marker"></i>
+								</div>
+								<a href="javascript:void(0);" class="ui-btn-small ui-btn-primary" id="J-sure-place">Add</a>
+							</div>
+
+							<!-- 如果是已经有了相应的行程景点的话，显示以下信息 -->
+							<ul class="preview-list">
+								<li>
+									<p>Queens food tour in New York</p>
+									<a href="javascript:void(0);" class="i-remove">Remove</a>
+								</li>
+								<li>
+									<p>Street art tour in San Francisco</p>
+									<a href="javascript:void(0);" class="i-remove">Remove</a>
+								</li>
+								<li>
+									<p>Local guide to Paris</p>
+									<a href="javascript:void(0);" class="i-remove">Remove</a>
+								</li>
+								<li>
+									<p>Explore London like a local</p>
+									<a href="javascript:void(0);" class="i-remove">Remove</a>
+								</li>
+								<li>
+									<p>Best Napa wine tour</p>
+									<a href="javascript:void(0);" class="i-remove">Remove</a>
+								</li>
+								<li>
+									<p>Food tour in Berlin</p>
+									<a href="javascript:void(0);" class="i-remove">Remove</a>
+								</li>
+								<li class="empty">
+									<p>You have not added attractions, go and add it</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- 行程摘要 -->
+					<div class="guide itinerary-description">
+						<div class="mod-hd"><h4 class="title">Itinerary</h4></div>
+						<div class="alert alert-error">one weekend and to two days, please help me to make a stroke,thank you!</div>
+						<div class="mod-bd">
+							<div class="operate">
+								<a href="#J-itinerary-tmpl" data-toggle="modal" class="act-gettmpl">Get the template</a>
+							</div>
+							<textarea class="input-area"></textarea>
+						</div>
+					</div>
+
+					<!-- 旅客人数 -->
+					<div class="guide" id="J-traveler-join">
+						<div class="mod-hd">
+							<h4 class="title">Person</h4>
+						</div>
+						<div class="mod-bd">
+							<input type="text" class="input-area" value="2 People" readonly="readonly" />
+						</div>
+					</div>
+
+					<!-- 地点：碰面地点 -->
+					<div class="guide">
+						<div class="mod-hd">
+							<h4 class="title">Meet Place</h4>
+						</div>
+						<div class="mod-bd">
+							<input type="text" class="input-area" placeholder="guangdong,shenzhen,nanshan" />
+						</div>
+					</div>
+
+					<!-- 留言、描述 -->
+					<div class="guide msg-description">
+						<div class="mod-hd"><h4 class="title">Other</h4></div>
+						<div class="mod-bd">
+							<textarea class="input-area"></textarea>
+						</div>
+					</div>
+
+					<!-- 按钮 -->
+					<div class="guide-mod guide-btn-mod">
+						<strong class="pay-info">应付金额：<span class="price">$960</span></strong>
+						<button class="ui-btn-big ui-btn-primary"><span>Response</span></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 模板 -->
+<div id="J-itinerary-tmpl" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="J-itinerary-tmpllabel" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3 id="J-itinerary-tmpllabel">Modal header</h3>
+	</div>
+	<div class="modal-body">
+		<p>One fine body…</p>
+	</div>
+	<div class="modal-footer">
+		<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+		<button class="btn btn-primary">Save changes</button>
+	</div>
+</div>
+
+</body>
+</html>

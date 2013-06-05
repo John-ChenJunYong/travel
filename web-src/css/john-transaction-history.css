@@ -6,7 +6,7 @@
  * explanation:交易记录;
  */
 .history-mod .hd { position:relative; padding:10px; border-bottom:1px solid #dddddd; }
-.history-mod .hd-t { font-size:18px; line-height:30px; }
+.history-mod .hd-t { font-size:20px; line-height:30px; }
 .history-mod .hd select { position:absolute; top:50%; right:10px; margin-top:-15px; margin-bottom:0px; }
 .history-list { table-layout:fixed; width:100%; border-collapse:collapse; border-spacing:0px; text-align:left; }
 .history-list span,
@@ -37,5 +37,5 @@
 .history-list .popover-content { position:relative; padding:6px 14px 6px 26px; color:#0088cc; }
 .history-list .popover-content:before {
 	position:absolute; top:7px; left:6px; content:""; width:18px; height:18px;
-	background-image:url(../img/_icon-map-marker-light.png); background-repeat:no-repeat; background-position:0px 0px;
+	background-image:url(../img/_icon-sprite.png); background-repeat:no-repeat; background-position:-7px -33px;
 }

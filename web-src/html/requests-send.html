@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>提交需求</title>
+<!-- bootstrap -->
+<link href="../css/bootstrap.css" rel="stylesheet" />
+<link href="../css/bootstrap-fixed.css" rel="stylesheet" />
+<link href="../css/bootstrap-datepicker.css" rel="stylesheet" />
+<!-- bootstrap的响应式 -->
+<link href="../css/bootstrap-responsive.css" rel="stylesheet" />
+<!-- 自定义 -->
+<link href="../css/lightbox.css" rel="stylesheet" />
+<link href="../css/john-global.css" rel="stylesheet" />
+<link href="../css/john-public.css" rel="stylesheet" />
+<link href="../css/john-requests.css" rel="stylesheet" />
+
+<script src="../js/jquery-1.8.3.js" ></script>
+<script src="../js/bootstrap-modal.js"></script>
+<script src="../js/bootstrap-tooltip.js"></script>
+<script src="../js/bootstrap-popover.js"></script>
+<script src="../js/bootstrap-dropdown.js"></script>
+<script src="../js/bootstrap-typeahead.js"></script>
+<script src="../js/bootstrap-datepicker.js"></script>
+<script src="../js/jquery.jcarousel.js"></script>
+<script src="../js/jquery.pikachoose.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/john-requests.js"></script>
+
+</head>
+
+<body>
+
+<!-- 主体区域 -->
+<div class="content">
+	<div class="orders-step-title">
+		<h2 class="hd-t">提交需求</h2>
+	</div>
+
+	<!-- 订单流程 -->
+	<ol class="orders-step orders-step-2">
+		<li class="step-1">
+			<p class="tips">
+				提交订单
+				<span class="time">2013-5-18 14:28:55</span>
+			</p>
+		</li>
+		<li class="step-2">
+			<p class="tips">
+				旅伴回复
+			</p>
+		</li>
+		<li class="step-3">
+			<p class="tips">
+				付款
+			</p>
+		</li>
+		<li class="step-4">
+			<p class="tips">
+				完成
+			</p>
+		</li>
+	</ol>
+
+	<!-- 当前步骤提示 -->
+	<p class="description-tips">
+		Please confirm your order information, and click next to continue to place an order.
+	</p>
+	<div class="requests-mod">
+		<!-- 时间 -->
+		<div class="guide">
+			<div class="mod-hd">
+				<h4 class="title">Time</h4>
+				<a href="javascript:void(0);"
+				data-toggle="popover"
+				data-title="Example"
+				data-content="Here enter your travel start date and journey length"
+				class="example">[Example]</a>
+			</div>
+			<div class="mod-bd">
+				<textarea class="input-area" placeholder="Here enter your travel start date and journey length"></textarea>
+			</div>
+		</div>
+
+		<!-- 地点：游玩的地点 -->
+		<div class="guide">
+			<div class="mod-hd">
+				<h4 class="title">Place/View Spot</h4>
+				<a href="javascript:void(0);"
+				data-toggle="popover"
+				data-title="Example"
+				data-content="Here enter your travel start date and journey length"
+				class="example">[Example]</a>
+			</div>
+			<div class="mod-bd">
+				<textarea class="input-area" placeholder="Sausalito, California"></textarea>
+			</div>
+		</div>
+
+		<!-- 旅客人数 -->
+		<div class="guide" id="J-traveler-join">
+			<div class="mod-hd">
+				<h4 class="title">Person</h4>
+			</div>
+			<div class="mod-bd">
+				<select name="traveler-join">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+			</div>
+		</div>
+
+		<!-- 行程套餐 -->
+		<div class="guide">
+			<div class="mod-hd">
+				<h4 class="title">Itinerary</h4>
+			</div>
+			<div class="mod-bd">
+				<p class="tips">Tips:You can choose an itinerary below if that's exactly what you want.Or you can choose an itinerary and leave some modification in the "Leave a message" box.</p>
+				<ul class="group-itinerary-list" id="J-itinerary-list">
+					<li>
+						<span class="ui-radio"><input type="radio" name="itinerary" value="0" class="radio" /></span>
+						<a href="iframe_a.html?v=2013-6-75" data-toggle="modal" data-target="#J-itinerary-modal">Bike the City in 3 Hours</a>
+						<span class="price">(&yen;1834)</span>
+					</li>
+					<li>
+						<span class="ui-radio"><input type="radio" name="itinerary" value="1" class="radio" /></span>
+						<a href="iframe_b.html?v=2013-6-5" data-toggle="modal" data-target="#J-itinerary-modal">Queens food tour in New York</a>
+						<span class="price">(&yen;1834)</span>
+					</li>
+					<li>
+						<span class="ui-radio"><input type="radio" name="itinerary" value="2" class="radio" /></span>
+						<a href="javascript:void(0);">Explore London like a local</a>
+						<span class="price">(&yen;1834)</span>
+					</li>
+					<li>
+						<span class="ui-radio"><input type="radio" name="itinerary" value="3" class="radio" /></span>
+						<a href="javascript:void(0);">Street art tour in San Francisco</a>
+						<span class="price">(&yen;1834)</span>
+					</li>
+					<li>
+						<span class="ui-radio"><input type="radio" name="itinerary" value="4" class="radio" /></span>
+						<a href="javascript:void(0);">Best Napa wine tour</a>
+						<span class="price">(&yen;1834)</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- 留言、描述 -->
+		<div class="guide msg-description">
+			<div class="mod-hd">
+				<h4 class="title">Leave a message</h4>
+				<a href="javascript:void(0);"
+				data-toggle="popover"
+				data-title="Example"
+				data-content="Here enter your travel start date and journey length"
+				class="example">[Example]</a>
+			</div>
+			<div class="mod-bd">
+				<textarea class="input-area"></textarea>
+			</div>
+		</div>
+
+		<!-- 按钮区域 -->
+		<div class="guide guide-btn-mod">
+			<select namemod-="duration-request">
+				<option value="0">回复时间无限制</optgroup>
+				<option value="1">12小时内回复</option>
+				<option value="2">24小时内回复</option>
+				<option value="3">48小时内回复</option>
+				<option value="4">72小时内回复</option>
+			</select>
+			<button class="ui-btn-big btn-submit-orders"><span>Submit Orders</span></button>
+		</div>
+	</div>
+</div>
+
+
+<!-- modal -->
+<div id="J-itinerary-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="J-modal-label" aria-hidden="true">
+	<div class="modal-body"></div>
+</div>
+
+</body>
+</html>

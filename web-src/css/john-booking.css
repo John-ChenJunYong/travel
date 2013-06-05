@@ -34,7 +34,7 @@
 .orders-step .step-4 .tips { left:54px; }
 
 /*提示*/
-.description-tips { padding:14px 0px; margin-bottom:20px; border-bottom:1px dashed #cdcdcd; }
+.description-tips { padding:34px 0px 14px 0px; margin-bottom:20px; border-bottom:1px dashed #cdcdcd; color:#999999; }
 
 /**
  * 列表类
@@ -60,15 +60,16 @@
  * 通用模块类
  */
 .guide-mod { clear:both; margin-bottom:10px; }
-.guide-mod .hd { padding:10px 0px; overflow:hidden; }
-.guide-mod .hd-t { display:inline-block; padding-right:10px; }
+.guide-mod .hd { padding:12px 0px; overflow:hidden; }
+.guide-mod .hd-t { display:inline-block; padding-right:10px; line-height:1; }
 .guide-mod .hd-extra { font-weight:400; }
 .guide-mod .hd-extra span { color:#ff6600; }
 .guide-mod .bd { padding:20px; border:1px solid #cdcdcd; border-radius:5px; }
-.guide-mod p { margin:0px 0px; }
+.guide-mod p { margin:0px; }
 .guide-mod .quantity { padding:0px 4px; color:#ff0000; }
 .guide-mod .ui-input-line { display:none; min-height:30px; padding:0px 0px; }
 .guide-mod .ui-input-wrap { float:left; margin-right:10px; }
+.guide-mod select { margin-bottom:0px; }
 .guide-mod .ui-btn-small { padding:4px 20px; }
 .guide-mod .btn-wrap { display:none; padding:20px 0px 0px 0px; text-align:right; }
 .guide-mod .btn-wrap .ui-btn-big { padding-left:50px; padding-right:50px; }
@@ -82,26 +83,26 @@
 .gallery-mod .gallery-thumb-list li { padding:0px 3px; }
 /*景点、线路*/
 .attractions-list li,
-.itinerary-list li { position:relative; line-height:1.75; }
+.itinerary-list li { position:relative; }
 .attractions-list li:before,
-.itinerary-list li:before { position:absolute; left:0px; content:""; z-index:2; width:18px; height:18px; background-image:url(../img/icon-article.png); }
+.itinerary-list li:before { position:absolute; left:0px; content:""; z-index:2; width:18px; height:18px; background-image:url(../img/_icon-sprite.png); }
 /*景点*/
 .attractions .bd { padding:0px; border:none; }
 .attractions-list { width:auto; padding:20px; margin-top:10px; background-color:#e8f7fe; border:1px solid #b2ddf1; border-radius:5px; overflow:hidden; }
-.attractions-list li { float:left; width:33%; padding:4px 0px; cursor:pointer; }
+.attractions-list li { float:left; width:33%; padding:6px 0px; cursor:pointer; }
 .attractions-list p { float:left; max-width:80%; padding-left:24px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-.attractions-list li:before { top:50%; margin-top:-9px; background-position:0px 0px; }
+.attractions-list li:before { top:50%; margin-top:-9px; background-position:-5px -33px; }
 .attractions-list li:hover:before {
 	-webkit-animation:bounce 1s .2s ease both;
 	-moz-animation:bounce 1s .2s ease both;
 }
-.attractions-list .i-remove { display:none; margin-left:10px; vertical-align:-4px; }
+.attractions-list .i-remove { display:none; margin-left:10px; }
 .attractions-list .empty { text-indent:0px; color:#0088cc; }
 .attractions-list .empty:before { display:none; }
 /*线路*/
 .itinerary-list { padding:20px 4px 0px 4px; }
-.itinerary-list li { padding:2px 0px 2px 24px; }
-.itinerary-list li:before { top:5px; background-position:0px -18px; }
+.itinerary-list li { padding:6px 0px 6px 24px; }
+.itinerary-list li:before { top:7px; background-position:-5px -146px; }
 .itinerary-list li:hover:before {
 	-webkit-animation:rotate 1s .2s ease both;
 	-moz-animation:rotate 1s .2s ease both;

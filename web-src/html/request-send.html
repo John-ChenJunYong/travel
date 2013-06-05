@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>提交需求</title>
+<!-- bootstrap -->
+<link href="../css/bootstrap.css" rel="stylesheet" />
+<link href="../css/bootstrap-fixed.css" rel="stylesheet" />
+<link href="../css/bootstrap-datepicker.css" rel="stylesheet" />
+<!-- bootstrap的响应式 -->
+<link href="../css/bootstrap-responsive.css" rel="stylesheet" />
+<!-- 自定义 -->
+<link href="../css/lightbox.css" rel="stylesheet" />
+<link href="../css/john-global.css" rel="stylesheet" />
+<link href="../css/john-public.css" rel="stylesheet" />
+<link href="../css/john-request.css" rel="stylesheet" />
+
+<script src="../js/jquery-1.8.3.js" ></script>
+<script src="../js/bootstrap-modal.js"></script>
+<script src="../js/bootstrap-tooltip.js"></script>
+<script src="../js/bootstrap-popover.js"></script>
+<script src="../js/bootstrap-dropdown.js"></script>
+<script src="../js/bootstrap-typeahead.js"></script>
+<script src="../js/bootstrap-datepicker.js"></script>
+<script src="../js/jquery.jcarousel.js"></script>
+<script src="../js/jquery.pikachoose.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/john-request.js"></script>
+
+</head>
+
+<body>
+
+<!-- 主体区域 -->
+<div class="content">
+	<div class="orders-step-title">
+		<h2 class="hd-t">提交需求</h2>
+	</div>
+
+	<!-- 订单流程 -->
+	<ol class="orders-step orders-step-2">
+		<li class="step-1">
+			<p class="tips">
+				提交订单
+				<span class="time">2013-5-18 14:28:55</span>
+			</p>
+		</li>
+		<li class="step-2">
+			<p class="tips">
+				旅伴回复
+			</p>
+		</li>
+		<li class="step-3">
+			<p class="tips">
+				付款
+			</p>
+		</li>
+		<li class="step-4">
+			<p class="tips">
+				完成
+			</p>
+		</li>
+	</ol>
+
+	<!-- 当前步骤提示 -->
+	<p class="description-tips">
+		Please confirm your order information, and click next to continue to place an order.
+	</p>
+
+	<!-- 时间 -->
+	<div class="guide-mod guide-time">
+		<div class="hd">
+			<h3 class="hd-t">Time</h3>
+			<a href="javascript:void(0);"
+			data-toggle="popover"
+			data-title="Example"
+			data-content="Here enter your travel start date and journey length"
+			class="example">[Example]</a>
+		</div>
+		<div class="bd">
+			<textarea class="input-area" placeholder="Here enter your travel start date and journey length"></textarea>
+		</div>
+	</div>
+
+	<!-- 地点：碰面地点 -->
+	<div class="guide-mod guide-place">
+		<div class="hd">
+			<h3 class="hd-t">Place/View Spot</h3>
+			<a href="javascript:void(0);"
+			data-toggle="popover"
+			data-title="Example"
+			data-content="Here enter your travel start date and journey length"
+			class="example">[Example]</a>
+		</div>
+		<div class="bd">
+			<textarea class="input-area" placeholder="Sausalito, California"></textarea>
+		</div>
+	</div>
+
+	<!-- 旅客人数 -->
+	<div class="guide-mod guide-traveler" id="J-traveler-join">
+		<div class="hd">
+			<h3 class="hd-t">Person</h3>
+		</div>
+		<div class="bd">
+			<select name="traveler-join">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+			</select>
+		</div>
+	</div>
+
+	<div class="guide-mod guide-itinerary">
+		<div class="hd">
+			<h3 class="hd-t">Itinerary</h3>
+		</div>
+		<div class="bd">
+			<p class="tips">Tips:You can choose an itinerary below if that's exactly what you want.Or you can choose an itinerary and leave some modification in the "Leave a message" box.</p>
+			<ul class="itinerary-list" id="J-itinerary-list">
+				<li>
+					<span class="ui-radio"><input type="radio" name="itinerary" value="0" class="radio" /></span>
+					<a href="iframe_a.html">Bike the City in 3 Hours</a>
+					<span class="price">(&yen;1834)</span>
+				</li>
+				<li>
+					<span class="ui-radio"><input type="radio" name="itinerary" value="1" class="radio" /></span>
+					<a href="iframe_b.html">Queens food tour in New York</a>
+					<span class="price">(&yen;1834)</span>
+				</li>
+				<li>
+					<span class="ui-radio"><input type="radio" name="itinerary" value="2" class="radio" /></span>
+					<a href="javascript:void(0);">Explore London like a local</a>
+					<span class="price">(&yen;1834)</span>
+				</li>
+				<li>
+					<span class="ui-radio"><input type="radio" name="itinerary" value="3" class="radio" /></span>
+					<a href="javascript:void(0);">Street art tour in San Francisco</a>
+					<span class="price">(&yen;1834)</span>
+				</li>
+				<li>
+					<span class="ui-radio"><input type="radio" name="itinerary" value="4" class="radio" /></span>
+					<a href="javascript:void(0);">Best Napa wine tour</a>
+					<span class="price">(&yen;1834)</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 留言、描述 -->
+	<div class="guide-mod msg-description">
+		<div class="hd">
+			<h3 class="hd-t">Leave a message</h3>
+			<a href="javascript:void(0);"
+			data-toggle="popover"
+			data-title="Example"
+			data-content="Here enter your travel start date and journey length"
+			class="example">[Example]</a>
+		</div>
+		<div class="bd">
+			<textarea class="input-area"></textarea>
+		</div>
+	</div>
+
+	<div class="guide-mod guide-btn-mod">
+		<select name="duration-request">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+		</select>
+		<button class="ui-btn-big btn-submit-orders"><span>Submit Orders</span></button>
+	</div>
+</div>
+
+
+<!-- modal -->
+<div id="J-itinerary-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="J-modal-label" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3 id="J-modal-label">Modal header</h3>
+	</div>
+	<div class="modal-body">
+		<!-- 标题 -->
+		<div class="attractions-title">
+			<h1>Scout for Street Art</h1>
+		</div>
+
+		<!-- 画廊 -->
+		<div class="gallery" id="J-gallery">
+			<ul class="gallery-thumb-list">
+				<li><img src="../img/gallery-1.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg"/><span>这里是标题这里是标题这里是标题这里是标题这里是标题</span></li>
+				<li><img src="../img/gallery-2.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-3.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-4.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-1.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-2.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-3.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-4.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-1.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-2.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-3.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-4.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-2.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-3.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-4.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-1.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-2.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-3.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-4.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-1.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-2.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-3.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+				<li><img src="../img/gallery-4.jpg" alt="图片描述" ref="../img/gallery-zoom.jpg" /><span>这里是标题</span></li>
+			</ul>
+			<!-- <div class="view-control">
+				<a href="javascript:void(0);" class="picture active" title="图片">图片</a>
+				<a href="javascript:void(0);" class="video" title="视频">视频</a>
+			</div> -->
+		</div>
+
+		<!-- 景点 -->
+		<div class="article attractions">
+			<h2 class="hd-t">View Port</h2>
+			<ul class="attractions-list">
+				<li>
+					<p>Queens food tour in New York</p>
+				</li>
+				<li>
+					<p>Street art tour in San Francisco</p>
+				</li>
+				<li>
+					<p>Local guide to Paris</p>
+				</li>
+				<li>
+					<p>Explore London like a local</p>
+				</li>
+				<li>
+					<p>Best Napa wine tour</p>
+				</li>
+				<li>
+					<p>Food tour in Berlin</p>
+				</li>
+			</ul>
+		</div>
+
+		<!-- 线路 -->
+		<div class="article itinerary">
+			<h2 class="hd-t">Itinerary</h2>
+			<ul class="itinerary-list">
+				<li>First day  08:00-12:00  Queens food tour in New York/13:00-16:00  Street art tour in San Francisco/19:00-22:00  Explore London like a local.</li>
+				<li>Second day  08:00-12:00  Local guide to Paris/14:00-18:00  Best Napa wine tour/20:00-24:00  Food tour in Berlin.</li>
+			</ul>
+		</div>
+
+		<!-- 详情 -->
+		<div class="article details">
+			<h2 class="hd-t">Details</h2>
+			<div class="details-article">
+				<p>
+					Imagine you’re fabulously wealthy with two summer homes and friends who go by names like Cartwright
+					and Kensington. You’ve entered the world of the Evening Star, where the good life seems to come 
+					naturally. Captain Marco, who has taken the helm of many rock royalty-owned vessels, will navigate his 
+					sailboat through the beautiful waters off Sausalito. All you and your crew need to worry about is having a 
+					tremendously good time.
+				</p>
+				<p>
+					Captain Marco will help you chart your own route to suit your interests. Depending on conditions, you might 
+					sail under the Golden Gate Bridge, along the San Francisco city front, past Alcatraz, around Angel Island 
+					and through Raccoon straights.
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+		<button class="btn btn-primary">Save changes</button>
+	</div>
+</div>
+
+</body>
+</html>

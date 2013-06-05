@@ -72,7 +72,7 @@ var GuideNew = {
 		var that 		= 	this;
 		var opts 		= 	opts || {};
 		var schedule 	= 	opts.schedule 	||	$('.schedule-mod');
-		var type 		= 	opts.type 		|| 	$('#J-schedule-select').val();
+		var type 		= 	opts.type 		|| 	$('#J-schedule-select').val() || 'day';
 		var status 		= 	opts.status;
 		schedule.removeClass(this.active_name);
 		$('#J-schedule-' + type).addClass(this.active_name);
@@ -293,7 +293,7 @@ var GuideNew = {
 	 * 选择日期
 	 * @return {[type]} [description]
 	 */
-	chooseScheduleDay : function(arg) {
+	chooseScheduleDay : function(arg, callback) {
 		
 		if (!arg) return false;
 
@@ -343,6 +343,10 @@ var GuideNew = {
 			that.conversionData(temp_day, type);
 			// 隐藏日历
 			_this.datepicker('hide');
+
+			if(typeof callback === 'function') {
+				callback();
+			}
 		});
 	},
 

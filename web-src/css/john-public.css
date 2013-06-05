@@ -41,7 +41,6 @@ input[readonly=readonly] { background-color:#ffffff; cursor:default; }
 	background:-o-linear-gradient(top,  #f77c82 0%,#e75158 100%); /* Opera 11.10+ */
 	background:-ms-linear-gradient(top,  #f77c82 0%,#e75158 100%); /* IE10+ */
 	background:linear-gradient(to bottom,  #f77c82 0%,#e75158 100%); /* W3C */
-	/* filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#f77c82', endColorstr='#e75158',GradientType=0 ); /* IE6-9 */
 }
 .ui-tabs-nav .active .i-arrow { display:block; }
 .ui-tabs-nav .active a { color:#ffffff; }
@@ -90,6 +89,10 @@ input[readonly=readonly] { background-color:#ffffff; cursor:default; }
 .ui-btn-small .i-search { background-position:-7px -286px; }
 .ui-btn-big .i-star { background-position:-3px -338px; }
 .btn-view-middle .icon-eye-open { margin-right:6px; background-position:-7px -651px; }
+.ui-btn-small .i-desc { background-position:-7px -424px; }
+.ui-btn-small.active .i-desc { background-position:-7px -481px; }
+.ui-btn-small .i-asc { background-position:-7px -397px; }
+.ui-btn-small.active .i-asc { background-position:-7px -454px; }
 /*按钮在鼠标经过的默认效果*/
 .ui-btn-big:hover,
 .ui-btn-big:focus,
@@ -277,7 +280,6 @@ input[readonly=readonly] { background-color:#ffffff; cursor:default; }
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9191', endColorstr='#ef5656',GradientType=0 ); /* IE6-9 */
 }
 
-
 /*按钮组*/
 .ui-btn-group { font-size:0px; overflow:hidden; }
 .ui-btn-group li { display:inline-block; }
@@ -344,9 +346,14 @@ input[readonly=readonly] { background-color:#ffffff; cursor:default; }
 	border-radius:0px 5px 5px 0px;
 }
 
+/*将按钮全部靠右边*/
+.guide-btn-mod { text-align:right; }
+.guide-btn-mod .pay-info { padding-right:20px; font-size:20px; line-height:30px; vertical-align:-5px; }
+.guide-btn-mod .pay-info .price { color:#ff0000; font-size:30px; vertical-align:-3px; }
+.guide-btn-mod .ui-btn-big { padding-left:40px; padding-right:40px; margin-left:10px; }
+
 /*纯文字提示类*/
 .ui-tips-danger { margin:10px 0px; color:#f06973; font-size:12px; }
-
 
 /*滚动条*/
 .ui-scroll-bar,
@@ -359,25 +366,20 @@ input[readonly=readonly] { background-color:#ffffff; cursor:default; }
 .ui-scroll-bar { position:absolute; top:0px; right:-1px; bottom:0px; z-index:1; width:12px; min-height:200px; background-repeat:repeat-y; background-position:-24px 0px; }
 .ui-scroll-bar .up,
 .ui-scroll-bar .down { position:absolute; left:0px; right:0px; z-index:2}
-.ui-scroll-bar .up { top:0px; height:14px; background-position:0px 0px; }
-.ui-scroll-bar .down { bottom:0px; height:14px; background-position:0px -14px; }
+.ui-scroll-bar .up { top:0px; height:12px; background-position:0px 0px; }
+.ui-scroll-bar .down { bottom:0px; height:12px; background-position:0px -16px; }
 .ui-scroll-bar .dragger { position:absolute; top:14px; left:0px; right:0px; z-index:6; height:49px; background-repeat:repeat-y; background-position:-12px 0px; }
 .ui-scroll-bar .dragger-bd { display:block; position:relative; top:0px; right:0px; bottom:0px; left:0px; height:100%; }
 .ui-scroll-bar .dragger-bd:before,
 .ui-scroll-bar .dragger-bd:after { position:absolute; left:0px; right:0px; content:""; height:4px; overflow:hidden; }
 .ui-scroll-bar .dragger-bd:before { top:0px; background-position:0px -28px; }
 .ui-scroll-bar .dragger-bd:after { bottom:0px; background-position:0px -32px; }
-.ui-scroll-bar .dragger-bd b { position:absolute; top:50%; right:0px; bottom:0px; left:50%; height:5px; margin:-3px 0px 0px -7px; background-position:0px -36px; }
-
-/*输入框*/
-.ui-input-wrap { display:inline-block; position:relative; }
-.ui-input-wrap input { margin-bottom:0px; }
-.ui-input-wrap i[class^=i] { position:absolute; top:3px; right:3px; }
+.ui-scroll-bar .dragger-bd b { position:absolute; top:50%; right:0px; bottom:0px; left:50%; height:5px; margin:-3px 0px 0px -6px; background-position:0px -36px; }
 
 
 /*单选框、复选框*/
 .ui-checkbox,
-.ui-radio { position:relative; display:inline-block; width:16px; height:16px; margin-right:6px; background-image:url(../img/_icon-form.png); background-repeat:no-repeat; vertical-align:-3px; }
+.ui-radio { position:relative; display:inline-block; width:16px; height:16px; margin-right:6px; background-image:url(../img/_icon-sprite.png); background-repeat:no-repeat; vertical-align:-3px; }
 .ui-checkbox input,
 .ui-radio input {
 	position:absolute; top:0px; right:0px; bottom:0px; left:0px; z-index:2; width:100%; height:100%; min-height:100%; padding:0px; margin:0px; border:none;
@@ -385,10 +387,12 @@ input[readonly=readonly] { background-color:#ffffff; cursor:default; }
 	filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
 	opacity:0;
 }
-.ui-checkbox { background-position:-76px 0; }
-.ui-checkbox.ui-checked { background-position:-93px 0; }
-.ui-radio { background-position:-42px 0; }
-.ui-radio.ui-radioed { background-position:-59px 0; }
+.ui-checkbox { background-position:-34px -6px; }
+.ui-checkbox.ui-checked { background-position:-34px -34px; }
+.ui-radio { background-position:-34px -119px; }
+.ui-radio.ui-radioed { background-position:-34px -147px; }
+.alert-error-list .ui-checkbox { background-position:-34px -62px }
+.alert-error-list .ui-checkbox.ui-checked { background-position:-34px -90px; }
 
 
 /*分页*/
@@ -417,7 +421,7 @@ input[readonly=readonly] { background-color:#ffffff; cursor:default; }
 .ui-pagination .next b { background-position:-11px -173px; }
 
 /*画廊*/
-.gallery { position:relative; min-height:470px; font-size:12px; overflow:hidden; }
+.gallery { position:relative; min-height:400px; font-size:12px; overflow:hidden; }
 .gallery .view-control { position:absolute; top:20px; right:20px; }
 .gallery .view-control a { float:left; width:32px; height:28px; margin-left:10px; background-image:url(../img/bg-gallery.png); background-repeat:no-repeat; text-indent:-999px; overflow:hidden; }
 .gallery .view-control .picture { background-position:0px -56px; }
@@ -441,7 +445,7 @@ input[readonly=readonly] { background-color:#ffffff; cursor:default; }
 .gallery span[class*=prev] { left:0px; background-position:3px -112px; border-right:1px solid #cdcdcd; }
 .gallery span[class*=next] { right:0px; background-position:-18px -112px; border-left:1px solid #cdcdcd; }
 /*画廊插件的js特殊处理*/
-.pika-stage { position:relative; width:100%; height:auto; min-height:400px; margin-bottom:10px; overflow:hidden; }
+.pika-stage { position:relative; width:100%; height:auto; min-height:300px; margin-bottom:10px; overflow:hidden; }
 .pika-imgnav { position:absolute; top:0px; right:0px; bottom:0px; left:0px; width:100%; height:100%; }
 .pika-imgnav .previous,
 .pika-imgnav .next { position:absolute; top:0px; bottom:0px; width:50%; background:url(about:blank); cursor:pointer; }
@@ -558,6 +562,46 @@ input[readonly=readonly] { background-color:#ffffff; cursor:default; }
 }
 .collect-side .ft p { margin:0px; }
 
+/*服务时间*/
+.service-time .hd { padding:16px 0px; }
+.service-time .hd select { position:absolute; top:50%; right:0px; margin-top:-15px; margin-bottom:0px; }
+.schedule-mod.active { display:block; }
+.schedule-mod { display:none; font-size:12px; }
+.schedule-mod .mod-hd { min-height:20px; border:1px solid #cdcdcd; border-bottom:none; }
+.schedule-mod .mod-ft { min-height:28px; padding:5px; border:1px solid #cdcdcd; border-top:none; }
+.schedule-mod .temp-data { display:none; }
+.schedule-list { table-layout:fixed; width:100%; border:1px solid #cdcdcd; text-align:center; }
+.schedule-list td { padding:0px; border:1px solid #cdcdcd; }
+.schedule-list .hour-list td { border:none; }
+.schedule-list .hour { position:relative; z-index:2; width:24px; height:24px; padding:5px 0px; }
+.schedule-list .hour span { position:absolute; top:50%; left:-8px; min-width:16px; margin-top:-10px; }
+.schedule-list .hour span[data-value='0'] { margin-left:-8px; }
+.schedule-list .hour i { position:absolute; bottom:-3px; left:-2px; width:5px; height:5px; background-image:url(../img/_icon-schedule.png); background-repeat:no-repeat; background-position:0px -87px; }
+.schedule-list .hour-list .td-day { vertical-align:bottom; }
+.schedule-list .hour-list .td-day i { display:block; width:48px; height:34px; background-image:url(../img/_icon-schedule.png); background-repeat:no-repeat; background-position:0px -100px; }
+.schedule-list .td-day { width:70px; }
+.schedule-list .date-operate { position:relative; min-height:24px; line-height:24px; color:#999999; cursor:pointer; text-align:center; }
+.schedule-list .date-operate .choose { position:absolute; top:0px; right:0px; bottom:0px; left:0px; }
+.schedule-list .date-operate .date { display:block; width:100%; font-size:12px; color:#333333; }
+.schedule-list .date-operate .i-remove { position:absolute; top:2px; left:-19px; display:none; }
+.schedule-list .check,
+.schedule-list .checkall { display:block; min-height:24px; padding:0px; margin:0px; }
+.schedule-list .checkall,
+.schedule-list .check.active,
+.schedule-list .checkall.active { background-image:url(../img/_icon-schedule.png); background-repeat:no-repeat; }
+.schedule-list .check.active { background-position:center -160px; }
+.schedule-list .checkall { background-position:center -257px; }
+.schedule-list .checkall.active { background-position:center -305px; }
+.schedule-mod .i-addition { float:left; margin-left:16px; }
+.schedule-mod .tips { padding:4px 14px; overflow:hidden; }
+.schedule-mod .tips li { position:relative; float:left; padding-right:26px; padding-left:38px; }
+.schedule-mod .tips i { position:absolute; top:0px; left:0px; width:28px; height:20px; margin-right:6px; background-image:url(../img/_icon-schedule.png); background-repeat:no-repeat; vertical-align:-5px; }
+.schedule-mod .tips .i-work { background-position:center -307px; }
+.schedule-mod .tips .i-mywork { background-position:0 0px; }
+.schedule-mod .tips .i-allday { background-position:0px -60px; }
+.schedule-mod .tips .i-idle { background-position:0px -20px; }
+.schedule-mod .tips .i-busy { background-position:0px -40px; }
+
 /*预订*/
 .booking {
 	margin-bottom:10px; border:1px solid #cdcdcd;
@@ -580,6 +624,17 @@ input[readonly=readonly] { background-color:#ffffff; cursor:default; }
  * date:2013-5-24 11:04:38;
  * explanation:重写页面页面所有自定义icon（不包括bootstrap方面的）;
  */
+
+/*输入框*/
+.ui-input-wrap { display:inline-block; position:relative; }
+.ui-input-wrap input {
+	display:block; width:100%; height:30px; margin-bottom:0px;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+.ui-input-wrap i { position:absolute; top:3px; right:1px; }
+
 /*所引用的图片*/
 .page-prev,
 .page-next,
@@ -591,6 +646,8 @@ input[readonly=readonly] { background-color:#ffffff; cursor:default; }
 .i-map-marker,
 .i-heart,
 .i-line,
+.i-remove,
+.i-delete,
 .i-remove-green { display:inline-block; background:transparent; background-image:url(../img/_icon-sprite.png); background-repeat:no-repeat; border:none; text-indent:-999px; overflow:hidden; }
 /*图片外观*/
 .page-prev,
@@ -599,16 +656,14 @@ input[readonly=readonly] { background-color:#ffffff; cursor:default; }
 .page-prev:hover { background-position:0 -29px; }
 .page-next { background-position:-29px 0; }
 .page-next:hover { background-position:-29px -29px; }
-
 .i-time { width:18px; height:18px; background-position:-145px -19px; }
 .i-person,
 .i-user { width:24px; height:24px; background-color:#ffffff; background-position:-3px -58px; border-radius:0px 4px 4px 0px; }
 
 .i-date,
 .i-calendar { width:24px; height:24px; background-color:#ffffff; background-position:-3px -225px; border-radius:0px 4px 4px 0px; }
-
-.i-map-marker { width:18px; height:18px; background-position:-164px -19px; }
-.i-map-marker-light { width:18px; height:18px; background-position:-164px -38px; }
+.i-map-marker { width:24px; height:24px; background-color:#ffffff; background-position:-3px -2px; border-radius:0px 4px 4px 0px; }
+.i-map-marker-light { width:24px; height:24px; background-color:#ffffff; background-position:-5px -33px; border-radius:0px 4px 4px 0px; }
 /*鼠标经过效果*/
 .page-prev:hover,
 .page-next:hover {
@@ -621,8 +676,8 @@ input[readonly=readonly] { background-color:#ffffff; cursor:default; }
 
 /*28px*/
 .i-line { width:3px; height:28px; background-position:-13px -616px; }
-.i-remove,
-.i-delete { width:28px; height:28px; background-image:url(../img/_icon-delete.png); background-repeat:no-repeat; background-position:0px 0px; }
+.i-remove { min-width:18px; min-height:18px; background-position:-5px -534px; vertical-align:0px; cursor:pointer; }
+.i-delete { min-width:28px; min-height:28px; background-position:0px -504px; vertical-align:-1px; cursor:pointer; }
 
 
 
