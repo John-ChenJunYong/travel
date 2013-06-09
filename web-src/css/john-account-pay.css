@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* CSS Document */
+/**
+ * date:2013-6-8 14:24:04;
+ * explanation:用户付款相关页面：包括自己主动付款、代付款页面;
+ */
+.pay-self .hd,
+.pay-others .hd { position:relative; padding:10px; border-bottom:1px solid #dddddd; }
+.pay-self .hd-t,
+.pay-others .hd-t { font-size:20px; line-height:30px; }
+
+/*当前付款用户*/
+.info-oneself { position:relative; table-layout:fixed; width:100%; margin-top:-1px; margin-bottom:40px; background-color:#e8f7fe; border-top:1px solid #b2ddf0; border-bottom:1px solid #b2ddf0; border-collapse:collapse; border-spacing:0px; text-align:left; }
+.info-oneself td { padding:20px 10px; vertical-align:top; }
+.info-oneself .time { width:15%; }
+.info-oneself .time span { display:block; padding:8px 0px; }
+.info-oneself .pic { width:80px; }
+.info-oneself .status { color:#ff6600; }
+.info-oneself .price { width:15%; font-size:24px; color:#ff0000; }
+.pay-others .info-oneself td { vertical-align:middle; }
+.pay-others .info-oneself p { margin:10px 0px; }
+.pay-others .pay-title { font-size:18px; color:#0088cc; }
+
+/*第一种方式：采用信用卡或者银行卡支付*/
+.pay-self .pay-form { padding:0px 20px; overflow:hidden; }
+.pay-self .support-list { padding-bottom:10px; }
+.pay-self .pay-form label { padding-top:5px; }
+.pay-self .pay-form .error { border-color:#b94a48; color:#b94a48; }
+.pay-self .pay-form .error:focus {
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
+}
+.pay-self .pay-form .info-cart { float:left; width:40%; padding:0 5% 0 0; border-right:1px dashed #dddddd; }
+.pay-self .pay-form .info-user { float:left; width:40%; padding:0 0 0 15%; margin-left:-1px; }
+.pay-self .pay-form .support-list { }
+.pay-self .pay-form .icon-question-sign { vertical-align:1px; }
+.pay-self .pay-form .select-year,
+.pay-self .pay-form .select-month { width:86px; }
+.pay-self .pay-form .input-address { 
+	display:block; width:100%; max-width:100%; height:30px;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+/*第二种方式：采用paypal支付*/
+.pay-self .pay-paypal { padding:0px 20px; overflow:hidden; }
+.pay-self .pay-paypal .desc { padding:20px 0px; margin-bottom:20px; border-bottom:1px dashed #dddddd; }
+
+/*找人代付*/
+.pay-others .alert { width:480px; background-color:#ffeacd; border-color:#f9c47a; font-size:12px; color:#333333; }
+.pay-others .label-agree { font-size:12px; }
+.pay-others .tips-check { margin-bottom:26px; font-size:12px; }
+.pay-others .alert .ui-checked { background-position:-34px -314px; }

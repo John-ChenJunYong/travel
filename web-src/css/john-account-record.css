@@ -1,0 +1,88 @@
+@charset "utf-8";
+/* CSS Document */
+/**
+ * date:2013-6-6 11:48:35;
+ * explanation:账户相关记录，包括提款记录、积分记录、收入记录;
+ */
+.account-record { padding:10px 20px; }
+.account-record .mod-title { margin-left:-20px; margin-right:-20px; }
+.account-record input,
+.account-record select,
+.account-record p { margin-bottom:0px; }
+.account-record .hd { margin-bottom:20px; }
+.account-record .hd-t { font-size:20px; line-height:30px; }
+.account-record .record-title { position:relative; min-height:30px; padding-bottom:24px; margin-bottom:24px; border-bottom:1px dashed #dddddd; }
+.account-record .record-title .title { font-size:18px; line-height:30px; font-weight:400; }
+.account-record .record-title span,
+.account-record .record-title span:before,
+.account-record .record-title span:after { background-image:url(../img/_icon-account.png); background-repeat:no-repeat; }
+.account-record .record-title span {
+	position:relative; float:left; padding:0px 24px 0px 18px; margin:-1px 20px 0px 0px; background-repeat:repeat-x; background-position:0px -30px; color:#ffffff; font-size:16px;
+	text-shadow:1px 1px 0px rgba(0, 0, 0,0.5);
+}
+.account-record .record-title span:before,
+.account-record .record-title span:after { position:absolute; top:0px; content:""; width:10px; height:30px; }
+.account-record .record-title span:before { left:0px; background-position:0px 0px; }
+.account-record .record-title span:after { right:0px; background-position:-10px 0px; }
+.account-record .integral-title span { background-position:0px -90px; }
+.account-record .integral-title span:before { background-position:0px -60px; }
+.account-record .integral-title span:after { background-position:-10px -60px; }
+.account-record .withdrawals-title span { background-position:0px -150px; }
+.account-record .withdrawals-title span:before { background-position:0px -120px; }
+.account-record .withdrawals-title span:after { background-position:-10px -120px; }
+.account-record .record-title .filter { position:absolute; top:0px; right:0px; }
+.account-record .table { table-layout:fixed; }
+.account-record .table .date { width:15%; }
+.account-record .table .price { width:15%; }
+.account-record .table .w-status { width:35%; }
+.account-record .table .details { width:40%; }
+.account-record .table .operate { width:25%; }
+.account-record .table-hover tbody tr:hover > td,
+.account-record .table-hover tbody tr:hover > th { background-color: #ebf2fa; }
+.account-record a[class*=sorting],
+.account-record a[class*=sorting]:hover { text-decoration:none; }
+.account-record a[class*=sorting] .caret { margin-left:4px; vertical-align:2px; border-top-color:#999999; }
+.account-record a[class*=sorting]:hover .caret { border-top-color:#005580; }
+.account-record a[class*=sorting].active .caret { border-top:none; border-bottom:4px solid #999999; }
+.account-record a[class*=sorting].active:hover .caret { border-bottom-color:#005580; }
+.account-record .result-tips { padding-top:20px; }
+.account-record .result-tips .amount { padding-left:6px; color:#158c2e; }
+.account-record .operate .ui-btn-small { padding:1px 8px; font-size:12px; }
+.account-record .empty { padding:20px 10px; }
+.account-record .empty p { margin-bottom:10px; }
+/*提款信息*/
+.info-withdrawals { }
+.info-withdrawals .title { margin-bottom:10px; }
+.info-withdrawals .list { padding:10px 40px; margin:16px 0px 30px 0px; background-color:#ebf2fa; border-top:1px solid #c5e0ff; border-bottom:1px solid #c5e0ff; }
+.info-withdrawals .list li { padding:6px 0px; }
+.info-withdrawals .list .price { color:#ff6600; }
+.info-withdrawals .guide-btn-mod { text-align:left; }
+.info-withdrawals .guide-btn-mod a { margin-right:10px; }
+
+/**
+ * @overflow:复写bootstrap垂直表单;
+ * date:2013-6-6 17:20:49;
+ */
+.form-horizontal { margin-bottom:0px; }
+.form-horizontal .input-line { position:relative; min-height:30px; padding-left:210px; padding-bottom:20px; }
+.form-horizontal .input-line label { position:absolute; top:5px; left:0px; width:200px; margin:0px; text-align:right; }
+.form-horizontal .input-line p { margin:10px 0px 0px 0px; }
+.form-horizontal .act { text-decoration:underline; }
+.form-horizontal .help-tips { padding:10px; margin-top:10px; background-color:#f7f7f7; border:1px solid #cdcdcd; border-radius:5px; }
+.form-horizontal .help-tips .t { float:left; }
+.form-horizontal .help-tips p { padding-left:8px; margin:0px; overflow:hidden; color:#999999 }
+
+/**
+ * @overflow:复写bootstrap在弹出增加提款方式的时候的宽度及外观
+ * date:2013-6-7 10:17:16;
+ */
+#J-withdrawals-method-modal { top:5%; width:710px; margin-left:-355px; }
+.w-method-mod { padding-top:10px; }
+.w-method-mod .table { table-layout:fixed; margin-bottom:0px; font-size:13px; }
+.w-method-mod .operate { width:2.8%; padding-left:0px; padding-right:0px; }
+.w-method-mod .ui-radio { margin:0px; }
+.w-method-mod .details { width:40%; }
+.w-method-mod .currency { width:12%; }
+.w-method-mod .result-tips { color:#0088cc; }
+.w-method-mod .table-wrap { height:300px; overflow:auto; }
+.w-method-mod .table-wrap::-webkit-scrollbar { width:6px; height:6px; }

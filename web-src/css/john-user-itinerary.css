@@ -3,7 +3,7 @@
 
 /**
  * date:2013-5-30 16:44:12;
- * explanation:行程管理;
+ * explanation:行程管理：包括已发布的行程列表、增加行程、修改行程等页面都需要引用该样式;
  */
 .history-mod .hd { position:relative; padding:10px; border-bottom:1px solid #dddddd; }
 .history-mod .hd-t { font-size:18px; line-height:30px; }
@@ -30,9 +30,38 @@
 
 /*行程管理*/
 .itinerary-history-mod .hd { padding:0px; border:none; }
-.itinerary-history-mod .nav-tabs { margin-bottom:0px; }
 .itinerary-history-mod .ui-btn-big { position:absolute; top:0px; right:10px; width:130px; margin-top:-10px; }
 .history-list .booked { width:11%; }
 .history-list .date { width:14%; }
 .history-list .view { width:17.6%; }
 .history-list .view .img { width:100px; max-width:100px; height:auto; padding:4px; background-color:#ffffff; border:1px solid #dddddd; }
+
+/**************************************************
+ * 发布行程
+ **************************************************/
+.itinerary-manage .guide-step { padding-left:15px; padding-right:15px; }
+.itinerary-manage .guide-step li { width:20%; }
+.itinerary-manage .guide-step .step-5:after { display:none; }
+.itinerary-manage .mod-title { padding-left:40px; padding-right:40px; margin-left:-20px; margin-right:-20px; margin-bottom:30px; }
+.itinerary-manage .form-horizontal { padding:0px 15px; margin-bottom:0px; }
+.itinerary-manage .form-horizontal .input-line { position:relative; min-height:30px; padding-left:100px; padding-bottom:20px; }
+.itinerary-manage .form-horizontal .input-line label { position:absolute; top:5px; left:0px; width:80px; margin:0px; text-align:right; }
+.itinerary-manage .form-horizontal .input-line p { margin:10px 0px 0px 0px; }
+.itinerary-manage .form-horizontal .input-txt { height:30px; }
+.itinerary-manage .form-horizontal .input-area { height:240px; }
+.itinerary-manage .form-horizontal .tips { color:#999999; }
+.itinerary-manage .form-horizontal .input-line .ui-input-wrap { float:left; width:87.30%; margin-right:1.4020%; }
+.itinerary-manage .form-horizontal .input-line .ui-btn-small { float:left; width:11%; padding-left:0px; padding-right:0px; }
+.itinerary-manage .form-horizontal input[class*=input-],
+.itinerary-manage .form-horizontal textarea[class*=input-] { display:block; width:100%; min-width:100%; max-width:100%; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
+.itinerary-manage .form-horizontal .operate { margin-bottom:10px; }
+.itinerary-manage .form-horizontal .act-gettmpl { font-weight:700; text-decoration:underline; }
+.itinerary-manage .preview-list { padding:20px; background-color:#e8f7fe; margin-left:100px; border:1px solid #b2ddf1; border-radius:5px; }
+.itinerary-manage .preview-list li { position:relative; padding:6px 0px; overflow:hidden; }
+.itinerary-manage .preview-list p { float:left; max-width:80%; padding-left:24px; margin-bottom:0px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.itinerary-manage .preview-list li:before { position:absolute; top:50%; left:0px; content:""; width:18px; height:18px; margin-top:-9px; background:url(../img/_icon-sprite.png) no-repeat -5px -33px; }
+.itinerary-manage .preview-list .i-remove { float:left; margin-left:10px; }
+.itinerary-manage .preview-list .empty { color:#999999; }
+.itinerary-manage .preview-list .empty:before { background-position:-5px -5px; }
+.itinerary-manage .guide-btn-mod { margin-top:20px; }
+.itinerary-manage .media-mod { padding:0px; }

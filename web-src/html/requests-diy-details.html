@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>旅伴收到的请求</title>
+<title>旅伴收到的请求、旅伴查看已经付款的订单详情</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -64,9 +64,9 @@
 		</div>
 
 		<div class="col-main">
-			<div class="requests-mod">
+			<div class="requests-mod respond-details">
 				<div class="hd">
-					<h3 class="hd-t">收到的需求</h3>
+					<h3 class="hd-t">行程计划</h3>
 				</div>
 				<div class="bd">
 					<div class="item-traveler">
@@ -75,37 +75,122 @@
 								<td class="user"><a href="#" target="_blank"><img src="../img/avator-1.jpg" alt="图片描述" class="avator" /></a></td>
 								<td class="name"><a href="#" target="_blank">Yi Lian</a></td>
 								<td class="date">2013-06-03 12:30:15</td>
-								<td class="operate"><a href="javascript:void(0);" class="ui-btn-small btn-book-small"><span>Get In Touch</span></a></td>
+								<td class="operate"><a href="javascript:void(0);" class="ui-btn-small"><span>Get In Touch</span></a></td>
 							</tr>
 						</table>
 					</div>
-					<!-- 时间、周期 -->
+					<!-- 游玩时间列表 -->
 					<div class="item">
-						<h4 class="title">Time</h4>
-						<p class="desc">June brought us a weekend tour of Shenzhen, time is about 2 days</p>
+						<h4 class="title">Schedule</h4><strong class="hd-extra">( In all：<span>48h</span> ）</strong>
+						<ul class="travel-time-list">
+							<li>
+								<strong>2013-05-15</strong>
+								<span>08:00-12:00</span>
+								<span>08:00-12:00</span>
+								<span>08:00-12:00</span>
+								<span>08:00-12:00</span>
+								<span>08:00-12:00</span>
+								<span>08:00-12:00</span>
+								<span>08:00-12:00</span>
+								<span>08:00-12:00</span>
+								<span>08:00-12:00</span>
+								<span>08:00-12:00</span>
+							</li>
+							<li>
+								<strong>2013-05-16</strong>
+								<span>08:00-12:00</span>
+								<span>08:00-12:00</span>
+							</li>
+							<li>
+								<strong>2013-05-17</strong>
+								<span>08:00-12:00</span>
+								<span>08:00-12:00</span>
+								<span>08:00-12:00</span>
+							</li>
+							<li>
+								<strong>2013-05-18</strong>
+								<span>08:00-12:00</span>
+								<span>08:00-12:00</span>
+							</li>
+							<li>
+								<strong>2013-05-19</strong>
+								<span>08:00-12:00</span>
+							</li>
+							<li>
+								<strong>2013-05-20</strong>
+								<span>08:00-12:00</span>
+								<span>08:00-12:00</span>
+								<span>08:00-12:00</span>
+							</li>
+						</ul>
 					</div>
-					<!-- 见面地点 -->
+					<!-- 景点 -->
 					<div class="item">
-						<h4 class="title">Place/View Spot</h4>
-						<p class="desc">Sausalito, California neighborhood</p>
+						<h4 class="title">View spot</h4>
+						<ul class="attractions-list">
+							<li>
+								<p>Queens food tour in New York</p>
+							</li>
+							<li>
+								<p>Street art tour in San Francisco</p>
+							</li>
+							<li>
+								<p>Local guide to Paris</p>
+							</li>
+							<li>
+								<p>Explore London like a local</p>
+							</li>
+							<li>
+								<p>Best Napa wine tour</p>
+							</li>
+							<li>
+								<p>Food tour in Berlin</p>
+							</li>
+						</ul>
+					</div>
+					<!-- 行程套餐的景点游玩时间摘要 -->
+					<div class="item">
+						<h4 class="title">Itinerary</h4>
+						<p class="desc">On this tour we will hike the beautiful trails of the East Bay, stop at epic vistas overlooking the Bay Area, explore ancient rock formations and off the beaten path trails. </p>
+						<ul class="itinerary-list">
+							<li>
+								First day<br />
+								08:00-12:00  Queens food tour in New York<br />
+								13:00-16:00  Street art tour in San Francisco<br />
+								19:00-22:00  Explore London like a local.
+							</li>
+							<li>
+								Second day<br />
+								08:00-12:00  Local guide to Paris<br />
+								14:00-18:00  Best Napa wine tour<br />
+								20:00-24:00  Food tour in Berlin.<br />
+							</li>
+						</ul>
 					</div>
 					<!-- 人数 -->
 					<div class="item">
 						<h4 class="title">Person</h4>
 						<p class="desc">2people</p>
 					</div>
-					<!-- 行程套餐 -->
+					<!-- 见面地点 -->
 					<div class="item">
-						<h4 class="title">Itinerary</h4>
-						<p class="desc">Bike the City in 3 Hours<span class="price">(&yen;1834)</span></p>
+						<h4 class="title">Meet Place</h4>
+						<p class="desc">guangdong,shenzhen,nanshan</p>
 					</div>
 					<!-- 留言 -->
 					<div class="item">
 						<h4 class="title">Message</h4>
-						<pre class="desc">Refer to "Bike the City in 3 Hours" timeline</pre>
+						<pre class="desc">On this tour we will hike the beautiful trails of the East Bay, stop at epic vistas overlooking the Bay Area,<br />explore ancient rock formations and off the beaten path trails.</pre>
+					</div>
+					<!-- 其它附言 -->
+					<div class="item">
+						<h4 class="title">Other</h4>
+						<pre class="desc">On this tour we will hike the beautiful trails of the East Bay, stop at epic vistas overlooking the Bay Area,<br />explore ancient rock formations and off the beaten path trails.</pre>
 					</div>
 					<!-- 按钮 -->
 					<div class="guide-mod guide-btn-mod">
+						<strong class="pay-info">应付金额:<span class="price">$960</span></strong>
+						<button class="ui-btn-big"><span>Get in touch</span></button>
 						<button class="ui-btn-big ui-btn-danger"><span>Decline</span></button>
 						<button class="ui-btn-big ui-btn-primary"><span>Accept</span></button>
 					</div>

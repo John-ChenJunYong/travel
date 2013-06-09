@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>行程管理---付款</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- bootstrap -->
+<link href="../css/bootstrap.css" rel="stylesheet" />
+<link href="../css/bootstrap-fixed.css" rel="stylesheet" />
+<link href="../css/bootstrap-datepicker.css" rel="stylesheet" />
+<!-- bootstrap的响应式 -->
+<link href="../css/bootstrap-responsive.css" rel="stylesheet" />
+<!-- 自定义 -->
+<link href="../css/john-global.css" rel="stylesheet" />
+<link href="../css/john-public.css" rel="stylesheet" />
+<link href="../css/john-dashboard.css" rel="stylesheet" />
+<link href="../css/john-account-pay.css" rel="stylesheet" />
+<link href="../css/john-public-responsive.css" rel="stylesheet" />
+
+<script src="../js/jquery-1.8.3.js" > </script>
+<script src="../js/bootstrap-tab.js"></script>
+<script src="../js/bootstrap-tooltip.js"></script>
+<script src="../js/john-account-pay.js"></script>
+</head>
+
+<body>
+
+<div class="content">
+	<div class="content-inner">
+		<div class="crumb-mod">
+			<ul class="breadcrumb">
+				<li><i class="icon-home"></i><a href="#">Dashboard</a> <span class="divider">/</span></li>
+				<li><a href="#">Photos and Video</a> <span class="divider">/</span></li>
+				<li class="active">Upload</li>
+			</ul>
+			<a href="javascript:void(0);" class="ui-btn-middle btn-view-middle">
+				<span><i class="icon-eye-open"></i>VIEW PROFILE</span>
+			</a>
+		</div>
+
+		<div class="col-side">
+			<div class="current-user">
+				<img src="../img/avator-1.jpg" alt="图片描述" class="avator">
+				<strong class="name">Yi Lian</strong>
+			</div>
+			<ul class="nav nav-list">
+				<li><a href="#"><i class="icon-home"></i>Dashboard</a></li>
+				<li class="nav-header">Transaction</li>
+				<li><a href="#"><i class="icon-file"></i>Bookings</a></li>
+				<li><a href="#"><i class="icon-file"></i>Guests</a></li>
+				<li class="nav-header">Account</li>
+				<li><a href="#"><i class="icon-user"></i>Profile</a></li>
+				<li><a href="#"><i class="icon-picture"></i>Photos</a></li>
+				<li><a href="#"><i class="icon-ok-circle"></i>Verification</a></li>
+				<li><a href="#"><i class="icon-eye-open"></i>Reviews</a></li>
+				<li class="nav-header">Setting</li>
+				<li><a href="#"><i class="icon-file"></i>Notification</a></li>
+				<li><a href="#"><i class="icon-file"></i>Privacy</a></li>
+				<li><a href="#"><i class="icon-file"></i>Security</a></li>
+				<li class="divider"></li>
+				<li><a href="#"><i class="icon-question-sign"></i>Help</a></li>
+			</ul>
+		</div>
+
+		<div class="col-main">
+			<div class="pay-self">
+				<div class="hd"><h3 class="hd-t">付款方式</h3></div>
+				<div class="bd">
+					<table class="info-oneself">
+						<tr>
+							<td class="time">
+								<span class="deal-orders">5246898745</span>
+								<span class="deal-time">2013-04-16</span>
+							</td>
+							<td class="pic"><img src="../img/avator-1.jpg" alt="图片描述" class="avator" />	</td>
+							<td class="name">Yi Lian</td>
+							<td class="status">Accept</td>
+							<td class="people">10People</td>
+							<td class="price">&yen;650</td>
+						</tr>
+					</table>
+
+					<ul class="nav nav-tabs" id="J-payment-type">
+						<li class="active"><a href="#J-payment-card" data-toggle="tab">信用卡</a></li>
+						<li><a href="#J-payment-paypal" data-toggle="tab">Paypal</a></li>
+					</ul>
+
+					<div class="tab-content">
+						<!-- 第一种方式：采用信用卡或者银行卡支付 -->
+						<form action="#" method="post" class="tab-pane active pay-form" id="J-payment-card">
+							<div class="support-list"><img src="../img/logo-support-list.png" alt="目前支持的信用卡：Visa, MasterCard, American Express, Discover" /></div>
+
+							<div class="info-cart">
+								<label class="title">卡的类型</label>
+								<select id="J-card-type" name="card-type">
+									<option value="visa">Visa</option>
+									<option value="master">MasterCard</option>
+									<option value="american_express">American Express</option>
+									<option value="discover">Discover</option>
+									<option value="jcb">JCB</option>
+								</select>
+
+								<label class="title">信用卡卡号</label>
+								<input type="text" class="input-numbe" />
+
+								<label class="title">到期于</label>
+								<select name="card-expire-month" class="select-month" id="J-card-expire-month">
+									<option>月份</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+								</select>
+								<select name="card-expire-year" class="select-year" id="J-card-expire-year">
+									<option>年份</option>
+									<option value="2013">2013</option>
+									<option value="2014">2014</option>
+									<option value="2015">2015</option>
+									<option value="2016">2016</option>
+									<option value="2017">2017</option>
+									<option value="2018">2018</option>
+									<option value="2019">2019</option>
+									<option value="2020">2020</option>
+									<option value="2021">2021</option>
+									<option value="2022">2022</option>
+									<option value="2023">2023</option>
+								</select>
+
+								<label class="title">安全码</label>
+								<input type="text" class="input-code" />
+								<i class="icon icon-question-sign" data-toggle="tooltip" title="信用卡或签名栏上的3或4位数值。"></i>
+							</div>
+
+							<div class="info-user">
+								<label class="title">名字</label>
+								<input type="text" class="input-txt" />
+
+								<label class="title">姓氏</label>
+								<input type="text" class="input-txt" />
+
+								<label class="title">详细地址</label>
+								<input type="text" class="input-address" />
+							</div>
+
+							<div class="guide-btn-mod">
+								<button class="ui-btn-big ui-btn-primary" id="J-pay"><span>Next Step</span></button>
+							</div>
+						</form>
+
+						<!-- 第二种方式：采用paypal支付 -->
+						<form action="#" method="post" class="tab-pane pay-paypal" id="J-payment-paypal">
+							<a href="https://www.paypal.com/c2/" target="_blank"><img src="../img/logo-paypal.jpg" alt="paypal" /></a>
+							<p class="desc"><strong>说明：</strong>点击“下一步”后，您将跳转到PayPal完成付款。<strong>您必须完成此过程，否则无法交易。</strong></p>
+
+							<div class="guide-btn-mod">
+								<button class="ui-btn-big" id="J-pay-other"><span>找人代付</span></button>
+								<button class="ui-btn-big ui-btn-primary" id="J-pay"><span>Next Step</span></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

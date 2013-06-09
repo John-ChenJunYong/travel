@@ -83,7 +83,12 @@ var GuideNew = {
 			var data_length = $.trim(data_textarea).length;
 			// var data_temp_div = $('#J-temp-' + type).text();
 
-			if(!data_length) return false;
+			if(!data_length) {
+				that.temp_month_data = {};
+				that.temp_week_data = {};
+				that.temp_day_data = {};
+				return false;
+			}
 
 			var json = utils.stringToJSON(data_textarea);
 
@@ -283,6 +288,8 @@ var GuideNew = {
 	 */
 	conversionData : function(data, type) {
 		if (!data || !type) return false;
+
+		console.log(data);
 
 		var temp_value = utils.jsonToString(data);
 		$('#J-schedule-data').val(temp_value);

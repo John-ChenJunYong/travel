@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>账户中心---用户提现</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- bootstrap -->
+<link href="../css/bootstrap.css" rel="stylesheet" />
+<link href="../css/bootstrap-fixed.css" rel="stylesheet" />
+<link href="../css/bootstrap-datepicker.css" rel="stylesheet" />
+<!-- bootstrap的响应式 -->
+<link href="../css/bootstrap-responsive.css" rel="stylesheet" />
+<!-- 自定义 -->
+<link href="../css/john-global.css" rel="stylesheet" />
+<link href="../css/john-public.css" rel="stylesheet" />
+<link href="../css/john-dashboard.css" rel="stylesheet" />
+<link href="../css/john-account-record.css" rel="stylesheet" />
+<link href="../css/john-public-responsive.css" rel="stylesheet" />
+
+<script src="../js/jquery-1.8.3.js" > </script>
+<script src="../js/bootstrap-tab.js"></script>
+<script src="../js/bootstrap-tooltip.js"></script>
+<script src="../js/bootstrap-popover.js"></script>
+<script src="../js/bootstrap-datepicker.js"></script>
+<script src="../js/bootstrap-modal.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/john-account-record.js"></script>
+
+</head>
+
+<body>
+
+<div class="content">
+	<div class="content-inner">
+		<div class="crumb-mod">
+			<ul class="breadcrumb">
+				<li><i class="icon-home"></i><a href="#">Dashboard</a> <span class="divider">/</span></li>
+				<li><a href="#">Photos and Video</a> <span class="divider">/</span></li>
+				<li class="active">Upload</li>
+			</ul>
+			<a href="javascript:void(0);" class="ui-btn-middle btn-view-middle">
+				<span><i class="icon-eye-open"></i>VIEW PROFILE</span>
+			</a>
+		</div>
+
+		<div class="col-side">
+			<div class="current-user">
+				<img src="../img/avator-1.jpg" alt="图片描述" class="avator">
+				<strong class="name">Yi Lian</strong>
+			</div>
+			<ul class="nav nav-list">
+				<li><a href="#"><i class="icon-home"></i>Dashboard</a></li>
+				<li class="nav-header">Transaction</li>
+				<li><a href="#"><i class="icon-file"></i>Bookings</a></li>
+				<li><a href="#"><i class="icon-file"></i>Guests</a></li>
+				<li class="nav-header">Account</li>
+				<li><a href="#"><i class="icon-user"></i>Profile</a></li>
+				<li><a href="#"><i class="icon-picture"></i>Photos</a></li>
+				<li><a href="#"><i class="icon-ok-circle"></i>Verification</a></li>
+				<li><a href="#"><i class="icon-eye-open"></i>Reviews</a></li>
+				<li class="nav-header">Setting</li>
+				<li><a href="#"><i class="icon-file"></i>Notification</a></li>
+				<li><a href="#"><i class="icon-file"></i>Privacy</a></li>
+				<li><a href="#"><i class="icon-file"></i>Security</a></li>
+				<li class="divider"></li>
+				<li><a href="#"><i class="icon-question-sign"></i>Help</a></li>
+			</ul>
+		</div>
+
+		<div class="col-main">
+			<!-- 用户提现：选项卡菜单 -->
+			<ul class="nav nav-tabs" id="J-account-withdrawals">
+				<li class="active"><a href="#J-withdrawals" data-toggle="tab">Withdrawals</a></li>
+				<li><a href="#J-withdrawals-method" data-toggle="tab">Withdrawals Method</a></li>
+				<li><a href="#J-withdrawals-record" data-toggle="tab">Withdrawals Record</a></li>
+			</ul>
+			<!-- 用户提现：选项卡内容 -->
+			<div class="tab-content">
+				<!-- 开始提款 -->
+				<div class="tab-pane active account-record" id="J-withdrawals">
+					<!-- 提款第一步 -->
+					<form class="form-horizontal">
+						<div class="record-title withdrawals-title">
+							<h4 class="title"><span>Current Balance</span></h4>
+						</div>
+						<div class="input-line">
+							<label>Choose A Withdrawals Method:</label>
+							<select name="method" class="select">
+								<option value="0">All listing and items</option>
+								<option value="1">Paid</option>
+								<option value="2">Clinch a bargain</option>
+								<option value="3">Refund</option>
+								<option value="4">Denied</option>
+								<option value="5">Waiting for a reply</option>
+							</select>
+							<p class="act-wrap"><a href="javascript:void(0);" class="act"  id="J-add-method">Add  Withdrawals Method</a></p>
+						</div>
+						<div class="input-line">
+							<label>Withdrawals Amount:</label>
+							<input type="text" placeholder="Price" />
+							<span class="help-inline">&yen;</span>
+							<div class="help-tips">
+								<span class="t">Tips:</span>
+								<p>Sending money to friends and family is free for you and the recipient when you fund the transfer with your bank account or PayPal balance. You can also use a debit or credit card or make an international transfer for a small fee.</p>
+							</div>
+						</div>
+						<div class="input-line">
+							<a href="javascript:void(0);" class="ui-btn-small ui-btn-primary"><span>NEXT</span></a>
+						</div>
+					</form>
+					<!-- 提款第二步 -->
+					<div class="info-withdrawals" style="display:none;">
+						<h5 class="title">Confirm withdrawals information</h5>
+						<ul class="list">
+							<li>Withdrawals Way:PayPal</li>
+							<li>Withdrawals amount:&yen;<span class="price">120</span></li>
+						</ul>
+						<div class="guide-btn-mod">
+							<a href="javascript:void(0);" class="ui-btn-small ui-btn-primary"><span>Confirm Withdrawals</span></a>
+							<a href="javascript:void(0);">Returns Modified</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- 账户提款方式 -->
+				<div class="tab-pane account-record" id="J-withdrawals-method">
+					<div class="mod-title">
+						<h2 class="mod-hd"><i class="i-video"></i>Withdraw</h2>
+						<p class="mod-extra">
+							我们将您所收到的预订款项称为“转款”。我们的安全支付系统支持多种收款方式，您可以在这里进行设置和编辑。您所能选择的收款方式和货币因国家而异，而且您还可以利用收款路线规则在不同的收款方式之间拆分您的转款。
+							<a href="#" target="_blank">查看更多关于收款的常见问题 »</a>
+						</p>
+					</div>
+					<!-- 无提款方式的情况下 -->
+					<div class="empty">
+						<p>You have not set up any methods for receiving payments.</p>
+						<a href="javascript:void(0);" class="ui-btn-small ui-btn-primary"><span>Add Withdrawals Method</span></a>
+					</div>
+					<!-- 有提款方式的情况下 -->
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th class="method">Method</th>
+								<th class="details">Details</th>
+								<th class="p-status">Status</th>
+								<th class="operate"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Westren Union</td>
+								<td>Lin Cheuk ，China CNY(min$60)</td>
+								<td>Ready</td>
+								<td class="operate">
+									<a href="javascript:void(0);" class="ui-btn-small"><span>Default</span></a>
+									<a href="javascript:void(0);" class="ui-btn-small"><span>Edit</span></a>
+									<a href="javascript:void(0);" class="ui-btn-small ui-btn-danger"><span>Delete</span></a>
+								</td>
+							</tr>
+							<tr>
+								<td>PayPal</td>
+								<td>LinC@qq.com (USD,EUR)</td>
+								<td>New</td>
+								<td class="operate">Default</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="4" class="result-tips">
+									<a href="javascript:void(0);" class="ui-btn-small ui-btn-primary"><span>Add Withdrawals Method</span></a>
+								</td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+
+				<!-- 账户提款记录 -->
+				<div class="tab-pane account-record" id="J-withdrawals-record">
+					<div class="record-title withdrawals-title">
+						<h4 class="title"><span>Total Earnings</span>&yen;198.0</h4>
+						<div class="filter">
+							<select name="filter-record" class="select">
+								<option value="0">All listing and items</option>
+								<option value="1">Paid</option>
+								<option value="2">Clinch a bargain</option>
+								<option value="3">Refund</option>
+								<option value="4">Denied</option>
+								<option value="5">Waiting for a reply</option>
+							</select>
+						</div>
+					</div>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th class="date">
+									<a href="javascript:void(0);" class="sorting-date">Date<b class="caret"></b></a>
+								</th>
+								<th class="sn">Serial number</th>
+								<th class="mothod">Mothod</th>
+								<th class="w-status">Status</th>
+								<th class="price">
+									<a href="javascript:void(0);" class="sorting-price">Amount<b class="caret"></b></a>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>2013-6-6</td>
+								<td>2255485211</td>
+								<td>Paypal</td>
+								<td>Succesed</td>
+								<td>&yen;100</td>
+							</tr>
+							<tr>
+								<td>2013-6-6</td>
+								<td>2255485211</td>
+								<td>Paypal</td>
+								<td>expected to account on May 13</td>
+								<td>&yen;100</td>
+							</tr>
+							<tr>
+								<td>2013-6-6</td>
+								<td>2255485211</td>
+								<td>Paypal</td>
+								<td>expected to account on Jun 12</td>
+								<td>&yen;100</td>
+							</tr>
+							<tr>
+								<td>2013-6-6</td>
+								<td>2255485211</td>
+								<td>Paypal</td>
+								<td>Failed </td>
+								<td>&yen;100</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="5" class="result-tips">Has completed 3 income  in total:<span class="amount">&yen;133</span></td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 弹层模板 -->
+<div id="J-withdrawals-method-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-body">
+		<form method class="w-method-mod form-horizontal">
+			<div class="input-line">
+				<label>Choose A Withdrawals Method:</label>
+				<select id="J-country" name="country">
+					<option value="AF">Afghanistan</option>
+					<option value="AL">Albania</option>
+					<option value="DZ">Algeria</option>
+					<option value="AS">American Samoa</option>
+					<option value="AD">Andorra</option>
+					<option value="AO">Angola</option>
+					<option value="AI">Anguilla</option>
+					<option value="AQ">Antarctica</option>
+					<option value="AG">Antigua and Barbuda</option>
+					<option value="AR">Argentina</option>
+					<option value="AM">Armenia</option>
+					<option value="AW">Aruba</option>
+					<option value="AU">Australia</option>
+					<option value="AT">Austria</option>
+					<option value="AZ">Azerbaijan</option>
+					<option value="BS">Bahamas</option>
+					<option value="BH">Bahrain</option>
+					<option value="BD">Bangladesh</option>
+					<option value="BB">Barbados</option>
+					<option value="BY">Belarus</option>
+					<option value="BE">Belgium</option>
+					<option value="BZ">Belize</option>
+					<option value="BJ">Benin</option>
+					<option value="WF">Wallis and Futuna</option>
+					<option value="EH">Western Sahara</option>
+					<option value="YE">Yemen</option>
+					<option value="ZM">Zambia</option>
+					<option value="ZW">Zimbabwe</option>
+					<option value="AX">Åland Islands</option>
+				</select>
+			</div>
+			<p class="title">We can send money to users in China as follows. Which do you prefer?</p>
+			<div class="table-wrap">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th class="operate"></th>
+							<th>Method</th>
+							<th>Arrives On</th>
+							<th>Fees</th>
+							<th class="currency">Currency</th>
+							<th class="details">Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="operate"><span class="ui-radio"><input type="radio" name="method" value="0" class="radio" /></span></td>
+							<td>PayPal</td>
+							<td>3-4 hours</td>
+							<td>PayPal withdrawals fee</td>
+							<td>USD</td>
+							<td>
+								PayPal charges a fee to withdraw money...
+								<ul>
+									<li>to your local bank account.</li>
+									<li>to your US bank account.</li>
+									<li>via paper check.</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td class="operate"><span class="ui-radio"><input type="radio" name="method" value="1" class="radio" /></span></td>
+							<td>International Wire</td>
+							<td>5-7 business days except holidays</td>
+							<td>Bank Fee</td>
+							<td>USD</td>
+							<td>Your bank will likely charge a fee to receive the wire. <a href="#" target="_blank">Learn More</a></td>
+						</tr>
+						<tr>
+							<td class="operate"><span class="ui-radio"><input type="radio" name="method" value="2" class="radio" /></span></td>
+							<td>Western Union</td>
+							<td>Next business day</td>
+							<td>$10 USD</td>
+							<td>CNY</td>
+							<td>
+								Cash pickup at Western Union Agent locations that support Quick Cash (<a href="#" target="_blank">multiple locations</a>).<br />
+								Valid government-issued photo identification will be required at the time of cash pickup.<br />
+								Note that money will be sent only from Monday through Friday Pacific Standard Time. <a href="#" target="_blank">Learn More</a>
+							</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="6" class="result-tips">* Money is always released the day after check in but may take longer to arrive to you.</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<a href="javascript:void(0);" class="ui-btn-small" data-dismiss="modal" aria-hidden="true">Cancel</a>
+		<a href="javascript:void(0);" class="ui-btn-small ui-btn-primary" data-dismiss="modal" aria-hidden="true">Save</a>
+	</div>
+</div>
+</body>
+</html>

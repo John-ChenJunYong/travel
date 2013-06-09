@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>行程管理---旅伴</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- bootstrap -->
+<link href="../css/bootstrap.css" rel="stylesheet" />
+<link href="../css/bootstrap-fixed.css" rel="stylesheet" />
+<link href="../css/bootstrap-datepicker.css" rel="stylesheet" />
+<!-- bootstrap的响应式 -->
+<link href="../css/bootstrap-responsive.css" rel="stylesheet" />
+<!-- 自定义 -->
+<link href="../css/john-global.css" rel="stylesheet" />
+<link href="../css/john-public.css" rel="stylesheet" />
+<link href="../css/john-dashboard.css" rel="stylesheet" />
+<link href="../css/john-account-pay.css" rel="stylesheet" />
+<link href="../css/john-public-responsive.css" rel="stylesheet" />
+
+<script src="../js/jquery-1.8.3.js" > </script>
+<script src="../js/bootstrap-tab.js"></script>
+<script src="../js/bootstrap-tooltip.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/john-account-pay.js"></script>
+</head>
+
+<body>
+
+<div class="content">
+	<form action="" method="post" class="pay-others">
+		<div class="hd"><h3 class="hd-t">为他人付款</h3></div>
+		<div class="bd">
+			<table class="info-oneself">
+				<tr>
+					<td class="pic"><img src="../img/avator-1.jpg" alt="图片描述" class="avator" />	</td>
+					<td class="info">
+						<p class="pay-title">Mark(1869572314)发起了1笔代付，请您帮忙付款<span class="price">&yen;650</span>！</p>
+						<p>代支付订单号：5246898745</p>
+					</td>
+				</tr>
+			</table>
+
+			<div class="alert">
+				<p class="tips">为避免风险，建议您和代付申请人通过电话等方式确认以上信息。</p>
+				<label class="label-agree">
+					<span class="ui-checkbox"><input type="checkbox" class="checkbox" id="J-checkbox-agree" /></span>我知道是<b>为他人付款</b>，商品或服务<b>不归我所有</b>
+				</label>
+			</div>
+			<button class="ui-btn-big ui-btn-primary" disabled="disabled" id="J-pay"><span>确认付款</span></button>
+		</div>
+	</form>
+</div>
+
+</body>
+</html>

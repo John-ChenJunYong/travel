@@ -17,7 +17,7 @@
 <link href="../css/john-public.css" rel="stylesheet" />
 <link href="../css/john-dashboard.css" rel="stylesheet" />
 <link href="../css/john-transaction-history.css" rel="stylesheet" />
-<!-- <link href="../css/john-public-responsive.css" rel="stylesheet" /> -->
+<link href="../css/john-public-responsive.css" rel="stylesheet" />
 
 <script src="../js/jquery-1.8.3.js" > </script>
 <script src="../js/bootstrap-tooltip.js"></script>
@@ -82,11 +82,11 @@
 							<tr>
 								<th class="time">Orders/Time</th>
 								<th class="user">Guide</th>
-								<th class="number">People</th>
-								<th class="duration">Duration</th>
-								<th class="total">Total</th>
+								<th class="name"></th>
 								<th class="status">Status</th>
-								<th class="handle">Handle</th>
+								<th class="price">Price</th>
+								<th class="number">People</th>
+								<th class="operate">Operation</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -95,92 +95,44 @@
 									<span class="deal-orders">5246898745</span>
 									<span class="deal-time">2013-04-16</span>
 								</td>
-								<td class="user">
-									<img src="../img/avator-1.jpg" alt="图片描述" class="avator" />
-									<strong class="name"><a href="#">Yi Lian</a></strong>
-									<a href="javascript:void(0);" class="ui-btn-small"
-									data-toggle="popover"
-									data-content="Queens food tour in New York"><span>Get in Touch</span></a>
+								<td class="user" colspan="4">
+									<!-- 所有之前发送过需求的旅伴 -->
+									<div class="user-list-wrap">
+										<table class="user-list">
+											<tr>
+												<td class="pic">
+													<img src="../img/avator-1.jpg" alt="图片描述" class="avator" />	
+													<a href="javascript:void(0);" class="ui-btn-small"><span>Contact</span></a>
+												</td>
+												<td class="name">Yi Lian</td>
+												<td class="status">Accept</td>
+												<td class="price">&yen;650</td>
+											</tr>
+											<tr>
+												<td class="pic">
+													<img src="../img/avator-2.jpg" alt="图片描述" class="avator" />	
+													<a href="javascript:void(0);" class="ui-btn-small"><span>Contact</span></a>
+												</td>
+												<td>Yi Lian</td>
+												<td class="status">Waiting</td>
+												<td>&yen;650</td>
+											</tr>
+											<tr>
+												<td class="pic">
+													<img src="../img/avator-3.jpg" alt="图片描述" class="avator" />	
+													<a href="javascript:void(0);" class="ui-btn-small"><span>Contact</span></a>
+												</td>
+												<td>Yi Lian</td>
+												<td class="status">Clinch</td>
+												<td>&yen;650</td>
+											</tr>
+										</table>
+									</div>
+									<a href="javascript:void(0);" class="act-more J-act-more-user">More</a>
 								</td>
-								<td class="number">
-									10
-								</td>
-								<td class="duration">
-									48h
-								</td>
-								<td class="total">
-									$960
-								</td>
-								<td class="status">
-									<span class="paid">Paid</span>
-								</td>
-								<td class="handle">
-									<span>Confirmed</span>
-									<a href="#">Complaints </a>
-									<a href="#">Order details</a>
-									<a href="javascript:void(0);" class="ui-btn-small ui-btn-primary"><span>Confirm</span></a>
-								</td>
-							</tr>
-							<tr>
-								<td class="time">
-									<span class="deal-orders">5246898745</span>
-									<span class="deal-time">2013-04-16</span>
-								</td>
-								<td class="user">
-									<img src="../img/avator-1.jpg" alt="图片描述" class="avator" />
-									<strong class="name"><a href="#">Yi Lian</a></strong>
-									<a href="javascript:void(0);" class="ui-btn-small"
-									data-toggle="popover"
-									data-content="Queens food tour in New York"><span>Get in Touch</span></a>
-								</td>
-								<td class="number">
-									10
-								</td>
-								<td class="duration">
-									48h
-								</td>
-								<td class="total">
-									$960
-								</td>
-								<td class="status">
-									<span class="paid">Clinch a bargain</span>
-								</td>
-								<td class="handle">
-									<span>Confirmed</span>
-									<a href="#">Complaints </a>
-									<a href="#">Order details</a>
-									<a href="javascript:void(0);" class="ui-btn-small ui-btn-primary"><span>Confirm</span></a>
-								</td>
-							</tr>
-							<tr>
-								<td class="time">
-									<span class="deal-orders">5246898745</span>
-									<span class="deal-time">2013-04-16</span>
-								</td>
-								<td class="user">
-									<img src="../img/avator-1.jpg" alt="图片描述" class="avator" />
-									<strong class="name"><a href="#">Yi Lian</a></strong>
-									<a href="javascript:void(0);" class="ui-btn-small"
-									data-toggle="popover"
-									data-content="Queens food tour in New York"><span>Get in Touch</span></a>
-								</td>
-								<td class="number">
-									10
-								</td>
-								<td class="duration">
-									48h
-								</td>
-								<td class="total">
-									$960
-								</td>
-								<td class="status">
-									<span class="paid">Waiting for a reply</span>
-								</td>
-								<td class="handle">
-									<span>Confirmed</span>
-									<a href="#">Complaints </a>
-									<a href="#">Order details</a>
-									<a href="javascript:void(0);" class="ui-btn-small ui-btn-primary"><span>Confirm</span></a>
+								<td class="number">10</td>
+								<td class="operate">
+									<a href="#">Details</a>
 								</td>
 							</tr>
 						</tbody>
@@ -203,21 +155,50 @@
 	</div>
 </div>
 
+
 <script type="text/javascript">
 	$(function(){
-		// 为元素绑定popover事件
-		$('a[data-toggle=popover]')
-		.popover({
-			trigger : 'hover',
-			delay: {
-				show: 100,
-				hide: 400
+		$.fn.showMoreUser = function(opts) {
+			var defaults = {
+				speed : 400
 			}
-		})
-		.on('click', function(e){
-			e.preventDefault();
-		});
+			var opts = $.extend({}, defaults, opts);
+
+			// 默认高度
+			return this.each(function(){
+				var _this = $(this);
+				_this.live('click', function(){
+					var __this = $(this);
+					__this.blur();
+					var _parent = __this.parent();
+					var _listwrap = _parent.find('.user-list-wrap');
+					var _list = _listwrap.find('table');
+					var _children = _list.find('tr');
+
+					// 默认高度，主要是下次缩回去的时候需要用到
+					var height_default = _children.height() * 2;
+					// 外围容器的高度
+					var height_listwrap = _listwrap.height();
+					// 列表的高度
+					var height_list = _list.height();
+					// 需要做动画的高度
+					var animate_height = height_listwrap < height_list ? height_list : height_default;
+					var animate_txt = height_listwrap < height_list ? 'Less' : 'More';
+
+					_listwrap.stop(true, true).animate({
+						'height' : animate_height
+					}, opts.speed, function(){
+						__this.text(animate_txt);
+					});
+
+					return false;
+				});
+
+			});
+		}
+		$('.J-act-more-user').showMoreUser();
 	});
 </script>
+
 </body>
 </html>

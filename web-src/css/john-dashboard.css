@@ -29,7 +29,7 @@
 }
 .crumb-mod .breadcrumb { padding:0px; margin-bottom:0px; background-color:transparent; }
 .crumb-mod .breadcrumb .icon-home { margin-right:12px; }
-.crumb-mod .btn-view-middle { position:absolute; top:50%; right:20px; margin-top:-17px; }
+.crumb-mod .btn-view-middle { position:absolute; top:50%; right:20px; margin-top:-15px; }
 
 
 /*当前用户*/
@@ -42,13 +42,14 @@
 .nav-list>li>a { padding:3px 35px; margin-left:-35px; margin-right:-35px; }
 
 /*主体栏目的默认标题*/
-.mod-title { position:relative; padding:18px; margin:10px 0px; border-width:1px 0px; border-style:solid; border-color:#d6d6d6 transparent; }
+.mod-title { position:relative; padding:16px 20px; margin:10px 0px; border-width:1px 0px; border-style:solid; border-color:#dddddd transparent; }
 .mod-title:first-child { margin-top:-20px; border-top:none; }
-.mod-title .mod-hd { float:left; font-size:14px; padding-right:18px; line-height:32px; }
-.mod-title .mod-hd i[class*='i-'] { display:inline-block; width:32px; height:32px; margin-top:-4px; background-image:url(../img/icon-dashboard.png); background-repeat:no-repeat; vertical-align:middle; }
-.mod-title .mod-extra { padding:6px 0px; margin:0px; color:#999999; overflow:hidden; }
-.mod-title .mod-hd .i-video { background-position:0px 0px; }
-.mod-title .mod-hd .i-photo { background-position:0px -32px; }
+.mod-title .mod-hd { float:left; font-size:14px; padding-right:18px; line-height:28px; }
+.mod-title .mod-hd i { display:inline-block; width:28px; height:28px; margin-right:6px; background-image:url(../img/_icon-sprite.png); background-repeat:no-repeat; vertical-align:-8px; }
+.mod-title .mod-extra { padding:4px 0px; margin:0px; color:#999999; overflow:hidden; }
+.mod-title .mod-hd .i-video { background-position:-28px -224px; }
+.mod-title .mod-hd .i-photo { background-position:-28px -252px; }
+.mod-title .mod-hd .i-edit { background-position:-28px -280px; }
 
 /*普通文章列表模块*/
 .article { padding:0px 20px; }
@@ -209,3 +210,10 @@
  * explanation:处理旅客的请求;
  ****************************/
 /* @import url('john-requests.css') */
+
+
+/****************************
+ * date:2013-6-6 11:47:21;
+ * explanation:账户相关记录，包括提款记录、积分记录、收入记录;
+ ****************************/
+/* @import url('john-account-record.css') */

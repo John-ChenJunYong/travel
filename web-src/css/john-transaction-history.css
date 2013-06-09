@@ -9,24 +9,24 @@
 .history-mod .hd-t { font-size:20px; line-height:30px; }
 .history-mod .hd select { position:absolute; top:50%; right:10px; margin-top:-15px; margin-bottom:0px; }
 .history-list { table-layout:fixed; width:100%; border-collapse:collapse; border-spacing:0px; text-align:left; }
-.history-list span,
-.history-list strong { display:block; }
 .history-list th { padding:6px 10px; border-bottom:1px solid #dddddd; font-weight:400; text-align:left; }
 .history-list td { padding:20px 10px; border-bottom:1px dashed #dddddd; vertical-align:top; }
 .history-list .time { width:15%; }
-.history-list .time span { padding-bottom:10px; }
-.history-list .user { width:15%; text-align:center; }
-.history-list .user strong { padding:4px 0px; }
-.history-list .user .ui-btn-small { padding-left:4px; padding-right:4px; }
-.history-list .number { width:11%; }
-.history-list .duration { width:11%; }
-.history-list .total { width:11%; }
+.history-list .time span { padding-bottom:10px; display:block; }
+.history-list td.user { padding-left:0px; padding-right:0px; padding-bottom:0px; }
+.history-list th.user { width:78px; }
+.history-list .user .ui-btn-small { display:block; padding-top:2px; padding-bottom:2px; margin-top:8px; }
+.history-list .user-list-wrap { height:252px; overflow:hidden; }
+.history-list .user-list { table-layout:fixed; width:100%; }
+.history-list .user-list td { padding-top:0px; padding-bottom:14px; border:none; }
+.history-list .pic { width:78px; text-align:center; }
 .history-list td.status { color:#ff6600; }
-.history-list .handle { width:15%; }
-.history-list .handle span { padding-bottom:8px; }
-.history-list .handle a { display:inline-block; margin-bottom:8px; }
-.history-list .handle .ui-btn-small { display:block; }
-.history-list .ui-btn-small span { display:inline; padding:0px; margin:0px; }
+.history-list .number { width:12%; }
+.history-list .operate { width:15%; }
+.history-list .operate a { display:block; margin-bottom:8px; text-transform:capitalize; }
+.history-list .operate .ui-btn-small { width:80px; padding:3px 0px; }
+.history-list .act-more { display:block; width:78px; padding-bottom:10px; text-align:center; cursor:pointer; }
+.history-list .act-more:hover { text-decoration:none; }
 /**
  * @overflow
  * @explanation:重新定义bootstrap popover的外观;

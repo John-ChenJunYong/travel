@@ -12,17 +12,7 @@
  * 流程类
  */
 /*申请流程*/
-.guide-step { height:35px; padding:0px 0px 0px 0px; margin-bottom:30px; overflow:hidden; }
-.guide-step li { position:relative; float:left; width:25%; background-color:#efefef; line-height:35px; text-align:center; cursor:pointer; }
-.guide-step li:after { position:absolute; top:0px; right:-22px; bottom:0px; content:""; width:22px; height:35px; background-image:url(../img/_icon-sprite.png); background-repeat:no-repeat; background-position:0px -682px; }
-.guide-step .step-1 { z-index:5; }
-.guide-step .step-2 { z-index:4; }
-.guide-step .step-3 { z-index:3; }
-.guide-step .step-4 { z-index:2; }
-
 .guide-step .step-4:after { display:none; }
-.guide-step .active { background-color:#0088cc; color:#ffffff; }
-.guide-step .active:after { background-position:0px -738px; }
 
 .guide-description,
 .guide-congratulation { padding:0px 296px 0px 0px; margin:0px; color:#0088cc; }

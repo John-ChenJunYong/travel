@@ -51,8 +51,7 @@
 .schedule-list .td-all { width:80px; }
 .schedule-list .ui-checkbox { width:30px; height:30px; margin:0px auto; background-color:transparent; border:none; }
 /*游玩时间列表*/
-.travel-time-list { }
-.travel-time-list li { position:relative; padding:6px 400px 6px 100px; }
+.travel-time-list li { position:relative; padding:6px 200px 6px 100px; }
 .travel-time-list strong { position:absolute; top:6px; left:0px; font-weight:400; color:#0088cc; }
 .travel-time-list span { display:inline-block; padding-right:20px; }
 

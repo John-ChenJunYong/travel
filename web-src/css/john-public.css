@@ -18,6 +18,15 @@ input[readonly=readonly] { background-color:#ffffff; cursor:default; }
 	/*font-family:'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif!important;*/
 }
 .content:after { clear:both; display:block; height:0px; overflow:hidden; visibility:hidden; content:""; }
+/*滚动条*/
+::-webkit-scrollbar { width:10px; height:10px; -webkit-appearance:none; }
+::-webkit-scrollbar-button:vertical { display:none; }
+::-webkit-scrollbar-track:vertical { background-color:black; }
+::-webkit-scrollbar-track-piece { background:#ffffff; }
+::-webkit-scrollbar-thumb:vertical { background-color:#8e8e8e; border-radius:5px; }
+::-webkit-scrollbar-thumb:vertical:hover { background-color:#3b3b3b; }
+::-webkit-scrollbar-corner:vertical { background-color:#535353; }
+::-webkit-scrollbar-resizer:vertical { background-color:#ff6e00; }
 
 /*tab*/
 .ui-tabs-nav { border-bottom:1px solid #cdcdcd; }
@@ -72,7 +81,7 @@ input[readonly=readonly] { background-color:#ffffff; cursor:default; }
 }
 /*按钮默认大小*/
 .ui-btn-big { padding:8px 10px; font-weight:500; font-size:16px; }
-.ui-btn-middle { padding:6px 10px; font-size:14px; }
+.ui-btn-middle,
 .ui-btn-small { padding:4px 10px; font-size:13px; }
 /*按钮当中出现的小图标*/
 .ui-btn-big i,
@@ -180,7 +189,7 @@ input[readonly=readonly] { background-color:#ffffff; cursor:default; }
 }
 .ui-btn-primary[disabled],
 .ui-btn-blue[disabled] {
-	color:#ffffff; cursor: default;
+	color:#ffffff; cursor:default;
 	background-color: #5a86de; border-color:#5a81d1;
 	background-image:none;
 	box-shadow: none;
@@ -347,9 +356,9 @@ input[readonly=readonly] { background-color:#ffffff; cursor:default; }
 }
 
 /*将按钮全部靠右边*/
-.guide-btn-mod { text-align:right; }
-.guide-btn-mod .pay-info { padding-right:20px; font-size:20px; line-height:30px; vertical-align:-5px; }
-.guide-btn-mod .pay-info .price { color:#ff0000; font-size:30px; vertical-align:-3px; }
+.guide-btn-mod { clear:both; text-align:right; }
+.guide-btn-mod .pay-info { display:block; padding-bottom:16px; font-size:20px; line-height:30px; }
+.guide-btn-mod .pay-info .price { padding-left:6px; color:#ff0000; font-size:30px; vertical-align:-3px; }
 .guide-btn-mod .ui-btn-big { padding-left:40px; padding-right:40px; margin-left:10px; }
 
 /*纯文字提示类*/
@@ -393,7 +402,6 @@ input[readonly=readonly] { background-color:#ffffff; cursor:default; }
 .ui-radio.ui-radioed { background-position:-34px -147px; }
 .alert-error-list .ui-checkbox { background-position:-34px -62px }
 .alert-error-list .ui-checkbox.ui-checked { background-position:-34px -90px; }
-
 
 /*分页*/
 .ui-pagination { padding:16px 0px; text-align:center; font-size:0px; }
@@ -487,7 +495,7 @@ input[readonly=readonly] { background-color:#ffffff; cursor:default; }
 
 /*评价列表*/
 .review-list .item { border-bottom:1px solid #cdcdcd; }
-.review-list .traveler-item { padding:4px 0px 10px 0px; overflow:hidden; }
+.review-list .traveler-item { padding:6px 0px 10px 0px; overflow:hidden; }
 .review-list .companion-item { padding:4px 0px 10px 0px; border-top:1px dashed #cdcdcd; overflow:hidden; }
 .review-list .user { float:left; text-align:center; }
 .review-list .name { display:block; font-weight:400; }
@@ -619,6 +627,19 @@ input[readonly=readonly] { background-color:#ffffff; cursor:default; }
 .booking .input-date { width:96px; }
 .booking .input-person { width:78px; }
 .booking .ui-btn-big { display:block; }
+
+/*申请流程*/
+.guide-step { height:35px; padding:0px 0px 0px 0px; margin-bottom:30px; overflow:hidden; }
+.guide-step li { position:relative; float:left; width:25%; background-color:#efefef; line-height:35px; text-align:center; cursor:pointer; }
+.guide-step li:after { position:absolute; top:0px; right:-22px; bottom:0px; content:""; width:22px; height:35px; background-image:url(../img/_icon-sprite.png); background-repeat:no-repeat; background-position:0px -682px; }
+.guide-step .step-1 { z-index:10; }
+.guide-step .step-2 { z-index:9; }
+.guide-step .step-3 { z-index:8; }
+.guide-step .step-4 { z-index:7; }
+.guide-step .step-5 { z-index:6; }
+.guide-step .step-6 { z-index:5; }
+.guide-step .active { background-color:#0088cc; color:#ffffff; }
+.guide-step .active:after { background-position:0px -738px; }
 
 /**
  * date:2013-5-24 11:04:38;
